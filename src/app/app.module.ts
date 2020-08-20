@@ -12,6 +12,7 @@ import { DisclaimersComponent } from './disclaimers/disclaimers.component';
 import { BuyMaACoffeeComponent } from './buy-ma-acoffee/buy-ma-acoffee.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AppRoutingModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule
 
   ],
   providers: [],

@@ -14,9 +14,7 @@ export const environment = {
   API_Covid_Countries_AS: '/com.Samuel.sscovid19.api/Countries/AS',
   API_Covid_Countries_AF: '/com.Samuel.sscovid19.api/Countries/AF',
   API_Covid_Countries_OC: '/com.Samuel.sscovid19.api/Countries/OC'
-
-
-
+  
 };
 
 

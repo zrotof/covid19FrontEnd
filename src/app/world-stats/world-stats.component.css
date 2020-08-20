@@ -1,0 +1,156 @@
+
+
+.greetings{
+    margin-top: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
+    color: whitesmoke;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.greetings span:nth-child(1){
+    font-size: 195%;
+    margin-bottom: 1%;
+}
+
+.greetings span:nth-child(2){
+    font-size: 15px;
+    margin-bottom: 1%;
+}
+
+.greetings span:nth-child(3){
+    text-align: right;
+}
+
+
+
+
+.Globals{
+
+    background: #161748;
+    width: 100%;
+    height:23%;
+    display:flex;
+}
+
+
+.Spinning_earth{
+    height: 100%;
+    width: 11%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left:1%;
+}
+
+.earth{
+    
+    margin: auto;
+    height: 85%;
+    width: 100%;
+    background-image: url("../../assets/img/coro_spinner.jpg");
+    border-radius: 50%;
+    background-size: cover;
+    box-shadow: 20px -20px 50px 2px #000 inset, 0 0 2px #000;
+    animation: spin 25s linear infinite;
+}
+
+@keyframes spin{
+    0%
+    {
+        background-position: 0 0;
+    }
+    100%
+    {
+        background-position: 1200px 0;
+    }
+}
+
+.Cases{
+    
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: skyblue;
+    margin-left: 1%;
+    margin-right: 2%;
+}
+
+.Cases img{
+    height: 70px;
+    width:30px;
+    margin-bottom: 2%;
+}
+
+.ReCrDe{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.Recovered{
+    color:rgb(33, 163, 33);
+    display:flex;
+    border-bottom: solid white;
+    padding-bottom: 3%;
+
+
+}
+.Recovered img{
+    
+    height: 40px;
+    width: 18px;
+}
+
+.Recovered div{
+    display: flex;
+    flex-direction: column;
+}
+
+.Criticals{
+    color: rgb(218, 218, 39);
+    display:flex;
+    border-bottom: solid white;
+
+    padding-bottom: 3%;
+    margin-bottom: 3%;
+    margin-top: 3%;
+
+}
+.Criticals img{
+    height: 40px;
+    width: 18px;
+
+}
+.Criticals div{
+    display: flex;
+    flex-direction: column;
+}
+
+.Deaths{
+    color: rgb(190, 24, 24);
+    display:flex;
+    margin-top: 3%;
+
+
+}
+.Deaths img{
+    height: 40px;
+    width: 18px;
+
+}
+
+.Deaths div{
+    display: flex;
+    flex-direction: column;
+}
+
+.Table{
+    margin-left: 2%;
+    border: solid green;
+}
