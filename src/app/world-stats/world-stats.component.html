@@ -3,7 +3,7 @@
         <span>You can access data on the evolution of the corona virus worldwide. We strive to update our data regularly. 
             (*)<strong>Don't forget to wear a mask and barrier gestures.</strong></span>
         
-        <span>Last update :  </span>
+        <span>Last update :  {{ worlds[0].wDate | date:'short' }}</span>
 </div>
   
   
@@ -15,7 +15,7 @@
     
     <div class="Cases RCD">
       <img src="../assets/img/coro_cases.png" alt="confirmed man logo">
-      <span><strong>123456765</strong></span>
+      <span><strong>{{ worlds[0].wCases | number }}</strong></span>
       <span><strong>Total Confirmed Cases</strong></span>
     </div>
   
@@ -25,16 +25,16 @@
         <img src="../assets/img/coro_rescue.png" alt="rescued man logo">
         <div>
           <span><strong>Total Recovered</strong></span>
-          <span><strong>123456765</strong></span>
+          <span><strong>{{worlds[0].wRecovered | number}}</strong></span>
         </div>
       </div>
   
       <div class="Criticals RCD">
-        <img src="../assets/img/coro_critical.png" alt="criticalsman logo">
+        <img src="../assets/img/coro_critical.png" alt="criticals man logo">
         <div>
   
           <span><strong>Total Criticals</strong></span>
-          <span><strong>123456765</strong></span>
+          <span><strong>{{worlds[0].wCritical | number}}</strong></span>
         </div>
       </div>
   
@@ -43,12 +43,238 @@
         <div>
   
           <span><strong>Total Deaths</strong></span>
-          <span><strong>123456765</strong></span>
+          <span><strong>{{worlds[0].wDeaths | number}}</strong></span>
         </div>
       </div>
+
+      
   
     </div>
   
+
+
+
+    <div class="continents">
+      <div class="titles">
+        <div style="width: 20%;" >Continents</div>
+        <div style="width: 20%;" ><img  src="../assets/img/coro_cases.png" alt="confirmed man logo"></div>
+        <div style="width: 20%;" ><img  src="../assets/img/coro_rescue.png" alt="rescued man logo"></div>
+        <div style="width: 20%;" ><img  src="../assets/img/coro_critical.png" alt="rescued man logo"></div>
+        <div style="width: 20%;" ><img  src="../assets/img/coro_deaths.png" alt="deaths man logo"></div>
+      </div>
+      <div class="values" *ngFor="let continent of continents">
+       
+        <div class="line">
+          
+          <div style="width: 20%;" class="normal">{{ continent.ctName }}</div>
+       
+          <div style="width: 20%;" class="tab-cases">
+            <div>{{ continent.ctCases | number }}</div>
+            <div>+{{ continent.ctToDayCases| number }}</div>
+          </div>
+
+          <div style="width: 20%;" class="normal">{{ continent.ctRecovered | number }}</div>
+
+          <div style="width: 20%;" class="normal">{{ continent.ctCritical | number }}</div>
+
+          <div style="width: 20%;"class="tab-deaths" >
+            <div>{{ continent.ctDeaths | number }}</div>
+            <div >+{{ continent.ctToDayDeaths | number }}</div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
  
-    <div class="Table"></div>
+</div>
+
+<div class="data-by-continents">
+
+<div class="bloc">
+  <div class="continent">
+    <div style="display: flex; justify-content: space-between;"><span>North America </span><div style="background-color: white;color: black; font-weight: bold; width: 40%; display: flex;justify-content: center; align-items: center;"class="tests"> {{ testsNA | number }} people tested</div></div>
+    <div style="background-color: #343a40; display: flex;border: 2px solid gray;" class="cy-header">
+      <div style="width: 30%;display: flex; align-items: center; padding-left: 1%;">Countries</div>
+      <div style="width: 17.5%; display: flex; align-items: center; justify-content: center; border-left: 1px solid gray ;">Cases</div>
+      <div style="width: 17.5%; display: flex; align-items: center; justify-content: center; border-left: 1px solid gray ;">Recovered</div>
+      <div style="width: 17.5%; display: flex; align-items: center; justify-content: center; border-left: 1px solid gray ;">Criticals</div>
+      <div style="width: 17.5%; display: flex; align-items: center; justify-content: center; border-left: 1px solid gray ;">Deaths</div>
+    </div>
+    <div style="background-color: #343a40; height: 30vh; display: flex; align-items: center;border: 2px solid gray;" >
+      
+      <div style="background-color: #343a40; height: 28vh; width:100%; overflow: auto; padding-right: 2%;">
+      <div  class="cy-values" >
+        <div *ngFor="let countryNA of countriesNA" style="display: flex; border-bottom: 2px solid gray; border-right: 2px solid gray;">
+          <div style="width: 30%; display: flex; align-items: center; padding-left: 1%"><img src ={{countryNA.cyFlag}} alt="flag of {{countryNA.cyName}} "> {{countryNA.cyName}}</div>
+          <div style="width: 17.5%; display: flex; flex-direction: column; align-items: center;justify-content: center;">
+            <div>{{countryNA.cyCases | number}}</div>
+            <div style="color: skyblue;">+{{countryNA.cyToDayCases | number}}</div>
+          </div>
+          <div style="width: 17.5%; display: flex; flex-direction: column; align-items: center;justify-content: center;">{{countryNA.cyRecovered | number}}</div>
+          <div style="width: 17.5%; display: flex; flex-direction: column; align-items: center;justify-content: center;">{{countryNA.cyCritical | number}}</div>
+          <div style="width: 17.5%;  display: flex; flex-direction: column; align-items: center;justify-content: center;">
+            <div>{{countryNA.cyDeaths | number}}</div>
+            <div style="color: red;">+{{countryNA.cyToDayDeaths | number}}</div>
+          </div>
+      </div>
+    </div>
+      </div>
+    </div>
+    
+    
+  </div>
+
+
+
+
+
+
+  <div class="continent">
+
+    <div><span>South America </span><div> Tests realised</div></div>
+    <table class="table table-fixed table-bordered table-dark">
+      <thead>
+          <tr>
+              <th scope="col" class="col-4">Countries</th>
+              <th scope="col" class="col-2">Cases</th>
+              <th scope="col" class="col-2">Recovered</th>
+              <th scope="col" class="col-2">Criticals</th>
+              <th scope="col" class="col-2">Deaths</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <th scope="row" class="col-4">1</th>
+              <td class="col-2" >Mark</td>
+              <td class="col-2">Otto</td>
+              <td class="col-2">@mdo</td>
+              <td class="col-2">@mdo</td>
+
+          </tr>
+         
+      </tbody>
+   </table>
+    
+  </div>
+
+
+</div>
+
+<div class="bloc">
+  <div class="continent">
+    <div><span>Europe </span><div> tests realised</div></div>
+    <table class="table table-fixed table-bordered table-dark">
+      <thead>
+          <tr>
+              <th scope="col" class="col-4">Countries</th>
+              <th scope="col" class="col-2">Cases</th>
+              <th scope="col" class="col-2">Recovered</th>
+              <th scope="col" class="col-2">Criticals</th>
+              <th scope="col" class="col-2">Deaths</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <th scope="row" class="col-4">1</th>
+              <td class="col-2" >Mark</td>
+              <td class="col-2">Otto</td>
+              <td class="col-2">@mdo</td>
+              <td class="col-2">@mdo</td>
+
+          </tr>
+         
+      </tbody>
+  </table>
+  </div>
+
+  <div class="continent">
+
+    <div><span>Asia </span><div> tests realised</div></div>
+    <table class="table table-fixed table-bordered table-dark">
+      <thead>
+          <tr>
+              <th scope="col" class="col-4">Countries</th>
+              <th scope="col" class="col-2">Cases</th>
+              <th scope="col" class="col-2">Recovered</th>
+              <th scope="col" class="col-2">Criticals</th>
+              <th scope="col" class="col-2">Deaths</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <th scope="row" class="col-4">1</th>
+              <td class="col-2" >Mark</td>
+              <td class="col-2">Otto</td>
+              <td class="col-2">@mdo</td>
+              <td class="col-2">@mdo</td>
+
+          </tr>
+         
+      </tbody>
+  </table>
+    
+  </div>
+</div>
+
+<div class="bloc">
+  <div class="continent">
+
+  <div><span>Africa </span><div> tests realised</div></div>
+    <table class="table table-fixed table-bordered table-dark">
+      <thead>
+          <tr>
+              <th scope="col" class="col-4">Countries</th>
+              <th scope="col" class="col-2">Cases</th>
+              <th scope="col" class="col-2">Recovered</th>
+              <th scope="col" class="col-2">Criticals</th>
+              <th scope="col" class="col-2">Deaths</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <th scope="row" class="col-4">1</th>
+              <td class="col-2" >Mark</td>
+              <td class="col-2">Otto</td>
+              <td class="col-2">@mdo</td>
+              <td class="col-2">@mdo</td>
+
+          </tr>
+         
+      </tbody>
+  </table>
+    
+  </div>
+
+
+
+  <div class="continent">
+    <div><span>Oceania </span><div> tests realised</div></div>
+  <table class="table table-fixed table-bordered table-dark">
+    <thead>
+        <tr>
+            <th scope="col" class="col-4">Countries</th>
+            <th scope="col" class="col-2">Cases</th>
+            <th scope="col" class="col-2">Recovered</th>
+            <th scope="col" class="col-2">Criticals</th>
+            <th scope="col" class="col-2">Deaths</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row" class="col-4">1</th>
+            <td class="col-2" >Mark</td>
+            <td class="col-2">Otto</td>
+            <td class="col-2">@mdo</td>
+            <td class="col-2">@mdo</td>
+
+        </tr>
+       
+    </tbody>
+</table>
+  
+</div>
+</div>
+
+
 </div>
