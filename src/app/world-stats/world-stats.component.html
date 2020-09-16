@@ -1,7 +1,7 @@
 <div class="greetings">
-        <span>Welcome to you,</span>
-        <span>You can access data on the evolution of the corona virus worldwide. We strive to update our data regularly. 
-            (*)<strong>Don't forget to wear a mask and barrier gestures.</strong></span>
+        <span class="change">,</span>
+        <span>You can access data on the evolution of covid19 worldwide. We strive to update our data regularly. 
+            <strong>(*) Don't forget to wear a mask and apply barrier gestures.</strong></span>
         
         <span>Last update :  {{ worlds[0].wDate | date:'short' }}</span>
 </div>
@@ -62,29 +62,62 @@
         <div style="width: 20%;" ><img  src="../assets/img/coro_critical.png" alt="rescued man logo"></div>
         <div style="width: 20%;" ><img  src="../assets/img/coro_deaths.png" alt="deaths man logo"></div>
       </div>
-      <div class="values" *ngFor="let continent of continents">
-       
-        <div class="line">
+      
+      <div class="loaders" *ngIf="!continents">
           
-          <div style="width: 20%;" class="normal">{{ continent.ctName }}</div>
-       
-          <div style="width: 20%;" class="tab-cases">
-            <div>{{ continent.ctCases | number }}</div>
-            <div>+{{ continent.ctToDayCases| number }}</div>
-          </div>
+        <svg version="1.1" id="L4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+          <circle fill="#ffffff" stroke="none" cx="6" cy="50" r="6">
+            <animate
+              attributeName="opacity"
+              dur="1s"
+              values="0;1;0"
+              repeatCount="indefinite"
+              begin="0.1"/>    
+          </circle>
+          <circle fill="#ffffff" stroke="none" cx="26" cy="50" r="6">
+            <animate
+              attributeName="opacity"
+              dur="1s"
+              values="0;1;0"
+              repeatCount="indefinite" 
+              begin="0.2"/>       
+          </circle>
+          <circle fill="#ffffff" stroke="none" cx="46" cy="50" r="6">
+            <animate
+              attributeName="opacity"
+              dur="1s"
+              values="0;1;0"
+              repeatCount="indefinite" 
+              begin="0.3"/>     
+          </circle>
+        </svg>
 
-          <div style="width: 20%;" class="normal">{{ continent.ctRecovered | number }}</div>
-
-          <div style="width: 20%;" class="normal">{{ continent.ctCritical | number }}</div>
-
-          <div style="width: 20%;"class="tab-deaths" >
-            <div>{{ continent.ctDeaths | number }}</div>
-            <div >+{{ continent.ctToDayDeaths | number }}</div>
-          </div>
-
-        </div>
       </div>
 
+
+      <div class="values" *ngFor="let continent of continents">
+       
+          <div class="line">
+            
+            <div  style="width: 20%;" class="normal">{{ continent.ctName }}</div>
+        
+            <div style="width: 20%;" class="tab-cases">
+              <div>{{ continent.ctCases | number }}</div>
+              <div>+{{ continent.ctToDayCases| number }}</div>
+            </div>
+
+            <div style="width: 20%;" class="normal">{{ continent.ctRecovered | number }}</div>
+
+            <div style="width: 20%;" class="normal">{{ continent.ctCritical | number }}</div>
+
+            <div style="width: 20%;"class="tab-deaths" >
+              <div>{{ continent.ctDeaths | number }}</div>
+              <div >+{{ continent.ctToDayDeaths | number }}</div>
+            </div>
+
+          </div>
+       </div>
     </div>
  
 </div>
@@ -93,27 +126,58 @@
 
 <div class="bloc">
   <div class="continent">
-    <div style="display: flex; justify-content: space-between;"><span>North America </span><div style="background-color: white;color: black; font-weight: bold; width: 40%; display: flex;justify-content: center; align-items: center;"class="tests"> {{ testsNA | number }} people tested</div></div>
-    <div style="background-color: #343a40; display: flex;border: 2px solid gray;" class="cy-header">
-      <div style="width: 30%;display: flex; align-items: center; padding-left: 1%;">Countries</div>
-      <div style="width: 17.5%; display: flex; align-items: center; justify-content: center; border-left: 1px solid gray ;">Cases</div>
-      <div style="width: 17.5%; display: flex; align-items: center; justify-content: center; border-left: 1px solid gray ;">Recovered</div>
-      <div style="width: 17.5%; display: flex; align-items: center; justify-content: center; border-left: 1px solid gray ;">Criticals</div>
-      <div style="width: 17.5%; display: flex; align-items: center; justify-content: center; border-left: 1px solid gray ;">Deaths</div>
+    <div class="labels-tested"><span class="labels">North America </span><div class="tested"> {{ testsNA | number }} people tested</div></div>
+    <div class="cy-header">
+      <div class="cy-header-name">Countries</div>
+      <div class="cy-header-crcd">Cases</div>
+      <div class="cy-header-crcd">Recovered</div>
+      <div class="cy-header-crcd">Criticals</div>
+      <div class="cy-header-crcd">Deaths</div>
     </div>
-    <div style="background-color: #343a40; height: 30vh; display: flex; align-items: center;border: 2px solid gray;" >
+    <div class="values-content" >
       
-      <div style="background-color: #343a40; height: 28vh; width:100%; overflow: auto; padding-right: 2%;">
+      <div class="values-overflow">
       <div  class="cy-values" >
-        <div *ngFor="let countryNA of countriesNA" style="display: flex; border-bottom: 2px solid gray; border-right: 2px solid gray;">
-          <div style="width: 30%; display: flex; align-items: center; padding-left: 1%"><img src ={{countryNA.cyFlag}} alt="flag of {{countryNA.cyName}} "> {{countryNA.cyName}}</div>
-          <div style="width: 17.5%; display: flex; flex-direction: column; align-items: center;justify-content: center;">
+
+
+        <div class="loaders" *ngIf="!countriesNA">
+          <svg version="1.1" id="L4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+          <circle fill="#ffffff" stroke="none" cx="6" cy="50" r="6">
+            <animate
+              attributeName="opacity"
+              dur="1s"
+              values="0;1;0"
+              repeatCount="indefinite"
+              begin="0.1"/>    
+          </circle>
+          <circle fill="#ffffff" stroke="none" cx="26" cy="50" r="6">
+            <animate
+              attributeName="opacity"
+              dur="1s"
+              values="0;1;0"
+              repeatCount="indefinite" 
+              begin="0.2"/>       
+          </circle>
+          <circle fill="#ffffff" stroke="none" cx="46" cy="50" r="6">
+            <animate
+              attributeName="opacity"
+              dur="1s"
+              values="0;1;0"
+              repeatCount="indefinite" 
+              begin="0.3"/>     
+          </circle>
+        </svg>
+        </div>
+        <div *ngFor="let countryNA of countriesNA" class="cy-values-row">
+          <div class="cy-values-flag-name"><img class="cy-values-flag" src ={{countryNA.cyFlag}} alt="flag of {{countryNA.cyName}} "> {{countryNA.cyName}}</div>
+          <div class="cy-values-crcd">
             <div>{{countryNA.cyCases | number}}</div>
             <div style="color: skyblue;">+{{countryNA.cyToDayCases | number}}</div>
           </div>
-          <div style="width: 17.5%; display: flex; flex-direction: column; align-items: center;justify-content: center;">{{countryNA.cyRecovered | number}}</div>
-          <div style="width: 17.5%; display: flex; flex-direction: column; align-items: center;justify-content: center;">{{countryNA.cyCritical | number}}</div>
-          <div style="width: 17.5%;  display: flex; flex-direction: column; align-items: center;justify-content: center;">
+          <div class="cy-values-crcd">{{countryNA.cyRecovered | number}}</div>
+          <div class="cy-values-crcd">{{countryNA.cyCritical | number}}</div>
+          <div class="cy-values-crcd">
             <div>{{countryNA.cyDeaths | number}}</div>
             <div style="color: red;">+{{countryNA.cyToDayDeaths | number}}</div>
           </div>
@@ -131,30 +195,35 @@
 
 
   <div class="continent">
-
-    <div><span>South America </span><div> Tests realised</div></div>
-    <table class="table table-fixed table-bordered table-dark">
-      <thead>
-          <tr>
-              <th scope="col" class="col-4">Countries</th>
-              <th scope="col" class="col-2">Cases</th>
-              <th scope="col" class="col-2">Recovered</th>
-              <th scope="col" class="col-2">Criticals</th>
-              <th scope="col" class="col-2">Deaths</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-              <th scope="row" class="col-4">1</th>
-              <td class="col-2" >Mark</td>
-              <td class="col-2">Otto</td>
-              <td class="col-2">@mdo</td>
-              <td class="col-2">@mdo</td>
-
-          </tr>
-         
-      </tbody>
-   </table>
+    <div class="labels-tested"><span class="labels">South America </span><div class="tested"> {{ testsSA | number }} people tested</div></div>
+    <div class="cy-header">
+      <div class="cy-header-name">Countries</div>
+      <div class="cy-header-crcd">Cases</div>
+      <div class="cy-header-crcd">Recovered</div>
+      <div class="cy-header-crcd">Criticals</div>
+      <div class="cy-header-crcd">Deaths</div>
+    </div>
+    <div class="values-content" >
+      
+      <div class="values-overflow">
+      <div  class="cy-values" >
+        <div *ngFor="let countrySA of countriesSA" class="cy-values-row">
+          <div class="cy-values-flag-name"><img class="cy-values-flag" src ={{countrySA.cyFlag}} alt="flag of {{countrySA.cyName}} "> {{countrySA.cyName}}</div>
+          <div class="cy-values-crcd">
+            <div>{{countrySA.cyCases | number}}</div>
+            <div style="color: skyblue;">+{{countrySA.cyToDayCases | number}}</div>
+          </div>
+          <div class="cy-values-crcd">{{countrySA.cyRecovered | number}}</div>
+          <div class="cy-values-crcd">{{countrySA.cyCritical | number}}</div>
+          <div class="cy-values-crcd">
+            <div>{{countrySA.cyDeaths | number}}</div>
+            <div style="color: red;">+{{countrySA.cyToDayDeaths | number}}</div>
+          </div>
+      </div>
+    </div>
+      </div>
+    </div>
+    
     
   </div>
 
@@ -163,118 +232,142 @@
 
 <div class="bloc">
   <div class="continent">
-    <div><span>Europe </span><div> tests realised</div></div>
-    <table class="table table-fixed table-bordered table-dark">
-      <thead>
-          <tr>
-              <th scope="col" class="col-4">Countries</th>
-              <th scope="col" class="col-2">Cases</th>
-              <th scope="col" class="col-2">Recovered</th>
-              <th scope="col" class="col-2">Criticals</th>
-              <th scope="col" class="col-2">Deaths</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-              <th scope="row" class="col-4">1</th>
-              <td class="col-2" >Mark</td>
-              <td class="col-2">Otto</td>
-              <td class="col-2">@mdo</td>
-              <td class="col-2">@mdo</td>
-
-          </tr>
-         
-      </tbody>
-  </table>
+    <div class="labels-tested"><span class="labels">Europe </span><div class="tested"> {{ testsEU | number }} people tested</div></div>
+    <div class="cy-header">
+      <div class="cy-header-name">Countries</div>
+      <div class="cy-header-crcd">Cases</div>
+      <div class="cy-header-crcd">Recovered</div>
+      <div class="cy-header-crcd">Criticals</div>
+      <div class="cy-header-crcd">Deaths</div>
+    </div>
+    <div class="values-content" >
+      
+      <div class="values-overflow">
+      <div  class="cy-values" >
+        <div *ngFor="let countryEU of countriesEU" class="cy-values-row">
+          <div class="cy-values-flag-name"><img class="cy-values-flag" src ={{countryEU.cyFlag}} alt="flag of {{countryEU.cyName}} "> {{countryEU.cyName}}</div>
+          <div class="cy-values-crcd">
+            <div>{{countryEU.cyCases | number}}</div>
+            <div style="color: skyblue;">+{{countryEU.cyToDayCases | number}}</div>
+          </div>
+          <div class="cy-values-crcd">{{countryEU.cyRecovered | number}}</div>
+          <div class="cy-values-crcd">{{countryEU.cyCritical | number}}</div>
+          <div class="cy-values-crcd">
+            <div>{{countryEU.cyDeaths | number}}</div>
+            <div style="color: red;">+{{countryEU.cyToDayDeaths | number}}</div>
+          </div>
+      </div>
+    </div>
+      </div>
+    </div>
+    
+    
   </div>
 
   <div class="continent">
-
-    <div><span>Asia </span><div> tests realised</div></div>
-    <table class="table table-fixed table-bordered table-dark">
-      <thead>
-          <tr>
-              <th scope="col" class="col-4">Countries</th>
-              <th scope="col" class="col-2">Cases</th>
-              <th scope="col" class="col-2">Recovered</th>
-              <th scope="col" class="col-2">Criticals</th>
-              <th scope="col" class="col-2">Deaths</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-              <th scope="row" class="col-4">1</th>
-              <td class="col-2" >Mark</td>
-              <td class="col-2">Otto</td>
-              <td class="col-2">@mdo</td>
-              <td class="col-2">@mdo</td>
-
-          </tr>
-         
-      </tbody>
-  </table>
+    <div class="labels-tested"><span class="labels">Asia </span><div class="tested"> {{ testsAS | number }} people tested</div></div>
+    <div class="cy-header">
+      <div class="cy-header-name">Countries</div>
+      <div class="cy-header-crcd">Cases</div>
+      <div class="cy-header-crcd">Recovered</div>
+      <div class="cy-header-crcd">Criticals</div>
+      <div class="cy-header-crcd">Deaths</div>
+    </div>
+    <div class="values-content" >
+      
+      <div class="values-overflow">
+      <div  class="cy-values" >
+        <div *ngFor="let countryAS of countriesAS" class="cy-values-row">
+          <div class="cy-values-flag-name"><img class="cy-values-flag" src ={{countryAS.cyFlag}} alt="flag of {{countryAS.cyName}} "> {{countryAS.cyName}}</div>
+          <div class="cy-values-crcd">
+            <div>{{countryAS.cyCases | number}}</div>
+            <div style="color: skyblue;">+{{countryAS.cyToDayCases | number}}</div>
+          </div>
+          <div class="cy-values-crcd">{{countryAS.cyRecovered | number}}</div>
+          <div class="cy-values-crcd">{{countryAS.cyCritical | number}}</div>
+          <div class="cy-values-crcd">
+            <div>{{countryAS.cyDeaths | number}}</div>
+            <div style="color: red;">+{{countryAS.cyToDayDeaths | number}}</div>
+          </div>
+      </div>
+    </div>
+      </div>
+    </div>
+    
     
   </div>
 </div>
 
 <div class="bloc">
   <div class="continent">
-
-  <div><span>Africa </span><div> tests realised</div></div>
-    <table class="table table-fixed table-bordered table-dark">
-      <thead>
-          <tr>
-              <th scope="col" class="col-4">Countries</th>
-              <th scope="col" class="col-2">Cases</th>
-              <th scope="col" class="col-2">Recovered</th>
-              <th scope="col" class="col-2">Criticals</th>
-              <th scope="col" class="col-2">Deaths</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-              <th scope="row" class="col-4">1</th>
-              <td class="col-2" >Mark</td>
-              <td class="col-2">Otto</td>
-              <td class="col-2">@mdo</td>
-              <td class="col-2">@mdo</td>
-
-          </tr>
-         
-      </tbody>
-  </table>
+    <div class="labels-tested"><span class="labels">Africa </span><div class="tested"> {{ testsAF | number }} people tested</div></div>
+    <div class="cy-header">
+      <div class="cy-header-name">Countries</div>
+      <div class="cy-header-crcd">Cases</div>
+      <div class="cy-header-crcd">Recovered</div>
+      <div class="cy-header-crcd">Criticals</div>
+      <div class="cy-header-crcd">Deaths</div>
+    </div>
+    <div class="values-content" >
+      
+      <div class="values-overflow">
+      <div  class="cy-values" >
+        <div *ngFor="let countryAF of countriesAF" class="cy-values-row">
+          <div class="cy-values-flag-name"><img class="cy-values-flag" src ={{countryAF.cyFlag}} alt="flag of {{countryAF.cyName}} "> {{countryAF.cyName}}</div>
+          <div class="cy-values-crcd">
+            <div>{{countryAF.cyCases | number}}</div>
+            <div style="color: skyblue;">+{{countryAF.cyToDayCases | number}}</div>
+          </div>
+          <div class="cy-values-crcd">{{countryAF.cyRecovered | number}}</div>
+          <div class="cy-values-crcd">{{countryAF.cyCritical | number}}</div>
+          <div class="cy-values-crcd">
+            <div>{{countryAF.cyDeaths | number}}</div>
+            <div style="color: red;">+{{countryAF.cyToDayDeaths | number}}</div>
+          </div>
+      </div>
+    </div>
+      </div>
+    </div>
+    
     
   </div>
 
 
 
   <div class="continent">
-    <div><span>Oceania </span><div> tests realised</div></div>
-  <table class="table table-fixed table-bordered table-dark">
-    <thead>
-        <tr>
-            <th scope="col" class="col-4">Countries</th>
-            <th scope="col" class="col-2">Cases</th>
-            <th scope="col" class="col-2">Recovered</th>
-            <th scope="col" class="col-2">Criticals</th>
-            <th scope="col" class="col-2">Deaths</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row" class="col-4">1</th>
-            <td class="col-2" >Mark</td>
-            <td class="col-2">Otto</td>
-            <td class="col-2">@mdo</td>
-            <td class="col-2">@mdo</td>
+    <div class="labels-tested"><span class="labels">Oceania </span><div class="tested"> {{ testsOC | number }} people tested</div></div>
+    <div class="cy-header">
+      <div class="cy-header-name">Countries</div>
+      <div class="cy-header-crcd">Cases</div>
+      <div class="cy-header-crcd">Recovered</div>
+      <div class="cy-header-crcd">Criticals</div>
+      <div class="cy-header-crcd">Deaths</div>
+    </div>
+    <div class="values-content" >
+      
+      <div class="values-overflow">
+      <div  class="cy-values" >
+        <div *ngFor="let countryOC of countriesOC" class="cy-values-row">
+          <div class="cy-values-flag-name"><img class="cy-values-flag" src ={{countryOC.cyFlag}} alt="flag of {{countryOC.cyName}} "> {{countryOC.cyName}}</div>
+          <div class="cy-values-crcd">
+            <div>{{countryOC.cyCases | number}}</div>
+            <div style="color: skyblue;">+{{countryOC.cyToDayCases | number}}</div>
+          </div>
+          <div class="cy-values-crcd">{{countryOC.cyRecovered | number}}</div>
+          <div class="cy-values-crcd">{{countryOC.cyCritical | number}}</div>
+          <div class="cy-values-crcd">
+            <div>{{countryOC.cyDeaths | number}}</div>
+            <div style="color: red;">+{{countryOC.cyToDayDeaths | number}}</div>
+          </div>
+      </div>
+    </div>
+      </div>
+    </div>
+    
+    
+  </div>
+</div>
 
-        </tr>
-       
-    </tbody>
-</table>
-  
-</div>
-</div>
 
 
 </div>

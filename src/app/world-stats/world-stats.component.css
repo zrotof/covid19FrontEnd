@@ -4,11 +4,70 @@
     margin-top: 1%;
     margin-left: 5%;
     margin-right: 5%;
-    color: whitesmoke;
+    color: white;
 
     display: flex;
     flex-direction: column;
     text-align: center;
+}
+
+
+.change:before
+{
+  content: 'Welcome to you';
+  animation: animate infinite 45s;
+}
+@keyframes animate
+{
+  10%
+  {
+  content: 'Bienvenue à vous';
+
+  }
+  20%
+  {
+  content: 'Willkommen bei Ihnen';
+
+  }
+  30%
+  {
+  content: 'Bienvenido a ti';
+  
+  }
+  40%
+  {
+  content: 'Bem-vindo a si';
+
+  }
+  50%
+  {
+  content: 'Benvenuti da voi';
+ 
+  }
+  
+  60%
+  {
+  content: 'Welkom bij u';
+
+  }
+
+
+  70%
+  {
+  content: 'Witamy Państwa';
+
+  }
+  80%
+  {
+  content: 'Добро пожаловать';
+
+  }
+  
+  90%
+  {
+  content: '欢迎你的到来';
+
+  }
 }
 
 .greetings span:nth-child(1){
@@ -194,8 +253,22 @@
     width: 100%;
 }
 
+.loaders{
+    background: gray;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    width: 100%;
+    height: 80%;
+}
 
-
+svg{
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    display:inline-block;
+  }
+  
 .line{
     display:flex;
     height:100%;
@@ -205,6 +278,16 @@
     background-color: white;
     border-top: solid black;
     font-weight: bold;
+}
+
+.line:hover{
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size:1.1em; 
+
+
 }
 
 
@@ -278,14 +361,64 @@ justify-content: center;}
     margin-bottom: 4%;
 }
 
+.labels-tested{
+    display: flex;
+     justify-content: space-between;
+}
 
-.continent div span {
+.labels{
     font-weight: bold;
     font-size: 1.8em;
 }
 
+.tested{
+    background-color: white;
+    color: black;
+     font-weight: bold;
+      width: 40%;
+       display: flex;
+       justify-content: center;
+        align-items: center;
+}
+
 .cy-header{
+    background-color: #343a40;
     height: 5vh;
+     display: flex;
+     border: 2px solid gray;
+}
+
+.cy-header-name{
+    width: 30%;
+    display: flex;
+     align-items: center; 
+     padding-left: 1%;
+}
+
+.cy-header-crcd{
+    width: 17.5%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-left: 1px solid gray ;
+}
+
+
+
+.values-content{
+    background-color: #343a40; 
+    height: 30vh; 
+    display: flex; 
+    align-items: center;
+    border: 2px solid gray;
+}
+
+.values-overflow{
+    background-color: #343a40; 
+    height: 28vh; 
+    width:100%; 
+    overflow: auto; 
+    padding-right: 1.5%;
 }
 .cy-values{
     padding-top: 0.5%;
@@ -297,12 +430,31 @@ justify-content: center;}
     height: 100%;
 }
 
+.cy-values-row{
+    display: flex; 
+    border-bottom: 2px solid gray; 
+    border-right: 2px solid gray;
+}
 
-.cy-values img{
+.cy-values-flag-name{
+    width: 30%; 
+    display: flex; 
+    align-items: center; 
+    padding-left: 1%
+}
+.cy-values-flag{
     height:30px;
     width:40px;
     margin-right: 2%;
     
+}
+
+.cy-values-crcd{
+    width: 17.5%; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
 }
 
 

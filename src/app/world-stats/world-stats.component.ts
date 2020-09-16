@@ -15,6 +15,11 @@ export class WorldStatsComponent implements OnInit {
   worlds : World;
   continents  :  Continent[];
   countriesNA : Countries[];
+  countriesSA : Countries[];
+  countriesEU : Countries[];
+  countriesAS : Countries[];
+  countriesAF : Countries[];
+  countriesOC : Countries[];
 
 
 
@@ -30,6 +35,11 @@ export class WorldStatsComponent implements OnInit {
     this.getWorld();
     this.getContinents();
     this.getContinentsNA();
+    this.getContinentsSA();
+    this.getContinentsEU();
+    this.getContinentsAS();
+    this.getContinentsAF();
+    this.getContinentsOC();
   }
 
   getWorld() : void {
@@ -69,5 +79,30 @@ export class WorldStatsComponent implements OnInit {
   getContinentsNA() : void {
     this.covidService.getCountriesCasesByContinentNA()
     .subscribe(result3 =>this.countriesNA = result3)
+  }
+
+  getContinentsSA() : void {
+    this.covidService.getCountriesCasesByContinentSA()
+    .subscribe(result4 =>this.countriesSA = result4)
+  }
+
+  getContinentsEU() : void {
+    this.covidService.getCountriesCasesByContinentEU()
+    .subscribe(result5 =>this.countriesEU = result5)
+  }
+
+  getContinentsAS() : void {
+    this.covidService.getCountriesCasesByContinentAS()
+    .subscribe(result6 =>this.countriesAS = result6)
+  }
+
+  getContinentsAF() : void {
+    this.covidService.getCountriesCasesByContinentAF()
+    .subscribe(result7 =>this.countriesAF = result7)
+  }
+
+  getContinentsOC() : void {
+    this.covidService.getCountriesCasesByContinentOC()
+    .subscribe(result8 =>this.countriesOC = result8)
   }
 }

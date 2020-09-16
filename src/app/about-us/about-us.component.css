@@ -1,0 +1,34 @@
+.about-us{
+    display: flex;
+    background-color: #161748;
+    border-top: solid white;
+    color:white;
+    min-height:89%;
+    align-items:center;
+    justify-content: center;
+    padding-left: 5%;
+    padding-right:5%;
+}
+
+span{
+    font-size: 2.2em;
+    text-decoration: underline;
+    font-weight:bold;
+    margin-bottom: 6%;
+    text-align:center;
+}
+
+img{
+    margin-left: 10px;
+    margin-right: 10px;
+    height:40px;
+    width: 40px;
+}
+
+.text-bloc{
+    width:30%;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    height:60%;
+}

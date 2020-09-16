@@ -20,7 +20,7 @@ export class Covid19Service {
   continentSA = environment.API_Covid_Countries_SA ;
   continentEU = environment.API_Covid_Countries_EU ;
   continentAS = environment.API_Covid_Countries_AS ;
-  sontinentAF = environment.API_Covid_Countries_AF ;
+  continentAF = environment.API_Covid_Countries_AF ;
   continentOC = environment.API_Covid_Countries_OC ;
 
   constructor( private http :HttpClient ) { 
@@ -42,6 +42,26 @@ export class Covid19Service {
 
   getCountriesCasesByContinentNA() : Observable<Countries[]>{
     return this.http.get<Countries[]>(this.continentNA)
+  }
+
+  getCountriesCasesByContinentSA() : Observable<Countries[]>{
+    return this.http.get<Countries[]>(this.continentSA)
+  }
+
+  getCountriesCasesByContinentEU() : Observable<Countries[]>{
+    return this.http.get<Countries[]>(this.continentEU)
+  }
+
+  getCountriesCasesByContinentAS() : Observable<Countries[]>{
+    return this.http.get<Countries[]>(this.continentAS)
+  }
+
+  getCountriesCasesByContinentAF() : Observable<Countries[]>{
+    return this.http.get<Countries[]>(this.continentAF)
+  }
+
+  getCountriesCasesByContinentOC() : Observable<Countries[]>{
+    return this.http.get<Countries[]>(this.continentOC)
   }
 
 
