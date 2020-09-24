@@ -1,20 +1,59 @@
 .about-us{
     display: flex;
-    background-color: #161748;
-    border-top: solid white;
-    color:white;
+    flex-direction: column;
+    background-color: white;
+    color:#161748;
     min-height:89%;
     align-items:center;
     justify-content: center;
     padding-left: 5%;
     padding-right:5%;
+    padding-top: 5%;
 }
 
-span{
+.title{
+    text-decoration: underline;
+    font-size: 2.5em;
+    font-weight: bolder;
+    margin-bottom: 4%;
+    margin-top: 2%;
+
+}
+
+.content{
+    display:flex;
+    background-color: #161748;
+    align-items: center;
+    justify-content: space-around;
+    width:100%;
+    margin-bottom: 5vh;
+    
+}
+
+.photo{
+   
+    width: 40%;
+    height: 50vh;
+    text-align: center;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-bloc{
+    display: flex;
+    flex-direction: column;
+    width:40%;
+}
+
+
+
+.subtitle{
     font-size: 2.2em;
     text-decoration: underline;
     font-weight:bold;
-    margin-bottom: 6%;
+    margin-bottom: 2%;
     text-align:center;
 }
 
@@ -25,10 +64,12 @@ img{
     width: 40px;
 }
 
-.text-bloc{
-    width:30%;
+.text{
+    width:100%;
     display: flex;
     flex-direction: column;
     text-align: justify;
     height:60%;
+    color: white;
+    margin-bottom: 5%;
 }
