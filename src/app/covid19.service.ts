@@ -22,55 +22,64 @@ export class Covid19Service {
   continentAS = environment.API_Covid_Countries_AS ;
   continentAF = environment.API_Covid_Countries_AF ;
   continentOC = environment.API_Covid_Countries_OC ;
+  continentAll = environment.API_Covid_Countries_All ;
+  WorldHistoricAll = environment.API_World_Historical_All ;
 
-  constructor( private http :HttpClient ) { 
+  constructor( private http :HttpClient ){
 
   }
 
   getWorldCases() : Observable<World>{
 
     return this.http.get<World>(this.worldURL);
-  
   }
-
 
   getContinentCases() : Observable<Continent[]>{
-    return this.http.get<Continent[]>(this.continentURL)
 
+    return this.http.get<Continent[]>(this.continentURL)
   }
 
-
   getCountriesCasesByContinentNA() : Observable<Countries[]>{
+
     return this.http.get<Countries[]>(this.continentNA)
   }
 
   getCountriesCasesByContinentSA() : Observable<Countries[]>{
+
     return this.http.get<Countries[]>(this.continentSA)
   }
 
   getCountriesCasesByContinentEU() : Observable<Countries[]>{
+
     return this.http.get<Countries[]>(this.continentEU)
   }
 
   getCountriesCasesByContinentAS() : Observable<Countries[]>{
+
     return this.http.get<Countries[]>(this.continentAS)
   }
 
   getCountriesCasesByContinentAF() : Observable<Countries[]>{
+
     return this.http.get<Countries[]>(this.continentAF)
   }
 
   getCountriesCasesByContinentOC() : Observable<Countries[]>{
+
     return this.http.get<Countries[]>(this.continentOC)
   }
 
+  getCountriesAllCases() : Observable<Countries[]>{
 
+    return this.http.get<Countries[]>(this.continentAll)
+  }
 
+  ////////////Historical data
 
+  getWorldHistorical() : any{
 
-
-
-
+    return this.http.get(this.WorldHistoricAll);
+  }
 
   /**
    * Handle Http operation that failed.

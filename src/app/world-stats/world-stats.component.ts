@@ -20,6 +20,7 @@ export class WorldStatsComponent implements OnInit {
   countriesAS : Countries[];
   countriesAF : Countries[];
   countriesOC : Countries[];
+  countriesAll : Countries[];
 
 
 
@@ -40,6 +41,7 @@ export class WorldStatsComponent implements OnInit {
     this.getContinentsAS();
     this.getContinentsAF();
     this.getContinentsOC();
+    this.getCountriesAll();
   }
 
   getWorld() : void {
@@ -104,5 +106,10 @@ export class WorldStatsComponent implements OnInit {
   getContinentsOC() : void {
     this.covidService.getCountriesCasesByContinentOC()
     .subscribe(result8 =>this.countriesOC = result8)
+  }
+
+  getCountriesAll() : void {
+    this.covidService.getCountriesAllCases()
+    .subscribe(result9 =>this.countriesAll = result9)
   }
 }
