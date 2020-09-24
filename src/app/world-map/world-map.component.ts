@@ -106,9 +106,7 @@ export class WorldMapComponent implements OnInit {
     chart.data.push({date: new Date(key), cases: data2.cases[key], recovered: data2.recovered[key],deaths: data2.deaths[key]});
     }
 
-    });
- 
-//console.log(chart.data);
+    //console.log(chart.data);
     //chart.data=[];
 
 // Create axes
@@ -161,11 +159,58 @@ chart.cursor = new am4charts.XYCursor();
 //Adding scrollbar
 var scrollbarX = new am4charts.XYChartScrollbar();
 scrollbarX.series.push(series);
+
 chart.scrollbarX = scrollbarX;
 
+chart.scrollbarX.background.fill = am4core.color("#dc67ab");
+chart.scrollbarX.background.fillOpacity = 0.2;
+
+
+chart.scrollbarX.startGrip.background.fill = am4core.color("#000000");
+chart.scrollbarX.startGrip.background.fillOpacity = 0.8;
+chart.scrollbarX.endGrip.background.fill = am4core.color("#000000");
+chart.scrollbarX.endGrip.background.fillOpacity = 0.8;
+chart.scrollbarX.minHeight= 40;
+
+
+    });
+ 
+
+    customizeGrip(chart.scrollbarX.startGrip);
+    customizeGrip(chart.scrollbarX.endGrip); 
+//Customizing grip
+
+function customizeGrip(grip) {
+  // This is empty for now
+  grip.icon.disabled = true;
+  grip.background.fill = am4core.color("#000000");
+  grip.background.fillOpacity = 0.5;
+  grip.height=40;
+
+  let img = grip.createChild(am4core.Rectangle);
+  img.width = 10;
+  img.height = 10;
+  img.fill = am4core.color("#000000");
+  img.fillOpacity= 1
+  img.rotation = 45;
+  img.align = "center";
+  img.valign = "middle";
+
+  // Add vertical bar
+  let line = grip.createChild(am4core.Rectangle);
+  line.height = 30;
+  line.width = 3;
+  img.fill = am4core.color("#000000");
+  img.fillOpacity= 1
+  line.align = "center";
+  line.valign = "middle";
+
+}
+
+
 // Add cursor
-chart.cursor = new am4charts.XYCursor();
-chart.cursor.xAxis = dateAxis;
+chart.plotContainer.visible = false;
+
   
   // Disabling amChart logo
   chart.logo.disabled = true;
