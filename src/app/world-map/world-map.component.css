@@ -23,9 +23,19 @@
 }
 
 .some-data{
-width:25%;
+
+    padding-top: 3%;
+display: flex;
+color: white;
+justify-content: space-around;
+width:100%;
+align-items: center;
 }
 
+.bloc{
+    display: flex;
+    flex-direction: column;
+}
 #graphdiv {
     margin-top:1%;
     padding-top:2%;
