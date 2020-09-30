@@ -12,4 +12,11 @@ export class BuyMaACoffeeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //Redirecting Buy me a coffee page 
+  redirectToBMC(){
+
+    const url = 'https://www.buymeacoffee.com/sscovid19';
+    window.open(url, '_blank');
+  }
+
 }

@@ -1,0 +1,123 @@
+.content{
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content: center;
+    background-color: white;
+
+    padding-left: 5%;
+    padding-right:5%;
+    width:100%;
+    padding-bottom: 5%;
+}
+
+
+.main-bloc{
+    display:flex;
+    width:100%;
+    justify-content: space-between;
+
+}
+
+.title{
+    text-decoration: underline;
+    font-size: 2.5em;
+    font-weight: bolder;
+    margin-bottom: 4%;
+    margin-top: 3%;
+    color : #161748;
+
+}
+
+.left-bloc{
+    width:40%;
+    background-color : #161748;
+    height: 50vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.left-bloc span{
+    
+    font-size: 1.7em;
+    font-weight: bolder;
+    margin-bottom: 2%;
+    margin-top: 3%;
+    text-align:center;
+    width: 100%;
+}
+
+.right-bloc{
+    width:60%;
+    height: 50vh;
+    background-image: 
+    linear-gradient(
+        rgba(0 0 0 / 38%),
+        rgba(47 55 72 / 75%)
+
+    ), 
+    url("../../assets/img/picsou.jpg");
+    background-repeat: no-repeat;
+     /* Center and scale the image nicely */
+    background-position: center;
+    background-size: cover;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    flex-direction: column;
+}
+
+.link{
+    text-align: center;
+    background-color: black;
+    width: 100%;
+    color: white;
+}
+
+.btn {
+    border: none;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    background-color: #222;
+    padding: 17px 60px;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.20);
+  }
+  
+  .btn span {
+    position: relative; 
+    z-index: 1;
+  }
+  
+  .btn:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 490%;
+    width: 140%;
+    background: #78c7d2;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    -webkit-transform: translateX(-97%) translateY(-25%) rotate(45deg);
+    transform: translateX(-93%) translateY(-25%) rotate(45deg);
+  }
+  
+  .btn:hover:after {
+    -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+    transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  }
+  
