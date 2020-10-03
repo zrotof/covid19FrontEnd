@@ -23,15 +23,16 @@ export class Covid19Service {
   continentAF = environment.API_Covid_Countries_AF ;
   continentOC = environment.API_Covid_Countries_OC ;
   continentAll = environment.API_Covid_Countries_All ;
+  allCountries = environment.API_Covid_JustCountries ;
   WorldHistoricAll = environment.API_World_Historical_All ;
 
   constructor( private http :HttpClient ){
 
   }
 
-  getWorldCases() : Observable<World>{
+  getWorldCases() : Observable<World[]>{
 
-    return this.http.get<World>(this.worldURL);
+    return this.http.get<World[]>(this.worldURL);
   }
 
   getContinentCases() : Observable<Continent[]>{
@@ -74,12 +75,35 @@ export class Covid19Service {
     return this.http.get<Countries[]>(this.continentAll)
   }
 
-  ////////////Historical data
+  getCountriesAllCountries() : Observable<any>{
+
+    return this.http.get<any>(this.allCountries);
+  }
+
+  ////////////Historical data world
 
   getWorldHistorical() : any{
 
     return this.http.get(this.WorldHistoricAll);
   }
+
+
+  ////////////Historical data for a specific country
+
+  getCountryHistorical(param) : any{
+
+    return this.http.get("https://disease.sh/v3/covid-19/historical/"+param+"?lastdays=all");
+  }
+
+
+   ////////////Globals covid19 data for a specific country
+
+   getCountryGlobals(param) : Observable<Countries[]>{
+
+    return this.http.get<Countries[]>("https://disease.sh/v3/covid-19/countries/"+param+"?strict=true");
+  }
+
+
 
   /**
    * Handle Http operation that failed.

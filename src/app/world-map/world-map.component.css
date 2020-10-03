@@ -15,32 +15,56 @@
     padding-right:9%;
 }
 
-.graph{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background-color: #161748;
-}
 
 .some-data{
 
-    padding-top: 3%;
-display: flex;
-color: white;
-justify-content: space-around;
-width:100%;
-align-items: center;
+    padding-top: 2%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: space-around;
+    width:100%;
+    align-items: center;
+    background-color: #161748;
+
+}
+
+.title{
+    font-size: 2em;
+    font-weight: bolder;
+    margin-bottom: 2%;
+    color : white;
+
+}
+
+.percentage-bloc{
+    display: flex;
+    justify-content: space-around;
+    width:100%;
+    margin-bottom: 2%;
+
 }
 
 .bloc{
-    display: flex;
+    display:flex;
     flex-direction: column;
 }
-#graphdiv {
+
+#worldgraphdiv {
     margin-top:1%;
     padding-top:2%;
     padding-bottom: 2%;
     width: 100%;
     height: 60vh;
     background-color: #f4f4f8;
+}
+
+.data-bloc{
+    display: flex;
+    justify-content: space-around;
+    width:100%;
+}
+.table{
+    width: 50%;
+    text-align: center;
 }

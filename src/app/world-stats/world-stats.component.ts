@@ -12,7 +12,7 @@ import { Countries } from '../../../models/countries';
 })
 export class WorldStatsComponent implements OnInit {
 
-  worlds : World;
+  worlds : World[];
   continents  :  Continent[];
   countriesNA : Countries[];
   countriesSA : Countries[];
