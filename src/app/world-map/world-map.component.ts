@@ -230,7 +230,8 @@ chart.logo.disabled = true;
   worldCases() : void{
     this.covidService.getWorldCases()
     .subscribe(data3 =>{
-      this.worldNumbers = data3
+      this.worldNumbers = data3;
+      console.log("World :",this.worldNumbers);
     });
   
 }
