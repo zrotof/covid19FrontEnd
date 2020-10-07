@@ -9,12 +9,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 const routes: Routes = [
 
-    { path: 'world-stats', component: WorldStatsComponent },
-    { path: 'world-map', component: WorldMapComponent },
-    { path: 'about-us', component: AboutUsComponent },
+    { path: '', component: WorldStatsComponent },
+    { path: 'map', component: WorldMapComponent },
+    { path: 'about', component: AboutUsComponent },
+    { path: 'covid19', component: AboutUsComponent },
     { path: 'disclaimers', component: DisclaimersComponent },
-    { path: 'buy-me-acoofee', component: BuyMaACoffeeComponent},
-    { path: '',   redirectTo: '/world-stats', pathMatch: 'full' }, // redirect to `first-component`
+    { path: 'buy-me-a-coffee', component: BuyMaACoffeeComponent},
+    { path: 'stats',   redirectTo: '', pathMatch: 'full' }, // redirect to `first-component`
     { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
 
 ];
