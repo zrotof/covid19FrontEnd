@@ -15,6 +15,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { Covid19Component } from './covid19/covid19.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     DisclaimersComponent,
     BuyMaACoffeeComponent,
     AboutUsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    Covid19Component
   ],
   imports: [
     BrowserModule,
