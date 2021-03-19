@@ -1,0 +1,158 @@
+.covid19-history{
+    margin-top: 7.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+
+.title{
+    text-decoration: underline;
+    font-size: 2.5em;
+    font-weight: bolder;
+    margin-bottom: 45px;
+    margin-top: 45px;
+}
+
+
+.introduction{
+    width: 100%;
+    font-size: 1.4em;
+    font-weight: bold;
+    padding-left:2em;
+    padding-right:2em;
+    margin-bottom: 1em;
+}
+
+#accordionExample{
+    z-index: 1;
+}
+
+
+label{
+    font-size: 0.6em;
+    cursor: pointer;
+}
+
+
+label:hover{
+    background-color: #161748;
+    color: white ;
+}
+
+.accordion-item{
+    margin-bottom: 1em;
+}
+
+
+
+
+.accordion-body{
+    display: flex;
+    flex-direction: column;
+}
+
+.some-covid19-facts{
+    height: 50em;
+    width: 100%;
+    margin-bottom: 4vh;
+    margin-top: 4vh;
+}
+
+.some-covid19-facts-small{
+    display: none;
+}
+
+
+
+@media all and (max-width: 940px){
+
+    #accordionExample{
+        width: 100%;
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    .some-covid19-facts{
+        height: 40em;
+       
+    }
+
+    
+}
+
+@media all and (max-width: 905px){
+
+    .title{
+        font-size: 2em;
+    }
+
+    
+}
+
+@media all and (max-width: 840px){
+
+    #accordionExample{
+        width: 100%;
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+    }
+    .some-covid19-facts{
+        height: 30em;
+       
+    }
+
+    
+}
+
+
+@media all and (max-width: 702px){
+
+    #accordionExample{
+        width: 100%;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    .some-covid19-facts{
+        height: 25em;
+       
+    }
+
+    
+}
+
+@media all and (max-width: 640px){
+
+    .some-covid19-facts{
+        display: none;
+       
+    }
+
+    .some-covid19-facts-small{
+        display: inherit;
+        height: 25em;
+        width: 100%;
+        padding-right: 1em;
+        padding-left: 1em;
+        margin-bottom: 2em;
+
+    }
+
+  
+}
+
+
+@media all and (max-width: 479px){
+
+    .title{
+        font-size: 1.7em;
+    }
+
+  
+}
+
+
+
+
+

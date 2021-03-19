@@ -1,146 +1,157 @@
 <div class="graphs">
-    <div id="mapdiv"></div>
 
-    <div class="some-data" *ngIf="countryGlobals; else elseBlock">
-        <div style="width:100%; display: flex; align-items: center; justify-content: center; text-align: center;margin-bottom: 3%;">
-          <img style="width:100px; height:70px; margin-right: 1%;" src="{{countryGlobals.countryInfo.flag}}">
-          <div style="display:flex; flex-direction: column; justify-content: center;">
-            <span class="title">{{countryGlobals['country'] | uppercase}} GLOBAL DATA</span>
-            <span style="text-align: left;">Last update: ...</span>
-          </div>
-        </div>
-        
-        
-        
-        <table class="table table-bordered table-dark" style="margin-bottom: 4%;">
-            <thead>
-              <tr>
-                <th scope="col"></th>
-                <th scope="col">Cases</th>
-                <th scope="col">Recovered</th>
-                <th scope="col">Sick</th>
-                <th scope="col">Deaths</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Total</th>
-                <td>{{countryGlobals.cases | number}}</td>
-                <td>{{countryGlobals.recovered | number}} </td>
-                <td>{{countryGlobals.active | number}}</td>
-                <td>{{countryGlobals.deaths | number}}</td>
+  <span class="title-top"> yes yes</span>
 
-              </tr>
-              <tr>
-                <th scope="row">Data of today</th>
-                <td style="color: skyblue;">+ {{countryGlobals.todayCases | number}}</td>
-                <td style="color:green">+ {{countryGlobals.todayRecovered | number}}</td>
-                <td> / </td>
-                <td style="color: red;">+ {{countryGlobals.todayDeaths | number}}</td>
+  <div id="worldMap"></div>
 
-              </tr>
-            </tbody>
-          </table>
-        
-        
-        <div class="percentage-bloc">
+  <div *ngIf="view" class="some-data">
 
-            <div class="bloc">
-                <span class="percentage-bloc-title" style="margin-bottom: 4%;">TEST PERCENTAGE</span>
-                <span>Population: {{ countryGlobals['population'] | number }}</span>
-                <span>Tests: {{ countryGlobals['tests'] | number }} </span>  
-                <span style="width:100%; border-top: solid white;">{{ countryGlobals['tests']/ countryGlobals['population'] | percent:'2.2' }} of the population has been tested</span>          
-            </div>
-            <div class="bloc">
-                <span class="percentage-bloc-title" style="margin-bottom: 5%;">RECOVERED PERCENTAGE</span>
-                <span>Cases: {{ countryGlobals['cases'] | number }} </span>
-                <span>Recovered: {{ countryGlobals['recovered'] | number }} </span>            
-                <span style="width:100%; border-top: solid white;">{{ countryGlobals['recovered'] / countryGlobals['cases'] | percent:'2.2' }} of sick people recover</span>          
-            </div>
-            <div class="bloc">
-                <span class="percentage-bloc-title" style="margin-bottom: 5%;">DEATHS PERCENTAGE</span>
-                <span>Cases: {{ countryGlobals['cases'] | number }} </span>
-                <span>Deaths: {{ countryGlobals['deaths'] | number }} </span>
-                <span style="width:100%; border-top: solid white; text-align: center;">{{ countryGlobals['deaths'] / countryGlobals['cases'] | percent:'2.2' }} of sick people die</span>          
-            </div>
-
-            
-
-        </div>
+    <div *ngIf="countryGlobals" class="some-data-content" >
+      <img  class="some-data-content-flag" src="{{countryGlobals.countryInfo.flag}}">
+      <div class="some-data-content-text">
+        <span class="title">{{countryGlobals.country | uppercase}} GLOBAL DATA</span>
+        <span >Last update: {{countryGlobals.updated | date:'EEEE, MMMM d, y, h:mm a'}} </span>
+      </div>
     </div>
 
-    <div *ngIf="!view" style="margin-top:1%;padding-top:2%;padding-bottom: 2%;width: 100%;height: 60vh;background-color: #f4f4f8;" id="countrygraphdiv"></div> 
-    <ng-template #elseBlock>
-        <div class="some-data" *ngFor="let world of worldNumbers">
-           <div style="width:100%; display: flex; align-items: center; justify-content: center; text-align: center; margin-bottom: 3%;">
-            <img style="width:100px; height:70px; margin-right: 1%;" src="../../assets/img/earth.jpg">
-            <div style="display: flex; flex-direction: column; justify-content: center; height:70px;">
-              <span class="title">WORLD GLOBAL DATA</span>
-              <span style="text-align: left;">Last update: ...</span>
-            </div> 
-          </div>
+    <table class="table table-bordered table-dark table-personalised">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Cases</th>
+          <th scope="col">Recovered</th>
+          <th scope="col">Active</th>
+          <th scope="col">Deaths</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="countryGlobals">
+        <tr>
+          <th scope="row">Total</th>
+          <td>{{countryGlobals.cases | number}}</td>
+          <td>{{countryGlobals.recovered | number}} </td>
+          <td>{{countryGlobals.active | number}}</td>
+          <td>{{countryGlobals.deaths | number}}</td>
+
+        </tr>
+        <tr>
+          
+          <th scope="row">Data of today</th>
+          <td class="table-text-skyblue">+ {{countryGlobals.todayCases | number}}</td>
+          <td class="table-text-green">+ {{countryGlobals.todayRecovered | number}}</td>
+          <td> / </td>
+          <td class="table-text-red">+ {{countryGlobals.todayDeaths | number}}</td>
+        </tr>
+      </tbody>
+    </table>
 
 
-            <table class="table table-bordered table-dark" style="margin-bottom: 4%;">
-                <thead>
-                  <tr>
-                    <th scope="col"></th>
-                    <th scope="col">Cases</th>
-                    <th scope="col">Recovered</th>
-                    <th scope="col">Sick</th>
-                    <th scope="col">Deaths</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">Total</th>
-                    <td>{{world.wCases | number}}</td>
-                    <td>{{world.wRecovered | number}} </td>
-                    <td>{{world.active | number}}</td>
-                    <td>{{world.wDeaths | number}}</td>
-    
-                  </tr>
-                  <tr>
-                    <th scope="row">Data of today</th>
-                    <td style="color: skyblue;">+ {{world.todayCases | number}}</td>
-                    <td style="color:green">+ {{world.todayRecovered | number}}</td>
-                    <td> / </td>
-                    <td style="color: red;">+ {{world.todayDeaths | number}}</td>
-    
-                  </tr>
-                </tbody>
-              </table>
+    <div *ngIf="countryGlobals" class="percentage-bloc">
+
+      <div class="bloc">
+        <span class="percentage-bloc-title">TEST PERCENTAGE</span>
+        <span>Population: {{ countryGlobals['population'] | number }}</span>
+        <span>Tests: {{ countryGlobals['tests'] | number }} </span>
+        <span class="last">{{ countryGlobals['tests']/ countryGlobals['population'] | percent:'2.2' }}
+          of the population has been tested</span>
+      </div>
+      <div class="bloc">
+        <span class="percentage-bloc-title" >RECOVERED PERCENTAGE</span>
+        <span>Cases: {{ countryGlobals['cases'] | number }} </span>
+        <span>Recovered: {{ countryGlobals['recovered'] | number }} </span>
+        <span class="last">{{ countryGlobals['recovered'] / countryGlobals['cases'] | percent:'2.2' }}
+          of sick people recover</span>
+      </div>
+      <div class="bloc">
+        <span class="percentage-bloc-title">DEATHS PERCENTAGE</span>
+        <span>Cases: {{ countryGlobals['cases'] | number }} </span>
+        <span>Deaths: {{ countryGlobals['deaths'] | number }} </span>
+        <span class="last">{{ countryGlobals['deaths'] / countryGlobals['cases'] | percent:'2.2' }}
+          of sick people die</span>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+  <div [ngClass]="{'chart':view}" class="chart" #countryHistoricalChart></div>
 
 
 
 
-            <div class="percentage-bloc">
-                <div class="bloc">
-                    <span class="percentage-bloc-title" style="margin-bottom: 4%;">TEST PERCENTAGE</span>
-                    <span>Population: {{ world.wPopulation | number }}</span>
-                    <span>Tests: {{ world.wTests | number }} </span>  
-                    <span style="width:100%; border-top: solid white;">{{ world.wTests / world.wPopulation | percent:'2.2' }} of the population has been tested</span>          
-                </div>
-                <div class="bloc">
-                    <span class="percentage-bloc-title" style="margin-bottom: 5%;">RECOVERED PERCENTAGE</span>
-                    <span>Cases: {{ world.wCases | number }} </span>
-                    <span>Recovered: {{ world.wRecovered | number }} </span>            
-                    <span style="width:100%; border-top: solid white;">{{ world.wRecovered / world.wCases | percent:'2.2' }} of sick people recover</span>          
-                </div>
-                <div class="bloc">
-                    <span class="percentage-bloc-title" style="margin-bottom: 5%;">DEATHS PERCENTAGE</span>
-                    <span>Cases: {{ world.wCases | number }} </span>
-                    <span>Deaths: {{ world.wDeaths | number }} </span>
-                    <span style="width:100%; border-top: solid white;">{{ world.wDeaths / world.wCases | percent:'2.2' }} of sick people die</span>          
-    
-                </div>
-            </div>
-        </div>
 
-    </ng-template>
+  <div *ngIf="!view" class="some-data">
 
-        <div id="worldgraphdiv"></div>
-    
+    <div *ngIf="worldNumbers" class="some-data-content">
+      <img class="some-data-content-flag" src="../../assets/img/earth.jpg">
+      <div  class="some-data-content-text">
+        <span class="title">WORLD GLOBAL DATA</span>
+        <span >Last update: {{worldNumbers[0].updatedAt | date:'EEEE, MMMM d, y, h:mm a'}}</span>
+      </div>
+    </div>
 
-    
+    <table class="table table-bordered table-dark table-personalised">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Cases</th>
+          <th scope="col">Recovered</th>
+          <th scope="col">Active</th>
+          <th scope="col">Deaths</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="worldNumbers">
+        <tr>
+          <th scope="row">Total</th>
+          <td>{{worldNumbers[0].wCases | number}}</td>
+          <td>{{worldNumbers[0].wRecovered | number}} </td>
+          <td>{{worldNumbers[0].active | number}}</td>
+          <td>{{worldNumbers[0].wDeaths | number}}</td>
+
+        </tr>
+        <tr>
+          <th scope="row">Data of today</th>
+          <td class="table-text-skyblue">+ {{worldNumbers[0].wToDayCases | number}}</td>
+          <td class="table-text-green">+ {{worldNumbers[0].wToDayRecovered | number}}</td>
+          <td> / </td>
+          <td class="table-text-red">+ {{worldNumbers[0].wToDayDeaths | number}}</td>
+
+        </tr>
+      </tbody>
+    </table>
+
+
+    <div *ngIf="worldNumbers" class="percentage-bloc">
+      <div class="bloc">
+        <span class="percentage-bloc-title" >TEST PERCENTAGE</span>
+        <span>Population: {{ worldNumbers[0].wPopulation | number }}</span>
+        <span>Tests: {{ worldNumbers[0].wTests | number }} </span>
+        <span class="last">{{ worldNumbers[0].wTests / worldNumbers[0].wPopulation | percent:'2.2' }}
+          of the population has been tested</span>
+      </div>
+      <div class="bloc">
+        <span class="percentage-bloc-title" >RECOVERED PERCENTAGE</span>
+        <span>Cases: {{ worldNumbers[0].wCases | number }} </span>
+        <span>Recovered: {{ worldNumbers[0].wRecovered | number }} </span>
+        <span class="last">{{ worldNumbers[0].wRecovered / worldNumbers[0].wCases | percent:'2.2' }}
+          of sick people recover</span>
+      </div>
+      <div class="bloc">
+        <span class="percentage-bloc-title">DEATHS PERCENTAGE</span>
+        <span>Cases: {{ worldNumbers[0].wCases | number }} </span>
+        <span>Deaths: {{ worldNumbers[0].wDeaths | number }} </span>
+        <span class="last">{{ worldNumbers[0].wDeaths / worldNumbers[0].wCases | percent:'2.2' }}
+          of sick people die</span>
+
+      </div>
+
+    </div>
+
+
+    <div class="chart" id="worldHistoricalChart"></div>
+
+  </div>
+
 </div>

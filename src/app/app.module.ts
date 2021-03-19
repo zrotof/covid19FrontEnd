@@ -16,6 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { Covid19Component } from './covid19/covid19.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { Covid19Component } from './covid19/covid19.component';
     BuyMaACoffeeComponent,
     AboutUsComponent,
     PageNotFoundComponent,
-    Covid19Component
+    Covid19Component,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

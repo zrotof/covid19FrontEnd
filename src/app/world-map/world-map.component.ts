@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Countries } from '../../../models/countries';
 import { World } from '../../../models/world';
 import { HttpClient } from '@angular/common/http';
@@ -21,6 +21,7 @@ am4core.useTheme(am4themes_animated);
 })
 export class WorldMapComponent implements OnInit {
 
+  @ViewChild('countryHistoricalChart') countryHistoricalChart: ElementRef<HTMLElement>;
 
   historicalCountry: any[];
   worldNumbers: World[];
@@ -34,21 +35,26 @@ export class WorldMapComponent implements OnInit {
   countryObject: any;
   countryGlobals: Countries[];
   i = 0;
-  view = true;
+  view = false;
   constructor( private covidService : Covid19Service ) { }
 
   ngOnInit(): void {
 
-    this.createWorldGraph();
-    this.createWorldMap();
     this.worldCases();
+    this.createWorldMap();
+
   }
 
 
+  ngAfterViewInit() {
+    this.createWorldGraph(); 
 
+    }
+
+  //creating the graph displaying the world historics data of covid
   createWorldGraph() : void{
     // Create chart instance
-    let chart = am4core.create("worldgraphdiv", am4charts.XYChart);
+    let worldHistoricsChart = am4core.create('worldHistoricalChart', am4charts.XYChart);
     // Add data
    
   this.covidService.getWorldHistorical().subscribe(data2 => {
@@ -56,23 +62,23 @@ export class WorldMapComponent implements OnInit {
     for(var key in data2.cases ){
       var i=0;
       // Add data
-      chart.data.push({date: new Date(key), cases: data2.cases[key], recovered: data2.recovered[key],deaths: data2.deaths[key]});
+      worldHistoricsChart.data.push({date: new Date(key), cases: data2.cases[key], recovered: data2.recovered[key],deaths: data2.deaths[key]});
     }
 
     //console.log(chart.data);
     //chart.data=[];
 
 // Create axes
-let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+let dateAxis = worldHistoricsChart.xAxes.push(new am4charts.DateAxis());
 dateAxis.renderer.grid.template.location = 0;
 dateAxis.renderer.minGridDistance = 50;
 //dateAxis.renderer.labels.template.fill = am4core.color("#e59165");
 
 
-let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+let valueAxis = worldHistoricsChart.yAxes.push(new am4charts.ValueAxis());
 
 // Create series for cases
-let series = chart.series.push(new am4charts.LineSeries());
+let series = worldHistoricsChart.series.push(new am4charts.LineSeries());
 series.dataFields.valueY = "cases";
 series.dataFields.dateX = "date";
 series.name = "Cases";
@@ -84,7 +90,7 @@ series.tooltipHTML = `<div style="display:flex; align-items:center; justify-cont
 series.tooltip.pointerOrientation = "vertical";
 
 // Create series for Recovered
-let series2 = chart.series.push(new am4charts.LineSeries());
+let series2 = worldHistoricsChart.series.push(new am4charts.LineSeries());
 series2.dataFields.valueY = "recovered";
 series2.dataFields.dateX = "date";
 series2.name = "Recovered";
@@ -97,7 +103,7 @@ series2.tooltipHTML = `<div style="display:flex; align-items:center; justify-con
 
 
 // Create series for deaths
-let series3 = chart.series.push(new am4charts.LineSeries());
+let series3 = worldHistoricsChart.series.push(new am4charts.LineSeries());
 series3.dataFields.valueY = "deaths";
 series3.dataFields.dateX = "date";
 series3.name = "Deaths";
@@ -109,82 +115,105 @@ series3.tooltipHTML = `<div style="display:flex; align-items:center; justify-con
                       </div>`;
 
 //Legend
-chart.legend = new am4charts.Legend();
-chart.cursor = new am4charts.XYCursor();
+worldHistoricsChart.legend = new am4charts.Legend();
+worldHistoricsChart.cursor = new am4charts.XYCursor();
 
 //Adding scrollbar
 var scrollbarX = new am4charts.XYChartScrollbar();
 scrollbarX.series.push(series);
 
-chart.scrollbarX = scrollbarX;
+worldHistoricsChart.scrollbarX = scrollbarX;
 
-chart.scrollbarX.background.fill = am4core.color("#dc67ab");
-chart.scrollbarX.background.fillOpacity = 0.2;
+worldHistoricsChart.scrollbarX.background.fill = am4core.color("#dc67ab");
+worldHistoricsChart.scrollbarX.background.fillOpacity = 0.2;
 
 //Defining the size ofthe scroll bar
-chart.scrollbarX.minHeight= 40;
+worldHistoricsChart.scrollbarX.minHeight= 40;
 
 //Setting of gris
-chart.scrollbarX.startGrip.background.fill = am4core.color("#000000");
-    chart.scrollbarX.startGrip.background.fillOpacity = 0.8;
-    chart.scrollbarX.endGrip.background.fill = am4core.color("#000000");
-    chart.scrollbarX.endGrip.background.fillOpacity = 0.8;
+worldHistoricsChart.scrollbarX.startGrip.background.fill = am4core.color("#000000");
+worldHistoricsChart.scrollbarX.startGrip.background.fillOpacity = 0.8;
+worldHistoricsChart.scrollbarX.endGrip.background.fill = am4core.color("#000000");
+worldHistoricsChart.scrollbarX.endGrip.background.fillOpacity = 0.8;
     
 
 // Disabling amChart logo
-chart.logo.disabled = true;
+worldHistoricsChart.logo.disabled = true;
 
 
     });
 }
 
+
+
+
+
   createWorldMap() : void{
     // Create map instance
-  let chart = am4core.create("mapdiv", am4maps.MapChart);
+  let worldMap = am4core.create("worldMap", am4maps.MapChart);
   
+
+
   // Set map definition
-  chart.geodata = am4geodata_worldLow;
+  worldMap.geodata = am4geodata_worldLow;
   
   // Set projection
-  chart.projection = new am4maps.projections.Miller();
+  worldMap.projection = new am4maps.projections.Miller();
   // Disabling amChart logo
-  chart.logo.disabled = true;
+  worldMap.logo.disabled = true;
 
   // Create map polygon series
-  var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+  var polygonSeries = worldMap.series.push(new am4maps.MapPolygonSeries());
+
+  //Disabling dragable pan (desactivation de l'effet drag dans la map)
+  worldMap.seriesContainer.draggable = false;
+  worldMap.seriesContainer.resizable = false;
+
+  //disabling zoom:wheel on srolling
+  worldMap.chartContainer.wheelable = false;
+
+
+  //Disabling the zoom on the map
+  worldMap.maxZoomLevel = 1;
+
   
   // Make map load polygon (like country names) data from GeoJSON
   polygonSeries.useGeodata = true;
   
   //Adding external datas for the series
-  
   this.covidService.getCountriesAllCases().subscribe(data => {
     polygonSeries.data = data;
     //console.log(data);
   });
 
-    // Remove Antarctica
+    // Remove Antarctica continent
     polygonSeries.exclude = ["AQ"];
+
 
   // Configure series
   var polygonTemplate = polygonSeries.mapPolygons.template;
 
+
+  
   //Handling a click event on the map and creation of the associated historic map
 
-  polygonTemplate.events.on("hit", function(ev) {
-    this.view= false;
+   polygonTemplate.events.on("hit", function(ev) {
+
+    this.view= true;
+
     this.countryObject = ev.target.dataItem.dataContext;
-      // Create chart instance
-      let chart2 = am4core.create("countrygraphdiv", am4charts.XYChart);
+
+    // Create chart instance
+    let countryHistoricsChart =  am4core.create(this.countryHistoricalChart.nativeElement, am4charts.XYChart);
     
-    this.covidService.getCountryHistorical(this.countryObject['cyName'])
+     this.covidService.getCountryHistorical(this.countryObject['cyName'])
     .subscribe( data4 =>{
       this.historicalCountry = data4;
       console.log("this.historicalCountry :",this.historicalCountry )
 
      
     //Calling the function who will draw the country historics globals data
-    this.createCountryGraph(this.historicalCountry, chart2);
+    this.createCountryGraph(this.historicalCountry, countryHistoricsChart);
       //console.log("this.historicalCountry :",this.historicalCountry )
 
     });
@@ -197,9 +226,6 @@ chart.logo.disabled = true;
     });
     
   },this);
-
-
-  
 
     // Create hover state and set alternative fill color
     var hs = polygonTemplate.states.create("hover");
@@ -216,29 +242,25 @@ chart.logo.disabled = true;
                                   <span>Deaths : {cyDeaths} <span style="color:red; margin-left:5px;"> +{cyToDayDeaths}</span></span> 
                                 <div>`
 
-  // Adding external values, values of all countries covid19 cases
-
-  
-
-
-  //Adding zoom control
-  chart.zoomControl = new am4maps.ZoomControl();
-  chart.zoomControl.slider.height = 50;
   }
 
 
-  worldCases() : void{
-    this.covidService.getWorldCases()
-    .subscribe(data3 =>{
-      this.worldNumbers = data3;
-      console.log("World :",this.worldNumbers);
-    });
-  
-}
 
 
 
-  createCountryGraph(param, map) : void{
+
+
+
+
+
+
+
+
+
+
+
+//creating Graph for the historics covid data of the clicked country
+createCountryGraph(param, map) : void{
 
     for(var key in param.timeline.cases ){
       var j=0;
@@ -321,10 +343,29 @@ map.scrollbarX.startGrip.background.fill = am4core.color("#000000");
 // Disabling amChart logo
 map.logo.disabled = true;
 
+}
 
-    }
 
 
+
+
+
+
+
+
+
+
+
+
+  //Getting world cases
+   worldCases() : void{
+    this.covidService.getWorldCases()
+   .subscribe(data3 =>{
+     this.worldNumbers = data3;
+     console.log("World :",this.worldNumbers);
+   });
+ 
+}
 
 
 }

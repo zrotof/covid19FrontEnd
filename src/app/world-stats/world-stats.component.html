@@ -1,124 +1,154 @@
-<div class="greetings" *ngFor="let world of worlds">
-        <span class="change">,</span>
-        <span>You can access data on the evolution of covid19 worldwide. We strive to update our data regularly. 
-            <strong>(*) Don't forget to wear a mask and apply barrier gestures.</strong></span>
+<div class="greetings">
+        <span class="date-update">Last update :  {{ worlds[0].wDate | date:'EEEE, MMMM d, y, h:mm a' }}</span>
+        <!-- <span class="change">,</span>
+        -->
+        <div class="Globals-text">
+          <h1 class="Globals-text-title">World's Globals Data About Covid-19</h1>
+          <div class="Globals-text-content">
+            <span>Unfortunately, the SARS-Cov2 corona virus continues to claim thousands of victims around the world, despite the many measures taken to stop its spread. Below is a global overview of the situation presented by continent and by world.</span>
+            <div>
+              <ul>
+                <li class="confirmed-cases">Number of confirmed cases</li>
+                <li class="recovered-cases">Number of recovered people</li>
+              </ul>
+              
+              <ul>
+                <li class="criticals-cases">Number of people with criticals cases</li>
+                <li class="death-cases">Number of dead people</li>
+              </ul>
+            </div>
+            
         
-        <span>Last update :  {{ world.wDate | date:'short' }}</span>
+          </div>
+        </div>
+        <span class="recommendations">(*) Don't forget to wear a mask, apply barrier gestures and use hydro-alcoholic gels.</span>
+        
 </div>
   
   
+
+
 <div class="Globals" *ngFor="let world of worlds">
-  
+
     <div class="Spinning_earth">
       <div class="earth"></div>
     </div>
     
     <div class="Cases RCD">
       <img src="../assets/img/coro_cases.png" alt="confirmed man logo">
-      <span><strong>{{ world.wCases | number }}</strong></span>
+      <span class="number"><strong>{{ world.wCases | number }}</strong></span>
       <span><strong>Total Confirmed Cases</strong></span>
     </div>
   
-    <div class="ReCrDe ">
+    <div class="ReCrDe">
   
       <div class="Recovered">
         <img src="../assets/img/coro_rescue.png" alt="rescued man logo">
         <div>
           <span><strong>Total Recovered</strong></span>
-          <span><strong>{{world.wRecovered | number}}</strong></span>
+          <span  class="number"><strong>{{world.wRecovered | number}}</strong></span>
         </div>
       </div>
   
       <div class="Criticals RCD">
         <img src="../assets/img/coro_critical.png" alt="criticals man logo">
         <div>
-  
           <span><strong>Total Criticals</strong></span>
-          <span><strong>{{world.wCritical | number}}</strong></span>
+          <span  class="number"><strong>{{world.wCritical | number}}</strong></span>
         </div>
       </div>
   
       <div class="Deaths RCD">
         <img src="../assets/img/coro_deaths.png" alt="deaths man logo">
         <div>
-  
           <span><strong>Total Deaths</strong></span>
-          <span><strong>{{world.wDeaths | number}}</strong></span>
+          <span  class="number"><strong>{{world.wDeaths | number}}</strong></span>
         </div>
       </div>
 
     </div>
-  
-
-
 
     <div class="continents">
       <div class="titles">
-        <div style="width: 20%;" >Continents</div>
-        <div style="width: 20%;" ><img  src="../assets/img/coro_cases.png" alt="confirmed man logo"></div>
-        <div style="width: 20%;" ><img  src="../assets/img/coro_rescue.png" alt="rescued man logo"></div>
-        <div style="width: 20%;" ><img  src="../assets/img/coro_critical.png" alt="rescued man logo"></div>
-        <div style="width: 20%;" ><img  src="../assets/img/coro_deaths.png" alt="deaths man logo"></div>
+        <div class="titles-medium">Continents</div>
+        <div class="titles-max" ><img  src="../assets/img/coro_cases.png" alt="confirmed man logo"></div>
+        <div class="titles-medium" ><img  src="../assets/img/coro_rescue.png" alt="rescued man logo"></div>
+        <div class="titles-medium" ><img  src="../assets/img/coro_critical.png" alt="rescued man logo"></div>
+        <div class="titles-max" ><img  src="../assets/img/coro_deaths.png" alt="deaths man logo"></div>
       </div>
       
-      <div class="loaders" *ngIf="!continents">
-          
-        <svg version="1.1" id="L4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
-          <circle fill="#ffffff" stroke="none" cx="6" cy="50" r="6">
-            <animate
-              attributeName="opacity"
-              dur="1s"
-              values="0;1;0"
-              repeatCount="indefinite"
-              begin="0.1"/>    
-          </circle>
-          <circle fill="#ffffff" stroke="none" cx="26" cy="50" r="6">
-            <animate
-              attributeName="opacity"
-              dur="1s"
-              values="0;1;0"
-              repeatCount="indefinite" 
-              begin="0.2"/>       
-          </circle>
-          <circle fill="#ffffff" stroke="none" cx="46" cy="50" r="6">
-            <animate
-              attributeName="opacity"
-              dur="1s"
-              values="0;1;0"
-              repeatCount="indefinite" 
-              begin="0.3"/>     
-          </circle>
-        </svg>
-
-      </div>
-
+        <div class="loader--continents" *ngIf="!continents">
+         
+          <div class="d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+               </div>
 
       <div class="values" *ngFor="let continent of continents">
        
           <div class="line">
             
-            <div  style="width: 20%;" class="normal">{{ continent.ctName }}</div>
+            <div class="titles-medium normal">{{ continent.ctName }}</div>
         
-            <div style="width: 20%;" class="tab-cases">
+            <div class="titles-max tab-cases">
               <div>{{ continent.ctCases | number }}</div>
               <div>+{{ continent.ctToDayCases| number }}</div>
             </div>
 
-            <div style="width: 20%;" class="normal">{{ continent.ctRecovered | number }}</div>
+            <div class="titles-medium normal">{{ continent.ctRecovered | number }}</div>
 
-            <div style="width: 20%;" class="normal">{{ continent.ctCritical | number }}</div>
+            <div class="titles-medium normal">{{ continent.ctCritical | number }}</div>
 
-            <div style="width: 20%;"class="tab-deaths" >
+            <div class="titles-max tab-deaths" >
               <div>{{ continent.ctDeaths | number }}</div>
               <div >+{{ continent.ctToDayDeaths | number }}</div>
             </div>
 
           </div>
        </div>
-    </div>
- 
+    </div> 
 </div>
+
+
+
+<div class="data-introduction">
+  <div>
+    <div class="data-introduction-left">
+      <h2>
+        titre1
+      </h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt nostrum cupiditate error non, eligendi maiores esse maxime voluptas, inventore sapiente officia, quibusdam sed et delectus. Labore ducimus ullam explicabo magnam.</p>
+
+    </div>
+    <div class="data-introduction-right">
+      <h2>
+        Titre 2
+      </h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt nostrum cupiditate error non, eligendi maiores esse maxime voluptas, inventore sapiente officia, quibusdam sed et delectus. Labore ducimus ullam explicabo magnam.</p>
+    </div>
+  </div>
+  <div class="rounded">
+    <div >
+      <span>Continents</span>
+      <span> 06 </span>
+    </div>
+    <div>
+      <span>Countries</span>
+      <span>+200</span>
+    </div>
+    <div>
+      <span>Countries</span>
+      <span> ok </span>
+
+    </div>
+  </div>
+</div>
+
+
+
+
 
 <div class="data-by-continents">
 
@@ -138,48 +168,30 @@
       <div  class="cy-values" >
 
 
-        <div class="loaders" *ngIf="!countriesNA">
-          <svg version="1.1" id="L4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
-          <circle fill="#ffffff" stroke="none" cx="6" cy="50" r="6">
-            <animate
-              attributeName="opacity"
-              dur="1s"
-              values="0;1;0"
-              repeatCount="indefinite"
-              begin="0.1"/>    
-          </circle>
-          <circle fill="#ffffff" stroke="none" cx="26" cy="50" r="6">
-            <animate
-              attributeName="opacity"
-              dur="1s"
-              values="0;1;0"
-              repeatCount="indefinite" 
-              begin="0.2"/>       
-          </circle>
-          <circle fill="#ffffff" stroke="none" cx="46" cy="50" r="6">
-            <animate
-              attributeName="opacity"
-              dur="1s"
-              values="0;1;0"
-              repeatCount="indefinite" 
-              begin="0.3"/>     
-          </circle>
-        </svg>
+        <div class="loader" *ngIf="!countriesNA">
+         
+          <div class="d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+         
         </div>
-        <div *ngFor="let countryNA of countriesNA" class="cy-values-row">
-          <div class="cy-values-flag-name"><img class="cy-values-flag" src ={{countryNA.cyFlag}} alt="flag of {{countryNA.cyName}} "> {{countryNA.cyName}}</div>
-          <div class="cy-values-crcd">
-            <div>{{countryNA.cyCases | number}}</div>
-            <div style="color: skyblue;">+{{countryNA.cyToDayCases | number}}</div>
+        <div *ngFor="let countryNA of countriesNA">
+          <div *ngIf="countryNA.cyCases" class="cy-values-row">
+            <div class="cy-values-flag-name"><img class="cy-values-flag" src ={{countryNA.cyFlag}} alt="flag of {{countryNA.cyName}} "> {{countryNA.cyName}}</div>
+            <div class="cy-values-crcd">
+              <div>{{countryNA.cyCases | number}}</div>
+              <div style="color: skyblue;">+{{countryNA.cyToDayCases | number}}</div>
+            </div>
+            <div class="cy-values-crcd">{{countryNA.cyRecovered | number}}</div>
+            <div class="cy-values-crcd">{{countryNA.cyCritical | number}}</div>
+            <div class="cy-values-crcd">
+              <div>{{countryNA.cyDeaths | number}}</div>
+              <div style="color: red;">+{{countryNA.cyToDayDeaths | number}}</div>
+            </div>
           </div>
-          <div class="cy-values-crcd">{{countryNA.cyRecovered | number}}</div>
-          <div class="cy-values-crcd">{{countryNA.cyCritical | number}}</div>
-          <div class="cy-values-crcd">
-            <div>{{countryNA.cyDeaths | number}}</div>
-            <div style="color: red;">+{{countryNA.cyToDayDeaths | number}}</div>
-          </div>
-      </div>
+        </div>
     </div>
       </div>
     </div>
@@ -205,7 +217,20 @@
       
       <div class="values-overflow">
       <div  class="cy-values" >
-        <div *ngFor="let countrySA of countriesSA" class="cy-values-row">
+
+        <div class="loader" *ngIf="!countriesSA">
+         
+          <div class="d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+         
+        </div>
+
+
+        <div *ngFor="let countrySA of countriesSA" >
+          <div *ngIf="countrySA.cyCases" class="cy-values-row">
           <div class="cy-values-flag-name"><img class="cy-values-flag" src ={{countrySA.cyFlag}} alt="flag of {{countrySA.cyName}} "> {{countrySA.cyName}}</div>
           <div class="cy-values-crcd">
             <div>{{countrySA.cyCases | number}}</div>
@@ -217,6 +242,7 @@
             <div>{{countrySA.cyDeaths | number}}</div>
             <div style="color: red;">+{{countrySA.cyToDayDeaths | number}}</div>
           </div>
+        </div>
       </div>
     </div>
       </div>
@@ -242,7 +268,23 @@
       
       <div class="values-overflow">
       <div  class="cy-values" >
-        <div *ngFor="let countryEU of countriesEU" class="cy-values-row">
+
+        <div class="loader" *ngIf="!countriesEU">
+         
+          <div class="d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+         
+        </div>
+
+
+
+
+        <div *ngFor="let countryEU of countriesEU">
+          <div *ngIf="countryEU.cyCases" class="cy-values-row">
+
           <div class="cy-values-flag-name"><img class="cy-values-flag" src ={{countryEU.cyFlag}} alt="flag of {{countryEU.cyName}} "> {{countryEU.cyName}}</div>
           <div class="cy-values-crcd">
             <div>{{countryEU.cyCases | number}}</div>
@@ -253,6 +295,7 @@
           <div class="cy-values-crcd">
             <div>{{countryEU.cyDeaths | number}}</div>
             <div style="color: red;">+{{countryEU.cyToDayDeaths | number}}</div>
+          </div>
           </div>
       </div>
     </div>
@@ -275,7 +318,19 @@
       
       <div class="values-overflow">
       <div  class="cy-values" >
-        <div *ngFor="let countryAS of countriesAS" class="cy-values-row">
+
+        <div class="loader" *ngIf="!countriesAS">
+         
+          <div class="d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+         
+        </div>
+        <div *ngFor="let countryAS of countriesAS">
+          <div *ngIf="countryAS.cyCases" class="cy-values-row">
+
           <div class="cy-values-flag-name"><img class="cy-values-flag" src ={{countryAS.cyFlag}} alt="flag of {{countryAS.cyName}} "> {{countryAS.cyName}}</div>
           <div class="cy-values-crcd">
             <div>{{countryAS.cyCases | number}}</div>
@@ -286,6 +341,7 @@
           <div class="cy-values-crcd">
             <div>{{countryAS.cyDeaths | number}}</div>
             <div style="color: red;">+{{countryAS.cyToDayDeaths | number}}</div>
+          </div>
           </div>
       </div>
     </div>
@@ -310,7 +366,19 @@
       
       <div class="values-overflow">
       <div  class="cy-values" >
-        <div *ngFor="let countryAF of countriesAF" class="cy-values-row">
+
+        <div class="loader" *ngIf="!countriesAF">
+         
+          <div class="d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+         
+        </div>
+        <div *ngFor="let countryAF of countriesAF" >
+          <div *ngIf="countryAF.cyCases" class="cy-values-row">
+
           <div class="cy-values-flag-name"><img class="cy-values-flag" src ={{countryAF.cyFlag}} alt="flag of {{countryAF.cyName}} "> {{countryAF.cyName}}</div>
           <div class="cy-values-crcd">
             <div>{{countryAF.cyCases | number}}</div>
@@ -321,6 +389,7 @@
           <div class="cy-values-crcd">
             <div>{{countryAF.cyDeaths | number}}</div>
             <div style="color: red;">+{{countryAF.cyToDayDeaths | number}}</div>
+          </div>
           </div>
       </div>
     </div>
@@ -345,7 +414,20 @@
       
       <div class="values-overflow">
       <div  class="cy-values" >
-        <div *ngFor="let countryOC of countriesOC" class="cy-values-row">
+
+
+        <div class="loader" *ngIf="!countriesOC">
+         
+          <div class="d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+         
+        </div>
+        <div *ngFor="let countryOC of countriesOC">
+          <div *ngIf="countryOC.cyCases" class="cy-values-row">
+
           <div class="cy-values-flag-name"><img class="cy-values-flag" src ={{countryOC.cyFlag}} alt="flag of {{countryOC.cyName}} "> {{countryOC.cyName}}</div>
           <div class="cy-values-crcd">
             <div>{{countryOC.cyCases | number}}</div>
@@ -356,6 +438,7 @@
           <div class="cy-values-crcd">
             <div>{{countryOC.cyDeaths | number}}</div>
             <div style="color: red;">+{{countryOC.cyToDayDeaths | number}}</div>
+          </div>
           </div>
       </div>
     </div>

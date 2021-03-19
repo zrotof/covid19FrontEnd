@@ -1,0 +1,39 @@
+<nav class="header">
+
+    <div class="header_left" routerLink="">
+      <img class="header_left_img" src="../../assets/img/coro_logo.jpg" logo="logo of the website">
+      <div class="header_left_text">
+        <span>Covid19</span>
+        <span>World's Status</span>
+      </div>
+    </div>
+
+    <ul>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> 
+            <span routerLink="/">World's Stats</span>
+        </li>
+
+        <li  routerLinkActive="active">
+            <span routerLink="/map">Map</span>
+        </li>
+
+        <li  routerLinkActive="active">
+            <span routerLink="/about">About</span>
+        </li>
+
+        <li  routerLinkActive="active">
+            <span routerLink="/covid19">Covid-19</span>
+        </li>
+
+        <li  routerLinkActive="active">
+            <span routerLink="/buy-me-a-coffee">Buy Me A Coffee</span>
+        </li>
+    </ul> 
+
+    <div class="burger_menu" (click)="onBurgerMenu()">
+        <span class="line1"></span>
+        <span class="line2"></span>
+        <span class="line3"></span>
+    </div>
+  
+</nav>
