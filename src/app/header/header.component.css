@@ -43,18 +43,18 @@ span {
     font-weight: bold;
 }
 
-ul{
+.header-menu{
     padding: 0;
     margin: 0;
     display: flex;
     list-style: none;
 }
 
-li{
+.header-menu > li{
     margin-left: 1vh;
 }
 
-li > span {
+.header-menu >li > span {
     font-size: 1.23em;
     padding-left: 1vh;
     padding-right: 1vh;
@@ -63,7 +63,7 @@ li > span {
     outline: none;
 }
 
-li > span:hover {
+.header-menu > li > span:hover {
     color: red;
     background-color: whitesmoke;
     border-radius: 8px;
@@ -86,10 +86,7 @@ li > span:hover {
     .header{
         padding-left: 2vh;
         padding-right: 2vh;
-    }
-
-    .header_left_img{
-        height: 70%;
+        height: 6em;
     }
 
     .burger_menu{
@@ -109,35 +106,38 @@ li > span:hover {
         transition: all 0.3s ease;
     }
 
-    ul{
+    .header-menu{
         position: absolute;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
-        background: linear-gradient(  rgba(0, 0, 0, 0.705),  rgba(0, 0, 0, 0.705));
-        height: 25vh;
-        top: 16vh;
+        background: #161748c9;
+        top: 6em;
         right: 0%;
+        margin-top: 0%;
         margin-right: 0%;
-        width: 50%;
-        height: 25vh;
+        padding-left: 5em;
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
+        padding-top: 2em;
+        padding-bottom: 2em;
         
 
     }
 
-    ul > li {
+    .header-menu > li {
         margin-left: 0%;
         opacity: 0;
         text-align: right;
         width: 100%;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
 
     }
-    ul > li > span{
+    .header-menu > li > span{
         width: 100%;
-        padding-right: 5vh;
+        padding-right: 3vh;
 
     }
 
@@ -207,12 +207,43 @@ li > span:hover {
 
 @media all and (max-width: 575px){
 
-    .header_left_img{
-        height: 60%;
-    }
     .header_left_text > span{
         font-size: 1em;
     }
+
+}
+
+@media all and (max-width: 430px){
+
+    .header{
+        height: 4.5em;
+    }
+
+    .header_left_img{
+        height: 85%;
+    }
+
+    .header_left_text > span{
+        font-size: 0.8em;
+    }
+
+    .header-menu{
+        top: 4.5em;
+        padding-left: 3em;
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+
+    }
+
+    .header-menu > li{
+        margin-top: 0.1em;
+        margin-bottom: 0.1em;
+    }
+
+    .header-menu > li > span{
+        font-size: 1.1em;
+    }
+
 
 }
 
