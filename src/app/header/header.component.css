@@ -6,8 +6,8 @@
     background-color: #161748;
     height: 7.5em;
     width: 100%;
-    padding-left: 4vh;
-    padding-right: 4vh;
+    padding-left: 1em;
+    padding-right: 1em;
     position: fixed;
     top: 0%;
     border-bottom:  solid white;
@@ -77,6 +77,7 @@ span {
 
 .burger_menu{
     display: none;
+    border: solid white;
 }
 
 
@@ -209,6 +210,7 @@ span {
     .header_left_text > span{
         font-size: 1em;
     }
+    
 
 }
 

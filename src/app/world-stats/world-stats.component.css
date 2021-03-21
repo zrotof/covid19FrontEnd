@@ -447,6 +447,7 @@ justify-content: center;}
     flex-wrap: wrap;
     padding-left: 0.5em;
     padding-right: 0.5em;
+
 }
 
 .data-introduction-right,
@@ -456,6 +457,7 @@ justify-content: center;}
     flex-direction: column;
     align-items: flex-start;
     width: 60vh;
+
 }
 
 .data-introduction-right
@@ -476,7 +478,6 @@ justify-content: center;}
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 60vh;
     font-size: 1.6em;
     text-decoration: underline;
 
@@ -981,6 +982,13 @@ justify-content: center;}
         width:30px;
     }
 
+    .cy-header-name,
+    .cy-header-crcd
+    {
+        font-size: 00.9em;
+    }
+
+    
     .cy-values-flag-name{
         font-size: 0.9em;
     }
