@@ -2,9 +2,9 @@
         <span class="date-update">Last update :  {{ worlds[0].wDate | date:'EEEE, MMMM d, y, h:mm a' }}</span>
         <!-- <span class="change">,</span>
         -->
-        <div class="Globals-text">
-          <h1 class="Globals-text-title">World's Globals Data About Covid-19</h1>
-          <div class="Globals-text-content">
+        <div class="globals-text">
+          <h1 class="globals-text-title">World's Globals Data About Covid-19</h1>
+          <div class="globals-text-content">
             <span>Unfortunately, the SARS-Cov2 corona virus continues to claim thousands of victims around the world, despite the many measures taken to stop its spread. Below is a global overview of the situation presented by continent and by world.</span>
             <div>
               <ul>
@@ -28,7 +28,7 @@
   
 
 
-<div class="Globals" *ngFor="let world of worlds">
+<div class="globals" *ngFor="let world of worlds">
 
     <div class="Spinning_earth">
       <div class="earth"></div>
@@ -115,20 +115,23 @@
 
 <div class="data-introduction">
   <div>
+    
     <div class="data-introduction-left">
       <h2>
-        titre1
+        Titre1
       </h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt nostrum cupiditate error non, eligendi maiores esse maxime voluptas, inventore sapiente officia, quibusdam sed et delectus. Labore ducimus ullam explicabo magnam.</p>
-
     </div>
+
     <div class="data-introduction-right">
       <h2>
         Titre 2
       </h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt nostrum cupiditate error non, eligendi maiores esse maxime voluptas, inventore sapiente officia, quibusdam sed et delectus. Labore ducimus ullam explicabo magnam.</p>
     </div>
+
   </div>
+
   <div class="rounded">
     <div >
       <span>Continents</span>

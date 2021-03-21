@@ -1,11 +1,11 @@
 .greetings{
     margin-top: 7.5em;
-    margin-left: 5%;
-    margin-right: 5%;
     padding-top: 1em;
     padding-bottom: 1em;
     display: flex;
     flex-direction: column;
+    padding-left:0.5em;
+    padding-right:0.5em;
 }
 
 /*
@@ -88,10 +88,11 @@
     margin-top: 1vh;
     text-align: right;
     font-weight: bold;
+    margin-right:1em;
+    
 }
 
-
-.Globals{
+.globals{
     background: #161748;
     display:flex;
     justify-content: center;
@@ -108,7 +109,7 @@
     flex-wrap: wrap;
 }
 
-.Globals-text{
+.globals-text{
     display:flex;
     justify-content: center;
     align-items: center;
@@ -116,20 +117,19 @@
     color: black;
     margin-top:2vh;
     width:100%;
-    padding: 0 2vh;
     
 }
 
-.Globals-text-title{
-    width: 30vh;
+.globals-text-title{
+    width: 28vh;
     font-size: 1.8em;
     color:#161748;
     font-weight:bold;
-    padding:2vh;
+    margin-right: 0.5em;
 
 }
 
-.Globals-text-content{
+.globals-text-content{
     text-align: unset;
     display:flex;
     flex-direction: column;
@@ -140,13 +140,13 @@
     border-radius: 8px;
 }
 
-.Globals-text-content > div{
+.globals-text-content > div{
     margin-top:1vh;
     display:flex;
     align-items:flex-start;
 }
 
-.Globals-text-content > div > ul{
+.globals-text-content > div > ul{
     list-style: none;
 }
 
@@ -338,7 +338,7 @@
     flex-direction: column;
 }
 
-.loader--continents{
+.loader-continents{
     display: flex;
     justify-content:center;
     align-items:center;
@@ -434,27 +434,40 @@ justify-content: center;}
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-top:2em;
-    margin-bottom:2em;
+    justify-content: space-between;
+    padding-top:0.5em;
+    padding-bottom:0.5em;
 
 }
 
 .data-introduction > div{
-
     display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
 }
 
 .data-introduction-right,
 .data-introduction-left
 {
-    margin-left: 2vh;
-    margin-right: 2vh;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: 60vh;
 }
+
+.data-introduction-right
+{
+    padding-left: 2em;
+}
+
+.data-introduction-left
+{
+    padding-right: 2em;
+}
+
 
 .data-introduction-right > h2,
 .data-introduction-left > h2{
@@ -707,8 +720,58 @@ justify-content: center;}
     }
 }
 
+@media all and (max-width: 1200px){
+
+
+    .globals-text-content{
+        width:75%;
+    }
+
+}
+
+@media all and (max-width: 1055px){
+
+    .globals-text-title{
+        width: 100%;
+        padding: 0%;
+        text-align: center;
+    }
+    .globals-text-content{
+        width:100%;
+        margin-right: 1em;
+        margin-left:1em;
+    }
+
+    .data-introduction-right
+    {
+        padding-left: 0.5em;
+        
+    }
+
+    .data-introduction-left
+    {
+        padding-right: 0.5em;
+    }
+
+
+}
+
+
+
+
 @media all and (max-width: 1041px){
 
+    .continent{
+        width: 90%;
+    }
+
+}
+
+@media all and (max-width: 1007px){
+
+    .greetings{
+        margin-top: 6em;
+    }
     .continent{
         width: 90%;
     }
@@ -725,7 +788,7 @@ justify-content: center;}
 
 @media all and (max-width: 973px){
 
-    .Globals{
+    .globals{
         padding-top: 3vh;
     }
 
@@ -743,10 +806,9 @@ justify-content: center;}
         width: 100%;
     }
 
-    .Globals > div> div > img, .Globals > div> div > div > img{
+    .globals > div > img, .globals > div > div > img{
         height: 40px;
-        width:20px;
-        
+        width:20px;        
     }
 
     .number{
@@ -763,7 +825,20 @@ justify-content: center;}
 
 }
 
+@media all and (max-width: 933px){
 
+    .data-introduction-left,
+    .data-introduction-right {
+        text-align: justify;
+
+    }
+
+    .data-introduction-left > h2,
+    .data-introduction-right > h2{
+        text-align: center;
+    }
+    
+}
 
 
 @media all and (max-width: 877px){
@@ -784,6 +859,134 @@ justify-content: center;}
         width: 100%;
         text-align: center;
         padding: 0%;
+    }
+    
+}
+
+@media all and (max-width: 505px){
+
+    .greetings{
+        padding-top: 0%;
+    }
+
+    .date-update{
+        margin-top: 0.3em;
+        font-size: 0.9em;
+        width: 100%;
+        padding-right: 0.3em;
+        padding-left: 0.3em;
+        text-align: center;
+
+    }
+
+    .globals-text{
+        font-size: 0.9em;
+    }
+
+    .globals-text-content{
+        margin: 0em;
+    }
+
+    .globals-text-title{
+        font-size: 1.4em;
+        margin-bottom: 1em;
+    }
+
+    .recommendations {
+        font-size: 1em;
+    }
+
+    .globals > div > img, .globals > div > div > img {
+        height: 30px;
+        width:15px;
+    }
+
+    .Recovered{
+        flex-wrap: wrap;
+    }
+
+    .ReCrDe{
+        width: 100%;
+        margin: 0%;
+        justify-content: space-around;
+    }
+
+    .Recovered,.Criticals,.Deaths{
+        margin: 0%;
+    }
+
+    .number{
+        font-size: 1.2em;
+    }
+
+    .data-introduction-left,
+    .data-introduction-right
+    {
+        width: 100%;
+        font-size: 0.9em;
+    }
+
+    .data-introduction-left > h2,
+    .data-introduction-right > h2
+    {
+       
+        font-size: 1.3em;
+    }
+
+    .rounded > div span:first-child {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        font-size: 1.1em;
+    }
+
+    .rounded > div span:last-child {
+        font-size: 1.1em;
+        height: 7.5vh;
+        width: 7.5vh;
+    }
+
+    .labels{
+        font-size: 1.3em;
+    }
+
+    .tested{
+        width: inherit;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+
+    .data-by-continents{
+        padding-left: 0.3em;
+        padding-right: 0.3em;
+
+    }
+    
+
+    .bloc{
+        margin-left: 0%;
+        margin-right: 0%;
+
+    }
+    
+
+    .continent{
+        margin-left: 0%;
+        margin-right: 0%;
+        width: 100%;
+    }
+
+    .cy-values-flag{
+
+        height:25px;
+        width:30px;
+    }
+
+    .cy-values-flag-name{
+        font-size: 0.9em;
+    }
+
+    .cy-values-crcd{
+        font-size: 0.9em;
     }
     
 }
