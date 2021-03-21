@@ -3,7 +3,7 @@
         <!-- <span class="change">,</span>
         -->
         <div class="globals-text">
-          <h1 class="globals-text-title">World's Globals Data About Covid-19</h1>
+          <h1 class="globals-text-title">World's Global Data About Covid-19</h1>
           <div class="globals-text-content">
             <span>Unfortunately, the SARS-Cov2 corona virus continues to claim thousands of victims around the world, despite the many measures taken to stop its spread. Below is a global overview of the situation presented by continent and by world.</span>
             <div>
@@ -70,38 +70,38 @@
 
     <div class="continents">
       <div class="titles">
-        <div class="titles-medium">Continents</div>
-        <div class="titles-max" ><img  src="../assets/img/coro_cases.png" alt="confirmed man logo"></div>
-        <div class="titles-medium" ><img  src="../assets/img/coro_rescue.png" alt="rescued man logo"></div>
-        <div class="titles-medium" ><img  src="../assets/img/coro_critical.png" alt="rescued man logo"></div>
-        <div class="titles-max" ><img  src="../assets/img/coro_deaths.png" alt="deaths man logo"></div>
+        <div class="titles-medium ">Continents</div>
+        <div class="titles-max " ><img  src="../assets/img/coro_cases.png" alt="confirmed man logo"></div>
+        <div class="titles-medium " ><img  src="../assets/img/coro_rescue.png" alt="rescued man logo"></div>
+        <div class="titles-medium " ><img  src="../assets/img/coro_critical.png" alt="rescued man logo"></div>
+        <div class="titles-max " ><img  src="../assets/img/coro_deaths.png" alt="deaths man logo"></div>
       </div>
       
-        <div class="loader--continents" *ngIf="!continents">
+        <div class="loader-continents" *ngIf="!continents">
          
           <div class="d-flex justify-content-center">
             <div class="spinner-border" role="status">
               <span class="visually-hidden">Loading...</span>
             </div>
           </div>
-               </div>
+        </div>
 
       <div class="values" *ngFor="let continent of continents">
        
           <div class="line">
             
-            <div class="titles-medium normal">{{ continent.ctName }}</div>
+            <div class="tab-continent-name">{{ continent.ctName }}</div>
         
-            <div class="titles-max tab-cases">
+            <div class="tab-cases">
               <div>{{ continent.ctCases | number }}</div>
               <div>+{{ continent.ctToDayCases| number }}</div>
             </div>
 
-            <div class="titles-medium normal">{{ continent.ctRecovered | number }}</div>
+            <div class=" tab-normal">{{ continent.ctRecovered | number }}</div>
 
-            <div class="titles-medium normal">{{ continent.ctCritical | number }}</div>
+            <div class=" tab-normal">{{ continent.ctCritical | number }}</div>
 
-            <div class="titles-max tab-deaths" >
+            <div class=" tab-deaths" >
               <div>{{ continent.ctDeaths | number }}</div>
               <div >+{{ continent.ctToDayDeaths | number }}</div>
             </div>

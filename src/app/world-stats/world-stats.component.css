@@ -144,10 +144,14 @@
     margin-top:1vh;
     display:flex;
     align-items:flex-start;
+    justify-content: space-around;
+    width: 100%;
 }
 
 .globals-text-content > div > ul{
     list-style: none;
+    padding: 0;
+
 }
 
 .confirmed-cases::before{
@@ -299,6 +303,7 @@
     height: 95%;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 
@@ -306,15 +311,23 @@
 .titles{
     display: flex;
     color: white;
+    overflow-x: scroll;
 }
 
-.titles div{
+.titles-medium,
+.titles-max{
     border: solid white;
     text-align: center;
 }
 
 .titles-medium{
     width: 20vh;
+    display: flex;
+    align-items: center;
+}
+
+.titles-medium > img{
+    margin: auto;
 }
 
 .titles-max{
@@ -377,24 +390,23 @@
     justify-content: center;
     align-items: center;
     font-size:1.1em; 
-
-
 }
 
-
-
-
-
-.line div:first-child{
-    text-align: left;
+.tab-continent-name{
+    height: 100%;
     padding-left: 1%;
-
+    width: 20vh;
 }
 
-.tab-cases{
+.tab-cases,
+.tab-deaths{
     display:flex;
     justify-content: center;
+    align-items: center;
+    width: 23vh;
 }
+
+
 
 .tab-cases div:first-child{
 text-align: right;
@@ -405,29 +417,37 @@ width:50%;
     text-align: left;
     padding-left:6%;
     color: rgb(0, 113, 158);
-    width: 50%;;
+    width: 50%;
     }
+
 
 
 
 .tab-deaths{
     display: flex;
-justify-content: center;}
+    justify-content: center;
+}
+
 .tab-deaths div:first-child{
     text-align: right;
     padding-right:6%;
     width: 50%;
-    }
-    .tab-deaths div:last-child{
-        text-align: left;
-        padding-left:6%;
-        color: rgb(190, 24, 24);
-        width:50%;
-        }
-.normal{
-    text-align:center;
 }
 
+.tab-deaths div:last-child{
+    text-align: left;
+    padding-left:6%;
+    color: rgb(190, 24, 24);
+    width:50%;
+}
+
+.tab-normal{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20vh;
+}
 
 
 .data-introduction{
@@ -530,12 +550,6 @@ justify-content: center;}
     margin-top: 2vh;
 
 }
-
-
-
-
-
-
 
 .data-by-continents{
     background-color: #161748;
@@ -678,10 +692,13 @@ justify-content: center;}
         width: 90%;
     }
 
-    .titles-medium{
-        width: 25%;
-    }
-    .titles-max{
+    .titles-medium,
+    .titles-max,
+    .tab-continent-name,
+    .tab-cases,
+    .tab-normal,
+    .tab-deaths
+    {
         width: 25%;
     }
 
@@ -844,13 +861,28 @@ justify-content: center;}
 
 @media all and (max-width: 877px){
 
-    .tab-cases, .tab-deaths{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    .tab-continent-name,
+    .tab-normal{
+        margin: auto;
+        
     }
 
 
+    .tab-cases,
+    .tab-deaths
+    {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .tab-cases > div,
+    .tab-deaths > div
+    {
+        padding: 0;
+
+    }
 
     .tab-cases div:first-child,
     .tab-cases div:last-child,
@@ -864,6 +896,26 @@ justify-content: center;}
     
 }
 
+@media all and (max-width: 620px){
+
+    .globals-text-content > div{
+        flex-direction: column;
+        justify-content: left;
+        flex-wrap: wrap;
+        
+    }
+
+    .globals-text-content > div > ul{
+        margin-bottom: 0;
+        flex-direction: column;
+        justify-content: left;
+        flex-wrap: wrap;
+        
+    }
+    
+}
+
+
 @media all and (max-width: 505px){
 
     .greetings{
@@ -871,6 +923,7 @@ justify-content: center;}
     }
 
     .date-update{
+        margin-right: 0%;
         margin-top: 0.3em;
         font-size: 0.9em;
         width: 100%;
@@ -995,6 +1048,85 @@ justify-content: center;}
 
     .cy-values-crcd{
         font-size: 0.9em;
+    }
+    
+}
+
+@media all and (max-width: 474px){
+
+    .titles-medium
+    
+    {
+        font-size: 0.8em;
+        text-align: center;
+    }
+
+    .tab-continent-name,
+    .tab-cases,
+    .tab-normal,
+    .tab-deaths{
+        font-size: 0.95em;
+    }
+  
+
+    .line{
+        pointer-events: none;
+    }
+    
+
+    
+}
+
+@media all and (max-width: 385px){
+    .tab-cases,
+    .tab-normal,
+    .tab-deaths{
+
+    }
+}
+
+@media all and (max-width: 360px){
+
+    .continents{
+        overflow-x: scroll;
+    }
+
+    .values,
+    .titles{
+        width: max-content;
+    }
+
+    .titles-medium,
+    .titles-max,
+    .normal,
+    .tab-cases,
+    .tab-deaths{
+        width: 7em;
+        border: solid red;
+    }
+
+    .titles > div {
+        border: none;
+    }
+
+    
+}
+
+
+@media all and (max-width: 345px){
+
+    .Cases > span:last-child,
+    .ReCrDe > div > div > span:first-child
+    {
+        font-size: 0.9em;
+    }
+    
+}
+
+@media all and (max-width: 324px){
+
+    .date-update{
+        padding: 0%;
     }
     
 }
