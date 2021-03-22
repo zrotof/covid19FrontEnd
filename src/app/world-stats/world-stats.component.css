@@ -553,11 +553,8 @@ width:50%;
 
 .data-by-continents{
     background-color: #161748;
-
-    padding-top: 7%;
     padding-left: 1%;
     padding-right: 1%;
-    padding-bottom:5%;
 }
 
 .bloc{
@@ -570,7 +567,8 @@ width:50%;
 
 }
 .continent{
-
+    margin-top: 2em;
+    margin-bottom: 2em;
     width: 47%;
     min-height: 20vh;
     color: white;
@@ -637,14 +635,10 @@ width:50%;
     height: 28vh; 
     width:100%; 
     overflow: auto; 
-    padding-right: 1.5%;
 }
 .cy-values{
-    padding-top: 0.5%;
-    margin-bottom: 2%;
     display:flex;
     flex-direction: column;
-    
     width: 100%;
     height: 100%;
 }
@@ -652,7 +646,6 @@ width:50%;
 .cy-values-row{
     display: flex; 
     border-bottom: 2px solid gray; 
-    border-right: 2px solid gray;
 }
 
 .cy-values-flag-name{
@@ -1038,7 +1031,7 @@ width:50%;
     .cy-header-name,
     .cy-header-crcd
     {
-        font-size: 00.9em;
+        font-size: 0.9em;
     }
 
     
@@ -1078,14 +1071,14 @@ width:50%;
 }
 
 @media all and (max-width: 385px){
-    .tab-cases,
-    .tab-normal,
-    .tab-deaths{
-
+    .titles-medium
+    
+    {
+        font-size: 0.75em;
     }
 }
 
-@media all and (max-width: 360px){
+@media all and (max-width: 363px){
 
     .continents{
         overflow-x: scroll;
@@ -1098,15 +1091,16 @@ width:50%;
 
     .titles-medium,
     .titles-max,
-    .normal,
-    .tab-cases,
-    .tab-deaths{
+    .tab-continent-name,
+    .tab-normal{
         width: 7em;
-        border: solid red;
     }
 
-    .titles > div {
-        border: none;
+
+  
+    .tab-cases,
+    .tab-deaths{
+        width: 8.8em;
     }
 
     

@@ -151,8 +151,6 @@
 
 
 
-
-
 <div class="data-by-continents">
 
 <div class="bloc">
@@ -172,14 +170,13 @@
 
 
         <div class="loader" *ngIf="!countriesNA">
-         
           <div class="d-flex justify-content-center">
             <div class="spinner-border" role="status">
               <span class="visually-hidden">Loading...</span>
             </div>
           </div>
-         
         </div>
+        
         <div *ngFor="let countryNA of countriesNA">
           <div *ngIf="countryNA.cyCases" class="cy-values-row">
             <div class="cy-values-flag-name"><img class="cy-values-flag" src ={{countryNA.cyFlag}} alt="flag of {{countryNA.cyName}} "> {{countryNA.cyName}}</div>
@@ -198,8 +195,6 @@
     </div>
       </div>
     </div>
-    
-    
   </div>
 
 
