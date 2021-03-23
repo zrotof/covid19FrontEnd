@@ -249,9 +249,9 @@ button {
 
 @media all and (max-width: 430px){
 
-
    .content{
         margin-top:4.5em;
+        font-size: 0.8em;
     }
 }
 
