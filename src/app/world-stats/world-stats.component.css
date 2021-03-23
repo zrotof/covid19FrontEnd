@@ -300,7 +300,7 @@
 }
 
 .continents{
-    height: 95%;
+    min-height: 95%;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -370,6 +370,9 @@
     height: 100%;
     color: black;
     background-color: white;
+    min-height: 16em;
+    max-height: 16em;
+
 }
 
   
@@ -570,20 +573,20 @@ width:50%;
     margin-top: 2em;
     margin-bottom: 2em;
     width: 47%;
-    min-height: 20vh;
     color: white;
-    margin-bottom: 4%;
     margin-left: 2vh;
     margin-right: 2vh;
+    display: flex;
+    flex-direction: column;
 
 }
 
-.labels-tested{
+.continent-name{
     display: flex;
      justify-content: space-between;
 }
 
-.labels{
+.name{
     font-weight: bold;
     font-size: 1.8em;
 }
@@ -592,24 +595,45 @@ width:50%;
     background-color: white;
     color: black;
      font-weight: bold;
-      width: 40%;
-       display: flex;
-       justify-content: center;
-        align-items: center;
+     padding-left: 0.5em;
+     padding-right: 0.5em;
+     display: flex;
+     align-items: center;
+     justify-content: center;
 }
+
+.continent-cy-value{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 2px solid gray;
+}
+
 
 .cy-header{
     background-color: #343a40;
-    height: 5vh;
+    height: 3em;
      display: flex;
-     border: 2px solid gray;
+
+     border-bottom: 2px solid gray;
+
+width: 100%;
+
+}
+
+.cy-header-name,
+.cy-header-crcd{
+
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+
 }
 
 .cy-header-name{
     width: 30%;
     display: flex;
      align-items: center; 
-     padding-left: 1%;
+     padding-left: 1%;  
 }
 
 .cy-header-crcd{
@@ -617,31 +641,21 @@ width:50%;
     display: flex; 
     align-items: center; 
     justify-content: center; 
-    border-left: 1px solid gray ;
 }
 
 
 
 .values-content{
-    background-color: #343a40; 
-    height: 30vh; 
-    display: flex; 
-    align-items: center;
-    border: 2px solid gray;
-}
-
-.values-overflow{
-    background-color: #343a40; 
-    height: 28vh; 
-    width:100%; 
-    overflow: auto; 
-}
-.cy-values{
-    display:flex;
+    display: flex;
     flex-direction: column;
+    min-height: 16em;
+    max-height: 16em;
+   
+    overflow: auto;
     width: 100%;
-    height: 100%;
-}
+    background-color: #343a40; 
+
+}   
 
 .cy-values-row{
     display: flex; 
@@ -834,6 +848,7 @@ width:50%;
 
     }
 
+
 }
 
 @media all and (max-width: 933px){
@@ -841,6 +856,7 @@ width:50%;
     .data-introduction-left,
     .data-introduction-right {
         text-align: justify;
+        width: 100%;
 
     }
 
@@ -905,8 +921,73 @@ width:50%;
         flex-wrap: wrap;
         
     }
+
+    .rounded > div > span:first-child,
+    .rounded div > span:last-child
+    {
+        font-size: 1em;
+    }
+
+    .rounded div > span:last-child
+    {
+        height: 3em;
+        width: 3em;
+    }
+
     
 }
+
+@media all and (max-width: 557px){
+
+    .name{
+        font-size: 1.4em;
+    }
+
+    .tested{
+        width: inherit;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        font-size: 0.9em;
+
+    }
+
+
+    .bloc{
+        margin-left: 0%;
+        margin-right: 0%;
+
+    }
+    
+
+    .continent{
+        margin-left: 0%;
+        margin-right: 0%;
+        width: 100%;
+    }
+
+    .cy-values-flag{
+
+        height:25px;
+        width:30px;
+    }
+
+    .cy-header-name,
+    .cy-header-crcd
+    {
+        font-size: 0.9em;
+    }
+
+    
+    .cy-values-flag-name{
+        font-size: 0.9em;
+    }
+
+    .cy-values-crcd{
+        font-size: 0.9em;
+    }
+    
+}
+
 
 
 @media all and (max-width: 505px){
@@ -992,55 +1073,12 @@ width:50%;
         width: 7.5vh;
     }
 
-    .labels{
-        font-size: 1.3em;
-    }
-
-    .tested{
-        width: inherit;
-        padding-left: 0.5em;
-        padding-right: 0.5em;
-    }
+    
 
     .data-by-continents{
         padding-left: 0.3em;
         padding-right: 0.3em;
 
-    }
-    
-
-    .bloc{
-        margin-left: 0%;
-        margin-right: 0%;
-
-    }
-    
-
-    .continent{
-        margin-left: 0%;
-        margin-right: 0%;
-        width: 100%;
-    }
-
-    .cy-values-flag{
-
-        height:25px;
-        width:30px;
-    }
-
-    .cy-header-name,
-    .cy-header-crcd
-    {
-        font-size: 0.9em;
-    }
-
-    
-    .cy-values-flag-name{
-        font-size: 0.9em;
-    }
-
-    .cy-values-crcd{
-        font-size: 0.9em;
     }
     
 }
@@ -1067,14 +1105,60 @@ width:50%;
     }
     
 
+    .name{
+        font-size: 1.3em;
+    }
+
+    .tested{
+        width: inherit;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        font-size: 0.8em;
+
+    }
+    
+
+
+    .cy-header{
+        height: 2em;
+    }
+
+    .cy-header-name,
+    .cy-header-crcd
+    {
+        font-size: 0.8em;
+    }
+
+    
+    .cy-values-flag-name{
+        font-size: 0.8em;
+    }
+
+    .cy-values-crcd{
+        font-size: 0.7em;
+    }
     
 }
+
+
 
 @media all and (max-width: 385px){
     .titles-medium
     
     {
         font-size: 0.75em;
+    }
+
+    .rounded > div > span:first-child,
+    .rounded div > span:last-child
+    {
+        font-size: 0.8em;
+    }
+
+    .rounded div > span:last-child
+    {
+        height: 3em;
+        width: 3em;
     }
 }
 
@@ -1103,6 +1187,40 @@ width:50%;
         width: 8.8em;
     }
 
+    /*
+        for data country by continent
+    */
+
+    .continent-cy-value{
+        overflow-x: scroll;
+
+    }
+
+    .cy-header,
+    .values-content    {
+        width: max-content;
+
+    }
+
+
+    .cy-header-name,
+    .cy-header-crcd,
+    .cy-values-flag-name{
+        width: 9em;
+    }
+
+    
+    .cy-values-crcd{
+        width: 10.3em;
+    }
+
+
+    .loader{
+        width: 360px;
+    
+    }
+    
+
     
 }
 
@@ -1121,6 +1239,11 @@ width:50%;
 
     .date-update{
         padding: 0%;
+    }
+
+    .loader{
+        width: 345px;
+    
     }
     
 }

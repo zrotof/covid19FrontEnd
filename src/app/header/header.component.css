@@ -173,11 +173,9 @@ span {
 
     .toggle .line3{
         transform-origin: 0 0;
-        
         transform: rotate(-45deg) translate(0.4vh,0.5vh);
         width: 6vh;
         text-align: center;
-
     }
 
     .active{

@@ -14,6 +14,7 @@
     font-weight: bolder;
     margin-bottom: 45px;
     margin-top: 45px;
+    color: #161748;
 }
 
 
@@ -76,6 +77,32 @@ label:hover{
     }
 }
 
+
+@media all and (max-width: 1056px){
+    .title{
+        font-size: 2em;
+        margin-bottom: 0.5em;
+    }
+
+    .introduction{
+        font-size: 1.3em;
+    }
+
+}
+
+
+@media all and (max-width: 1007px){
+    .covid19-history{
+        margin-top: 6em;
+    }
+
+}
+
+
+
+
+
+
 @media all and (max-width: 940px){
 
     .title{
@@ -124,6 +151,18 @@ label:hover{
 }
 
 
+@media all and (max-width: 718px){
+
+    .covid19-history{
+        margin-top: 5em;
+    }
+
+    .title{
+        font-size:1.8em ;
+    }
+}
+
+
 @media all and (max-width: 702px){
 
     #accordionExample{
@@ -134,9 +173,7 @@ label:hover{
     .some-covid19-facts{
         height: 25em;
        
-    }
-
-    
+    } 
 }
 
 @media all and (max-width: 640px){
@@ -190,6 +227,14 @@ label:hover{
         font-size: 1.7em;
     }
 
+  
+}
+
+@media all and (max-width: 430px){
+
+    .covid19-history{
+        margin-top:4.5em;
+    }
   
 }
 

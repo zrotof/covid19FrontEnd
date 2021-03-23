@@ -19,7 +19,6 @@
     margin-bottom: 45px;
     margin-top: 45px;
     color : #161748;
-
 }
 
 .main-bloc{
@@ -186,24 +185,44 @@ button {
         width:90%;
 
     }
+
+    .title{
+        font-size: 2em;
+        margin-bottom: 0;
+    }
+
 }
+
+
+@media all and (max-width: 1007px){
+    
+    .content{
+        margin-top: 6em;
+    }
+
+}
+
 
 @media all and (max-width: 718px){
     .left-bloc{
         width:100%;
-
     }
 
     .right-bloc{
         width:100%;
-
     }
+
+    .content{
+        margin-top: 5em;
+    }
+
+    .title{
+        font-size:1.8em ;
+    }
+
 }
 
 @media all and (max-width: 588px){
-    .title{
-        font-size:2em ;
-    }
 
     .title2{
         font-size: 1.5em;
@@ -227,4 +246,12 @@ button {
   
 }
 
+
+@media all and (max-width: 430px){
+
+
+   .content{
+        margin-top:4.5em;
+    }
+}
 

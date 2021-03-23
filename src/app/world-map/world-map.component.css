@@ -5,16 +5,6 @@
     width:100%;
 }
 
-.title-top{
-    text-decoration: underline;
-    font-size: 2.5em;
-    font-weight: bolder;
-    margin-bottom: 45px;
-    margin-top: 45px;
-    color:  #161748;
-    text-align: center;
-}
-  
 #worldMap {
     width: 100%;
     height: 45em;
@@ -181,6 +171,8 @@
 }
 
 @media all and (max-width: 455px){
+
+   
 
     .title{
         font-size: 1.3em;

@@ -18,8 +18,8 @@ export class HeaderComponent implements OnInit {
   onBurgerMenu(){
 
     var burger = $('.burger_menu');
-    var ul = $('ul');
-    const links = $('ul > li ').toArray();
+    var ul = $('.header-menu');
+    const links = $('.header-menu > li ').toArray();
     ul.toggleClass("burger_slide_in");
     //console.log(links);
 
