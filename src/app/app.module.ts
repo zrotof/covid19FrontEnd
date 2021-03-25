@@ -18,6 +18,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { Covid19Component } from './covid19/covid19.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ScreenSizeAdviceComponent } from './screen-size-advice/screen-size-advice.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { FooterComponent } from './footer/footer.component';
     PageNotFoundComponent,
     Covid19Component,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ScreenSizeAdviceComponent
   ],
   imports: [
     BrowserModule,

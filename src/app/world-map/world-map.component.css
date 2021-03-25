@@ -1,13 +1,16 @@
 .graphs{
     margin-top: 7.5em;
+    padding-top: 2em;
     display:flex;
     flex-direction: column;
     width:100%;
 }
 
 #worldMap {
-    width: 100%;
-    height: 40em;
+    margin-bottom: 5em;
+    width: auto;
+    height: 38em;
+    margin-bottom: 2em;
 }
 
 
@@ -122,6 +125,30 @@
     border-top: solid white;
 }
 
+@media all and (max-width: 1170px){
+
+    .graphs{
+        padding-top: 0em;
+    }
+    
+    #worldMap {
+        margin:0em
+    }
+
+  
+}
+
+
+@media all and (max-width: 952px){
+
+
+    #worldMap {
+        height:38em;
+    }
+
+  
+}
+
 @media all and (max-width: 928px){
 
     .table-personalised{
@@ -148,9 +175,20 @@
 
     }
 
+}
 
+@media all and (max-width: 768px){
 
-  
+    #worldMap {
+        height:30em;
+    }
+}
+
+@media all and (max-width: 604px){
+
+    #worldMap {
+        height:22em;
+    }
 }
 
 @media all and (max-width: 585px){
@@ -200,11 +238,60 @@
 
 }
 
+@media all and (max-width: 456px){
+
+    .graphs{
+        font-size: 0.8em;
+    }
+
+  
+}
+
 @media all and (max-width: 430px){
 
     .graphs{
         margin-top:4.5em;
-        font-size: 0.8em;
+    }
+
+    #worldMap {
+        height:25em;
+        width: auto;
     }
   
 }
+
+@media all and (max-width: 377px){
+
+
+    .graphs{
+        font-size: 0.8em;
+    }
+    #worldMap {
+        height:20em;
+        width: auto;
+    }
+  
+}
+
+@media all and (max-width: 340px){
+
+
+    table{
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+}
+
+@media all and (max-width: 320px){
+
+    #worldMap {
+        height:18em;
+        width: auto;
+    }
+  
+}
+
+
+

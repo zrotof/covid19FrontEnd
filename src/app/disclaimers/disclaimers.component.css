@@ -5,10 +5,7 @@
     flex-direction: column;
     background-color: #161748;
     color: black;
-    border-top: solid white;
-    padding-top: 5%;
-    padding-bottom: 5%;
-
+    margin-top: 7.5em;
 }
 
 .disclaimers{
@@ -21,6 +18,7 @@
     
     padding-bottom: 3%;
     background-color: white;
+    margin-bottom: 2em;
 }
 
 .disclaimers p{
@@ -36,14 +34,16 @@
 
 .content{
     position: relative;
-    height: 15vh;
+    height: 7.5em;
     width: 100%;
     display: flex;
     justify-content: center;
     text-align: center;
     overflow: hidden;
+    color: white;
 
   margin-bottom: 5%;
+
 }
 
 .content:before{
@@ -62,13 +62,64 @@
 
 
 .title{
+    position: absolute;
     text-decoration: underline;
     font-size: 2.5em;
     font-weight: bolder;
-    margin-bottom: 4%;
-    margin-top: 2%;
-    color:white;
-    position: relative;
+    margin-bottom: 45px;
+    margin-top: 45px;
+    color : white;
+}
+
+
+@media all and (max-width: 1056px){
+    
+
+    .title{
+        font-size: 2em;
+        margin-bottom: 0;
+    }
 
 }
+
+@media all and (max-width: 1007px){
+    
+    .parent{
+        margin-top: 6em;
+    }
+
+}
+
+@media all and (max-width: 950px){
+    
+    .parent{
+        padding-left: 0.3em;
+        padding-right: 0.3em;
+    }
+    .disclaimers{
+        width: 100%;
+
+    }
+
+}
+
+@media all and (max-width: 718px){
+    
+    .parent{
+        margin-top: 5em;
+    }
+
+    .title{
+        font-size:1.8em ;
+    }
+
+}
+
+@media all and (max-width: 430px){
+
+    .parent{
+         margin-top:4.5em;
+         font-size: 0.8em;
+     }
+ }
 

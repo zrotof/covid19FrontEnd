@@ -11,5 +11,6 @@ export class World{
     wAffectedCountries: number;
     wTests: number;
     wDate: Date;
+    wActive: number;
 
 }

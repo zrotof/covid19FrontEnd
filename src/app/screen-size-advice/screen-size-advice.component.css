@@ -1,0 +1,40 @@
+.sreen-size-advice{
+    position: absolute;
+    font-weight: 0.9em;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    display: none;
+}
+
+@media all and (max-width: 1007px){
+
+    .sreen-size-advice{
+        top: 6em;
+    }
+}
+
+@media all and (max-width: 430px){
+
+    .sreen-size-advice{
+        top: 4.5em;
+        display: block;
+        font-size: 0.9em;
+        padding-top: 0.8em;
+        padding-bottom: 0.8em;
+        padding-left: 0.8em;
+
+    }
+}
+
+@media all and (max-width: 320px){
+
+    .sreen-size-advice{
+        top: 4.5em;
+        display: block;
+        font-size: 0.8em;
+
+    }
+}

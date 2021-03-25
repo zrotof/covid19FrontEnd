@@ -18,7 +18,7 @@ export const environment = {
 
   API_World_Historical_All : 'https://disease.sh/v3/covid-19/historical/all?lastdays=all',
 
-  API_BUY_ME_COFEE_URL_MY_PAGE : 'https://www.buymeacoffee.com/sscovid19',
+  API_BUY_ME_COFEE_URL_MY_PAGE : 'https://www.buymeacoffee.com/SamuelSCovid19',
   API_BUY_ME_COFEE_URL_ABOUT : 'https://www.buymeacoffee.com/about'
                                
 };
