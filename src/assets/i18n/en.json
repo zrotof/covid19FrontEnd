@@ -1,0 +1,141 @@
+{
+    "header":{
+
+        "title" : " World Status"
+    },
+
+
+
+
+
+
+    "screen-size" : {
+        "text":"For an optimized rendering, it would be better to consult this website from a computer"
+    },
+
+
+
+
+
+
+
+
+    "bmac" :{
+        "title":"Buy Me A Coffee",
+        "top-bloc":{
+            "question":"Want to support me ?",
+            "paragraphe1":"If you really want to support me you have the following means :",
+            "support1":"Send your suggestions at sscovid19.contact@gmail.com",
+            "support2":"Share the website massively around you",
+            "support3":"Make a donation according to your availability"
+        },
+        "medium-bloc":{
+            "paragraphe1": "The goal behind the creation of this website has never been a way for me to make a lot of money, but keeping this website up to date, continually improving it and especially assuming the hosting costs generate costs that your donations will help me support.",
+            "paragraphe2": "The greatest joy for me would be to see my website grow, so feel free to share it if you find it useful and intuitive. I've put a lot of hours of work into it and I'd like to see that it wasn't all for nothing.",
+            "paragraphe3": "(*) For donations please click on the Buy Me A Coffee button below. You will be redirected to a secure external page that will handle the entire transaction.",
+            "paragraphe4": "(*)Feel free to donate according to your availability.",
+            "paragraphe5": "Thank you "
+        },
+        "bottom-bloc":{
+            "question": "Is Buy Me a Coffee safe and reliable ?",
+            "paragraphe1": "is a secured platform gives the audience a way to support a creator through the use of donations or tips.There are more than 100,000 creators on the platform.",
+            "bloc1":{
+                "text1":"They are verified by PayPal and Stripe",
+                "text2":"They don't store credit cards information"
+            },
+            "bloc2":{
+                "text1":"Very simple and fast to use",
+                "text2":"You have the possibility to enable monthly support"
+            },
+            "bloc3":{
+                "text1":"You don't pay any fees",
+                "text2":"You can donate from 1 euro"
+            }
+        }
+    },
+
+
+
+
+
+
+
+    "about" :{
+        "title": "About",
+        "bloc-photo":{
+            "info": "Please don't hesitate to send comments and suggestions in order to improve this website.",
+            "thanks": "Thank you"
+        },
+        "bloc-text":{
+            "me":{
+                "paragraphe1":"Hello, my name is Samuel Mandeng. I am a web developer and more generally a computer enthusiast.",
+                "paragraphe2":"Realizing this site is a way for me to be an actor in the fight against covid-19.Considering the number of hundreds of thousands and now millions of people who are affected by this disease, I proposed to realize this site for with two main objectives:",
+                "reason1":"to remind everyone that covid19 is real and that it does not only affect others",
+                "reason2":"allowing everyone to easily access data about the evolution of covid19 around the world"
+            },
+            "sources":{
+                "paragraphe1":"To create this website, I had to arm myself with a lot of will, encouragement, advice and reliable data resources. So I give a special thanks to :",
+                "source1":"disease.sh : an open API for disease-related statistics. They collect and verify data from Worldometers, Johns Hopkins University, government reported data, ..., and keep them up to date",
+                "source2":"friends & familly: they have been a great help, mainly on encouragement and perseverance"
+            }
+        }
+
+    },
+
+
+
+
+
+    "map":{
+        "title":{
+            "country":"GLOBAL DATA",
+            "world": "WORLD GLOBAL DATA"
+        },
+        "update":"Lastesr updates",
+        "table":{
+            "titles":{
+                "cases":"Cases",
+                "recovered":"Recovered",
+                "actives":"Actives",
+                "deaths":"deaths"
+            },
+            "totals":"Totals",
+            "today":"Data of today"
+
+        },
+        "percentage":{
+
+            "tests":{
+                "title": "TESTS PERCENTAGE",
+                "text":"of the population has been tested"
+            },
+
+            "recovered":{
+                "title":"RECOVERED PERCENTAGE",
+                "cases":"Cases",
+                "recovered": "Recovered",
+                "text":"of sick people recover"
+            },
+            "deaths":{
+                "title":"DEATHS PERCENTAGE",
+                "cases":"Cases",
+                "deaths":"Deaths",
+                "text":"of sick people die"
+            }
+            
+        }
+        
+    },
+
+
+
+
+    "home":{
+
+    }
+
+
+
+    
+
+}

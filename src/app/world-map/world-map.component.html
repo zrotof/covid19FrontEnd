@@ -6,8 +6,8 @@
     <div *ngIf="countryGlobals" class="some-data-content" >
       <img  class="some-data-content-flag" src="{{countryGlobals.countryInfo.flag}}">
       <div class="some-data-content-text">
-        <span class="title">{{countryGlobals.country | uppercase}} GLOBAL DATA</span>
-        <span >Last update: {{countryGlobals.updated | date:'EEEE, MMMM d, y, h:mm a'}} </span>
+        <span class="title">{{countryGlobals.country | uppercase }} {{'map.title.country' | translate}} </span>
+        <span >{{'map.update' | translate}}: {{countryGlobals.updated | date:'EEEE, MMMM d, y, h:mm a'}} </span>
       </div>
     </div>
 
@@ -15,24 +15,23 @@
       <thead>
         <tr>
           <th scope="col"></th>
-          <th scope="col">Cases</th>
-          <th scope="col">Recovered</th>
-          <th scope="col">Active</th>
-          <th scope="col">Deaths</th>
+          <th scope="col">{{'map.table.titles.cases' | translate}}</th>
+          <th scope="col">{{'map.table.titles.recovered' | translate}}</th>
+          <th scope="col">{{'map.table.titles.actives' | translate}}</th>
+          <th scope="col">{{'map.table.titles.deaths' | translate}}</th>
         </tr>
       </thead>
       <tbody *ngIf="countryGlobals">
         <tr>
-          <th scope="row">Total</th>
+          <th scope="row">{{'map.table.totals' | translate}}</th>
           <td>{{countryGlobals.cases | number}}</td>
           <td>{{countryGlobals.recovered | number}} </td>
           <td>{{countryGlobals.active | number}}</td>
           <td>{{countryGlobals.deaths | number}}</td>
-
         </tr>
         <tr>
           
-          <th scope="row">Data of today</th>
+          <th scope="row">{{'map.table.today' | translate}}</th>
           <td class="table-text-skyblue">+ {{countryGlobals.todayCases | number}}</td>
           <td class="table-text-green">+ {{countryGlobals.todayRecovered | number}}</td>
           <td> / </td>
@@ -45,25 +44,25 @@
     <div *ngIf="countryGlobals" class="percentage-bloc">
 
       <div class="bloc">
-        <span class="percentage-bloc-title">TEST PERCENTAGE</span>
+        <span class="percentage-bloc-title">{{'map.percentage.tests.title' | translate}}</span>
         <span>Population: {{ countryGlobals['population'] | number }}</span>
         <span>Tests: {{ countryGlobals['tests'] | number }} </span>
         <span class="last">{{ countryGlobals['tests']/ countryGlobals['population'] | percent:'2.2' }}
-          of the population has been tested</span>
+          {{'map.percentage.tests.text' | translate}}</span>
       </div>
       <div class="bloc">
-        <span class="percentage-bloc-title" >RECOVERED PERCENTAGE</span>
-        <span>Cases: {{ countryGlobals['cases'] | number }} </span>
-        <span>Recovered: {{ countryGlobals['recovered'] | number }} </span>
+        <span class="percentage-bloc-title" >{{'map.percentage.recovered.title' | translate}}</span>
+        <span>{{'map.percentage.recovered.cases' | translate}}: {{ countryGlobals['cases'] | number }} </span>
+        <span>{{'map.percentage.recovered.recovered' | translate}}: {{ countryGlobals['recovered'] | number }} </span>
         <span class="last">{{ countryGlobals['recovered'] / countryGlobals['cases'] | percent:'2.2' }}
-          of sick people recover</span>
+          {{'map.percentage.recovered.text' | translate}}</span>
       </div>
       <div class="bloc">
-        <span class="percentage-bloc-title">DEATHS PERCENTAGE</span>
-        <span>Cases: {{ countryGlobals['cases'] | number }} </span>
-        <span>Deaths: {{ countryGlobals['deaths'] | number }} </span>
+        <span class="percentage-bloc-title">{{'map.percentage.deaths.title' | translate}}</span>
+        <span>{{'map.percentage.deaths.cases' | translate}}: {{ countryGlobals['cases'] | number }} </span>
+        <span>{{'map.percentage.deaths.deaths' | translate}}: {{ countryGlobals['deaths'] | number }} </span>
         <span class="last">{{ countryGlobals['deaths'] / countryGlobals['cases'] | percent:'2.2' }}
-          of sick people die</span>
+          {{'map.percentage.deaths.text' | translate}}</span>
       </div>
 
 
@@ -84,7 +83,7 @@
     <div *ngIf="worldNumbers" class="some-data-content">
       <img class="some-data-content-flag" src="../../assets/img/earth.jpg">
       <div  class="some-data-content-text">
-        <span class="title">WORLD GLOBAL DATA</span>
+        <span class="title">{{'map.title.world' | translate}}</span>
         <span >Last update: {{worldNumbers[0].updatedAt | date:'EEEE, MMMM d, y, h:mm a'}}</span>
       </div>
     </div>
@@ -93,15 +92,15 @@
       <thead>
         <tr>
           <th scope="col"></th>
-          <th scope="col">Cases</th>
-          <th scope="col">Recovered</th>
-          <th scope="col">Active</th>
-          <th scope="col">Deaths</th>
+          <th scope="col">{{'map.table.titles.cases' | translate}}</th>
+          <th scope="col">{{'map.table.titles.recovered' | translate}}</th>
+          <th scope="col">{{'map.table.titles.actives' | translate}}</th>
+          <th scope="col">{{'map.table.titles.deaths' | translate}}</th>
         </tr>
       </thead>
       <tbody *ngIf="worldNumbers">
         <tr>
-          <th scope="row">Total</th>
+          <th scope="row">{{'map.table.totals' | translate}}</th>
           <td>{{worldNumbers[0].wCases | number}}</td>
           <td>{{worldNumbers[0].wRecovered | number}} </td>
           <td>{{worldNumbers[0].wActive | number}}</td>
@@ -109,7 +108,7 @@
 
         </tr>
         <tr>
-          <th scope="row">Data of today</th>
+          <th scope="row">{{'map.table.today' | translate}}</th>
           <td class="table-text-skyblue">+ {{worldNumbers[0].wToDayCases | number}}</td>
           <td class="table-text-green">+ {{worldNumbers[0].wToDayRecovered | number}}</td>
           <td> / </td>
@@ -122,25 +121,25 @@
 
     <div *ngIf="worldNumbers" class="percentage-bloc">
       <div class="bloc">
-        <span class="percentage-bloc-title" >TEST PERCENTAGE</span>
+        <span class="percentage-bloc-title" >{{'map.percentage.tests.title' | translate}}</span>
         <span>Population: {{ worldNumbers[0].wPopulation | number }}</span>
         <span>Tests: {{ worldNumbers[0].wTests | number }} </span>
         <span class="last">{{ worldNumbers[0].wTests / worldNumbers[0].wPopulation | percent:'2.2' }}
-          of the population has been tested</span>
+          {{'map.percentage.tests.text' | translate}}</span>
       </div>
       <div class="bloc">
-        <span class="percentage-bloc-title" >RECOVERED PERCENTAGE</span>
-        <span>Cases: {{ worldNumbers[0].wCases | number }} </span>
-        <span>Recovered: {{ worldNumbers[0].wRecovered | number }} </span>
+        <span class="percentage-bloc-title" >{{'map.percentage.recovered.title' | translate}}</span>
+        <span>{{'map.percentage.recovered.cases' | translate}}: {{ worldNumbers[0].wCases | number }} </span>
+        <span>{{'map.percentage.recovered.recovered' | translate}}: {{ worldNumbers[0].wRecovered | number }} </span>
         <span class="last">{{ worldNumbers[0].wRecovered / worldNumbers[0].wCases | percent:'2.2' }}
-          of sick people recover</span>
+          {{'map.percentage.recovered.text' | translate}}</span>
       </div>
       <div class="bloc">
-        <span class="percentage-bloc-title">DEATHS PERCENTAGE</span>
-        <span>Cases: {{ worldNumbers[0].wCases | number }} </span>
-        <span>Deaths: {{ worldNumbers[0].wDeaths | number }} </span>
+        <span class="percentage-bloc-title">{{'map.percentage.deaths.title' | translate}}</span>
+        <span>{{'map.percentage.deaths.cases' | translate}}: {{ worldNumbers[0].wCases | number }} </span>
+        <span>{{'map.percentage.deaths.deaths' | translate}}: {{ worldNumbers[0].wDeaths | number }} </span>
         <span class="last">{{ worldNumbers[0].wDeaths / worldNumbers[0].wCases | percent:'2.2' }}
-          of sick people die</span>
+          {{'map.percentage.deaths.text' | translate}}</span>
 
       </div>
 

@@ -1,0 +1,124 @@
+{
+    "header":{
+
+        "title" : "Statut Mondial",
+        "nav": [
+            {"menu":"Données Mondiales"},
+            {"menu":"Map"},
+            {"menu":"Covid-19"},
+            {"menu":"About"},
+            {"menu":"Buy Me A Coffee"}
+        ],
+        "lang-en": "EN",
+        "lang-fr": "FN"
+            
+    },
+
+    "screen-size" : {
+        "text":"Pour un rendu optimisé, il est préférable de consulter ce site à partir d'un ordinateur"
+    },
+
+    "bmac" :{
+        "title":"Offrez-moi Un Café",
+        "top-bloc":{
+            "question":"Voulez-vous me soutenir ?",
+            "paragraphe1":"Si vous voulez vraiment me soutenir, vous avez les moyens suivants :",
+            "support1":"Envoyez vos suggestions à sscovid19.contact@gmail.com",
+            "support2":"Partagez massivement le site web autour de vous",
+            "support3":"Faites un don en fonction de vos capacités"
+        },
+        "medium-bloc":{
+            "paragraphe1": "L'objectif derrière la création de ce site n'a jamais été un moyen pour moi de me faire beaucoup d'argent, mais maintenir ce site à jour, l'améliorer continuellement et surtout assumer les coûts d'hébergement génèrent des coûts que vos dons m'aideront à supporter.",
+            "paragraphe2": "La plus grande joie pour moi serait de voir mon site web devenir populaire, alors n'hésitez pas à le partager si vous le trouvez utile et intuitif. J'y ai consacré beaucoup d'heures de travail et j'aimerais voir que tout cela n'a pas été fait pour rien.",
+            "paragraphe3": "(*) Pour les dons, veuillez cliquer sur le bouton Buy Me A Coffee ci-dessous. Vous serez redirigé vers une page externe sécurisée qui traitera l'ensemble de la transaction.",
+            "paragraphe4": "(*)N'hésitez pas à faire un don en fonction de vos capacités.",
+            "paragraphe5": "Merci"
+
+        },
+        "bottom-bloc":{
+            "question": "Buy Me a Coffee est-il sûr et fiable ?",
+            "paragraphe1": "est une plateforme sécurisée qui permet au public de soutenir un créateur par le biais de dons ou de pourboires. Plus de 100 000 créateurs sont présents sur la plateforme.",
+            "bloc1":{
+                "text1":"Ils sont vérifiés par PayPal et Stripe",
+                "text2":"Ils ne stockent pas vos informations bancaires"
+            },
+            "bloc2":{
+                "text1":"Très simple et rapide à utiliser",
+                "text2":"Vous avez la possibilité d'activer une aide mensuelle"
+            },
+            "bloc3":{
+                "text1":"Vous ne payez aucuns frais",
+                "text2":"Vous pouvez faire un don à partir de 1 euro"
+            }
+        }
+    },
+
+    "about" :{
+        "title": "A Propos",
+        "bloc-photo":{
+            "info": "N'hésitez pas à nous faire part de vos commentaires et suggestions afin d'améliorer ce site",
+            "thanks": "Merci"
+        },
+        "bloc-text":{
+            "me":{
+                "paragraphe1":"Bonjour, je m'appelle Samuel Mandeng. Je suis un développeur web et plus généralement un passionné d'informatique.",
+                "paragraphe2":"Réaliser ce site est une façon pour moi d'être un acteur dans la lutte contre la covid-19.Compte tenu du nombre de centaines de milliers et maintenant de millions de personnes qui sont touchées par cette maladie, je me suis proposé de réaliser ce site pour avec deux objectifs principaux :",
+                "reason1":"pour rappeler à tous que la covid19 est réelle et qu'elle ne touche pas que les autres",
+                "reason2":"permettre à chacun d'accéder facilement aux données sur l'évolution de la covid19 dans le monde entier"
+            },
+            "sources":{
+                "paragraphe1":"Pour créer ce site, j'ai dû m'armer de beaucoup de volonté, d'encouragements, de conseils et de ressources de données fiables. Je remercie donc tout particulièrement :",
+                "source1":"disease.sh : une API qui fourni des données relatives aux maladies et en particulier la covid-19. Ils collectent et vérifient les données de Worldometers, de l'Université Johns Hopkins, des données gouvernementales, ..., et les tiennent à jour",
+                "source2":"amis & famille : ils ont été une grande source d'encouragement et de persévérance"
+            }
+        }
+
+    },
+    
+
+
+
+
+
+    "map":{
+        "title":{
+            "country":"DONNEES GLOBALES",
+            "world": "DONNEES MONDIALES GLOBALES"
+        },
+        "update":"Dernières M-A-J",
+        "table":{
+            "titles":{
+                "cases":"Cas",
+                "recovered":"Guéris",
+                "actives":"Actifs",
+                "deaths":"Décédés"
+            },
+            "totals":"Totaux",
+            "today":"Données du jour "
+
+        },
+        "percentage":{
+
+            "tests":{
+                "title": "POURCENTAGE DE TESTS",
+                "text":"de la population testée"
+            },
+
+            "recovered":{
+                "title":"POURCENTAGE DE GUÉRISON",
+                "cases":"Cas",
+                "recovered": "Guéris",
+                "text":"des malades guérissent"
+            },
+            "deaths":{
+                "title":"POURCENTAGE DE DÉCÈS",
+                "cases":"Cas",
+                "deaths":"Décédés",
+                "text":"des malades décèdent"
+            }
+            
+        }
+        
+    }
+
+}

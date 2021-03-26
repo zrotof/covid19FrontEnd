@@ -12,7 +12,7 @@ import { DisclaimersComponent } from './disclaimers/disclaimers.component';
 import { BuyMaACoffeeComponent } from './buy-ma-acoffee/buy-ma-acoffee.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { Covid19Component } from './covid19/covid19.component';
@@ -20,6 +20,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ScreenSizeAdviceComponent } from './screen-size-advice/screen-size-advice.component';
 
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,14 @@ import { ScreenSizeAdviceComponent } from './screen-size-advice/screen-size-advi
     MatInputModule,
     HttpClientModule,
     NgbModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    })
 
     
 
@@ -52,3 +61,9 @@ import { ScreenSizeAdviceComponent } from './screen-size-advice/screen-size-advi
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+// AOT compilation support
+export function httpTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

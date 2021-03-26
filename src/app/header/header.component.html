@@ -4,11 +4,16 @@
     <div class="header_left" routerLink="">
       <img class="header_left_img" src="../../assets/img/coro_logo.jpg" logo="logo of the website">
       <div class="header_left_text">
-        <span>Covid19</span>
-        <span>World's Status</span>
+        <span>Covid-19</span>
+        <span> {{'header.title' | translate}} </span>
       </div>
     </div>
 
+    <div class="header_right">
+        
+
+
+    <div class="header-menu-language">
     <ul class="header-menu">
         <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> 
             <span routerLink="/">World's Stats</span>
@@ -31,12 +36,35 @@
         <li  routerLinkActive="active">
             <span routerLink="/buy-me-a-coffee">Buy Me A Coffee</span>
         </li>
-    </ul> 
+    </ul>
+
+    
+    <div class="header-language">
+        <label class="switch english">
+            <input type="checkbox" class="checkbox en" (click)="chooseEnglish()" checked>
+            <span class="toggle-thumb">
+                <span>EN</span>
+                <span>EN</span>
+            </span>
+       </label>
+
+       <label class="switch french">
+        <input type="checkbox" class="checkbox fr" (click)="chooseFrench()">
+        <span class="toggle-thumb">
+            <span>FR</span>
+            <span>FR</span>  
+        </span>
+   </label>
+
+    </div>
+    </div> 
 
     <div class="burger_menu" (click)="onBurgerMenu()">
         <span class="line1"></span>
         <span class="line2"></span>
         <span class="line3"></span>
     </div>
+
+</div>
   
 </nav>

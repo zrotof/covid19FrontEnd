@@ -183,7 +183,7 @@ worldHistoricsChart.logo.disabled = true;
   //Adding external datas for the series
   this.covidService.getCountriesAllCases().subscribe(data => {
     polygonSeries.data = data;
-    //console.log(data);
+    console.log("data country "+data);
   });
 
     // Remove Antarctica continent
@@ -192,8 +192,6 @@ worldHistoricsChart.logo.disabled = true;
 
   // Configure series
   var polygonTemplate = polygonSeries.mapPolygons.template;
-
-
   
   //Handling a click event on the map and creation of the associated historic map
 
@@ -209,7 +207,7 @@ worldHistoricsChart.logo.disabled = true;
      this.covidService.getCountryHistorical(this.countryObject['cyName'])
     .subscribe( data4 =>{
       this.historicalCountry = data4;
-      console.log("this.historicalCountry :",this.historicalCountry )
+      //console.log("this.historicalCountry :",this.historicalCountry )
 
      
     //Calling the function who will draw the country historics globals data
@@ -227,21 +225,27 @@ worldHistoricsChart.logo.disabled = true;
     
   },this);
 
+
+    /* Create selected and hover states and set alternative fill color */
+  var ss = polygonTemplate.states.create("active");
+  ss.properties.fill = am4core.color("#d11141");
+
+
     // Create hover state and set alternative fill color
     var hs = polygonTemplate.states.create("hover");
     hs.properties.fill = am4core.color("#d11141");
+
     polygonTemplate.fill = am4core.color("#161748");
 
-  polygonTemplate.tooltipHTML =`<div style="display:flex; flex-direction: column; justify-content:center; background: gray; width:100%; padding:2px;">
-                                  <div style="display:flex; align-items:center; justify-content:center;" ><img style="width:10vh" src="{cyFlag}" alt="flag"></div>
-                                  <span>Country : {cyName}</span> 
-                                  <span style="margin-bottom:3px;">Population : {cyPopulation}</span> 
+  polygonTemplate.tooltipHTML =`<div style="display:flex; flex-direction: column; justify-content:center; padding:2px; ">
+                                  <img style="width:5em;height:3em;border-radius:10px;margin:auto" src="{cyFlag}" alt="country flag">
+                                  <span style="text-align:center; margin-top:0.2em;font-weight:bold;font-size:1.4em;margin-bottom: 0.4em">{cyName}</span> 
+                                  <span>Population : {cyPopulation}</span> 
                                   <span>Cases : {cyCases} <span style="color:skyblue; margin-left:5px;"> +{cyToDayCases}</span></span> 
                                   <span>Recovered : {cyRecovered}</span> 
                                   <span>Criticals : {cyCritical}</span> 
                                   <span>Deaths : {cyDeaths} <span style="color:red; margin-left:5px;"> +{cyToDayDeaths}</span></span> 
                                 <div>`
-
   }
 
 

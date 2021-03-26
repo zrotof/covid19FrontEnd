@@ -42,6 +42,20 @@ span {
     font-weight: bold;
 }
 
+.header_right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.header-menu-language{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
 .header-menu{
     padding: 0;
     margin: 0;
@@ -72,12 +86,93 @@ span {
 .active{
     padding-bottom: 1vh;
     color: white;
-    border-bottom: 4px solid red;
+    border-bottom: solid red;
 }
+
+.header-language{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1em;
+}
+
+.switch {
+    display: inline-block;
+    width: 40px;
+    height: 11px;
+    position: relative;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    text-align: center;
+  }
+
+.toggle-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    background-color: #475569;
+    border-radius: 40px;
+    cursor: pointer;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  .toggle-thumb > span:first-child {
+    font-size: 0.6em;
+    font-weight: bolder;
+  }
+
+  .toggle-thumb > span:last-child {
+    font-size: 0.65em;
+    color: black;
+  }
+
+  .english .toggle-thumb:before {
+    content: "";
+    height: 17px;
+    width: 17px;
+    position: absolute;
+    left: 3px;
+    background: no-repeat center/100% url("../../assets/img/en.png");
+    border-radius: 50%;
+    transition: .4s all ease;
+  }
+
+  .french .toggle-thumb:before {
+    content: "";
+    height: 17px;
+    width: 17px;
+    position: absolute;
+    left: 3px;
+    background: no-repeat center/100% url("../../assets/img/fr.jpeg");
+    border-radius: 50%;
+    transition: .4s all ease;
+  }
+
+  .checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .checkbox:checked + .toggle-thumb:before {
+    transform: translateX(17px);
+    
+  }
+
+
 
 .burger_menu{
     display: none;
 }
+
+
 
 
 @media all and (max-width: 1007px){
@@ -123,6 +218,10 @@ span {
         padding-bottom: 2em;
         
 
+    }
+
+    .header-language{
+        margin-right: 1em;
     }
 
     .header-menu > li {
