@@ -92,22 +92,12 @@
     
 }
 
-.globals{
-    background: #161748;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 1vh;
-    padding-right: 1vh;
-    flex-wrap: wrap;
-    margin-bottom: 1em;
-    padding-top: 0.4em;
-    padding-bottom: 0.4em;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+.date-loader{
+    margin-left: 7em;
+    margin-right: 7em;
 }
+
+
 
 .globals-text{
     display:flex;
@@ -193,6 +183,24 @@
     margin-right:1vh;
 }
 
+
+.globals{
+    background: #161748;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
 
 
 

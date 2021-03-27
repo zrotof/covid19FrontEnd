@@ -12,7 +12,7 @@ import { Countries } from '../../../models/countries';
 })
 export class WorldStatsComponent implements OnInit {
 
-  worlds : World[];
+  world : World;
   continents  :  Continent[];
   countriesNA : Countries[];
   countriesSA : Countries[];
@@ -34,6 +34,7 @@ export class WorldStatsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getWorld();
+
     this.getContinents();
     this.getContinentsNA();
     this.getContinentsSA();
@@ -44,10 +45,13 @@ export class WorldStatsComponent implements OnInit {
     this.getCountriesAll();
   }
 
+  ngAfterViewInit() {
+  }
+
   getWorld() : void {
     this.covidService.getWorldCases()
     .subscribe(result1 => {
-      this.worlds = result1;
+      this.world = result1[0];
     })
   }
 

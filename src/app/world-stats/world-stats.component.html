@@ -1,5 +1,14 @@
 <div class="greetings">
-        <span class="date-update">{{'data.updates' | translate}} {{ worlds[0].wDate | date:'EEEE, MMMM d, y, h:mm a' }}</span>
+
+        <span class="date-update">{{'data.updates' | translate}}
+
+          <span *ngIf="!world" class="date-loader"> 
+            <div class="spinner-border spinner-border-sm " role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </span>
+          <span *ngIf="world" > {{ world.wDate | date:'EEEE, MMMM d, y, h:mm a' }}</span>
+        </span>
         <!-- <span class="change">,</span>
         -->
         <div class="globals-text">
@@ -28,7 +37,7 @@
   
 
 
-<div class="globals" *ngFor="let world of worlds">
+<div class="globals">
 
     <div class="Spinning_earth">
       <div class="earth"></div>
