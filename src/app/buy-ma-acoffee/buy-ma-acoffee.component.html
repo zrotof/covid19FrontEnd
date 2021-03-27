@@ -17,7 +17,11 @@
             <p> {{'bmac.medium-bloc.paragraphe3' | translate}} </p>
             <p> {{'bmac.medium-bloc.paragraphe4' | translate}} </p>
                 <p> {{'bmac.medium-bloc.paragraphe5' | translate}} </p>
-                <button (click)= "redirectToBmc()" class="btn"><span>Buy Me A Coffee</span></button>
+                    <span routerLink="/buy-me-a-coffee" class="coffee" (click)= "redirectToBmc()">
+
+                    <img src="../../assets/img/coffee-cup.png" class="coffee-cup">
+                    Buy Me a coffee 
+                </span>
             </div>
         </div>
         <span class="title2"> {{'bmac.bottom-bloc.question' | translate}} </span>

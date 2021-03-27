@@ -22,9 +22,11 @@
     cursor: pointer;
 }
 
-.header_left_img{
-    height: 100%;
+
+.header_left > img{
+    height: 65%;
 }
+
 
 .header_left_text{
     display: flex;
@@ -64,15 +66,14 @@ span {
 }
 
 .header-menu > li{
-    margin-left: 1vh;
+    margin-left: 0.5em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
 }
 
 .header-menu >li > span {
     font-size: 1.23em;
-    padding-left: 1vh;
-    padding-right: 1vh;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
+    padding: 0.5em;
     outline: none;
 }
 
@@ -83,8 +84,22 @@ span {
     cursor: pointer;
 }
 
+.coffee{
+    padding: 0.5em;
+    border-radius: 6px;
+    background-color: rgb(209, 49, 84);
+    
+}
+
+.coffee-cup{
+    height:1.23em;
+    margin: auto;
+}
+
+
+
+
 .active{
-    padding-bottom: 1vh;
     color: white;
     border-bottom: solid red;
 }
@@ -93,8 +108,11 @@ span {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 1em;
+    margin-left: 2em;
 }
+
+
+
 
 .switch {
     display: inline-block;

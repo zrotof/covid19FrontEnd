@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="547" height="247.002" viewBox="0 0 547 247.002">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-4, .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-7 {
+        stroke: #fff;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 3px;
+        font-family: NotoSans, Noto Sans;
+        letter-spacing: 0.009em;
+      }
+
+      .cls-1 {
+        font-size: 127px;
+      }
+
+      .cls-2 {
+        font-size: 104px;
+      }
+
+      .cls-10, .cls-3, .cls-7, .cls-8 {
+        fill: none;
+      }
+
+      .cls-3 {
+        stroke-width: 8px;
+      }
+
+      .cls-4 {
+        stroke-width: 6px;
+      }
+
+      .cls-5 {
+        stroke-width: 28px;
+      }
+
+      .cls-6 {
+        fill: rgba(255,255,255,0.95);
+      }
+
+      .cls-7 {
+        stroke-width: 13px;
+      }
+
+      .cls-8 {
+        stroke: #161748;
+        stroke-linecap: round;
+        stroke-width: 7px;
+      }
+
+      .cls-9 {
+        stroke: none;
+      }
+
+      .cls-10 {
+        clip-path: url(#clip);
+      }
+    </style>
+    <clipPath id="clip">
+      <use xlink:href="#fill"/>
+    </clipPath>
+  </defs>
+  <g id="logo-sscovid19-final" transform="translate(-1270.5 -1391.338)">
+    <text id="s" class="cls-1" transform="translate(1334.5 1563.5)"><tspan x="0" y="0">s</tspan></text>
+    <text id="s-2" data-name="s" class="cls-1" transform="translate(1273.5 1563.5)"><tspan x="0" y="0">s</tspan></text>
+    <text id="c" class="cls-1" transform="translate(1395.5 1563.5)"><tspan x="0" y="0">c</tspan></text>
+    <text id="o" class="cls-1" transform="translate(1456.5 1563.5)"><tspan x="0" y="0">o</tspan></text>
+    <text id="v" class="cls-1" transform="translate(1533.5 1563.5)"><tspan x="0" y="0">v</tspan></text>
+    <text id="_1" data-name="1" class="cls-2" transform="translate(1710.5 1561.5)"><tspan x="0" y="0">1</tspan></text>
+    <g id="Groupe_2" data-name="Groupe 2" transform="matrix(0.999, 0.035, -0.035, 0.999, 50.637, -27.543)">
+      <path id="Tracé_11" data-name="Tracé 11" class="cls-3" d="M1602.9,1696.818l12.5-17.214s8.946-4.13,13.093-3.5c7.513,1.15,11.58,10.344,11.58,10.344s10.777-1.738-15.542,64.224-35.455,54.025-35.455,54.025l-28.744-4.705" transform="translate(13 -239)"/>
+      <path id="Tracé_12" data-name="Tracé 12" class="cls-4" d="M1572.711,1817.173l-8.3,32.46-18.369-1.28,42.274,11.236-16.758-8.046,6.328-33.212Z" transform="translate(248.724 -431.288) rotate(7)"/>
+      <g id="Rectangle_2" data-name="Rectangle 2" class="cls-5" transform="matrix(0.94, 0.342, -0.342, 0.94, 1670.92, 1361.397)">
+        <rect id="fill" class="cls-9" width="4" height="79"/>
+        <path class="cls-10" d="M0,14h4M14,0v79M4,65h-4M-10,79v-79"/>
+      </g>
+      <path id="Tracé_13" data-name="Tracé 13" class="cls-6" d="M1592.9,1803.476s9.425-3.227,30.436-50.778,18.511-63.03,18.511-63.03-10.022,27.755-24.618,58.3-50.138,49.74-50.138,49.74Z" transform="translate(13 -239)"/>
+    </g>
+    <path id="Tracé_14" data-name="Tracé 14" class="cls-7" d="M1591.553,1783.323l-6.836,19.641-2.2,48.117s30.007,2.767,44.4-6.707,12.05-30.572,12.05-30.572-2.542-13.745-16.938-22.707S1591.553,1783.323,1591.553,1783.323Z" transform="translate(66 -291.347)"/>
+    <text id="_9" data-name="9" class="cls-2" transform="translate(1756.5 1561.5)"><tspan x="0" y="0">9</tspan></text>
+    <path id="Tracé_15" data-name="Tracé 15" class="cls-8" d="M1637.91,1548.551s9.866-18.8,15.8-36.532a355.679,355.679,0,0,0,9.609-35.294" transform="translate(1)"/>
+  </g>
+</svg>

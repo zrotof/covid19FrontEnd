@@ -1,27 +1,27 @@
 <div class="greetings">
-        <span class="date-update">Last update :  {{ worlds[0].wDate | date:'EEEE, MMMM d, y, h:mm a' }}</span>
+        <span class="date-update">{{'data.updates' | translate}} {{ worlds[0].wDate | date:'EEEE, MMMM d, y, h:mm a' }}</span>
         <!-- <span class="change">,</span>
         -->
         <div class="globals-text">
-          <h1 class="globals-text-title">World's Global Data About Covid-19</h1>
+          <h1 class="globals-text-title">{{'data.title' | translate}}</h1>
           <div class="globals-text-content">
-            <span>Unfortunately, the SARS-Cov2 corona virus continues to claim thousands of victims around the world, despite the many measures taken to stop its spread. Below is a global overview of the situation presented by continent and by world.</span>
+            <span>{{'data.introduction' | translate}}</span>
             <div>
               <ul>
-                <li class="confirmed-cases">Number of confirmed cases</li>
-                <li class="recovered-cases">Number of recovered people</li>
+                <li class="confirmed-cases">{{'data.indications.one' | translate}}</li>
+                <li class="recovered-cases">{{'data.indications.two' | translate}}</li>
               </ul>
               
               <ul>
-                <li class="criticals-cases">Number of people with criticals cases</li>
-                <li class="death-cases">Number of dead people</li>
+                <li class="criticals-cases">{{'data.indications.three' | translate}}</li>
+                <li class="death-cases">{{'data.indications.four' | translate}}</li>
               </ul>
             </div>
             
         
           </div>
         </div>
-        <span class="recommendations">(*) Don't forget to wear a mask, apply barrier gestures and use hydro-alcoholic gels.</span>
+        <span class="recommendations">{{'data.advice' | translate}}</span>
         
 </div>
   
@@ -37,7 +37,7 @@
     <div class="Cases RCD">
       <img src="../assets/img/coro_cases.png" alt="confirmed man logo">
       <span class="number"><strong>{{ world.wCases | number }}</strong></span>
-      <span><strong>Total Confirmed Cases</strong></span>
+      <span><strong>{{'data.world.total-label-cases' | translate}}</strong></span>
     </div>
   
     <div class="ReCrDe">
@@ -45,7 +45,7 @@
       <div class="Recovered">
         <img src="../assets/img/coro_rescue.png" alt="rescued man logo">
         <div>
-          <span><strong>Total Recovered</strong></span>
+          <span><strong>{{'data.world.total-label-recovered' | translate}}</strong></span>
           <span  class="number"><strong>{{world.wRecovered | number}}</strong></span>
         </div>
       </div>
@@ -53,7 +53,7 @@
       <div class="Criticals RCD">
         <img src="../assets/img/coro_critical.png" alt="criticals man logo">
         <div>
-          <span><strong>Total Criticals</strong></span>
+          <span><strong>{{'data.world.total-label-criticals' | translate}}</strong></span>
           <span  class="number"><strong>{{world.wCritical | number}}</strong></span>
         </div>
       </div>
@@ -61,7 +61,7 @@
       <div class="Deaths RCD">
         <img src="../assets/img/coro_deaths.png" alt="deaths man logo">
         <div>
-          <span><strong>Total Deaths</strong></span>
+          <span><strong>{{'data.world.total-label-deaths' | translate}}</strong></span>
           <span  class="number"><strong>{{world.wDeaths | number}}</strong></span>
         </div>
       </div>
@@ -70,7 +70,7 @@
 
     <div class="continents">
       <div class="titles">
-        <div class="titles-medium ">Continents</div>
+        <div class="titles-medium ">{{'data.continent' | translate}}</div>
         <div class="titles-max " ><img  src="../assets/img/coro_cases.png" alt="confirmed man logo"></div>
         <div class="titles-medium " ><img  src="../assets/img/coro_rescue.png" alt="rescued man logo"></div>
         <div class="titles-medium " ><img  src="../assets/img/coro_critical.png" alt="rescued man logo"></div>
@@ -118,32 +118,32 @@
     
     <div class="data-introduction-left">
       <h2>
-        Titre1
+        {{'data.explanations.one.title' | translate}}
       </h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt nostrum cupiditate error non, eligendi maiores esse maxime voluptas, inventore sapiente officia, quibusdam sed et delectus. Labore ducimus ullam explicabo magnam.</p>
+      <p>{{'data.explanations.one.text' | translate}}</p>
     </div>
 
     <div class="data-introduction-right">
       <h2>
-        Sscovid19 data updates
+        {{'data.explanations.two.title' | translate}}
       </h2>
-      <p>We update our data regularly. However, we advise you to visit the website either in the early morning or in the evening to consult data that corresponds to reality.</p>
+      <p>{{'data.explanations.two.text' | translate}}</p>
     </div>
 
   </div>
 
   <div class="rounded">
     <div >
-      <span>Continents</span>
-      <span> 06 </span>
+      <span>{{'data.numbers.one.title' | translate}}</span>
+      <span>{{'data.numbers.one.value' | translate}}</span>
     </div>
     <div>
-      <span>Countries</span>
-      <span>+215</span>
+      <span>{{'data.numbers.two.title' | translate}}</span>
+      <span>{{'data.numbers.two.value' | translate}}</span>
     </div>
     <div>
-      <span>Countries</span>
-      <span> ok </span>
+      <span>{{'data.numbers.three.title' | translate}}</span>
+      <span> {{'data.numbers.three.value' | translate}} </span>
 
     </div>
   </div>
@@ -158,19 +158,19 @@
   <div class="continent">
 
     <div class="continent-name">
-      <span class="name">North America </span>
-      <span class="tested"> {{ testsNA | number }} people tested</span>
+      <span class="name">{{'data.continent-countries.name-na' | translate}}</span>
+      <span class="tested"> {{ testsNA | number }} {{'data.continent-countries.tests' | translate}}</span>
     </div>
 
     <div class="continent-cy-value">
 
       
     <div class="cy-header">
-      <div class="cy-header-name">Countries</div>
-      <div class="cy-header-crcd">Cases</div>
-      <div class="cy-header-crcd">Recovered</div>
-      <div class="cy-header-crcd">Criticals</div>
-      <div class="cy-header-crcd">Deaths</div>
+      <div class="cy-header-name">{{'data.continent-countries.headers.one' | translate}}</div>
+      <div class="cy-header-crcd">{{'data.continent-countries.headers.two' | translate}}</div>
+      <div class="cy-header-crcd">{{'data.continent-countries.headers.three' | translate}}</div>
+      <div class="cy-header-crcd">{{'data.continent-countries.headers.four' | translate}}</div>
+      <div class="cy-header-crcd">{{'data.continent-countries.headers.five' | translate}}</div>
     </div>
 
 
@@ -216,17 +216,20 @@
 
 
   <div class="continent">
-    <div class="continent-name"><span class="name">South America </span><span class="tested"> {{ testsSA | number }} people tested</span></div>
+    <div class="continent-name">
+      <span class="name">{{'data.continent-countries.name-sa' | translate}} </span><span class="tested"> {{ testsSA | number }} {{'data.continent-countries.tests' | translate}}</span></div>
     
     <div class="continent-cy-value">
 
-    <div class="cy-header">
-      <div class="cy-header-name">Countries</div>
-      <div class="cy-header-crcd">Cases</div>
-      <div class="cy-header-crcd">Recovered</div>
-      <div class="cy-header-crcd">Criticals</div>
-      <div class="cy-header-crcd">Deaths</div>
-    </div>
+      <div class="cy-header">
+        <div class="cy-header-name">{{'data.continent-countries.headers.one' | translate}}</div>
+        <div class="cy-header-crcd">{{'data.continent-countries.headers.two' | translate}}</div>
+        <div class="cy-header-crcd">{{'data.continent-countries.headers.three' | translate}}</div>
+        <div class="cy-header-crcd">{{'data.continent-countries.headers.four' | translate}}</div>
+        <div class="cy-header-crcd">{{'data.continent-countries.headers.five' | translate}}</div>
+      </div>
+
+
     <div class="values-content" >
 
       <div class="loader" *ngIf="!countriesSA">
@@ -267,19 +270,19 @@
 <div class="bloc">
   <div class="continent">
     <div class="continent-name">
-      <span class="name">Europe </span>
-    <span class="tested"> {{ testsEU | number }} people tested</span></div>
+      <span class="name">{{'data.continent-countries.name-eu' | translate}}</span>
+    <span class="tested"> {{ testsEU | number }} {{'data.continent-countries.tests' | translate}}</span></div>
    
     <div class="continent-cy-value">
 
     
-    <div class="cy-header">
-      <div class="cy-header-name">Countries</div>
-      <div class="cy-header-crcd">Cases</div>
-      <div class="cy-header-crcd">Recovered</div>
-      <div class="cy-header-crcd">Criticals</div>
-      <div class="cy-header-crcd">Deaths</div>
-    </div>
+      <div class="cy-header">
+        <div class="cy-header-name">{{'data.continent-countries.headers.one' | translate}}</div>
+        <div class="cy-header-crcd">{{'data.continent-countries.headers.two' | translate}}</div>
+        <div class="cy-header-crcd">{{'data.continent-countries.headers.three' | translate}}</div>
+        <div class="cy-header-crcd">{{'data.continent-countries.headers.four' | translate}}</div>
+        <div class="cy-header-crcd">{{'data.continent-countries.headers.five' | translate}}</div>
+      </div>
     <div class="values-content" >
       
       
@@ -319,17 +322,18 @@
   </div>
 
   <div class="continent">
-    <div class="continent-name"><span class="name">Asia </span><span class="tested"> {{ testsAS | number }} people tested</span></div>
+    <div class="continent-name">
+      <span class="name">{{'data.continent-countries.name-as' | translate}} </span><span class="tested"> {{ testsAS | number }} {{'data.continent-countries.tests' | translate}}</span></div>
     
     <div class="continent-cy-value">
 
-    <div class="cy-header">
-      <div class="cy-header-name">Countries</div>
-      <div class="cy-header-crcd">Cases</div>
-      <div class="cy-header-crcd">Recovered</div>
-      <div class="cy-header-crcd">Criticals</div>
-      <div class="cy-header-crcd">Deaths</div>
-    </div>
+      <div class="cy-header">
+        <div class="cy-header-name">{{'data.continent-countries.headers.one' | translate}}</div>
+        <div class="cy-header-crcd">{{'data.continent-countries.headers.two' | translate}}</div>
+        <div class="cy-header-crcd">{{'data.continent-countries.headers.three' | translate}}</div>
+        <div class="cy-header-crcd">{{'data.continent-countries.headers.four' | translate}}</div>
+        <div class="cy-header-crcd">{{'data.continent-countries.headers.five' | translate}}</div>
+      </div>
     <div class="values-content" >
       
       
@@ -369,18 +373,18 @@
 
 <div class="bloc">
   <div class="continent">
-    <div class="continent-name"><span class="name">Africa </span><span class="tested"> {{ testsAF | number }} people tested</span></div>
+    <div class="continent-name"><span class="name">{{'data.continent-countries.name-af' | translate}} </span><span class="tested"> {{ testsAF | number }} {{'data.continent-countries.tests' | translate}}</span></div>
     
     <div class="continent-cy-value">
 
 
-    <div class="cy-header">
-      <div class="cy-header-name">Countries</div>
-      <div class="cy-header-crcd">Cases</div>
-      <div class="cy-header-crcd">Recovered</div>
-      <div class="cy-header-crcd">Criticals</div>
-      <div class="cy-header-crcd">Deaths</div>
-    </div>
+      <div class="cy-header">
+        <div class="cy-header-name">{{'data.continent-countries.headers.one' | translate}}</div>
+        <div class="cy-header-crcd">{{'data.continent-countries.headers.two' | translate}}</div>
+        <div class="cy-header-crcd">{{'data.continent-countries.headers.three' | translate}}</div>
+        <div class="cy-header-crcd">{{'data.continent-countries.headers.four' | translate}}</div>
+        <div class="cy-header-crcd">{{'data.continent-countries.headers.five' | translate}}</div>
+      </div>
     <div class="values-content" >
       
 
@@ -419,17 +423,17 @@
 
 
   <div class="continent">
-    <div class="continent-name"><span class="name">Oceania </span><span class="tested"> {{ testsOC | number }} people tested</span></div>
+    <div class="continent-name"><span class="name">{{'data.continent-countries.name-oc' | translate}} </span><span class="tested"> {{ testsOC | number }} {{'data.continent-countries.tests' | translate}}</span></div>
    
     <div class="continent-cy-value">
 
-    <div class="cy-header">
-      <div class="cy-header-name">Countries</div>
-      <div class="cy-header-crcd">Cases</div>
-      <div class="cy-header-crcd">Recovered</div>
-      <div class="cy-header-crcd">Criticals</div>
-      <div class="cy-header-crcd">Deaths</div>
-    </div>
+      <div class="cy-header">
+        <div class="cy-header-name">{{'data.continent-countries.headers.one' | translate}}</div>
+        <div class="cy-header-crcd">{{'data.continent-countries.headers.two' | translate}}</div>
+        <div class="cy-header-crcd">{{'data.continent-countries.headers.three' | translate}}</div>
+        <div class="cy-header-crcd">{{'data.continent-countries.headers.four' | translate}}</div>
+        <div class="cy-header-crcd">{{'data.continent-countries.headers.five' | translate}}</div>
+      </div>
     <div class="values-content" >  
 
 

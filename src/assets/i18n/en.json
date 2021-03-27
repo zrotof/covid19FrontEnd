@@ -1,17 +1,250 @@
 {
     "header":{
 
-        "title" : " World Status"
+        "nav":{
+            "link1":"Data",
+            "link2":"Maps",
+            "link3":"Covid-19",
+            "link4":"About"
+        }
     },
-
-
-
 
 
 
     "screen-size" : {
         "text":"For an optimized rendering, it would be better to consult this website from a computer"
     },
+
+
+
+
+
+    "data":{
+        "updates":"Lastest updates :",
+        "title":"World Global Data About Covid-19",
+        "introduction":"Unfortunately, the SARS-Cov2 corona virus continues to claim thousands of victims around the world, despite the many measures taken to stop its spread. Below is a global overview of the situation presented by continent and by world.",
+        "indications":{
+            "one":"Number of confirmed cases",
+            "two":"Number of recovered people",
+            "three":"Number of people with criticals cases",
+            "four":"Number of dead people"
+        },
+        "advice":"(*) Don't forget to wear a mask, apply barrier gestures and use hydro-alcoholic gels.",
+        "world":{
+            "total-label-cases":"Total Confirmed Cases",
+            "total-label-recovered":"Total Recovered",
+            "total-label-criticals":"Total Criticals",
+            "total-label-deaths":"Total Deaths"
+        },
+        "continent":"Continent",
+        "explanations":{
+            "one":{
+                "title":"Titre1à compléter",
+                "text":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt nostrum cupiditate error non, eligendi maiores esse maxime voluptas, inventore sapiente officia, quibusdam sed et delectus. Labore ducimus ullam explicabo magnam."
+            },
+            "two":{
+                "title":"Sscovid19 data updates",
+                "text":"We regularly update our data. However, it is recommended to consult the website at the end of the day. This is to have access to data that extends over the duration of the day and therefore corresponds more to the reality."
+            }  
+            
+        },
+        "numbers":{
+            "one":{
+                "title":"Continents",
+                "value":"06"
+            },
+            "two":{
+                "title":"Countries",
+                "value":"+215"
+            },
+            "three":{
+                "title":"À trouver",
+                "value":"À trouver"
+            }
+        },
+        "continent-countries":{
+            "name-na":"North America",
+            "name-sa":"South America",
+            "name-eu":"Europe",
+            "name-as":"Asia",
+            "name-af":"Africa",
+            "name-oc":"Oceania",
+            "tests":"tests realised",
+            "headers":{
+                "one":"Countries",
+                "two":"Cases",
+                "three":"Recovered",
+                "four":"Criticals",
+                "five":"Deaths"
+            }
+        }
+
+    },
+
+
+
+
+
+
+
+    "covid19":{
+        "title":"COVID-19: What you should know",
+        "introduction":"Below, some important information and facts about the corona virus. The information comes from the World Health Organization (WHO) sources.",
+        "facts":{
+            "about-covid":{
+                "label":"What is COVID-19 ?",
+                "body":{
+                    "one":"The Covid-19 is the disease caused by a novel coronavirus, SARS-CoV-2. WHO learned of this new virus on December 31, 2019, when an outbreak of 'viral pneumonia' cases was reported in Wuhan, People's Republic of China."
+                }
+            },
+            "symptoms-covid":{
+                "label":"What are the symptoms of COVID-19 ?",
+                "body":{
+                    "common-symptoms":{
+                        "title":"The most common symptoms are :",
+                        "symptoms":{
+                            "one":"Fever",
+                            "two": "Dry Cough",
+                            "three":"Fatigue"
+                        }
+                    },
+                    "other-symptoms":{
+                        "title":"Other less common symptoms may affect some patients: ",
+                        "symptoms":{
+                            "one":"Loss of taste and smell",
+                            "two":"Nasal congestion",
+                            "three":"Conjunctivitis (red eyes)",
+                            "four":"Sore throat",
+                            "five":"Headaches",
+                            "six":"Muscle or joint pain",
+                            "seven":"Various types of skin rashes",
+                            "eight":"Nausea or vomiting",
+                            "nine":"Diarrhea",
+                            "ten":"Chills or dizziness"
+                        }
+                    },
+                    "severe-symptoms":{
+                        "title":"Symptoms of the severe form of COVID-19 include :",
+                        "symptoms":{
+                            "one":"Shortness of breath",
+                            "two":"Loss of appetite",
+                            "three":"Confusional state",
+                            "four":"Persistent chest pain or tightness",
+                            "five":"High temperature (over 38° C)"
+                        }
+                    },
+                    "less-symptoms":{
+                        "title":"Other symptoms are less common:",
+                        "symptoms":{
+                            "one":"Irritability",
+                            "two":"Confusional state",
+                            "three":"Altered consciousness (sometimes associated with seizures)",
+                            "four":"Anxiety disorders",
+                            "five":"Depression",
+                            "six":"Sleep disturbances"
+                        }
+                    }
+                }
+            },
+            "patient-covid":{
+                "label":"What happens to people who contract COVID-19 ?",
+                "body":{
+                    "one":"Of those patients who develop symptoms, most (about 80%) recover without the need for hospitalization. About 15% of patients become critically ill and require oxygen therapy, and 5% of infections are critical and require intensive care...",
+                    "two":"Complications leading to death include respiratory failure, acute respiratory distress syndrome (ARDS), sepsis and septic shock, thromboembolism, and/or multivisceral failure, causing damage to the heart, liver, or kidneys.",
+                    "three":"In rare cases, children may develop a severe inflammatory syndrome within weeks of infection."
+                }
+            },
+            "protect-covid":{
+                "label":"How can you protect yourself and others if you don't know who is infected ?",
+                "body":{
+                    "one":"For your safety, take a few simple precautions: maintain physical separation, wear a mask (especially when separation is not possible), ensure proper ventilation of rooms, avoid crowds and close contact, wash your hands regularly, and cough into your elbow or into a tissue. Follow local guidelines where you live and work.",
+                    "two":"Take all these precautions  !"
+                }
+            },
+            "test-covid":{
+                "label":"When should I be tested for COVID-19 ?",
+                "body":{
+                    "one":"Anyone with symptoms should be tested, if possible. People who do not have symptoms, but who have been in close contact with an infected or potentially infected person, may also want to consider getting tested - check and follow local health guidelines.",
+                    "two":"While a person is waiting for test results, they should remain isolated from others. When testing capabilities are limited, priority should be given to testing those at greatest risk of infection, such as health care workers, and those most likely to develop a severe form of the disease, such as the elderly, especially those living in nursing homes or long-term care facilities."
+                }
+            },
+            "again-covid":{
+                "label":"Is there a test that would allow me to know if I have had COVID-19 ?",
+                "body":{
+                    "one":"In most cases, a molecular test is used to screen for SARS-CoV-2 and confirm infection. The most commonly used molecular test is the polymerase chain reaction (PCR) test. A swab is taken from the nose and/or throat. The molecular test detects the presence of the virus in the swab by amplifying the viral genetic material to detectable levels. Therefore, a molecular test is used to confirm an active infection, usually within a few days of exposure and around the time that symptoms may appear."
+                }
+            },
+            "rapid-test-covid":{
+                "label":"What about rapid tests?",
+                "body":{
+                    "one":"Rapid diagnostic antigen tests (also called rapid diagnostic tests or RDTs) detect viral proteins (known as antigens). Samples are taken from the nose and/or throat using a swab. These tests are cheaper than PCR tests and give a result more quickly, but they are generally less reliable. These tests are most effective when the virus is circulating widely in a community and when the sample is taken when the person is most contagious."
+                }
+            },
+            "treatments-covid":{
+                "label":"Are there any treatments for COVID-19 ?",
+                "body":{
+                    "one":"Yes, there are three COVID-19 vaccines that have been licensed for use by some national regulatory authorities. None of them have yet received WHO emergency (EUL)/prequalification approval, but we expect an evaluation of the Pfizer vaccine by the end of December and for some of the other candidates soon after.",
+                    "two":"Large efficacy and safety studies of five vaccine candidates, including the three in question (the other two being Moderna and AstraZeneca), have been made public via press release, but only one company (AstraZeneca) has published results in a peer-reviewed journal. We expect to see more such reports in the near future. It is likely that other candidates will be submitted for regulatory approval."
+                }
+            }
+        }
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    "map":{
+        "title":{
+            "country":"GLOBAL DATA",
+            "world": "WORLD GLOBAL DATA"
+        },
+        "update":"Lastesr updates",
+        "table":{
+            "titles":{
+                "cases":"Cases",
+                "recovered":"Recovered",
+                "actives":"Actives",
+                "deaths":"deaths"
+            },
+            "totals":"Totals",
+            "today":"Data of today"
+
+        },
+        "percentage":{
+
+            "tests":{
+                "title": "TESTS PERCENTAGE",
+                "text":"of the population has been tested"
+            },
+
+            "recovered":{
+                "title":"RECOVERED PERCENTAGE",
+                "cases":"Cases",
+                "recovered": "Recovered",
+                "text":"of sick people recover"
+            },
+            "deaths":{
+                "title":"DEATHS PERCENTAGE",
+                "cases":"Cases",
+                "deaths":"Deaths",
+                "text":"of sick people die"
+            }
+            
+        }
+        
+    },
+
+
 
 
 
@@ -79,58 +312,6 @@
                 "source2":"friends & familly: they have been a great help, mainly on encouragement and perseverance"
             }
         }
-
-    },
-
-
-
-
-
-    "map":{
-        "title":{
-            "country":"GLOBAL DATA",
-            "world": "WORLD GLOBAL DATA"
-        },
-        "update":"Lastesr updates",
-        "table":{
-            "titles":{
-                "cases":"Cases",
-                "recovered":"Recovered",
-                "actives":"Actives",
-                "deaths":"deaths"
-            },
-            "totals":"Totals",
-            "today":"Data of today"
-
-        },
-        "percentage":{
-
-            "tests":{
-                "title": "TESTS PERCENTAGE",
-                "text":"of the population has been tested"
-            },
-
-            "recovered":{
-                "title":"RECOVERED PERCENTAGE",
-                "cases":"Cases",
-                "recovered": "Recovered",
-                "text":"of sick people recover"
-            },
-            "deaths":{
-                "title":"DEATHS PERCENTAGE",
-                "cases":"Cases",
-                "deaths":"Deaths",
-                "text":"of sick people die"
-            }
-            
-        }
-        
-    },
-
-
-
-
-    "home":{
 
     }
 

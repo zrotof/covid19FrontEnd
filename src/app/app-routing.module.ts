@@ -10,9 +10,9 @@ import { Covid19Component } from './covid19/covid19.component';
 const routes: Routes = [
 
     { path: '', component: WorldStatsComponent },
-    { path: 'map', component: WorldMapComponent },
+    { path: 'maps', component: WorldMapComponent },
     { path: 'about', component: AboutUsComponent },
-    { path: 'covid19', component: Covid19Component },
+    { path: 'covid-19', component: Covid19Component },
     { path: 'disclaimers', component: DisclaimersComponent },
     { path: 'buy-me-a-coffee', component: BuyMaACoffeeComponent},
     { path: 'stats',   redirectTo: '', pathMatch: 'full' }, // redirect to `first-component`

@@ -2,11 +2,7 @@
 <nav class="header">
 
     <div class="header_left" routerLink="">
-      <img class="header_left_img" src="../../assets/img/coro_logo.jpg" logo="logo of the website">
-      <div class="header_left_text">
-        <span>Covid-19</span>
-        <span> {{'header.title' | translate}} </span>
-      </div>
+      <img src="../../assets/img/logo-sscovid19-final.svg" alt="logo of the website">
     </div>
 
     <div class="header_right">
@@ -16,25 +12,29 @@
     <div class="header-menu-language">
     <ul class="header-menu">
         <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> 
-            <span routerLink="/">World's Stats</span>
+            <span routerLink="/">{{'header.nav.link1' | translate}}</span>
         </li>
 
         <li  routerLinkActive="active">
-            <span routerLink="/map">Map</span>
+            <span routerLink="/maps">{{'header.nav.link2' | translate}}</span>
         </li>
 
         <li  routerLinkActive="active">
-            <span routerLink="/covid19">Covid-19</span>
+            <span routerLink="/covid-19">{{'header.nav.link3' | translate}}</span>
         </li>
 
         <li  routerLinkActive="active">
-            <span routerLink="/about">About</span>
+            <span routerLink="/about">{{'header.nav.link4' | translate}}</span>
         </li>
 
         
 
         <li  routerLinkActive="active">
-            <span routerLink="/buy-me-a-coffee">Buy Me A Coffee</span>
+            <span routerLink="/buy-me-a-coffee" class="coffee">
+             
+                    <img src="../../assets/img/coffee-cup.png" class="coffee-cup">
+                    Buy Me a coffee 
+            </span>
         </li>
     </ul>
 
