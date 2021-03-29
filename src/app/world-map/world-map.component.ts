@@ -45,11 +45,13 @@ export class WorldMapComponent implements OnInit {
 
   }
 
-
+  
   ngAfterViewInit() {
     this.createWorldGraph(); 
 
-    }
+  }
+
+
 
   //creating the graph displaying the world historics data of covid
   createWorldGraph() : void{
@@ -148,17 +150,19 @@ worldHistoricsChart.logo.disabled = true;
 
 
 
+
+
+
   createWorldMap() : void{
     // Create map instance
   let worldMap = am4core.create("worldMap", am4maps.MapChart);
   
-
-
   // Set map definition
   worldMap.geodata = am4geodata_worldLow;
   
   // Set projection
   worldMap.projection = new am4maps.projections.Miller();
+
   // Disabling amChart logo
   worldMap.logo.disabled = true;
 
@@ -179,11 +183,41 @@ worldHistoricsChart.logo.disabled = true;
   
   // Make map load polygon (like country names) data from GeoJSON
   polygonSeries.useGeodata = true;
+
+
+  // Add heat rule
+  polygonSeries.heatRules.push({
+    "property": "fill",
+    "target": polygonSeries.mapPolygons.template,
+    "min":  am4core.color("#3a6b35").brighten(0.75),
+    "max": am4core.color("#161748")
+  });
   
   //Adding external datas for the series
   this.covidService.getCountriesAllCases().subscribe(data => {
-    polygonSeries.data = data;
-    console.log("data country "+data);
+
+    let worldMapDataPolygonSeries =[];
+
+    data.forEach(row => {
+
+      worldMapDataPolygonSeries.push({
+        "value":row.cyToDayCases,
+        "cyCases": row.cyCases,
+        "cyCritical": row.cyCritical,
+        "cyDate": row.cyCritical,
+        "cyDeaths": row.cyDeaths,
+        "cyFlag": row.cyFlag,
+        "cyName": row.cyName,
+        "cyPopulation": row.cyPopulation,
+        "cyRecovered": row.cyRecovered,
+        "cyTests": row.cyTests,
+        "cyToDayCases": row.cyToDayCases,
+        "cyToDayDeaths": row.cyToDayDeaths,
+        "id":row.id      
+      })
+    })
+    polygonSeries.data = worldMapDataPolygonSeries;
+    
   });
 
     // Remove Antarctica continent
@@ -192,13 +226,36 @@ worldHistoricsChart.logo.disabled = true;
 
   // Configure series
   var polygonTemplate = polygonSeries.mapPolygons.template;
+
+  polygonTemplate.fill = am4core.color("#ffffff");
+
+
+      // Create selected and hover states and set alternative fill color 
+  var ss = polygonTemplate.states.create("active");
+  ss.properties.fill = am4core.color("#d11141");
+
+
+    // Create hover state and set alternative fill color
+    var hs = polygonTemplate.states.create("hover");
+    hs.properties.fill = am4core.color("#d11141");
+
+
+  polygonTemplate.tooltipHTML =`<div style="display:flex; flex-direction: column; justify-content:center; padding:2px; ">
+                                  <img style="width:5em;height:3em;border-radius:10px;margin:auto" src="{cyFlag}" alt="country flag">
+                                  <span style="text-align:center; margin-top:0.2em;font-weight:bold;font-size:1.4em;margin-bottom: 0.4em">{cyName}</span> 
+                                  <span>Population : {cyPopulation}</span> 
+                                  <span>Cases : {cyCases} <span style="color:skyblue; margin-left:5px;"> +{cyToDayCases}</span></span> 
+                                  <span>Recovered : {cyRecovered}</span> 
+                                  <span>Criticals : {cyCritical}</span> 
+                                  <span>Deaths : {cyDeaths} <span style="color:red; margin-left:5px;"> +{cyToDayDeaths}</span></span> 
+                                <div>`
+
   
   //Handling a click event on the map and creation of the associated historic map
 
    polygonTemplate.events.on("hit", function(ev) {
 
     this.view= true;
-
     this.countryObject = ev.target.dataItem.dataContext;
 
     // Create chart instance
@@ -226,28 +283,8 @@ worldHistoricsChart.logo.disabled = true;
   },this);
 
 
-    /* Create selected and hover states and set alternative fill color */
-  var ss = polygonTemplate.states.create("active");
-  ss.properties.fill = am4core.color("#d11141");
 
-
-    // Create hover state and set alternative fill color
-    var hs = polygonTemplate.states.create("hover");
-    hs.properties.fill = am4core.color("#d11141");
-
-    polygonTemplate.fill = am4core.color("#161748");
-
-  polygonTemplate.tooltipHTML =`<div style="display:flex; flex-direction: column; justify-content:center; padding:2px; ">
-                                  <img style="width:5em;height:3em;border-radius:10px;margin:auto" src="{cyFlag}" alt="country flag">
-                                  <span style="text-align:center; margin-top:0.2em;font-weight:bold;font-size:1.4em;margin-bottom: 0.4em">{cyName}</span> 
-                                  <span>Population : {cyPopulation}</span> 
-                                  <span>Cases : {cyCases} <span style="color:skyblue; margin-left:5px;"> +{cyToDayCases}</span></span> 
-                                  <span>Recovered : {cyRecovered}</span> 
-                                  <span>Criticals : {cyCritical}</span> 
-                                  <span>Deaths : {cyDeaths} <span style="color:red; margin-left:5px;"> +{cyToDayDeaths}</span></span> 
-                                <div>`
   }
-
 
 
 
@@ -342,34 +379,25 @@ map.scrollbarX.startGrip.background.fill = am4core.color("#000000");
     map.scrollbarX.startGrip.background.fillOpacity = 0.8;
     map.scrollbarX.endGrip.background.fill = am4core.color("#000000");
     map.scrollbarX.endGrip.background.fillOpacity = 0.8;
-    
 
 // Disabling amChart logo
 map.logo.disabled = true;
 
+
+
 }
-
-
-
-
-
-
-
-
-
 
 
 
 
   //Getting world cases
-   worldCases() : void{
+  worldCases() : void{
     this.covidService.getWorldCases()
    .subscribe(data3 =>{
      this.worldNumbers = data3;
-     console.log("World :",this.worldNumbers);
+     //console.log("World :",this.worldNumbers);
    });
- 
-}
+  }
 
 
 }

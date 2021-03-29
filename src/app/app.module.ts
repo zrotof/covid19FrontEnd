@@ -22,6 +22,7 @@ import { ScreenSizeAdviceComponent } from './screen-size-advice/screen-size-advi
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { StartingLoaderComponent } from './starting-loader/starting-loader.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     Covid19Component,
     HeaderComponent,
     FooterComponent,
-    ScreenSizeAdviceComponent
+    ScreenSizeAdviceComponent,
+    StartingLoaderComponent
   ],
   imports: [
     BrowserModule,
