@@ -1,0 +1,147 @@
+{
+
+    "covid19":{
+        "title":"COVID-19 : Ce que vous devez savoir",
+        "introduction":"Vous trouverez ci-dessous des informations et des faits importants sur le virus corona. Les informations proviennent des sources de l'Organisation mondiale de la santé (OMS).",
+        "questions":{
+            "about-covid":{
+                "label":"Qu'est-ce que la COVID-19 ?",
+                "body":{
+                    "one":"La Covid-19 est la maladie causée par un nouveau coronavirus, le SRAS-CoV-2. L'OMS a appris l'existence de ce nouveau virus le 31 décembre 2019, lorsqu'une épidémie de cas de 'pneumonie virale' a été signalée à Wuhan, en République populaire de Chine."
+                }
+            },
+            "symptoms-covid":{
+                "label":"Quels sont les symptômes de la COVID-19 ?",
+                "body":{
+                    "common-symptoms":{
+                        "title":"Les symptômes les plus courants sont :",
+                        "symptoms":{
+                            "one":"Fièvre",
+                            "two": "Toux sèche",
+                            "three":"Fatigue"
+                        }
+                    },
+                    "other-symptoms":{
+                        "title":"D'autres symptômes moins courants peuvent affecter certains patients : ",
+                        "symptoms":{
+                            "one":"Perte du goût et de l'odorat",
+                            "two":"Congestion nasale",
+                            "three":"Conjonctivite (yeux rouges)",
+                            "four":"Mal de gorge",
+                            "five":"Maux de tête",
+                            "six":"Douleurs musculaires ou articulaires",
+                            "seven":"Différents types d'éruptions cutanées",
+                            "eight":"Nausées ou vomissements",
+                            "nine":"Diarrhée",
+                            "ten":"Frissons ou vertiges"
+                        }
+                    },
+                    "severe-symptoms":{
+                        "title":"Les symptômes de la forme sévère de la COVID-19 comprennent :",
+                        "symptoms":{
+                            "one":"Essoufflement",
+                            "two":"Perte d'appétit",
+                            "three":"État de confusion",
+                            "four":"Douleur ou oppression thoracique persistante",
+                            "five":"Température élevée (plus de 38° C)"
+                        }
+                    },
+                    "less-symptoms":{
+                        "title":"D'autres symptômes sont moins fréquents :",
+                        "symptoms":{
+                            "one":"Irritabilité",
+                            "two":"État de confusion",
+                            "three":"Altération de la conscience (parfois associée à des crises)",
+                            "four":"Troubles de l'anxiété",
+                            "five":"Dépression",
+                            "six":"Troubles du sommeil"
+                        }
+                    }
+                }
+            },
+            "patient-covid":{
+                "label":"Qu'arrive-t-il aux personnes qui contractent la COVID-19 ?",
+                "body":{
+                    "one":"Parmi les patients qui développent des symptômes, la plupart (environ 80 %) se rétablissent sans avoir besoin d'être hospitalisés. Environ 15 % des patients deviennent gravement malades et nécessitent une oxygénothérapie, et 5 % des infections sont critiques et nécessitent des soins intensifs...",
+                    "two":"Les complications conduisant au décès comprennent l'insuffisance respiratoire, le syndrome de détresse respiratoire aiguë (SDRA), la septicémie et le choc septique, la thromboembolie et/ou l'insuffisance multiviscérale, qui entraîne des lésions du cœur, du foie ou des reins.",
+                    "three":"Dans de rares cas, les enfants peuvent développer un syndrome inflammatoire grave dans les semaines qui suivent l'infection."
+                }
+            },
+            "protect-covid":{
+                "label":"Comment pouvez-vous vous protéger et protéger les autres si vous ne savez pas qui est infecté ?",
+                "body":{
+                    "one":"Pour votre sécurité, prenez quelques précautions simples : maintenez une séparation physique, portez un masque (surtout lorsque la séparation n'est pas possible), assurez une bonne ventilation des pièces, évitez les foules et les contacts rapprochés, lavez-vous régulièrement les mains et toussez dans votre coude ou dans un mouchoir. Suivez les directives locales là où vous vivez et travaillez.",
+                    "two":"Prenez toutes ces précautions !"
+                }
+            },
+            "test-covid":{
+                "label":"Quand dois-je faire le test de dépistage de la COVID-19 ?",
+                "body":{
+                    "one":"Toute personne présentant des symptômes doit être testée, si possible. Les personnes qui ne présentent pas de symptômes, mais qui ont été en contact étroit avec une personne infectée ou potentiellement infectée, peuvent également envisager de se faire tester - vérifiez et suivez les directives sanitaires locales.",
+                    "two":"Pendant qu'une personne attend les résultats des tests, elle doit rester isolée des autres. Lorsque les capacités de dépistage sont limitées, la priorité doit être donnée au dépistage des personnes les plus exposées au risque d'infection, comme les travailleurs de la santé, et des personnes les plus susceptibles de développer une forme grave de la maladie, comme les personnes âgées, en particulier celles qui vivent dans des maisons de retraite ou des établissements de soins de longue durée."
+                }
+            },
+            "again-covid":{
+                "label":"Existe-t-il un test qui me permettrait de savoir si j'ai eu la COVID-19 ?",
+                "body":{
+                    "one":"Dans la plupart des cas, un test moléculaire est utilisé pour dépister le SRAS-CoV-2 et confirmer l'infection. Le test moléculaire le plus couramment utilisé est le test de réaction en chaîne par polymérase (PCR). Un écouvillon est prélevé dans le nez et/ou la gorge. Le test moléculaire détecte la présence du virus dans l'écouvillon en amplifiant le matériel génétique viral à des niveaux détectables. Par conséquent, un test moléculaire est utilisé pour confirmer une infection active, généralement dans les quelques jours suivant l'exposition et à peu près au moment où les symptômes peuvent apparaître."
+                }
+            },
+            "rapid-test-covid":{
+                "label":"Qu'en est-il des tests rapides ?",
+                "body":{
+                    "one":"Les tests antigéniques de diagnostic rapide (également appelés tests de diagnostic rapide ou TDR) détectent les protéines virales (appelées antigènes). Des échantillons sont prélevés dans le nez et/ou la gorge à l'aide d'un écouvillon. Ces tests sont moins chers que les tests PCR et donnent un résultat plus rapidement, mais ils sont généralement moins fiables. Ces tests sont plus efficaces lorsque le virus circule largement dans une communauté et lorsque l'échantillon est prélevé au moment où la personne est la plus contagieuse."
+                }
+            },
+            "treatments-covid":{
+                "label":"Existe-t-il des traitements pour la COVID-19 ?",
+                "body":{
+                    "one":"Oui, il y a trois vaccins COVID-19 qui ont été autorisés par certaines autorités réglementaires nationales. Aucun d'entre eux n'a encore reçu l'approbation d'urgence (EUL)/préqualification de l'OMS, mais nous prévoyons une évaluation du vaccin Pfizer d'ici la fin décembre et pour certains des autres candidats peu après.",
+                    "two":"De vastes études sur l'efficacité et l'innocuité de cinq vaccins candidats, dont les trois en question (les deux autres étant Moderna et AstraZeneca), ont été rendues publiques par communiqué de presse, mais une seule société (AstraZeneca) a publié les résultats dans une revue à comité de lecture. Nous espérons voir d'autres rapports de ce type dans un avenir proche. Il est probable que d'autres candidats seront soumis à l'approbation des autorités réglementaires."
+                }
+            }
+        },
+        "facts":{
+            "one":{
+                "date":"Entre 10/2019 et 12/2019",
+                "text": "La date d'apparition du nouveau coronavirus SARS-CoV-2 à Wuhan n'est pas bien connue, mais elle est estimée entre octobre et décembre 2019."
+            },
+            "two":{
+                "date":"01/12/2019",
+                "text":"Premier patient diagnostiqué (patient zéro) dans la province de Hubei, en Chine centrale.  Il est âgé d'environ 70 ans."
+            },
+            "three":{
+                "multi":{
+                    "img":"../../assets/img/corona-who.png",
+                    "one":{
+                        "date":"31/01/2020",
+                        "text":"L'OMS déclare une urgence de santé publique de portée internationale."
+                    },
+                    "two":{
+                        "date":"11/03/2020",
+                        "text":"La Covid-19 est déclaré pandémie par l'OMS, qui appelle à des mesures de protection essentielles pour éviter la saturation des unités de soins intensifs et renforcer l'hygiène préventive."
+                    }
+                }
+            },
+            "four":{
+                "multi":{
+                    "one":{
+                        "date":"21/12/2021",
+                        "text":"Vaccin Pfizer-BioNTech validé le 21 Décembre 2021."
+                    },
+                    "two":{
+                        "date":"01/2021",
+                        "text":"Vaccin Moderna validé en Janvier 2021."
+                    },
+                    "three":{
+                        "date": "29/01/2021",
+                        "text": "Vaccine AstraZeneca validé le 29 Janvier 2021."
+                    }
+                }
+                
+            }
+        }
+    }
+    
+
+}

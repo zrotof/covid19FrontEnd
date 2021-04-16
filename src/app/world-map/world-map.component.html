@@ -1,13 +1,136 @@
 <div class="graphs">
-  <div id="worldMap"></div>
+
+  <span class="title-top"> Maps </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+  <!-- trying to pul indicator to alert but it reapear every time we come on the page
+      i want it to come just one time before closing it
+      
+  <div *ngIf="!isAlertClosed" class="carrousel alert alert-warning alert-dismissible fade show sreen-size-advice" role="alert">
+        <span class="question-title">Comment fonctionne cette page ?</span>						
+        <input type="radio" name="slides" id="radio-1" checked>
+        <input type="radio" name="slides" id="radio-2">
+        <input type="radio" name="slides" id="radio-3">
+        <input type="radio" name="slides" id="radio-4">
+        <input type="radio" name="slides" id="radio-5">
+        <ul class="slides">
+
+           <li class="slide">
+            <p>Il y est présenté la liste des pays que prend en compte notre site web sous forme de carte du globe terrestre en respectant les positions de chacun des pays.</p>
+          </li>        
+          
+          <li class="slide">
+            <p>En dessous de cette carte est présenté un tableau qui reprend les donnéees globales du monde concernant la covid-19.</p>
+          </li>
+
+          <li class="slide">
+            <p>En dessous de ce tableau se trouve une section qui présente différents pourcentages, qui permettent de se rendre compte de la gravité des chiffres continuellement croissants de la covid-19.</p>
+          </li>
+
+          <li class="slide">
+            <p>Et enfin apparait un graphe qui retrace l'historiue de l'évolution de la covid-19 depuis le 22 Janvier 2020. Il suffit de survoler le graphe pour parcourir les jours souhaités.  </p>
+          </li>
+
+          <li class="slide">
+            <p>En cliquant sur un pays de la carte on obtient les même informations du même type que ceux cités plus haut du pays sélectionné.</p>
+          </li>   
+       
+        </ul>
+
+        <div class="slidesNavigation">
+          <label for="radio-1" id="dotForRadio-1"></label>
+          <label for="radio-2" id="dotForRadio-2"></label>
+          <label for="radio-3" id="dotForRadio-3"></label>
+          <label for="radio-4" id="dotForRadio-4"></label>
+          <label for="radio-5" id="dotForRadio-5"></label>
+        </div>
+
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="alertClosed()"></button>
+  </div>		
+
+  -->
+
+
+
+  <div  class="carrousel">
+    <span class="question-title">{{'map.instructions.title'| translate}}</span>						
+    <input type="radio" name="slides" id="radio-1" checked>
+    <input type="radio" name="slides" id="radio-2">
+    <input type="radio" name="slides" id="radio-3">
+    <input type="radio" name="slides" id="radio-4">
+    <input type="radio" name="slides" id="radio-5">
+    <ul class="slides">
+
+       <li class="slide">
+        <p>{{'map.instructions.messages.one'| translate}}</p>
+      </li>        
+      
+      <li class="slide">
+        <p>{{'map.instructions.messages.two'| translate}}</p>
+      </li>
+
+      <li class="slide">
+        <p>{{'map.instructions.messages.three'| translate}}</p>
+      </li>
+
+      <li class="slide">
+        <p>{{'map.instructions.messages.four'| translate}}</p>
+      </li>
+
+      <li class="slide">
+        <p>{{'map.instructions.messages.five'| translate}}</p>
+      </li>   
+   
+    </ul>
+
+    <div class="slidesNavigation">
+      <label for="radio-1" id="dotForRadio-1"></label>
+      <label for="radio-2" id="dotForRadio-2"></label>
+      <label for="radio-3" id="dotForRadio-3"></label>
+      <label for="radio-4" id="dotForRadio-4"></label>
+      <label for="radio-5" id="dotForRadio-5"></label>
+    </div>
+
+</div>		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <div id="worldMap"></div>
+  
 
   <div *ngIf="view" class="some-data">
 
     <div *ngIf="countryGlobals" class="some-data-content" >
       <img  class="some-data-content-flag" src="{{countryGlobals.countryInfo.flag}}">
       <div class="some-data-content-text">
-        <span class="title">{{countryGlobals.country | uppercase }} {{'map.title.country' | translate}} </span>
-        <span >{{'map.update' | translate}}: {{countryGlobals.updated | date:'EEEE, MMMM d, y, h:mm a'}} </span>
+        <span class="title">{{countryGlobals.country | uppercase }} {{'map.header.country' | translate}} </span>
+        <span >{{'map.update' | translate}}: {{countryGlobals.updated | date :'short'}} </span>
       </div>
     </div>
 
@@ -83,8 +206,8 @@
     <div *ngIf="worldNumbers" class="some-data-content">
       <img class="some-data-content-flag" src="../../assets/img/earth.jpg">
       <div  class="some-data-content-text">
-        <span class="title">{{'map.title.world' | translate}}</span>
-        <span >Last update: {{worldNumbers[0].updatedAt | date:'EEEE, MMMM d, y, h:mm a'}}</span>
+        <span class="title">{{'map.header.world' | translate}}</span>
+        <span >{{'map.update' | translate}}: {{worldNumbers[0].updatedAt | date:'EEEE, MMMM d, y, h:mm a'}}</span>
       </div>
     </div>
 

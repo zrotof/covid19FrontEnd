@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-
 import * as $ from 'jquery';
 
 @Component({
@@ -12,15 +11,12 @@ export class HeaderComponent implements OnInit {
 
   isEnglishchecked : boolean = true;
   isFrenchChecked : boolean = false;
-  constructor(
-    public translate: TranslateService
-  ) {
-    translate.addLangs(['en', 'fr']);
-    translate.setDefaultLang('en');
+  constructor(private translate: TranslateService   ) {
+   
   }
 
   ngOnInit(): void {
-
+    
   }
 
 
@@ -34,12 +30,11 @@ export class HeaderComponent implements OnInit {
       this.isFrenchChecked = false;
 
       console.log("click english something");
-      this.translate.use("en");
-
+      this.translate.use('en');
     }
     else{
       $( ".en" ).prop( "checked", true );
-      console.log("click english nothing")
+      console.log("click english but do nothing")
 
     }
 
@@ -55,16 +50,14 @@ export class HeaderComponent implements OnInit {
 
       this.isFrenchChecked = true;
       this.isEnglishchecked = false;
-
-      this.translate.use("fr");
-
+      this.translate.use('fr');
 
       console.log("click french something")
 
     }
     else{
       $( ".fr" ).prop( "checked", true );
-      console.log("click french nothing");
+      console.log("click french but do nothing");
 
 
     }

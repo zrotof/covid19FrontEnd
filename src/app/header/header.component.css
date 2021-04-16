@@ -20,11 +20,16 @@
     height: 100%;
     outline: none;
     cursor: pointer;
+    background-image: url('../../assets/img/corona-without-bg.png');
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+
 }
 
 
 .header_left > img{
-    height: 65%;
+    height: 60%;
 }
 
 
@@ -75,14 +80,15 @@ span {
     font-size: 1.23em;
     padding: 0.5em;
     outline: none;
+    cursor: pointer;
 }
 
 .header-menu > li > span:hover {
     color: red;
     background-color: whitesmoke;
     border-radius: 8px;
-    cursor: pointer;
 }
+
 
 .coffee{
     padding: 0.5em;

@@ -7,15 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { WorldStatsComponent } from './world-stats/world-stats.component';
-import { WorldMapComponent } from './world-map/world-map.component';
-import { DisclaimersComponent } from './disclaimers/disclaimers.component';
-import { BuyMaACoffeeComponent } from './buy-ma-acoffee/buy-ma-acoffee.component';
-import { AboutUsComponent } from './about-us/about-us.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { Covid19Component } from './covid19/covid19.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ScreenSizeAdviceComponent } from './screen-size-advice/screen-size-advice.component';
@@ -23,17 +18,17 @@ import { ScreenSizeAdviceComponent } from './screen-size-advice/screen-size-advi
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { StartingLoaderComponent } from './starting-loader/starting-loader.component';
+import { WorldMapModule } from './modules/general/world-map/world-map.module';
+import { DisclaimersModule } from './modules/general/disclaimers/disclaimers.module';
+import { AboutUsModule } from './modules/general/about-us/about-us.module';
+import { Covid19Module } from './modules/general/covid19/covid19.module';
+import { BuyMeACoffeeModule } from './modules/general/buy-me-a-coffee/buy-me-a-coffee.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     WorldStatsComponent,
-    WorldMapComponent,
-    DisclaimersComponent,
-    BuyMaACoffeeComponent,
-    AboutUsComponent,
     PageNotFoundComponent,
-    Covid19Component,
     HeaderComponent,
     FooterComponent,
     ScreenSizeAdviceComponent,
@@ -51,10 +46,16 @@ import { StartingLoaderComponent } from './starting-loader/starting-loader.compo
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: httpTranslateLoader,
+        useFactory: (httpTranslateLoader),
         deps: [HttpClient]
-      }
-    })
+      },
+      isolate:false
+    }),
+    WorldMapModule,
+    DisclaimersModule,
+    AboutUsModule,
+    Covid19Module,
+    BuyMeACoffeeModule
 
     
 
@@ -67,5 +68,5 @@ export class AppModule { }
 
 // AOT compilation support
 export function httpTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }

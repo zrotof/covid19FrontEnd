@@ -1,0 +1,43 @@
+{
+
+
+    "map":{
+        "title":{
+            "country":"GLOBAL DATA",
+            "world": "WORLD GLOBAL DATA"
+        },
+        "update":"Lastesr updates",
+        "table":{
+            "titles":{
+                "cases":"Cases",
+                "recovered":"Recovered",
+                "actives":"Actives",
+                "deaths":"deaths"
+            },
+            "totals":"Totals",
+            "today":"Data of today"
+
+        },
+        "percentage":{
+
+            "tests":{
+                "title": "TESTS PERCENTAGE",
+                "text":"of the population has been tested"
+            },
+
+            "recovered":{
+                "title":"RECOVERED PERCENTAGE",
+                "cases":"Cases",
+                "recovered": "Recovered",
+                "text":"of sick people recover"
+            },
+            "deaths":{
+                "title":"DEATHS PERCENTAGE",
+                "cases":"Cases",
+                "deaths":"Deaths",
+                "text":"of sick people die"
+            }
+            
+        }
+        
+    }}

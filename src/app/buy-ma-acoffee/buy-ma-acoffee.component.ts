@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../../environments/environment';
 
 @Component({
@@ -8,10 +9,54 @@ import { environment } from '../../environments/environment';
 })
 export class BuyMaACoffeeComponent implements OnInit {
 
-  constructor() { }
+  currentLang:string='';
+	constructor(
+		private translate: TranslateService
+	  ) {
+    
+          
+		this.currentLang=this.translate.currentLang
+		this.translate.currentLang=''
+		this.translate.use(this.currentLang);
+		
+		
+	  }
 
   ngOnInit(): void {
+ /*
+
+    this.translate.onLangChange.subscribe(lang=>{
+      console.log(lang)
+      this.translate.currentLang=''
+      this.translate.use(lang.lang);
+    })
+    */
   }
+
+  /*setLangage(){
+    console.log("this.translate.currentLang");
+
+    console.log(this.translate.currentLang);
+    if(!this.translate.currentLang ){
+      this.translate.use('en');
+      this.i18nTranslateService.changeLanguage('en');
+      console.log("dans le 1")
+    }else{
+      this.i18nTranslateService.translateLanguageEvent.subscribe(language => {
+        this.translate.use(language);
+      console.log("lzlz");
+    console.log(language)})
+
+    console.log("dans le 2")
+    console.log("this.translate.currentLang");
+    console.log(this.translate.currentLang);
+
+    this.i18nTranslateService.changeLanguage('en')
+   // this.translate.use()
+    console.log("changé")
+
+    }
+  }*/
 
   //Redirecting Buy me a coffee page 
   redirectToBmc(){

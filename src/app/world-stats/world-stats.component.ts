@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Covid19Service }from '../covid19.service';
+import { Covid19Service }from '../services/main-services/main-covid19.service';
 import { World } from '../../../models/world';
 import { Continent } from '../../../models/continent';
 import { Countries } from '../../../models/countries';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-world-stats',
@@ -23,18 +24,30 @@ export class WorldStatsComponent implements OnInit {
   countriesAll : Countries[];
 
 
-
+  //Test variables
   testsNA : number; 
   testsSA : number;
   testsEU : number;
   testsAS : number;
   testsAF : number;
   testsOC : number;
-  constructor( private covidService : Covid19Service ) { }
+
+  //vacines variables
+  vacinesNA : number; 
+  vacinesSA : number;
+  vacinesEU : number;
+  vacinesAS : number;
+  vacinesAF : number;
+  vacinesOC : number;
+  constructor( 
+    private covidService : Covid19Service,
+    private route: ActivatedRoute
+    
+     ) { }
 
   ngOnInit(): void {
-    this.getWorld();
 
+    this.getWorld();
     this.getContinents();
     this.getContinentsNA();
     this.getContinentsSA();
@@ -42,44 +55,61 @@ export class WorldStatsComponent implements OnInit {
     this.getContinentsAS();
     this.getContinentsAF();
     this.getContinentsOC();
-    this.getCountriesAll();
+    //this.getCountriesAll();
+
   }
 
-  ngAfterViewInit() {
+
+
+  getWorld() : World {
+
+    let resolved = this.route.snapshot.data['resolved'];
+    this.world = resolved.worldGlobals[0];
+
+    console.log(this.world);
+
+    return this.world ;
+
   }
 
-  getWorld() : void {
-    this.covidService.getWorldCases()
-    .subscribe(result1 => {
-      this.world = result1[0];
-    })
-  }
+  getContinents() : Continent[] {
 
-  getContinents() : void {
-    this.covidService.getContinentCases()
-    .subscribe(result2 => {
-      this.continents = result2;
+    let resolved = this.route.snapshot.data['resolved'];
+    this.continents = resolved.continentGlobals
+
+    
       for(var i=0; i< Object.keys(this.continents).length; i++){
         if(this.continents[i].ctName == 'North America'){
           this.testsNA = this.continents[i].ctTests;
+          //this.vacinesNA = this.continents[i].ctVaccines; 
+
         }
         else if(this.continents[i].ctName == 'South America'){
           this.testsSA = this.continents[i].ctTests;
+          //this.vacinesSA  = this.continents[i].ctVaccines; 
+
         }
         else if(this.continents[i].ctName  == 'Europe'){
           this.testsEU = this.continents[i].ctTests;
+          //this.vacinesEU  = this.continents[i].ctVaccines; 
+
         }
         else if(this.continents[i].ctName  == 'Asia'){
           this.testsAS = this.continents[i].ctTests;
+          //this.vacinesAS  = this.continents[i].ctVaccines; 
+
         }
         else if(this.continents[i].ctName  == 'Africa'){
           this.testsAF = this.continents[i].ctTests;
+          //this.vacinesAF  = this.continents[i].ctVaccines; 
         }
         else if(this.continents[i].ctName  == 'Oceania'){
           this.testsOC = this.continents[i].ctTests;
+          //this.vacinesOC  = this.continents[i].ctVaccines; 
         }
       }
-    })
+
+    return this.continents;
   }
 
   getContinentsNA() : void {
@@ -112,8 +142,21 @@ export class WorldStatsComponent implements OnInit {
     .subscribe(result8 =>this.countriesOC = result8)
   }
 
-  getCountriesAll() : void {
+  /*getCountriesAll() : void {
     this.covidService.getCountriesAllCases()
     .subscribe(result9 =>this.countriesAll = result9)
+  }*/
+
+
+
+
+
+  //difference between the two dates in minutes
+  diff(date: Date){
+
+    var toDay = new Date();
+    var diff = (toDay.getTime() - date.getTime())
+    var diffMins = Math.round(((diff % 86400000) % 3600000) / 60000);
+    return diffMins;
   }
 }

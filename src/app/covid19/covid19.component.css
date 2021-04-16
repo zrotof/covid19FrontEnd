@@ -65,9 +65,174 @@ label:hover{
     margin-top: 4vh;
 }
 
-.some-covid19-facts-small{
-    display: none;
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    margin: 5% auto;
 }
+
+.timeline-event{
+    background: #161748;
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+      0 18px 36px -18px rgba(0, 0, 0, 0.3),
+      0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+      color: white;
+
+}
+
+.timeline-event-image{
+    border-radius: 8px 0 0 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: white;
+}
+
+
+.element-one::after{
+    content: "";
+    width: 2px;
+    height: 150%;
+    background: #16174823;
+    position: absolute;
+    top: 50%;
+    left: -2.55rem;
+    z-index: -1;
+}
+
+
+.element-one::before{
+    content: "";
+      width: 1rem;
+      height: 1rem;
+      position: absolute;
+      background: #161748;
+      border-radius: 100%;
+      left: -3rem;
+      top: 50%;
+      transform: translateY(-50%);
+}
+
+.element-two::after{
+    content: "";
+    width: 2px;
+    height: 200%;
+    background: #16174823;
+    position: absolute;
+    top: 50%;
+    left: -2.55rem;
+    z-index: -1;
+}
+
+
+.element-two::before{
+    content: "";
+      width: 1rem;
+      height: 1rem;
+      position: absolute;
+      background: #161748;
+      border-radius: 100%;
+      left: -3rem;
+      top: 50%;
+      transform: translateY(-50%);
+}
+
+
+.element-three::after{
+    content: "";
+    width: 2px;
+    height: 135%;
+    background: #16174823;
+    position: absolute;
+    top: 50%;
+    left: -2.55rem;
+    z-index: -1;
+}
+
+
+.element-three::before{
+    content: "";
+      width: 1rem;
+      height: 1rem;
+      position: absolute;
+      background: #161748;
+      border-radius: 100%;
+      left: -3rem;
+      top: 50%;
+      transform: translateY(-50%);
+}
+
+
+
+.element-four::after{
+    content: "";
+    width: 2px;
+    height: 135%;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: -2.55rem;
+    z-index: -1;
+}
+
+.element-four::before{
+    content: "";
+      width: 1rem;
+      height: 1rem;
+      position: absolute;
+      background: #161748;
+      border-radius: 100%;
+      left: -3rem;
+      top: 50%;
+      transform: translateY(-50%);
+}
+
+.coro-origine{
+        height: 4em;
+        width: 4em;
+}
+
+.coro-old-man{
+    height: 4em;
+    width: 4em;
+}
+
+.coro-oms{
+    height: 4em;
+    width: 4em;
+}
+
+.coro-vaccines{
+    height: 4em;
+    width: 4em;
+}
+
+.timeline-event-date{
+    color: #f6a4ec;
+      font-size: 1.5rem;
+      font-weight: 600;
+      white-space: nowrap;
+}
+
+.timeline-event-content{
+    padding: 0.5em;
+}
+
+.timeline-event-title{
+    font-size: 1.2rem;
+      font-weight: 600;
+      color: #9251ac;
+}
+
 
 
 @media all and (max-width: 1155px){

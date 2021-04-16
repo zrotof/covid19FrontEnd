@@ -37,12 +37,14 @@
         "continent":"Continant",
         "explanations":{
             "one":{
-                "title":"Titre1à compléter",
-                "text":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt nostrum cupiditate error non, eligendi maiores esse maxime voluptas, inventore sapiente officia, quibusdam sed et delectus. Labore ducimus ullam explicabo magnam."
+                "title":"Qu'est-ce que SSCOVID19 ?",
+                "text1":"SSCOVID19 est un site web qui présente l'état de progression du corona virus sars-cov-2 dans le monde par continents et par pays. Il est destiné à tous utilisateurs, dans un caractère strictement informatif (voir",
+                "text2":"Avis de non-responsabilités",
+                "text3":"), rejoignant ainsi la dynamique d'ensemble d'acteurs dans la lutte contre cette pandémie."
             },
             "two":{
-                "title":"Mises à jour des données sur Sscovid19",
-                "text":"Nous mettons régulièrement à jour nos données. Toutefois, il est recommandé de consulter le site web en fin de journée. Ceci, pour avoir accès à des données qui s'étendent sur la durée de la journée et par conséquent qui correspondent le plus à la réalité des choses."
+                "title":"Mises à jour des données sur SSCOVID19",
+                "text":"Nous mettons régulièrement à jour nos données. Toutefois, il est recommandé de consulter le site web en fin de journée pour avoir accès à des données qui correspondent à la réalité globales des chiffres."
             }  
             
         },
@@ -56,8 +58,7 @@
                 "value":"+215"
             },
             "three":{
-                "title":"À trouver",
-                "value":"À trouver"
+                "title":"Langues"
             }
         },
         "continent-countries":{
@@ -88,7 +89,7 @@
     "covid19":{
         "title":"COVID-19 : Ce que vous devez savoir",
         "introduction":"Vous trouverez ci-dessous des informations et des faits importants sur le virus corona. Les informations proviennent des sources de l'Organisation mondiale de la santé (OMS).",
-        "facts":{
+        "questions":{
             "about-covid":{
                 "label":"Qu'est-ce que la COVID-19 ?",
                 "body":{
@@ -185,13 +186,81 @@
                     "two":"De vastes études sur l'efficacité et l'innocuité de cinq vaccins candidats, dont les trois en question (les deux autres étant Moderna et AstraZeneca), ont été rendues publiques par communiqué de presse, mais une seule société (AstraZeneca) a publié les résultats dans une revue à comité de lecture. Nous espérons voir d'autres rapports de ce type dans un avenir proche. Il est probable que d'autres candidats seront soumis à l'approbation des autorités réglementaires."
                 }
             }
+        },
+        "facts":{
+            "one":{
+                "date":"Entre 10/2019 et 12/2019",
+                "text": "La date d'apparition du nouveau coronavirus SARS-CoV-2 à Wuhan n'est pas bien connue, mais elle est estimée entre octobre et décembre 2019."
+            },
+            "two":{
+                "date":"01/12/2019",
+                "text":"Premier patient diagnostiqué (patient zéro) dans la province de Hubei, en Chine centrale.  Il est âgé d'environ 70 ans."
+            },
+            "three":{
+                "multi":{
+                    "img":"../../assets/img/oms.png",
+                    "one":{
+                        "date":"31/01/2020",
+                        "text":"L'OMS déclare une urgence de santé publique de portée internationale."
+                    },
+                    "two":{
+                        "date":"11/03/2020",
+                        "text":"La Covid-19 est déclaré pandémie par l'OMS, qui appelle à des mesures de protection essentielles pour éviter la saturation des unités de soins intensifs et renforcer l'hygiène préventive."
+                    }
+                }
+            },
+            "four":{
+                "multi":{
+                    "one":{
+                        "date":"21/12/2021",
+                        "text":"Vaccin Pfizer-BioNTech validé le 21 Décembre 2021."
+                    },
+                    "two":{
+                        "date":"01/2021",
+                        "text":"Vaccin Moderna validé en Janvier 2021."
+                    },
+                    "three":{
+                        "date": "29/01/2021",
+                        "text": "Vaccine AstraZeneca validé le 29 Janvier 2021."
+                    }
+                }
+                
+            }
         }
     }
-    ,
+    
+,
 
 
 
 
+"disclaimers":{
+
+    "title":"Avis De Non-Responsabilité",
+    "introduction":"Les informations de ce site web sont fournies telles quelles, sans garantie d'aucune sorte, expresse ou implicite, quant à l'exhaustivité, l'exactitude, la fiabilité, l'adéquation ou la disponibilité du site web ou des informations, produits, services ou graphiques contenus sur le site web à quelque fin que ce soit, y compris, mais sans s'y limiter, les garanties implicites de qualité marchande, d'adéquation à un usage particulier ou de non-violation. Certaines juridictions n'autorisant pas l'exclusion des garanties implicites, l'exclusion ci-dessus peut ne pas vous concerner.",
+    "aggreement-advice":{
+        "title":"Vous comprenez et acceptez expressément que sscovid19.live ne sera pas responsable envers vous pour : ",
+        "a":{
+            "one":"a) Tout dommage direct, indirect, accessoire, spécial, consécutif ou exemplaire que vous pourriez subir, quelle qu'en soit la cause et en vertu de toute théorie de responsabilité. Cela inclut, sans s'y limiter, toute perte de bénéfices ou de revenus (qu'elle soit encourue directement ou indirectement), toute perte de clientèle ou de réputation commerciale, toute perte de données subie, tout coût d'acquisition de biens ou de services de substitution ou toute autre perte intangible."
+        },
+        "b":{
+            "one":"b) Tout dommage direct, indirect, accessoire, spécial, consécutif ou exemplaire découlant de ou lié au site web sscovid19.live ou aux informations qu'il contient, que ces dommages résultent d'un contrat, d'une négligence, d'un délit, d'une loi, d'une équité, d'un droit ou autre"
+        },
+        "c":{
+            "one":"c) Toute perte ou tout dommage que vous pourriez subir, y compris, mais sans s'y limiter, toute perte ou tout dommage résultant de :",
+            "two":"toute confiance que vous accordez à l'exhaustivité, à l'exactitude, à la fiabilité, à la pertinence ou à la disponibilité des informations contenues dans le site web et des services fournis.",
+            "three":"toute modification que sscovid19.live peut apporter aux informations ou aux services, ou toute interruption permanente ou temporaire de la fourniture des informations ou des services (ou de toute fonction connexe)."
+        }
+
+    },
+    "responsability":{
+        "title":"sscovid19.live ne prend aucune responsabilité et ne sera pas responsable de l'indisponibilité temporaire du site web.",
+        "one":"Les liens fournis sur ce site le sont uniquement pour votre commodité et la fourniture d'un tel lien ne constitue pas notre approbation de ce site ou de son fournisseur ou de tout contenu, produit ou service qui y est contenu ou offert. votre utilisation de chacun de ces sites est soumise aux conditions, le cas échéant, que chacun de ces sites a affichées. vous convenez que nous ne sommes pas responsables de l'exactitude, du respect des droits d'auteur, de la légalité, de la décence ou de tout autre aspect du contenu, des produits, des services ou de toute transmission reçue par le biais de ces sites. vous convenez également que nous n'avons aucune responsabilité quelle qu'elle soit à l'égard de ces sites tiers et de l'usage que vous en faites.",
+        "two":"sscovid19.live n'est pas directement ou indirectement détenu ou géré par une organisation gouvernementale, une organisation des Nations Unies, une organisation caritative publique, une organisation à but non lucratif ou une fondation privée. sscovid19.live n'est pas affilié, associé ou a un statut officiel avec les Nations Unies ou toute autre organisation officielle.",
+        "three":"Les informations de ce site web peuvent contenir des inexactitudes ou des erreurs. Les informations peuvent être modifiées ou mises à jour sans préavis. sscovid19.live peut également apporter des améliorations et/ou des modifications au contenu, aux produits et/ou aux services à tout moment et sans préavis. sscovid19.live n'assume absolument aucune responsabilité pour toute erreur sur le site. Toute confiance que vous accordez aux informations est donc strictement à vos risques et périls."
+    }
+
+},
 
 
 
@@ -200,16 +269,16 @@
         "title":"Offrez-moi Un Café",
         "top-bloc":{
             "question":"Voulez-vous me soutenir ?",
-            "paragraphe1":"Si vous voulez vraiment me soutenir, vous avez les moyens suivants :",
-            "support1":"Envoyez vos suggestions à sscovid19.contact@gmail.com",
+            "paragraphe1":"Si vous voulez me soutenir, vous avez les moyens suivants :",
+            "support1":"Soumettez vos suggestions à l'adresse sscovid19.contact@gmail.com dans le but d'améliorer ce site",
             "support2":"Partagez massivement le site web autour de vous",
             "support3":"Faites un don en fonction de vos capacités"
         },
         "medium-bloc":{
-            "paragraphe1": "L'objectif derrière la création de ce site n'a jamais été un moyen pour moi de me faire beaucoup d'argent, mais maintenir ce site à jour, l'améliorer continuellement et surtout assumer les coûts d'hébergement génèrent des coûts que vos dons m'aideront à supporter.",
-            "paragraphe2": "La plus grande joie pour moi serait de voir mon site web devenir populaire, alors n'hésitez pas à le partager si vous le trouvez utile et intuitif. J'y ai consacré beaucoup d'heures de travail et j'aimerais voir que tout cela n'a pas été fait pour rien.",
+            "paragraphe1": "L'objectif derrière la création de ce site n'a jamais été un moyen pour moi de me faire beaucoup d'argents, mais maintenir ce site à jour, l'améliorer continuellement et surtout assumer les coûts d'hébergement génèrent des coûts que vos dons m'aideront à supporter.",
+            "paragraphe2": "La plus grande joie pour moi serait de voir mon site web devenir populaire, alors n'hésitez pas à le partager si vous le trouvez utile et intuitif. J'y ai consacré beaucoup d'heures de travail et j'aimerais que tout cela n'est pas été en vin.",
             "paragraphe3": "(*) Pour les dons, veuillez cliquer sur le bouton Buy Me A Coffee ci-dessous. Vous serez redirigé vers une page externe sécurisée qui traitera l'ensemble de la transaction.",
-            "paragraphe4": "(*)N'hésitez pas à faire un don en fonction de vos capacités.",
+            "paragraphe4": "(*)N'hésitez pas à effectuer un don en fonction de vos capacités.",
             "paragraphe5": "Merci"
 
         },
@@ -229,20 +298,27 @@
                 "text2":"Vous pouvez faire un don à partir de 1 euro"
             }
         }
-    },
+    }
+,
+
+
+
+
+
+
 
     "about" :{
         "title": "A Propos",
         "bloc-photo":{
-            "info": "N'hésitez pas à nous faire part de vos commentaires et suggestions afin d'améliorer ce site",
+            "info": "N'hésitez pas à faire part de vos commentaires et suggestions afin d'améliorer ce site",
             "thanks": "Merci"
         },
         "bloc-text":{
             "me":{
-                "paragraphe1":"Bonjour, je m'appelle Samuel Mandeng. Je suis un développeur web et plus généralement un passionné d'informatique.",
-                "paragraphe2":"Réaliser ce site est une façon pour moi d'être un acteur dans la lutte contre la covid-19.Compte tenu du nombre de centaines de milliers et maintenant de millions de personnes qui sont touchées par cette maladie, je me suis proposé de réaliser ce site pour avec deux objectifs principaux :",
-                "reason1":"pour rappeler à tous que la covid19 est réelle et qu'elle ne touche pas que les autres",
-                "reason2":"permettre à chacun d'accéder facilement aux données sur l'évolution de la covid19 dans le monde entier"
+                "paragraphe1":"Bonjour, je m'appelle Samuel Bonachi. Je suis un développeur web et plus généralement un passionné d'informatique.",
+                "paragraphe2":"Réaliser ce site est une façon pour moi d'être un acteur dans la lutte contre la covid-19. Compte tenu du nombre de centaines de milliers et maintenant de millions de personnes qui sont touchées par cette maladie, je me suis proposé de réaliser ce site pour avec deux objectifs principaux :",
+                "reason1":"pour rappeler à tous que la covid-19 est réelle et qu'elle ne touche pas que les autres",
+                "reason2":"donner la possibité d'accéder facilement aux données sur l'évolution de la covid-19 dans le monde entier"
             },
             "sources":{
                 "paragraphe1":"Pour créer ce site, j'ai dû m'armer de beaucoup de volonté, d'encouragements, de conseils et de ressources de données fiables. Je remercie donc tout particulièrement :",
@@ -250,20 +326,32 @@
                 "source2":"amis & famille : ils ont été une grande source d'encouragement et de persévérance"
             }
         }
-
-    },
     
+    },
+
+
 
 
 
 
 
     "map":{
-        "title":{
+        "title":"Cartes",
+        "instructions":{
+            "title":"Comment fonctionne cette page ?",
+            "messages":{
+                "one":"Elle présente la liste des pays que prend en compte notre site web sous forme de carte du globe terrestre .",
+                "two":"En dessous de cette carte est présenté un tableau récapitulatif des données globales du monde concernant la covid-19 .",
+                "three":"En dessous du tableau se trouve une section qui présente différents pourcentages, mettant en évidence la gravité des chiffres continuellement croissants de la covid-19 .",
+                "four":"Tout au fond un graphe qui retrace l'historique de la covid-19 depuis le 22 Janvier 2020. Il suffit de survoler le graphe pour parcourir les jours souhaités .",
+                "five":"En cliquant sur un pays de la carte on obtient des informations de même types que ceux cités plus haut du pays sélectionné ."
+            }
+        },
+        "update":"Dernières M-A-J",
+        "header":{
             "country":"DONNEES GLOBALES",
             "world": "DONNEES MONDIALES GLOBALES"
         },
-        "update":"Dernières M-A-J",
         "table":{
             "titles":{
                 "cases":"Cas",
@@ -300,33 +388,15 @@
     },
 
 
-    "disclaimers":{
 
-        "title":"Avis De Non-Responsabilité",
-        "introduction":"Les informations de ce site web sont fournies telles quelles, sans garantie d'aucune sorte, expresse ou implicite, quant à l'exhaustivité, l'exactitude, la fiabilité, l'adéquation ou la disponibilité du site web ou des informations, produits, services ou graphiques contenus sur le site web à quelque fin que ce soit, y compris, mais sans s'y limiter, les garanties implicites de qualité marchande, d'adéquation à un usage particulier ou de non-violation. Certaines juridictions n'autorisant pas l'exclusion des garanties implicites, l'exclusion ci-dessus peut ne pas vous concerner.",
-        "aggreement-advice":{
-            "title":"Vous comprenez et acceptez expressément que sscovid19.live ne sera pas responsable envers vous pour : ",
-            "a":{
-                "one":"a) Tout dommage direct, indirect, accessoire, spécial, consécutif ou exemplaire que vous pourriez subir, quelle qu'en soit la cause et en vertu de toute théorie de responsabilité. Cela inclut, sans s'y limiter, toute perte de bénéfices ou de revenus (qu'elle soit encourue directement ou indirectement), toute perte de clientèle ou de réputation commerciale, toute perte de données subie, tout coût d'acquisition de biens ou de services de substitution ou toute autre perte intangible."
-            },
-            "b":{
-                "one":"b) Tout dommage direct, indirect, accessoire, spécial, consécutif ou exemplaire découlant de ou lié au site web sscovid19.live ou aux informations qu'il contient, que ces dommages résultent d'un contrat, d'une négligence, d'un délit, d'une loi, d'une équité, d'un droit ou autre"
-            },
-            "c":{
-                "one":"c) Toute perte ou tout dommage que vous pourriez subir, y compris, mais sans s'y limiter, toute perte ou tout dommage résultant de :",
-                "two":"toute confiance que vous accordez à l'exhaustivité, à l'exactitude, à la fiabilité, à la pertinence ou à la disponibilité des informations contenues dans le site web et des services fournis.",
-                "three":"toute modification que sscovid19.live peut apporter aux informations ou aux services, ou toute interruption permanente ou temporaire de la fourniture des informations ou des services (ou de toute fonction connexe)."
-            }
 
-        },
-        "responsability":{
-            "title":"sscovid19.live ne prend aucune responsabilité et ne sera pas responsable de l'indisponibilité temporaire du site web.",
-            "one":"Les liens fournis sur ce site le sont uniquement pour votre commodité et la fourniture d'un tel lien ne constitue pas notre approbation de ce site ou de son fournisseur ou de tout contenu, produit ou service qui y est contenu ou offert. votre utilisation de chacun de ces sites est soumise aux conditions, le cas échéant, que chacun de ces sites a affichées. vous convenez que nous ne sommes pas responsables de l'exactitude, du respect des droits d'auteur, de la légalité, de la décence ou de tout autre aspect du contenu, des produits, des services ou de toute transmission reçue par le biais de ces sites. vous convenez également que nous n'avons aucune responsabilité quelle qu'elle soit à l'égard de ces sites tiers et de l'usage que vous en faites.",
-            "two":"sscovid19.live n'est pas directement ou indirectement détenu ou géré par une organisation gouvernementale, une organisation des Nations Unies, une organisation caritative publique, une organisation à but non lucratif ou une fondation privée. sscovid19.live n'est pas affilié, associé ou a un statut officiel avec les Nations Unies ou toute autre organisation officielle.",
-            "three":"Les informations de ce site web peuvent contenir des inexactitudes ou des erreurs. Les informations peuvent être modifiées ou mises à jour sans préavis. sscovid19.live peut également apporter des améliorations et/ou des modifications au contenu, aux produits et/ou aux services à tout moment et sans préavis. sscovid19.live n'assume absolument aucune responsabilité pour toute erreur sur le site. Toute confiance que vous accordez aux informations est donc strictement à vos risques et périls."
-        }
 
-    },
+
+
+
+
+
+    
 
 
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-covid19',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Covid19Component implements OnInit {
 
-  constructor() { }
+	currentLang:string='';
+	constructor(
+		private translate: TranslateService
+	  ) {
+    
+ 
+		
+	  }
 
   ngOnInit(): void {
+ /*
+    this.translate.onLangChange.subscribe(lang=>{
+      console.log(lang)
+      this.translate.currentLang=''
+      this.translate.use(lang.lang);
+    })*/
   }
 
 }

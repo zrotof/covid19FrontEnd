@@ -23,8 +23,8 @@ height: 100%;
 }
 
 .starting-loader > img{
-    height: 5em;
-    height: 5em;
+    height: 4em;
+    height: 4em;
     animation-duration: 1.7s;
     animation-iteration-count: infinite;
 }

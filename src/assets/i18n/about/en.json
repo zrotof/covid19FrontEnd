@@ -1,0 +1,23 @@
+{
+    "about" :{
+        "title": "About",
+        "bloc-photo":{
+            "info": "Please don't hesitate to send comments and suggestions in order to improve this website.",
+            "thanks": "Thank you"
+        },
+        "bloc-text":{
+            "me":{
+                "paragraphe1":"Hello, my name is Samuel Mandeng. I am a web developer and more generally a computer enthusiast.",
+                "paragraphe2":"Realizing this site is a way for me to be an actor in the fight against covid-19.Considering the number of hundreds of thousands and now millions of people who are affected by this disease, I proposed to realize this site for with two main objectives:",
+                "reason1":"to remind everyone that covid19 is real and that it does not only affect others",
+                "reason2":"allowing everyone to easily access data about the evolution of covid19 around the world"
+            },
+            "sources":{
+                "paragraphe1":"To create this website, I had to arm myself with a lot of will, encouragement, advice and reliable data resources. So I give a special thanks to :",
+                "source1":"disease.sh : an open API for disease-related statistics. They collect and verify data from Worldometers, Johns Hopkins University, government reported data, ..., and keep them up to date",
+                "source2":"friends & familly: they have been a great help, mainly on encouragement and perseverance"
+            }
+        }
+
+}
+}

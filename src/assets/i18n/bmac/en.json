@@ -1,0 +1,36 @@
+{
+    "bmac" :{
+        "title":"Buy Me A Coffee",
+        "top-bloc":{
+            "question":"Want to support me ?",
+            "paragraphe1":"If you really want to support me you have the following means :",
+            "support1":"Send your suggestions at sscovid19.contact@gmail.com",
+            "support2":"Share the website massively around you",
+            "support3":"Make a donation according to your availability"
+        },
+        "medium-bloc":{
+            "paragraphe1": "The goal behind the creation of this website has never been a way for me to make a lot of money, but keeping this website up to date, continually improving it and especially assuming the hosting costs generate costs that your donations will help me support.",
+            "paragraphe2": "The greatest joy for me would be to see my website grow, so feel free to share it if you find it useful and intuitive. I've put a lot of hours of work into it and I'd like to see that it wasn't all for nothing.",
+            "paragraphe3": "(*) For donations please click on the Buy Me A Coffee button below. You will be redirected to a secure external page that will handle the entire transaction.",
+            "paragraphe4": "(*)Feel free to donate according to your availability.",
+            "paragraphe5": "Thank you "
+        },
+        "bottom-bloc":{
+            "question": "Is Buy Me a Coffee safe and reliable ?",
+            "paragraphe1": "is a secured platform gives the audience a way to support a creator through the use of donations or tips.There are more than 100,000 creators on the platform.",
+            "bloc1":{
+                "text1":"They are verified by PayPal and Stripe",
+                "text2":"They don't store credit cards information"
+            },
+            "bloc2":{
+                "text1":"Very simple and fast to use",
+                "text2":"You have the possibility to enable monthly support"
+            },
+            "bloc3":{
+                "text1":"You don't pay any fees",
+                "text2":"You can donate from 1 euro"
+            }
+        }
+    }
+
+}

@@ -1,0 +1,29 @@
+{
+    "disclaimers":{
+
+        "title":"Avis De Non-Responsabilité",
+        "introduction":"Les informations de ce site web sont fournies telles quelles, sans garantie d'aucune sorte, expresse ou implicite, quant à l'exhaustivité, l'exactitude, la fiabilité, l'adéquation ou la disponibilité du site web ou des informations, produits, services ou graphiques contenus sur le site web à quelque fin que ce soit, y compris, mais sans s'y limiter, les garanties implicites de qualité marchande, d'adéquation à un usage particulier ou de non-violation. Certaines juridictions n'autorisant pas l'exclusion des garanties implicites, l'exclusion ci-dessus peut ne pas vous concerner.",
+        "aggreement-advice":{
+            "title":"Vous comprenez et acceptez expressément que sscovid19.live ne sera pas responsable envers vous pour : ",
+            "a":{
+                "one":"a) Tout dommage direct, indirect, accessoire, spécial, consécutif ou exemplaire que vous pourriez subir, quelle qu'en soit la cause et en vertu de toute théorie de responsabilité. Cela inclut, sans s'y limiter, toute perte de bénéfices ou de revenus (qu'elle soit encourue directement ou indirectement), toute perte de clientèle ou de réputation commerciale, toute perte de données subie, tout coût d'acquisition de biens ou de services de substitution ou toute autre perte intangible."
+            },
+            "b":{
+                "one":"b) Tout dommage direct, indirect, accessoire, spécial, consécutif ou exemplaire découlant de ou lié au site web sscovid19.live ou aux informations qu'il contient, que ces dommages résultent d'un contrat, d'une négligence, d'un délit, d'une loi, d'une équité, d'un droit ou autre"
+            },
+            "c":{
+                "one":"c) Toute perte ou tout dommage que vous pourriez subir, y compris, mais sans s'y limiter, toute perte ou tout dommage résultant de :",
+                "two":"toute confiance que vous accordez à l'exhaustivité, à l'exactitude, à la fiabilité, à la pertinence ou à la disponibilité des informations contenues dans le site web et des services fournis.",
+                "three":"toute modification que sscovid19.live peut apporter aux informations ou aux services, ou toute interruption permanente ou temporaire de la fourniture des informations ou des services (ou de toute fonction connexe)."
+            }
+
+        },
+        "responsability":{
+            "title":"sscovid19.live ne prend aucune responsabilité et ne sera pas responsable de l'indisponibilité temporaire du site web.",
+            "one":"Les liens fournis sur ce site le sont uniquement pour votre commodité et la fourniture d'un tel lien ne constitue pas notre approbation de ce site ou de son fournisseur ou de tout contenu, produit ou service qui y est contenu ou offert. votre utilisation de chacun de ces sites est soumise aux conditions, le cas échéant, que chacun de ces sites a affichées. vous convenez que nous ne sommes pas responsables de l'exactitude, du respect des droits d'auteur, de la légalité, de la décence ou de tout autre aspect du contenu, des produits, des services ou de toute transmission reçue par le biais de ces sites. vous convenez également que nous n'avons aucune responsabilité quelle qu'elle soit à l'égard de ces sites tiers et de l'usage que vous en faites.",
+            "two":"sscovid19.live n'est pas directement ou indirectement détenu ou géré par une organisation gouvernementale, une organisation des Nations Unies, une organisation caritative publique, une organisation à but non lucratif ou une fondation privée. sscovid19.live n'est pas affilié, associé ou a un statut officiel avec les Nations Unies ou toute autre organisation officielle.",
+            "three":"Les informations de ce site web peuvent contenir des inexactitudes ou des erreurs. Les informations peuvent être modifiées ou mises à jour sans préavis. sscovid19.live peut également apporter des améliorations et/ou des modifications au contenu, aux produits et/ou aux services à tout moment et sans préavis. sscovid19.live n'assume absolument aucune responsabilité pour toute erreur sur le site. Toute confiance que vous accordez aux informations est donc strictement à vos risques et périls."
+        }
+
+    }
+}

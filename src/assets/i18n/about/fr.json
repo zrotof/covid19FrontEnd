@@ -1,0 +1,22 @@
+{
+    "about" :{
+    "title": "A Propos",
+    "bloc-photo":{
+        "info": "N'hésitez pas à nous faire part de vos commentaires et suggestions afin d'améliorer ce site",
+        "thanks": "Merci"
+    },
+    "bloc-text":{
+        "me":{
+            "paragraphe1":"Bonjour, je m'appelle Samuel Mandeng. Je suis un développeur web et plus généralement un passionné d'informatique.",
+            "paragraphe2":"Réaliser ce site est une façon pour moi d'être un acteur dans la lutte contre la covid-19.Compte tenu du nombre de centaines de milliers et maintenant de millions de personnes qui sont touchées par cette maladie, je me suis proposé de réaliser ce site pour avec deux objectifs principaux :",
+            "reason1":"pour rappeler à tous que la covid19 est réelle et qu'elle ne touche pas que les autres",
+            "reason2":"permettre à chacun d'accéder facilement aux données sur l'évolution de la covid19 dans le monde entier"
+        },
+        "sources":{
+            "paragraphe1":"Pour créer ce site, j'ai dû m'armer de beaucoup de volonté, d'encouragements, de conseils et de ressources de données fiables. Je remercie donc tout particulièrement :",
+            "source1":"disease.sh : une API qui fourni des données relatives aux maladies et en particulier la covid-19. Ils collectent et vérifient les données de Worldometers, de l'Université Johns Hopkins, des données gouvernementales, ..., et les tiennent à jour",
+            "source2":"amis & famille : ils ont été une grande source d'encouragement et de persévérance"
+        }
+    }
+
+}}

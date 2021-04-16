@@ -7,7 +7,7 @@
               <span class="visually-hidden">Loading...</span>
             </div>
           </span>
-          <span *ngIf="world" > {{ world.wDate | date:'EEEE, MMMM d, y, h:mm a' }}</span>
+          <span  > {{ world.wDate | date :'short'}}</span>
         </span>
         <!-- <span class="change">,</span>
         -->
@@ -45,7 +45,7 @@
     
     <div class="Cases RCD">
       <img src="../assets/img/coro_cases.png" alt="confirmed man logo">
-      <span class="number"><strong>{{ world.wCases | number }}</strong></span>
+      <span class="number" *ngIf="world" ><strong>{{ world.wCases | number }}</strong></span>
       <span><strong>{{'data.world.total-label-cases' | translate}}</strong></span>
     </div>
   
@@ -55,7 +55,7 @@
         <img src="../assets/img/coro_rescue.png" alt="rescued man logo">
         <div>
           <span><strong>{{'data.world.total-label-recovered' | translate}}</strong></span>
-          <span  class="number"><strong>{{world.wRecovered | number}}</strong></span>
+          <span  class="number" *ngIf="world" ><strong>{{world.wRecovered | number}}</strong></span>
         </div>
       </div>
   
@@ -63,7 +63,7 @@
         <img src="../assets/img/coro_critical.png" alt="criticals man logo">
         <div>
           <span><strong>{{'data.world.total-label-criticals' | translate}}</strong></span>
-          <span  class="number"><strong>{{world.wCritical | number}}</strong></span>
+          <span  class="number" *ngIf="world" ><strong>{{world.wCritical | number}}</strong></span>
         </div>
       </div>
   
@@ -71,7 +71,7 @@
         <img src="../assets/img/coro_deaths.png" alt="deaths man logo">
         <div>
           <span><strong>{{'data.world.total-label-deaths' | translate}}</strong></span>
-          <span  class="number"><strong>{{world.wDeaths | number}}</strong></span>
+          <span  class="number" *ngIf="world" ><strong>{{world.wDeaths | number}}</strong></span>
         </div>
       </div>
 
@@ -129,7 +129,11 @@
       <h2>
         {{'data.explanations.one.title' | translate}}
       </h2>
-      <p>{{'data.explanations.one.text' | translate}}</p>
+      <p>
+        {{'data.explanations.one.text1' | translate}}
+        <span class="disclaimers" routerLink="/disclaimers">{{'data.explanations.one.text2' | translate}}</span>
+        {{'data.explanations.one.text3' | translate}}
+      </p>
     </div>
 
     <div class="data-introduction-right">
@@ -152,7 +156,10 @@
     </div>
     <div>
       <span>{{'data.numbers.three.title' | translate}}</span>
-      <span> {{'data.numbers.three.value' | translate}} </span>
+      <span> 
+        <img class="rounded-en" src="../../assets/img/en.png" alt="flag of Fngland">
+        <img class="rounded-fr" src="../../assets/img/fr.jpeg" alt="flag of France" >
+    </span>
 
     </div>
   </div>

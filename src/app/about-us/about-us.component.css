@@ -17,7 +17,6 @@
     font-weight: bolder;
     margin-bottom: 45px;
     margin-top: 45px;
-
 }
 
 .content{
@@ -30,7 +29,6 @@
     linear-gradient(
         rgba(0 0 0 / 38%),
         rgba(47 55 72 / 75%)
-
     ), 
     url("../../assets/img/bg.jpg");
     background-repeat: no-repeat;

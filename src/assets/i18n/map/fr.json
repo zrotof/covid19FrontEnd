@@ -1,0 +1,41 @@
+{
+    "map":{
+        "title":{
+            "country":"DONNEES GLOBALES",
+            "world": "DONNEES MONDIALES GLOBALES"
+        },
+        "update":"Dernières M-A-J",
+        "table":{
+            "titles":{
+                "cases":"Cas",
+                "recovered":"Guéris",
+                "actives":"Actifs",
+                "deaths":"Décédés"
+            },
+            "totals":"Totaux",
+            "today":"Données du jour "
+
+        },
+        "percentage":{
+
+            "tests":{
+                "title": "POURCENTAGE DE TESTS",
+                "text":"de la population testée"
+            },
+
+            "recovered":{
+                "title":"POURCENTAGE DE GUÉRISON",
+                "cases":"Cas",
+                "recovered": "Guéris",
+                "text":"des malades guérissent"
+            },
+            "deaths":{
+                "title":"POURCENTAGE DE DÉCÈS",
+                "cases":"Cas",
+                "deaths":"Décédés",
+                "text":"des malades décèdent"
+            }
+            
+        }
+        
+    }}

@@ -1,0 +1,45 @@
+{
+
+    "bmac" :{
+        "title":"Offrez-moi Un Café",
+        "top-bloc":{
+            "question":"Voulez-vous me soutenir ?",
+            "paragraphe1":"Si vous voulez vraiment me soutenir, vous avez les moyens suivants :",
+            "support1":"Envoyez vos suggestions à sscovid19.contact@gmail.com",
+            "support2":"Partagez massivement le site web autour de vous",
+            "support3":"Faites un don en fonction de vos capacités"
+        },
+        "medium-bloc":{
+            "paragraphe1": "L'objectif derrière la création de ce site n'a jamais été un moyen pour moi de me faire beaucoup d'argent, mais maintenir ce site à jour, l'améliorer continuellement et surtout assumer les coûts d'hébergement génèrent des coûts que vos dons m'aideront à supporter.",
+            "paragraphe2": "La plus grande joie pour moi serait de voir mon site web devenir populaire, alors n'hésitez pas à le partager si vous le trouvez utile et intuitif. J'y ai consacré beaucoup d'heures de travail et j'aimerais voir que tout cela n'a pas été fait pour rien.",
+            "paragraphe3": "(*) Pour les dons, veuillez cliquer sur le bouton Buy Me A Coffee ci-dessous. Vous serez redirigé vers une page externe sécurisée qui traitera l'ensemble de la transaction.",
+            "paragraphe4": "(*)N'hésitez pas à faire un don en fonction de vos capacités.",
+            "paragraphe5": "Merci"
+
+        },
+        "bottom-bloc":{
+            "question": "Buy Me a Coffee est-il sûr et fiable ?",
+            "paragraphe1": "est une plateforme sécurisée qui permet au public de soutenir un créateur par le biais de dons ou de pourboires. Plus de 100 000 créateurs sont présents sur la plateforme.",
+            "bloc1":{
+                "text1":"Ils sont vérifiés par PayPal et Stripe",
+                "text2":"Ils ne stockent pas vos informations bancaires"
+            },
+            "bloc2":{
+                "text1":"Très simple et rapide à utiliser",
+                "text2":"Vous avez la possibilité d'activer une aide mensuelle"
+            },
+            "bloc3":{
+                "text1":"Vous ne payez aucuns frais",
+                "text2":"Vous pouvez faire un don à partir de 1 euro"
+            }
+        }
+    }
+
+    
+    
+
+
+
+
+
+}
