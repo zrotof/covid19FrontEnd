@@ -16,6 +16,8 @@ export const environment = {
 
   
   API_BUY_ME_COFEE_URL_MY_PAGE : 'https://www.buymeacoffee.com/SamuelSCovid19',
-  API_BUY_ME_COFEE_URL_ABOUT : 'https://www.buymeacoffee.com/about'
+  API_BUY_ME_COFEE_URL_ABOUT : 'https://www.buymeacoffee.com/about',
+
+  GOOGLE_ANALYTICS : 'G-J983C2WVRX'
          
 };

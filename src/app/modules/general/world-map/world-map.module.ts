@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { WorldMapRoutingModule } from './world-map-routing.module';
-import { WorldMapComponent } from '../../../world-map/world-map.component';
+import { WorldMapComponent } from '../../../components/world-map/world-map.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -12,7 +12,7 @@ import { SharedTranslateModule } from '../../shared/shared-translate/shared-tran
   imports: [
     CommonModule,
     WorldMapRoutingModule,
-    TranslateModule.forChild({
+/*    TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
         useFactory: mapHttpTranslateLoader,
@@ -22,6 +22,7 @@ import { SharedTranslateModule } from '../../shared/shared-translate/shared-tran
     isolate:false,
     extend:true
   }),
+*/
   SharedTranslateModule
 
   ],
@@ -37,6 +38,6 @@ import { SharedTranslateModule } from '../../shared/shared-translate/shared-tran
 export class WorldMapModule { }
 
 
-export function mapHttpTranslateLoader(http : HttpClient){
+/*export function mapHttpTranslateLoader(http : HttpClient){
   return new TranslateHttpLoader(http, './assets/i18n/map/', '.json')
-}
+}*/

@@ -20,13 +20,8 @@ export const environment = {
 
   API_BUY_ME_COFEE_URL_MY_PAGE : 'https://www.buymeacoffee.com/SamuelSCovid19',
   API_BUY_ME_COFEE_URL_ABOUT : 'https://www.buymeacoffee.com/about',
-
-  API_INIT_DATABASE : 'http://localhost:3000/database/setDB',
-  API_INIT_WORLD : 'http://localhost:3000/worlds',
-  API_INIT_CT_NAMES : 'http://localhost:3000/continents',
-  API_INIT_CT_VALUES : 'http://localhost:3000/ctTotals' ,
-  API_INIT_CY_NAMES : 'http://localhost:3000/countries',
-  API_INIT_CY_VALUES : 'http://localhost:3000/cyTotals'                    
+  
+  GOOGLE_ANALYTICS : 'G-J983C2WVRX'
 };
 
 

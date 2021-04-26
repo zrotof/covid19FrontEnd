@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
-import { WorldStatsComponent } from './world-stats/world-stats.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { WorldStatsComponent } from './components/world-stats/world-stats.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 import { DataResolverService} from './services/resolver/data-resolver/data-resolver.service';
 import { MapResolverService } from './services/resolver/map-resolver/map-resolver.service';
@@ -32,21 +32,18 @@ const routes: Routes = [
     { path: 'buy-me-a-coffee',
       loadChildren:() => import ('./modules/general/buy-me-a-coffee/buy-me-a-coffee.module')
       .then(mod => mod.BuyMeACoffeeModule)},
-      { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
+    { path: '**', component: PageNotFoundComponent }
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(
-    routes, 
-    {
-      preloadingStrategy: PreloadAllModules
-    }
-    //,
-
-    //{ relativeLinkResolution: 'legacy' }
-  
-    )],
+  imports: [RouterModule.forRoot(routes, {
+    preloadingStrategy: PreloadAllModules,
+    initialNavigation: 'enabled'
+}
+//,
+//{ relativeLinkResolution: 'legacy' }
+)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

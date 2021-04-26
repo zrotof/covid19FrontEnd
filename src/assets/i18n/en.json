@@ -29,7 +29,7 @@
             "three":"Number of people with criticals cases",
             "four":"Number of dead people"
         },
-        "advice":"(*) Don't forget to wear a mask, apply barrier gestures and use hydro-alcoholic gels.",
+        "advice":"(*) Don't forget to wear a mask, apply social distanciation and use hydro-alcoholic gels.",
         "world":{
             "total-label-cases":"Total Confirmed Cases",
             "total-label-recovered":"Total Recovered",
@@ -92,7 +92,7 @@
         "top-bloc":{
             "question":"Want to support me ?",
             "paragraphe1":"If you really want to support me you have the following means :",
-            "support1":"Submit your suggestions to sscovid19.contact@gmail.com in order to improve this site",
+            "support1":"Submit your suggestions to samuel@sscovid19.com in order to improve this site",
             "support2":"Share the website massively around you",
             "support3":"Make a donation according to your availability"
         },
@@ -332,25 +332,25 @@
     "title":"Disclaimers",
     "introduction":"Information on this web site is provided as is without warranty of any kind, either express or implied about the completeness, accuracy, reliability, suitability or availability with respect to the web site or the information, products, services, or graphics contained on the web site for any purpose including, but not limited to, the implied warranties of merchantability, fitness for a particular purpose, or non-infringement. Some jurisdictions do not allow the exclusion of implied warranties, so the above exclusion may not apply to you.",
     "aggreement-advice":{
-        "title":"You expressly understand and agree that sscovid19.live shall not be liable to you for:",
+        "title":"You expressly understand and agree that sscovid19.com shall not be liable to you for:",
         "a":{
             "one":"a) any direct, indirect, incidental, special, consequential or exemplary damages which may be incurred by you, however caused and under any theory of liability. This shall include, but not be limited to, any loss of profit or revenue (whether incurred directly or indirectly), any loss of goodwill or business reputation, any loss of data suffered, cost of procurement of substitute goods or services, or other intangible loss"
         },
         "b":{
-            "one":"b) any direct, indirect, incidental, special, consequential or exemplary damages arising out of or related to sscovid19.live web site or the information contained in it, whether such damages arise in contract, negligence, tort, under statute, in equity, at law or otherwise"
+            "one":"b) any direct, indirect, incidental, special, consequential or exemplary damages arising out of or related to sscovid19.com web site or the information contained in it, whether such damages arise in contract, negligence, tort, under statute, in equity, at law or otherwise"
         },
         "c":{
             "one":"c) any loss or damage which may be incurred by you, including but not limited to loss or damage as a result of:",
             "two":"any reliance placed by you on the completeness, accuracy, reliability, suitability or availability with respect to the information on the web site and the services provided",
-            "three":"any changes which sscovid19.live may make to the information or services, or for any permanent or temporary cessation in the provision of the information or services (or any related features)"
+            "three":"any changes which sscovid19.com may make to the information or services, or for any permanent or temporary cessation in the provision of the information or services (or any related features)"
         }
 
     },
     "responsability":{
-        "title":"sscovid19.live takes no responsibility for and will not be liable for the web site being temporarily unavailable.",
+        "title":"sscovid19.com takes no responsibility for and will not be liable for the web site being temporarily unavailable.",
         "one":"Links provided on this site are provided solely as a convenience to you and the provision of any such link does not constitute our endorsement of that site or its provider or of any of the content, products, or services contained or offered therein. your use of each of those sites is subject to the conditions, if any, that each of those sites has posted. you agree that we are not responsible for the accuracy, copyright compliance, legality, decency, or any other aspect of the contents, products, services or any transmissions received through such sites. you further agree that we have no liability whatsoever from such third party sites and your usage of them.",
-        "two":"sscovid19.live is not directly or indirectly owned or managed by any governmental organization, United Nations organization, public charity, non-profit, or private foundation. sscovid19.live is not affiliated, associated with, or in any way has any official status with the United Nations or any other official organization.",
-        "three":"Information on this web site may contain inaccuracies or errors. Information may be changed or updated without notice. sscovid19.live may also make improvements and/or changes in the content, the products, and/or the services at any time without notice. sscovid19.live takes absolutely no responsibility for any errors on the site. Any reliance you place on the information is therefore strictly at your own risk."
+        "two":"sscovid19.com is not directly or indirectly owned or managed by any governmental organization, United Nations organization, public charity, non-profit, or private foundation. sscovid19.com is not affiliated, associated with, or in any way has any official status with the United Nations or any other official organization.",
+        "three":"Information on this web site may contain inaccuracies or errors. Information may be changed or updated without notice. sscovid19.com may also make improvements and/or changes in the content, the products, and/or the services at any time without notice. sscovid19.com takes absolutely no responsibility for any errors on the site. Any reliance you place on the information is therefore strictly at your own risk."
     }
 },
 
@@ -440,7 +440,7 @@
         "job":"You can contact me for jobs opportunities",
         "follow":"FOLLOW",
         "legal":"LEGAL",
-        "copyright":"Copyright 2020 Samuel Bonachi. All Rights Reserved",
+        "copyright":"2021 Samuel Bonachi. All Rights Reserved",
         "disclaimers":"Disclaimers"
 
     }

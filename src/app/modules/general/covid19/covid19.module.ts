@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { Covid19RoutingModule } from './covid19-routing.module';
-import { Covid19Component } from '../../../covid19/covid19.component';
+import { Covid19Component } from '../../../components/covid19/covid19.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -12,15 +12,6 @@ import { SharedTranslateModule } from '../../shared/shared-translate/shared-tran
   imports: [
     CommonModule,
     Covid19RoutingModule,
-    TranslateModule.forChild({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: covid19HttpTranslateLoader,
-        deps: [HttpClient]
-      },
-      isolate:false,
-      extend:true
-    }),
     SharedTranslateModule
   ],
   exports :[

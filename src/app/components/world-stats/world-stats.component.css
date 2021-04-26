@@ -1,0 +1,1204 @@
+.greetings{
+    margin-top: 7.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    padding-left:0.5em;
+    padding-right:0.5em;
+}
+
+.recommendations{
+    margin-top: 1.5vh;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.date-update{
+    margin-top: 1vh;
+    text-align: right;
+    font-weight: bold;
+    margin-right:1em;
+    
+}
+
+.date-loader{
+    margin-left: 7em;
+    margin-right: 7em;
+}
+
+
+
+.globals-text{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: black;
+    margin-top:2vh;
+    width:100%;
+    
+}
+
+.globals-text-title{
+    width: 28vh;
+    font-size: 1.8em;
+    color:#161748;
+    font-weight:bold;
+    margin-right: 0.5em;
+
+}
+
+.globals-text-content{
+    text-align: unset;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    background-color: rgb(223, 223, 223);
+    padding:2vh;
+    border-radius: 8px;
+}
+
+.globals-text-content > div{
+    margin-top:1vh;
+    display:flex;
+    align-items:flex-start;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.globals-text-content > div > ul{
+    list-style: none;
+    padding: 0;
+
+}
+
+.confirmed-cases::before{
+    content:" ";
+    background-color: rgb(0, 113, 158) ;
+    height: 12px;
+    width: 12px;
+    display:inline-block;
+    margin-right:1vh;
+
+}
+
+
+.recovered-cases::before{
+    content:" ";
+    background-color:rgb(33, 163, 33) ;
+    height: 12px;
+    width: 12px;
+    display:inline-block;
+    margin-right:1vh;
+}
+
+.criticals-cases::before{
+    content:" ";
+    background-color: rgb(218, 218, 39);
+    height: 12px;
+    width: 12px;
+    display:inline-block;
+    margin-right:1vh;
+}
+
+
+.death-cases::before{
+    content:"";
+    background-color:rgb(190, 24, 24) ;
+    height: 12px;
+    width: 12px;
+    display:inline-block;
+    margin-right:1vh;
+}
+
+
+.globals{
+    background: #161748;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+
+
+.Spinning_earth{
+    height: 12em;
+    width: 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.earth{
+    height: 85%;
+    width: 100%;
+    margin-right:1em;
+
+    background-image: url("../../../assets/img/coro_spinner.jpg");
+    border-radius: 50%;
+    background-size: cover;
+    box-shadow: 20px -20px 50px 2px #000 inset, 0 0 2px #000;
+    animation: spin 20s linear infinite;
+}
+
+@keyframes spin{
+    0%
+    {
+        background-position: 0 0;
+    }
+    100%
+    {
+        background-position: 1200px 0;
+    }
+}
+
+.Cases{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: skyblue;
+}
+
+.Cases img{
+    height: 60px;
+    width:30px;
+    margin-bottom: 2%;
+}
+
+.ReCrDe{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1em;
+    margin-right:1em;
+}
+
+.Recovered{
+    color:rgb(33, 163, 33);
+    display:flex;
+    border-bottom: solid white;
+}
+
+.Recovered img{
+    height: 40px;
+    width: 18px;
+}
+
+.Recovered div{
+    display: flex;
+    flex-direction: column;
+}
+
+.Criticals{
+    color: rgb(218, 218, 39);
+    display:flex;
+    border-bottom: solid white;
+    margin-top: 6px;
+}
+
+.Criticals img{
+    height: 40px;
+    width: 18px;
+}
+
+.Criticals div{
+    display: flex;
+    flex-direction: column;
+}
+
+.Deaths{
+    color: rgb(190, 24, 24);
+    display:flex;
+    margin-top: 6px;
+}
+
+.Deaths img{
+    height: 40px;
+    width: 18px;
+}
+
+.Deaths div{
+    display: flex;
+    flex-direction: column;
+}
+
+.continents{
+    min-height: 95%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
+}
+
+.titles{
+    display: flex;
+    color: white;
+    overflow-x: scroll;
+}
+
+.titles-medium,
+.titles-max{
+    border: solid white;
+    text-align: center;
+}
+
+.titles-medium{
+    width: 20vh;
+    display: flex;
+    align-items: center;
+}
+
+.titles-medium > img{
+    margin: auto;
+}
+
+.titles-max{
+    width: 23vh;
+}
+
+
+.titles div:first-child{
+    
+    text-align: left;
+    padding-left: 1% ;
+}
+
+.titles div img{
+    height:20px;
+    width:13px;
+}
+
+.values{
+    display: flex;
+    flex-direction: column;
+}
+
+.loader-continents{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    width: 100%;
+    height: 100%;
+    color: black;
+    background-color: white;
+    min-height: 7em;
+}
+
+.loader{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    width: 100%;
+    height: 100%;
+    color: black;
+    background-color: white;
+    min-height: 16em;
+    max-height: 16em;
+
+}
+
+  
+.line{
+    display:flex;
+    height:100%;
+    color: black;
+    width: 100%;
+    font-size: small;
+    background-color: white;
+    border-top: solid black;
+    font-weight: bold;
+}
+
+.line:hover{
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size:1.1em; 
+}
+
+.tab-continent-name{
+    height: 100%;
+    padding-left: 1%;
+    width: 20vh;
+}
+
+.tab-cases,
+.tab-deaths{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 23vh;
+}
+
+
+
+.tab-cases div:first-child{
+text-align: right;
+padding-right:6%;
+width:50%;
+}
+.tab-cases div:last-child{
+    text-align: left;
+    padding-left:6%;
+    color: rgb(0, 113, 158);
+    width: 50%;
+    }
+
+
+
+
+.tab-deaths{
+    display: flex;
+    justify-content: center;
+}
+
+.tab-deaths div:first-child{
+    text-align: right;
+    padding-right:6%;
+    width: 50%;
+}
+
+.tab-deaths div:last-child{
+    text-align: left;
+    padding-left:6%;
+    color: rgb(190, 24, 24);
+    width:50%;
+}
+
+.tab-normal{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20vh;
+}
+
+
+.data-introduction{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top:0.5em;
+    padding-bottom:0.5em;
+
+}
+
+.data-introduction > div{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+
+}
+
+.data-introduction-right,
+.data-introduction-left
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 60vh;
+
+}
+
+.data-introduction-right
+{
+    padding-left: 2em;
+}
+
+.data-introduction-left
+{
+    padding-right: 2em;
+}
+
+
+.data-introduction-right > h2,
+.data-introduction-left > h2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1.35em;
+    text-decoration: underline;
+}
+
+.disclaimers{
+    font-weight: bold;
+    color: blue;
+    cursor: pointer;
+}
+
+
+.rounded{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.rounded > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2vh;
+    text-align: center;
+    margin-right:2vh;
+}
+
+.rounded-en{
+    height: 1.5em;
+    width: 3.3em;
+    margin-bottom: 0.05em;
+}
+
+.rounded-fr{
+    height: 1.5em;
+    width: 3.3em;
+    margin-top: 0.05em;
+}
+
+.rounded > div span:first-child{
+    
+    color: white;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    font-weight: lighter;
+    font-size: 1.3em;
+    background-color: #161748 ;
+    border-radius: 6px;
+    margin-top: 2vh;
+}
+
+.rounded > div span:last-child{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 50%;
+    border: solid #161748;
+    font-weight: bolder;
+    font-size: 1.4em;
+    padding:2vh;
+    justify-content: center;
+    height: 10vh;
+    width: 10vh;
+    margin-top: 2vh;
+    overflow: hidden;
+
+}
+
+.data-by-continents{
+    background-color: #161748;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.bloc{
+    display: flex;
+    width:100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.continent{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    width: 47%;
+    color: white;
+    margin-left: 2vh;
+    margin-right: 2vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.continent-name{
+    display: flex;
+     justify-content: space-between;
+}
+
+.name{
+    font-weight: bold;
+    font-size: 1.8em;
+}
+
+.tested{
+    background-color: white;
+    color: black;
+     font-weight: bold;
+     padding-left: 0.5em;
+     padding-right: 0.5em;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+.continent-cy-value{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 2px solid gray;
+}
+
+
+.cy-header{
+    background-color: #343a40;
+    height: 3em;
+     display: flex;
+
+     border-bottom: 2px solid gray;
+
+width: 100%;
+
+}
+
+.cy-header-name,
+.cy-header-crcd{
+
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+
+}
+
+.cy-header-name{
+    width: 30%;
+    display: flex;
+     align-items: center; 
+     padding-left: 1%;  
+}
+
+.cy-header-crcd{
+    width: 17.5%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+
+
+.values-content{
+    display: flex;
+    flex-direction: column;
+    min-height: 16em;
+    max-height: 16em;
+   
+    overflow: auto;
+    width: 100%;
+    background-color: #343a40; 
+
+}   
+
+.cy-values-row{
+    display: flex; 
+    border-bottom: 2px solid gray; 
+}
+
+.cy-values-flag-name{
+    width: 30%; 
+    display: flex; 
+    align-items: center; 
+    padding-left: 1%
+}
+.cy-values-flag{
+    height:30px;
+    width:40px;
+    margin-right: 2%;
+    border-radius: 6px;
+    
+}
+
+.cy-values-crcd{
+    width: 17.5%; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+@media all and (max-width: 1325px){
+
+    .Spinning_earth{
+        margin: 0;
+        margin-left: 4vh;
+        margin-right: 4vh;
+    }
+
+    .continents{
+        width: 90%;
+    }
+
+    .titles-medium,
+    .titles-max,
+    .tab-continent-name,
+    .tab-cases,
+    .tab-normal,
+    .tab-deaths
+    {
+        width: 25%;
+    }
+
+    .number {
+        font-size: 2em ;
+    }
+
+    .ReCrDe{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Recovered,.Criticals,.Deaths{
+        flex-direction: column;
+        border-bottom: none;
+        margin: 0%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-left: 4vh;
+        margin-right: 4vh;
+    }
+
+    .ReCrDe div img  {
+        height: 60px;
+        width:30px;
+        margin-bottom: 2%;
+    }
+
+    .ReCrDe > div > div  {
+        flex-direction: column-reverse;
+    }
+
+    .number {
+        font-size: 1.7em ;
+    }
+}
+
+@media all and (max-width: 1200px){
+
+
+    .globals-text-content{
+        width:75%;
+    }
+
+}
+
+@media all and (max-width: 1055px){
+
+    .globals-text-title{
+        width: 100%;
+        padding: 0%;
+        text-align: center;
+    }
+    .globals-text-content{
+        width:100%;
+        margin-right: 1em;
+        margin-left:1em;
+    }
+
+    .data-introduction-right
+    {
+        padding-left: 0.5em;
+        
+    }
+
+    .data-introduction-left
+    {
+        padding-right: 0.5em;
+    }
+
+
+}
+
+
+
+
+@media all and (max-width: 1041px){
+
+    .continent{
+        width: 90%;
+    }
+
+}
+
+@media all and (max-width: 1007px){
+
+    .greetings{
+        margin-top: 6em;
+    }
+    .continent{
+        width: 90%;
+    }
+
+}
+
+@media all and (max-width: 1035px){
+
+    .number {
+        font-size: 1.7em ;
+    }
+
+}
+
+@media all and (max-width: 973px){
+
+    .globals{
+        padding-top: 3vh;
+    }
+
+    .Spinning_earth{
+        display: none;
+    }
+
+    .number {
+        font-size: 1.7em ;
+    }
+
+    .continents{
+        margin-top: 3vh;
+        margin-bottom: 2vh;
+        width: 100%;
+    }
+
+    .globals > div > img, .globals > div > div > img{
+        height: 40px;
+        width:20px;        
+    }
+
+    .number{
+        font-size: 1.5em;
+    }
+
+    .Cases,.Recovered,.Criticals,.Deaths{
+        margin: 0%;
+        padding: 0%;
+        margin-left: 2vh;
+        margin-right: 2vh;
+
+    }
+
+
+}
+
+@media all and (max-width: 933px){
+
+    .data-introduction-left,
+    .data-introduction-right {
+        text-align: justify;
+        width: 100%;
+        padding: 0;
+
+    }
+
+    .data-introduction-left > h2,
+    .data-introduction-right > h2{
+        text-align: center;
+    }
+    
+}
+
+
+@media all and (max-width: 877px){
+
+    .tab-continent-name,
+    .tab-normal{
+        margin: auto;
+        
+    }
+
+
+    .tab-cases,
+    .tab-deaths
+    {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .tab-cases > div,
+    .tab-deaths > div
+    {
+        padding: 0;
+
+    }
+
+    .tab-cases div:first-child,
+    .tab-cases div:last-child,
+    .tab-deaths div:first-child,
+    .tab-deaths div:last-child
+    {
+        width: 100%;
+        text-align: center;
+        padding: 0%;
+    }
+    
+}
+
+@media all and (max-width: 620px){
+
+    .globals-text-content > div{
+        flex-direction: column;
+        justify-content: left;
+        flex-wrap: wrap;
+        
+    }
+
+    .globals-text-content > div > ul{
+        margin-bottom: 0;
+        flex-direction: column;
+        justify-content: left;
+        flex-wrap: wrap;
+        
+    }
+
+    .rounded > div > span:first-child,
+    .rounded div > span:last-child
+    {
+        font-size: 1em;
+    }
+
+    .rounded div > span:last-child
+    {
+        height: 3em;
+        width: 3em;
+    }
+
+    
+}
+
+@media all and (max-width: 557px){
+
+    .name{
+        font-size: 1.4em;
+    }
+
+    .tested{
+        width: inherit;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        font-size: 0.9em;
+
+    }
+
+
+    .bloc{
+        margin-left: 0%;
+        margin-right: 0%;
+
+    }
+    
+
+    .continent{
+        margin-left: 0%;
+        margin-right: 0%;
+        width: 100%;
+    }
+
+    .cy-values-flag{
+
+        height:25px;
+        width:30px;
+    }
+
+    .cy-header-name,
+    .cy-header-crcd
+    {
+        font-size: 0.9em;
+    }
+
+    
+    .cy-values-flag-name{
+        font-size: 0.9em;
+    }
+
+    .cy-values-crcd{
+        font-size: 0.9em;
+    }
+    
+}
+
+
+
+@media all and (max-width: 505px){
+
+    .greetings{
+        padding-top: 0%;
+    }
+
+    .date-update{
+        margin-right: 0%;
+        margin-top: 0.3em;
+        font-size: 0.9em;
+        width: 100%;
+        padding-right: 0.3em;
+        padding-left: 0.3em;
+        text-align: center;
+
+    }
+
+    .globals-text{
+        font-size: 0.9em;
+    }
+
+    .globals-text-content{
+        margin: 0em;
+    }
+
+    .globals-text-title{
+        font-size: 1.4em;
+        margin-bottom: 1em;
+    }
+
+    .recommendations {
+        font-size: 1em;
+    }
+
+    .globals > div > img, .globals > div > div > img {
+        height: 30px;
+        width:15px;
+    }
+
+    .Recovered{
+        flex-wrap: wrap;
+    }
+
+    .ReCrDe{
+        width: 100%;
+        margin: 0%;
+        justify-content: space-around;
+    }
+
+    .Recovered,.Criticals,.Deaths{
+        margin: 0%;
+    }
+
+    .number{
+        font-size: 1.2em;
+    }
+
+    .data-introduction-left,
+    .data-introduction-right
+    {
+        width: 100%;
+        font-size: 0.9em;
+    }
+
+    .data-introduction-left > h2,
+    .data-introduction-right > h2
+    {
+       
+        font-size: 1.3em;
+    }
+
+    .rounded > div span:first-child {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        font-size: 1.1em;
+    }
+
+    .rounded > div span:last-child {
+        font-size: 1.1em;
+        height: 7.5vh;
+        width: 7.5vh;
+    }
+
+    
+
+    .data-by-continents{
+        padding-left: 0.3em;
+        padding-right: 0.3em;
+
+    }
+    
+}
+
+@media all and (max-width: 474px){
+
+    .titles-medium
+    
+    {
+        font-size: 0.8em;
+        text-align: center;
+    }
+
+    .tab-continent-name,
+    .tab-cases,
+    .tab-normal,
+    .tab-deaths{
+        font-size: 0.95em;
+    }
+  
+
+    .line{
+        pointer-events: none;
+    }
+    
+
+    .name{
+        font-size: 1.3em;
+    }
+
+    .tested{
+        width: inherit;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        font-size: 0.8em;
+
+    }
+    
+
+
+    .cy-header{
+        height: 2em;
+    }
+
+    .cy-header-name,
+    .cy-header-crcd
+    {
+        font-size: 0.8em;
+    }
+
+    
+    .cy-values-flag-name{
+        font-size: 0.8em;
+    }
+
+    .cy-values-crcd{
+        font-size: 0.7em;
+    }
+    
+}
+
+
+
+@media all and (max-width: 385px){
+    .titles-medium
+    
+    {
+        font-size: 0.75em;
+    }
+
+    .rounded > div > span:first-child,
+    .rounded div > span:last-child
+    {
+        font-size: 0.8em;
+    }
+
+    .rounded div > span:last-child
+    {
+        height: 3em;
+        width: 3em;
+    }
+}
+
+@media all and (max-width: 363px){
+
+    .continents{
+        overflow-x: scroll;
+    }
+
+    .values,
+    .titles{
+        width: max-content;
+    }
+
+    .titles-medium,
+    .titles-max,
+    .tab-continent-name,
+    .tab-normal{
+        width: 7em;
+    }
+
+
+  
+    .tab-cases,
+    .tab-deaths{
+        width: 8.8em;
+    }
+
+    /*
+        for data country by continent
+    */
+
+    .continent-cy-value{
+        overflow-x: scroll;
+
+    }
+
+    .cy-header,
+    .values-content    {
+        width: max-content;
+
+    }
+
+
+    .cy-header-name,
+    .cy-header-crcd,
+    .cy-values-flag-name{
+        width: 9em;
+    }
+
+    
+    .cy-values-crcd{
+        width: 10.3em;
+    }
+
+
+    .loader{
+        width: 360px;
+    
+    }
+    
+
+    
+}
+
+
+@media all and (max-width: 345px){
+
+    .Cases > span:last-child,
+    .ReCrDe > div > div > span:first-child
+    {
+        font-size: 0.9em;
+    }
+    
+}
+
+@media all and (max-width: 324px){
+
+    .date-update{
+        padding: 0%;
+    }
+
+    .loader{
+        width: 345px;
+    
+    }
+    
+}

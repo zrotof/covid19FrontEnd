@@ -5,7 +5,7 @@ import { BuyMeACoffeeRoutingModule } from './buy-me-a-coffee-routing.module';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { BuyMaACoffeeComponent } from '../../../buy-ma-acoffee/buy-ma-acoffee.component';
+import { BuyMaACoffeeComponent } from '../../../components/buy-ma-acoffee/buy-ma-acoffee.component';
 import { SharedTranslateModule } from '../../shared/shared-translate/shared-translate.module';
 
 @NgModule({
@@ -13,15 +13,6 @@ import { SharedTranslateModule } from '../../shared/shared-translate/shared-tran
   imports: [
     CommonModule,
     BuyMeACoffeeRoutingModule,
-    TranslateModule.forChild({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: bmacHttpTranslateLoader,
-        deps: [HttpClient]
-      },
-      isolate:false,
-      extend:true
-    }),
     SharedTranslateModule
   ],
   exports :[

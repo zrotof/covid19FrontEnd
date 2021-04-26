@@ -1,0 +1,360 @@
+.header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    color: whitesmoke;
+    background-color: #161748;
+    height: 7.5em;
+    width: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+    position: fixed;
+    top: 0%;
+    border-bottom:  solid white;
+    z-index: 3;
+}
+
+.header_left{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    outline: none;
+    cursor: pointer;
+    background-image: url('../../../assets/img/corona-without-bg.png');
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+
+}
+
+
+.header_left > img{
+    height: 60%;
+}
+
+
+span {
+    font-weight: bold;
+}
+
+.header_right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.header-menu-language{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-menu{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    list-style: none;
+}
+
+.header-menu > li{
+    margin-left: 0.5em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    position: relative;
+}
+
+
+
+.header-menu >li > span {
+    font-size: 1.23em;
+    padding: 0.5em;
+    outline: none;
+    cursor: pointer;
+}
+
+.header-menu > li > span:hover {
+    color: red;
+    background-color: whitesmoke;
+    border-radius: 8px;
+}
+
+
+.coffee{
+    padding: 0.5em;
+    border-radius: 6px;
+    background-color: rgb(209, 49, 84);
+}
+
+.coffee-cup{
+    height:1.23em;
+    margin: auto;
+}
+
+
+
+
+.active{
+    color: white;
+    border-bottom: solid red;
+}
+
+.header-language{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 2em;
+}
+
+
+
+
+.switch {
+    display: inline-block;
+    width: 40px;
+    height: 11px;
+    position: relative;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    text-align: center;
+  }
+
+.toggle-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    background-color: #475569;
+    border-radius: 40px;
+    cursor: pointer;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  .toggle-thumb > span:first-child {
+    font-size: 0.6em;
+    font-weight: bolder;
+  }
+
+  .toggle-thumb > span:last-child {
+    font-size: 0.65em;
+    color: black;
+  }
+
+  .english .toggle-thumb:before {
+    content: "";
+    height: 17px;
+    width: 17px;
+    position: absolute;
+    left: 3px;
+    background: no-repeat center/100% url("../../../assets/img/en.png");
+    border-radius: 50%;
+    transition: .4s all ease;
+  }
+
+  .french .toggle-thumb:before {
+    content: "";
+    height: 17px;
+    width: 17px;
+    position: absolute;
+    left: 3px;
+    background: no-repeat center/100% url("../../../assets/img/fr.jpeg");
+    border-radius: 50%;
+    transition: .4s all ease;
+  }
+
+  .checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .checkbox:checked + .toggle-thumb:before {
+    transform: translateX(17px);
+    
+  }
+
+
+
+.burger_menu{
+    display: none;
+}
+
+
+
+
+@media all and (max-width: 1007px){
+    
+    .header{
+        padding-left: 2vh;
+        padding-right: 2vh;
+        height: 6em;
+    }
+
+    .burger_menu{
+        display: flex;
+        flex-direction: column;
+        height: 4.5vh;
+        width: 4.5vh;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+
+    .burger_menu span{
+        background-color: white;
+        width: 4.5vh;
+        height: 0.5vh;
+        transition: all 0.3s ease;
+    }
+
+    .header-menu{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        background: #161748c9;
+        top: 6em;
+        right: 0%;
+        margin-top: 0%;
+        margin-right: 0%;
+        padding-left: 5em;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        padding-top: 2em;
+        padding-bottom: 2em;
+        
+
+    }
+
+    .header-language{
+        margin-right: 1em;
+    }
+
+    .header-menu > li {
+        margin-left: 0%;
+        opacity: 0;
+        text-align: right;
+        width: 100%;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+
+    }
+    .header-menu > li > span{
+        width: 100%;
+        padding-right: 3vh;
+
+    }
+
+    .burger_slide_in{
+        transform: translateX(0%);
+    }
+
+
+
+    @keyframes navLinkFade {
+
+        from{
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        to{
+            opacity: 1;
+            transform: translateX(0px);
+        }
+        
+    }
+
+
+    .toggle .line1{
+        transform-origin : 0 0 ;
+        transform: rotate(45deg) translate(0.4vh,-0.5vh);
+        width: 6vh;
+    }   
+
+    .toggle .line2{
+        opacity: 0;    
+    }
+
+    .toggle .line3{
+        transform-origin: 0 0;
+        transform: rotate(-45deg) translate(0.4vh,0.5vh);
+        width: 6vh;
+        text-align: center;
+    }
+
+    .active{
+        padding:0;
+        border: none;
+    }
+
+    .active > a{
+        color: blue;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+
+}
+
+
+
+
+@media all and (max-width: 870px){
+
+    .header_left_text > span{
+        font-size: 1em;
+    }
+
+}
+
+@media all and (max-width: 575px){
+
+    .header_left_text > span{
+        font-size: 1em;
+    }
+    
+
+}
+
+@media all and (max-width: 430px){
+
+    .header{
+        height: 4.5em;
+    }
+
+    .header_left_img{
+        height: 85%;
+    }
+
+    .header_left_text > span{
+        font-size: 0.8em;
+    }
+
+    .header-menu{
+        top: 4.5em;
+        padding-left: 3em;
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+
+    }
+
+    .header-menu > li{
+        margin-top: 0.1em;
+        margin-bottom: 0.1em;
+    }
+
+    .header-menu > li > span{
+        font-size: 1.1em;
+    }
+
+
+}
+
