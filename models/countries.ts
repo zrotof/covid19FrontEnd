@@ -13,6 +13,7 @@ export class Countries {
     cyDate: Date; 
     cyTests: number;
     cyCode: number;
+    cyVaccines: number;
     id: any;
     
 }

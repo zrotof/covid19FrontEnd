@@ -13,23 +13,19 @@
     font-size: 1.2em;
     font-weight: bold;
     text-align: center;
-
 }
 
 .date-update{
     margin-top: 1vh;
     text-align: right;
     font-weight: bold;
-    margin-right:1em;
-    
+    margin-right: 1em;
 }
 
 .date-loader{
     margin-left: 7em;
     margin-right: 7em;
 }
-
-
 
 .globals-text{
     display:flex;
@@ -39,7 +35,6 @@
     color: black;
     margin-top:2vh;
     width:100%;
-    
 }
 
 .globals-text-title{
@@ -48,7 +43,6 @@
     color:#161748;
     font-weight:bold;
     margin-right: 0.5em;
-
 }
 
 .globals-text-content{
@@ -131,7 +125,6 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-
 }
 
 
@@ -346,8 +339,6 @@
     width: 23vh;
 }
 
-
-
 .tab-cases div:first-child{
 text-align: right;
 padding-right:6%;
@@ -359,9 +350,6 @@ width:50%;
     color: rgb(0, 113, 158);
     width: 50%;
     }
-
-
-
 
 .tab-deaths{
     display: flex;
@@ -397,6 +385,8 @@ width:50%;
     justify-content: space-between;
     padding-top:0.5em;
     padding-bottom:0.5em;
+    margin-top: 4em;
+
 
 }
 
@@ -512,60 +502,111 @@ width:50%;
     background-color: #161748;
     padding-left: 1%;
     padding-right: 1%;
-}
+    padding-top: 5em;
 
-.bloc{
     display: flex;
-    width:100%;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    margin-top: 4em;
+    margin-bottom: 4em;
+    overflow: hidden;
 }
+
+
+
 .continent{
-    margin-top: 2em;
-    margin-bottom: 2em;
-    width: 47%;
-    color: white;
+    margin-bottom: 5em;
+    width: 100%;
+    color: rgb(255, 255, 255);
     margin-left: 2vh;
     margin-right: 2vh;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
 
+}
+
+.circle-continent-na{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    left: 15%;
+    background-color: rgba(135, 207, 235, 0.452);
+    z-index: 2;
+    top: 2%;
+    color: black;
+}
+
+.circle{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    right: 5%;
+    background-color: rgba(255, 0, 0, 0.678);
+    z-index: 2;
+    top: 13.5%;
 }
 
 .continent-name{
     display: flex;
-     justify-content: space-between;
+    flex-direction: column;
+    z-index: 3;
+    background-color: rgba(255, 255, 255, 0.164);
+    backdrop-filter: blur(3px);
+    padding: 0.6em;
+    width: 16em;
+    border-radius: 8px;
+    margin-right: 0.5em;
 }
 
 .name{
     font-weight: bold;
-    font-size: 1.8em;
+    font-size: 2em;
+    margin-bottom: 0.3em;
 }
 
-.tested{
-    background-color: white;
-    color: black;
-     font-weight: bold;
-     padding-left: 0.5em;
-     padding-right: 0.5em;
-     display: flex;
-     align-items: center;
-     justify-content: center;
+.tests-vaccines{
+    display: flex;
+    flex-direction: column;
+}
+
+.tests,.vaccines{
+    display: flex;
+    font-weight: bold;
+}
+.tests-label, .vaccines-label{
+    font-size: 1.2em;
+    font-weight: bold;
+    white-space: nowrap;
+    margin-left: 0.3em;
+}
+
+.tests-value, .vaccines-value{
+    font-size: 1.2em;
+    margin-bottom: 0.3em;
+
 }
 
 .continent-cy-value{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 80%;
+    border-radius: 8px;
     border: 2px solid gray;
+    overflow: hidden;
+    backdrop-filter: blur(6px);
+    z-index: 3;
+    background-color: rgba(35, 35, 36, 0.6);
 }
 
 
 .cy-header{
-    background-color: #343a40;
     height: 3em;
      display: flex;
 
@@ -607,13 +648,12 @@ width: 100%;
    
     overflow: auto;
     width: 100%;
-    background-color: #343a40; 
 
 }   
 
 .cy-values-row{
     display: flex; 
-    border-bottom: 2px solid gray; 
+    border-bottom: 2px solid rgb(180, 180, 180); 
 }
 
 .cy-values-flag-name{
@@ -705,6 +745,68 @@ width: 100%;
     .globals-text-content{
         width:75%;
     }
+
+}
+
+@media all and (max-width: 1130px){
+
+  
+    .continent{
+        flex-direction: column;
+        margin-bottom: 5em;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+    }
+
+    .continent-name{
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        background: none;
+        align-items: flex-end;
+        backdrop-filter: unset;
+        padding: 0;
+        border-radius: unset;
+        margin:0;
+    }
+
+    .name{
+        margin: 0;
+    }
+
+    .tests-vaccines{
+        background-color: white;
+        color: black;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+
+    .tests, .vaccines{
+        flex-direction: row;
+    }
+
+    .tests-label, .vaccines-label{
+        text-decoration: none;
+        font-size: 1.1em; 
+        font-weight: bold;
+    }
+
+    .tests-value, .vaccines-value{
+        font-size: 1.1em; 
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+
+    .continent-cy-value{
+        width: 100%;
+        border-radius: unset;
+        backdrop-filter: inherit;
+    }
+
+    
+
+  
 
 }
 
@@ -860,7 +962,44 @@ width: 100%;
     
 }
 
+@media all and (max-width: 877px){
+
+.continent{
+    width: 100%;
+}
+
+.circle-continent-na{
+    width: 100px;
+    height: 100px;
+}
+
+
+.circle{
+    width: 50px;
+    height: 50px;
+}
+    
+}
+
+@media all and (max-width: 758px){
+
+    .continent{
+        font-size: 0.9em;
+    }
+        
+}
+
+@media all and (max-width: 700px){
+
+    .continent{
+        font-size: 0.8em;
+    }
+        
+}
+
 @media all and (max-width: 620px){
+
+
 
     .globals-text-content > div{
         flex-direction: column;
@@ -889,6 +1028,43 @@ width: 100%;
         width: 3em;
     }
 
+
+    .continent{
+        margin-left: 0%;
+        margin-right: 0%;
+        width: 100%;
+    }
+
+    .continent-cy-value{
+        overflow-x: scroll;
+
+    }
+
+
+    .cy-values-flag{
+        height:25px;
+        width:30px;
+    }
+
+
+    .cy-header,
+    .values-content    {
+        width: max-content;
+
+    }
+
+
+    .cy-header-name,
+    .cy-header-crcd,
+    .cy-values-flag-name{
+        width: 8em;
+    }
+
+    
+    .cy-values-crcd{
+        width: 8em;
+    }
+
     
 }
 
@@ -898,49 +1074,6 @@ width: 100%;
         font-size: 1.4em;
     }
 
-    .tested{
-        width: inherit;
-        padding-left: 0.5em;
-        padding-right: 0.5em;
-        font-size: 0.9em;
-
-    }
-
-
-    .bloc{
-        margin-left: 0%;
-        margin-right: 0%;
-
-    }
-    
-
-    .continent{
-        margin-left: 0%;
-        margin-right: 0%;
-        width: 100%;
-    }
-
-    .cy-values-flag{
-
-        height:25px;
-        width:30px;
-    }
-
-    .cy-header-name,
-    .cy-header-crcd
-    {
-        font-size: 0.9em;
-    }
-
-    
-    .cy-values-flag-name{
-        font-size: 0.9em;
-    }
-
-    .cy-values-crcd{
-        font-size: 0.9em;
-    }
-    
 }
 
 
@@ -1061,36 +1194,13 @@ width: 100%;
     
 
     .name{
-        font-size: 1.3em;
-    }
-
-    .tested{
-        width: inherit;
-        padding-left: 0.5em;
-        padding-right: 0.5em;
-        font-size: 0.8em;
-
+        font-size: 1.5em;
     }
     
 
 
     .cy-header{
-        height: 2em;
-    }
-
-    .cy-header-name,
-    .cy-header-crcd
-    {
-        font-size: 0.8em;
-    }
-
-    
-    .cy-values-flag-name{
-        font-size: 0.8em;
-    }
-
-    .cy-values-crcd{
-        font-size: 0.7em;
+        height: 2.8em;
     }
     
 }
@@ -1117,6 +1227,38 @@ width: 100%;
     }
 }
 
+@media all and (max-width: 375px){
+    .titles-medium
+    
+    {
+        font-size: 0.75em;
+    }
+
+    .rounded > div > span:first-child,
+    .rounded div > span:last-child
+    {
+        font-size: 0.8em;
+    }
+
+    .rounded div > span:last-child
+    {
+        height: 3em;
+        width: 3em;
+    }
+
+
+    .cy-header-name,
+    .cy-header-crcd,
+    .cy-values-flag-name{
+        width: 7.5em;
+    }
+
+    
+    .cy-values-crcd{
+        width: 7.5em;
+    }
+}
+
 @media all and (max-width: 363px){
 
     .continents{
@@ -1135,39 +1277,21 @@ width: 100%;
         width: 7em;
     }
 
-
-  
     .tab-cases,
     .tab-deaths{
         width: 8.8em;
     }
+    
+
+
+  
+   
 
     /*
         for data country by continent
     */
 
-    .continent-cy-value{
-        overflow-x: scroll;
-
-    }
-
-    .cy-header,
-    .values-content    {
-        width: max-content;
-
-    }
-
-
-    .cy-header-name,
-    .cy-header-crcd,
-    .cy-values-flag-name{
-        width: 9em;
-    }
-
     
-    .cy-values-crcd{
-        width: 10.3em;
-    }
 
 
     .loader{
@@ -1186,6 +1310,10 @@ width: 100%;
     .ReCrDe > div > div > span:first-child
     {
         font-size: 0.9em;
+    }
+
+    .name{
+        font-size: 1.4em;
     }
     
 }

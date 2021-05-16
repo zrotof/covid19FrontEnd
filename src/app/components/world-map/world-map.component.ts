@@ -340,6 +340,11 @@ var newClickedCountry : any;
 
     // Create chart instance
     let countryHistoricsChart =  am4core.create(this.countryHistoricalChart.nativeElement, am4charts.XYChart, );
+
+    let title = countryHistoricsChart.titles.create();
+    title.text = this.countryObject['cyName']+" Historical Data";
+    title.fontSize = 25;
+    title.marginBottom = 15;
     
      this.covidService.getCountryHistorical(this.countryObject['cyName'])
     .subscribe( data4 => {
@@ -382,8 +387,7 @@ createCountryGraph(param, map, am4core, am4charts) : void{
       map.data.push({date: new Date(key), cases: param.timeline.cases[key], recovered: param.timeline.recovered[key],deaths: param.timeline.deaths[key]});
     }
 
-    //console.log(chart.data);
-    //chart.data=[];
+    
 
 // Create axes
 let dateAxis = map.xAxes.push(new am4charts.DateAxis());
@@ -556,6 +560,11 @@ map.logo.disabled = true;
     // Create chart instance
     let worldHistoricsChart = am4core.create('worldHistoricalChart', am4charts.XYChart);
     
+    let title = worldHistoricsChart.titles.create();
+    title.text = "World Historical data";
+    title.fontSize = 25;
+    title.marginBottom = 15;
+
     // Add historics data coming from the resolver of maps
    let data2= this.resolver.worldHistoricsData;
 

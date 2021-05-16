@@ -70,167 +70,103 @@ label:hover{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 70%;
-    margin: 5% auto;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px ;
+    position: relative;
+    margin-bottom: 400px;
 }
 
-.timeline-event{
+.ligne{
+    width: 4px;
+    height: 715px;
     background: #161748;
-    margin-bottom: 20px;
-    position: relative;
-    display: flex;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
-      0 18px 36px -18px rgba(0, 0, 0, 0.3),
-      0 -12px 36px -8px rgba(0, 0, 0, 0.025);
-      color: white;
-
+    margin: 0 auto;
 }
 
 .timeline-event-image{
-    border-radius: 8px 0 0 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      background: white;
-}
-
-
-.element-one::after{
-    content: "";
-    width: 2px;
-    height: 150%;
-    background: #16174823;
     position: absolute;
-    top: 50%;
-    left: -2.55rem;
-    z-index: -1;
-}
-
-
-.element-one::before{
-    content: "";
-      width: 1rem;
-      height: 1rem;
-      position: absolute;
-      background: #161748;
-      border-radius: 100%;
-      left: -3rem;
-      top: 50%;
-      transform: translateY(-50%);
-}
-
-.element-two::after{
-    content: "";
-    width: 2px;
-    height: 200%;
-    background: #16174823;
-    position: absolute;
-    top: 50%;
-    left: -2.55rem;
-    z-index: -1;
-}
-
-
-.element-two::before{
-    content: "";
-      width: 1rem;
-      height: 1rem;
-      position: absolute;
-      background: #161748;
-      border-radius: 100%;
-      left: -3rem;
-      top: 50%;
-      transform: translateY(-50%);
-}
-
-
-.element-three::after{
-    content: "";
-    width: 2px;
-    height: 135%;
-    background: #16174823;
-    position: absolute;
-    top: 50%;
-    left: -2.55rem;
-    z-index: -1;
-}
-
-
-.element-three::before{
-    content: "";
-      width: 1rem;
-      height: 1rem;
-      position: absolute;
-      background: #161748;
-      border-radius: 100%;
-      left: -3rem;
-      top: 50%;
-      transform: translateY(-50%);
-}
-
-
-
-.element-four::after{
-    content: "";
-    width: 2px;
-    height: 135%;
+    border-radius: 50%;
+    padding: 2px;
     background: white;
+    border: 3px solid #161748;
+    width: 70px;
+    height: 70px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.element-one{
+    top: 0px;
+}
+
+.element-two{
+    top: 200px;
+}
+
+.element-three{
+    top: 375px;
+}
+
+.element-four{
+    top: 715px;
+}
+
+.timeline-event{
+    width: 400px;
+  
+    height: auto;
+    background: #161748;
     position: absolute;
-    top: 50%;
-    left: -2.55rem;
-    z-index: -1;
+    display: flex;
+    border-radius: 8px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+    color: white;
+    left: 50%;
+    transform: translate(-50%);
+    top: 100%;
+
 }
 
-.element-four::before{
-    content: "";
-      width: 1rem;
-      height: 1rem;
-      position: absolute;
-      background: #161748;
-      border-radius: 100%;
-      left: -3rem;
-      top: 50%;
-      transform: translateY(-50%);
+.box1{
+    top: 0px;
+    left: calc(50% - 270px);
 }
 
-.coro-origine{
-        height: 4em;
-        width: 4em;
+.box2{
+    top: 200px;
+    left: calc(50% + 270px);
 }
 
-.coro-old-man{
-    height: 4em;
-    width: 4em;
+.box3{
+    top: 375px;
+    left: calc(50% - 270px);
 }
 
-.coro-oms{
-    height: 4em;
-    width: 4em;
+.box4{
+    top: 715px;
+    left: calc(50% + 270px);
 }
 
-.coro-vaccines{
-    height: 4em;
-    width: 4em;
+
+.coro-origine,.coro-old-man,.coro-oms,.coro-vaccines{
+        height: 3em;
+        width: 3em;
 }
 
-.timeline-event-date{
-    color: #f6a4ec;
-      font-size: 1.5rem;
-      font-weight: 600;
-      white-space: nowrap;
-}
 
 .timeline-event-content{
-    padding: 0.5em;
+    padding: 1em;
 }
 
 .timeline-event-title{
     font-size: 1.2rem;
       font-weight: 600;
       color: #9251ac;
+      margin-bottom: 13px;
 }
 
 
@@ -257,11 +193,61 @@ label:hover{
 
 
 @media all and (max-width: 1007px){
+
     .covid19-history{
         margin-top: 6em;
     }
 
+    .timeline {
+        margin-top: 10px ;
+    }
+
+    .ligne{
+        width: 2px;
+    }
+
+    .timeline-event-image{
+        
+        border: 2px solid #161748;
+        width: 60px;
+        height: 60px;
+        
+    }
+
+    .timeline-event{
+        width: 300px;        
+    
+    }
+
+    .timeline-event-title{
+        font-size: 1.1em;
+    }
+
+    .timeline-event-description{
+        font-size: 0.9em;
+    }
+
+    .box1{
+        top: 0px;
+        left: calc(50% - 200px);
+    }
+    
+    .box2{
+        top: 200px;
+        left: calc(50% + 200px);
+    }
+    
+    .box3{
+        top: 375px;
+        left: calc(50% - 200px);
+    }
+    
+    .box4{
+        top: 715px;
+        left: calc(50% + 200px);
+    }
 }
+
 
 
 
@@ -320,6 +306,29 @@ label:hover{
 }
 
 
+@media all and (max-width: 742px){
+
+  .ligne{
+      position: relative;
+      left: -50%;
+  }
+
+  .element-one,.element-two,.element-three,.element-four{
+    left: calc(50% - 50%);
+    }
+
+
+  .box1,.box2,.box3,.box4{
+    left: calc(50% + 25px);
+    width: 90%;
+    }
+
+
+
+    
+}
+
+
 @media all and (max-width: 718px){
 
     .covid19-history{
@@ -330,34 +339,6 @@ label:hover{
         font-size:1.8em ;
     }
 
-    .timeline {
-        width: 100%;
-        padding:1.5em;
-   }
-
-    .timeline-event{
-        margin: 0px;
-        margin-bottom: 20px;
-        box-shadow: unset;
-        border: 1px solid black;
-    }
-
-    .element-one::before,
-    .element-two::before,
-    .element-three::before,
-    .element-four::before{
-        display: none;
-
-    }
-
-    .element-one::after,
-    .element-two::after,
-    .element-three::after,
-    .element-four::after{
-        
-        display: none;
-
-    }
 }
 
 
@@ -373,9 +354,6 @@ label:hover{
         height: 25em;
     } 
 
-    .timeline {
-        padding:1em;
-   }
 }
 
 @media all and (max-width: 640px){
@@ -418,10 +396,6 @@ label:hover{
         margin-top: 25px;
     }
 
-    .timeline {
-        padding:0.5em;
-   }
-
   
 }
 
@@ -439,6 +413,36 @@ label:hover{
 
     .covid19-history{
         margin-top:4.5em;
+    }
+
+    .timeline-event-image{
+        width: 3.5em;
+        height: 3.5em;
+    }
+
+    .coro-origine,.coro-old-man,.coro-oms,.coro-vaccines{
+        height: 2.5em;
+        width: 2.5em;
+}
+  
+}
+
+
+@media all and (max-width: 386px){
+
+    .timeline-event{
+        padding-bottom: 0px;
+    }
+
+    .timeline-event-content{
+        padding: 0.5em;
+    }
+
+    .timeline-event-title{
+        font-size: 1.1em;
+    }
+
+    .timeline-event-description{
         font-size: 0.8em;
     }
   

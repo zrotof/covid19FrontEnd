@@ -20,7 +20,12 @@
 
 
     "data":{
-        "updates":"Lastest updates :",
+      
+        "date-update":{
+            "label":"Lastest updates :",
+            "text1":"",
+            "text2":"minutes ago"
+            },
         "title":"World Global Data About Covid-19",
         "introduction":"Unfortunately, the SARS-Cov2 corona virus continues to claim thousands of victims around the world, despite the many measures taken to stop its spread. Below is a global overview of the situation presented by continent and by world.",
         "indications":{
@@ -70,13 +75,16 @@
             "name-as":"Asia",
             "name-af":"Africa",
             "name-oc":"Oceania",
-            "tests":"tests realised",
+            "tests":" Tests",
+            "vaccines":"Vaccines",
             "headers":{
                 "one":"Countries",
                 "two":"Cases",
                 "three":"Recovered",
                 "four":"Criticals",
-                "five":"Deaths"
+                "five":"Deaths",
+                "six":"Tests",
+                "seven":"Vaccines"
             }
         }
 
@@ -273,6 +281,7 @@
         }
     },
     "facts":{
+        "title": "Some Major Events",
         "one":{
             "date":"Between 10/2019 & 12/2019",
             "text": "The date of appearance of the new coronavirus SARS-CoV-2 in Wuhan is not well known, but it is estimated between October and December 2019."

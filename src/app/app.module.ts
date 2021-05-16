@@ -24,6 +24,7 @@ import { AboutUsModule } from './modules/general/about-us/about-us.module';
 import { Covid19Module } from './modules/general/covid19/covid19.module';
 import { BuyMeACoffeeModule } from './modules/general/buy-me-a-coffee/buy-me-a-coffee.module';
 
+
 import { LocationStrategy, Location, PathLocationStrategy } from '@angular/common';
 @NgModule({
   declarations: [

@@ -9,11 +9,15 @@ import { Countries } from '../../../../models/countries';
 import { Meta, Title } from '@angular/platform-browser';
 //import { ActivatedRoute } from '@angular/router';
 
+declare var Rellax : any; 
+
+
 @Component({
   selector: 'app-world-stats',
   templateUrl: './world-stats.component.html',
   styleUrls: ['./world-stats.component.css']
 })
+
 export class WorldStatsComponent implements OnInit {
 
   world : World;
@@ -36,12 +40,14 @@ export class WorldStatsComponent implements OnInit {
   testsOC : number;
 
   //vacines variables
-  vacinesNA : number; 
-  vacinesSA : number;
-  vacinesEU : number;
-  vacinesAS : number;
-  vacinesAF : number;
-  vacinesOC : number;
+  vaccinesNA : number = 0; 
+  vaccinesSA : number= 0;
+  vaccinesEU : number =0;
+  vaccinesAS : number =0;
+  vaccinesAF : number =0;
+  vaccinesOC : number =0;
+
+  dateWorld: number;
   constructor( private translate : TranslateService, private covidService : Covid19Service,private title: Title, private meta : Meta){
     //private route: ActivatedRoute
 
@@ -51,6 +57,7 @@ export class WorldStatsComponent implements OnInit {
      }
 
   ngOnInit(): void {
+
 
     this.setTitleAndMetaDescription();
 
@@ -63,6 +70,13 @@ export class WorldStatsComponent implements OnInit {
     this.getContinentsAF();
     this.getContinentsOC();
     //this.getCountriesAll();
+    var rellaxVertical = new Rellax('.rellaxV'); 
+    var rellaxHorizontal = new Rellax('.rellaxH', {
+      horizontal:true,
+  
+      //Disable vertical Parallax Scrolling     
+      vertical:false
+    });
 
   }
 
@@ -86,6 +100,7 @@ export class WorldStatsComponent implements OnInit {
     this.covidService.getWorldGlobals()
     .subscribe(result => {
       this.world = result[0];
+      this.dateWorld= this.diff(this.world.wDate)
     })
   }
 
@@ -171,33 +186,88 @@ getContinents() : void {
 
 
   getContinentsNA() : void {
+
     this.covidService.getCountriesCasesByContinentNA()
-    .subscribe(result3 =>this.countriesNA = result3)
+    .subscribe(result3 =>{
+      this.countriesNA = result3
+      this.countriesNA.forEach(element => {
+        if(element.cyVaccines != null)
+        {
+          this.vaccinesNA = this.vaccinesNA + Number(element.cyVaccines)
+        }
+        
+      });
+    })
   }
 
   getContinentsSA() : void {
     this.covidService.getCountriesCasesByContinentSA()
-    .subscribe(result4 =>this.countriesSA = result4)
+    .subscribe(result4 =>{
+      this.countriesSA = result4
+      this.countriesSA.forEach(element => {
+        if(element.cyVaccines != null)
+        {
+          this.vaccinesSA = this.vaccinesNA + Number(element.cyVaccines)
+        }
+        
+      });
+    })
   }
 
   getContinentsEU() : void {
     this.covidService.getCountriesCasesByContinentEU()
-    .subscribe(result5 =>this.countriesEU = result5)
+    .subscribe(result5 =>{
+      this.countriesEU = result5;
+      this.countriesEU.forEach(element => {
+        if(element.cyVaccines != null)
+        {
+          this.vaccinesEU = this.vaccinesEU + Number(element.cyVaccines)
+        }
+        
+      });
+    })
   }
 
   getContinentsAS() : void {
     this.covidService.getCountriesCasesByContinentAS()
-    .subscribe(result6 =>this.countriesAS = result6)
+    .subscribe(result6 =>{
+      this.countriesAS = result6;
+      this.countriesAS.forEach(element => {
+        if(element.cyVaccines != null)
+        {
+          this.vaccinesAS = this.vaccinesAS + Number(element.cyVaccines)
+        }
+        
+      });
+    })
   }
 
   getContinentsAF() : void {
     this.covidService.getCountriesCasesByContinentAF()
-    .subscribe(result7 =>this.countriesAF = result7)
+    .subscribe(result7 =>{
+      this.countriesAF = result7;
+      this.countriesAF.forEach(element => {
+        if(element.cyVaccines != null)
+        {
+          this.vaccinesAF = this.vaccinesAF + Number(element.cyVaccines)
+        }
+        
+      });
+    })
   }
 
   getContinentsOC() : void {
     this.covidService.getCountriesCasesByContinentOC()
-    .subscribe(result8 =>this.countriesOC = result8)
+    .subscribe(result8 =>{
+      this.countriesOC = result8;
+      this.countriesOC.forEach(element => {
+        if(element.cyVaccines != null)
+        {
+          this.vaccinesOC = this.vaccinesOC + Number(element.cyVaccines)
+        }
+        
+      });
+    })
   }
 
   /*getCountriesAll() : void {
@@ -221,10 +291,10 @@ getContinents() : void {
 
 
   //difference between the two dates in minutes
-  diff(date: Date){
+  diff(dateW: Date){
 
     var toDay = new Date();
-    var diff = (toDay.getTime() - date.getTime())
+    var diff = (toDay.getTime() - new Date(dateW).getTime())
     var diffMins = Math.round(((diff % 86400000) % 3600000) / 60000);
     return diffMins;
   }
