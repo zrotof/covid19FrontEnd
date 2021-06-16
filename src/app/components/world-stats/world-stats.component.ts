@@ -265,7 +265,6 @@ getContinents() : void {
         {
           this.vaccinesOC = this.vaccinesOC + Number(element.cyVaccines)
         }
-        
       });
     })
   }
@@ -290,7 +289,7 @@ getContinents() : void {
   }
 
 
-  //difference between the two dates in minutes
+  //function to return time in minutes from last updates
   diff(dateW: Date){
 
     var toDay = new Date();
@@ -298,4 +297,5 @@ getContinents() : void {
     var diffMins = Math.round(((diff % 86400000) % 3600000) / 60000);
     return diffMins;
   }
+  
 }

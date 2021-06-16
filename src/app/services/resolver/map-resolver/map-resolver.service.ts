@@ -16,8 +16,8 @@ export class MapResolverService implements Resolve<any>{
     
     return forkJoin({
       allCountriesCases : this.covid19Service.getCountriesAllCases(),
-      worldHistoricsData : this.covid19Service.getWorldHistoricsData()
-
+      worldHistoricsData : this.covid19Service.getWorldHistoricsData(),
+      worldVaccines : this.covid19Service.getWorldVaccines()
     })
   }
 }

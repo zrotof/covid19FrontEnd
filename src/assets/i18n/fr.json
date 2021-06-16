@@ -351,10 +351,10 @@
             "title":"Comment fonctionne cette page ?",
             "messages":{
                 "one":"Elle présente la liste des pays que prend en compte notre site web sous forme de carte du globe terrestre .",
-                "two":"En dessous de cette carte est présenté un tableau récapitulatif des données globales du monde concernant la covid-19 .",
-                "three":"En dessous du tableau se trouve une section qui présente différents pourcentages, mettant en évidence la gravité des chiffres continuellement croissants de la covid-19 .",
-                "four":"Tout au fond un graphe qui retrace l'historique de la covid-19 depuis le 22 Janvier 2020. Il suffit de survoler le graphe pour parcourir les jours souhaités .",
-                "five":"En cliquant sur un pays de la carte on obtient des informations de même types que ceux cités plus haut du pays sélectionné ."
+                "two":"En dessous de cette carte se trouvent deux graphes qui présentent respectivement l'historique de l'évolution de la pandémie  et l'historique de vaccination journalier dans le monde.",
+                "three":"Il suffit juste de survoler un graphe pour avoir des chiffres en fonction des dates .",
+                "four":"En survolant un pays on obtient des données globales sur la covid 19 du pays concerné .",
+                "five":"En cliquant sur un pays on obtient également respectivement les graphes d'évolution de la covid et de vaccination du pays sélectionné ."
             }
         },
         "update":"Dernières M-A-J",

@@ -13,6 +13,7 @@ export const environment = {
   API_Covid_Countries_OC: 'https://covid19backend.herokuapp.com/com.Samuel.sscovid19.api/Countries/OC',
   API_World_Historical_All : 'https://disease.sh/v3/covid-19/historical/all?lastdays=all',
   API_Covid_JustCountries : 'https://covid19backend.herokuapp.com/com.Samuel.sscovid19.api/Countries/justCountries',
+  API_World_Vaccines : 'https://disease.sh/v3/covid-19/vaccine/coverage?lastdays=all&fullData=true',
 
   
   API_BUY_ME_COFEE_URL_MY_PAGE : 'https://www.buymeacoffee.com/SamuelSCovid19',

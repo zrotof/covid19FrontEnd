@@ -377,10 +377,10 @@
         "title":"How does this page work ?",
         "messages":{
             "one":"it presents the list of countries that our website takes into account in the form of a map of the globe .",
-            "two":"Below this map is a summary table of global covid-19 data .",
-            "three":"Below the table is a section that shows different percentages, highlighting the severity of the continuously increasing covid-19 numbers .",
-            "four":"At the bottom of the screen, a graph showing the history of covid-19 since January 22, 2020. You just have to fly over the graph to browse the desired days .",
-            "five":"Clicking on a country on the map you will get the same kind of information as mentioned above for the selected country ."
+            "two":"Below this map are two graphs showing the history of the evolution of the pandemic and the history of daily vaccination in the world .",
+            "three":"Just hover over a graph to get the figures according to the dates .",
+            "four":"By hovering over a country, we obtain global data on the covid 19 of the country concerned .",
+            "five":"By clicking on a country, we also obtain the graphs of the evolution of the covid and vaccination of the selected country ."
         }
     },
     "update":"Lastest updates",

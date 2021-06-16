@@ -26,6 +26,7 @@ export class Covid19Service {
   continentAll = environment.API_Covid_Countries_All ;
   allCountries = environment.API_Covid_JustCountries ;
   WorldHistoricAll = environment.API_World_Historical_All ;
+  worldVaccines = environment.API_World_Vaccines;
 
   constructor( private http :HttpClient ){
 
@@ -92,12 +93,24 @@ export class Covid19Service {
     return this.http.get(this.WorldHistoricAll);
   }
 
+  ////////////Historical data world
 
-  ////////////Historical data for a specific country
+  getWorldVaccines() : Observable<Object>{
 
-  getCountryHistorical(param) : any{
+    return this.http.get(this.worldVaccines);
+  }
+
+
+  //Historical global data for a specific country
+  getCountryHistoricalGlobalData(param) : any{
 
     return this.http.get("https://disease.sh/v3/covid-19/historical/"+param+"?lastdays=all");
+  }
+
+  //Historical vaccines data for a specific country
+  getCountryHistoricalVaccinesData(param) : any{
+
+    return this.http.get("https://disease.sh/v3/covid-19/vaccine/coverage/countries/"+param+"?lastdays=all&fullData=true");
   }
 
 

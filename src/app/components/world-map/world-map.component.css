@@ -28,7 +28,7 @@
 
 
   /*Carousel*/
-  .carrousel {
+  .slide-bloc {
     background: #ffffff;
     text-align: center;
     padding: 0.5em;
@@ -41,79 +41,38 @@
   }
 
   
-  .carrousel .slides {
-    width: 500%;
-    left: 0;
-    padding-left: 0;
-    padding-top: 1em;
-    overflow: hidden;
-    list-style: none;
-    position: relative;
 
-    transition: transform .5s;
-  }
+  .carousel-item p{
+    
+      margin: 1em auto;
+      width: 80%;
+      text-align: center;
+      height: 70px;
+      display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    }
 
-  .carrousel .slides li {
-    width: 20%;
-    position: relative;
-    float: left;
-  }
 
-  .carrousel li p{
-    margin-top: 0;
-    padding: 0.5em;  
-  }
+  .carousel-indicators{
+    position: relative !important;
+    }
+    .carousel-indicators button{
+        background-color: #161748;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+    }
 
-  .carrousel .slidesNavigation {
-    display: block;
-    list-style: none;
-    text-align: center;
-    bottom: 1em;
-      position: absolute; 
-     left: 50%;
-      margin-left: -52px; 
-  }
-  .carrousel input {
-    display: none;
-  }
-  
-  .carrousel .slidesNavigation label {
-    float: left;
-    margin: 6px;
-    display: block;
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
-    border: solid 2px #161748;
-    font-size: 0;
-  }
-  #radio-1:checked ~ .slides {
-    transform: translateX(0%);
-  }
-  #radio-2:checked ~ .slides {
-    transform: translateX(-20%);
-  }
-  #radio-3:checked ~ .slides {
-    transform: translateX(-40%);
-  }
-  #radio-4:checked ~ .slides {
-    transform: translateX(-60%);
-  }
-  #radio-5:checked ~ .slides {
-    transform: translateX(-80%);
-  }
-  
-  .carrousel .slidesNavigation label:hover {
-     cursor: pointer;
-  }
+    .carousel-control-prev span,
+    .carousel-control-next span{
+        background-color: #161748;
+        border-radius: 50%;
+    }
 
-  .carrousel #radio-1:checked ~ .slidesNavigation label#dotForRadio-1,
-  .carrousel #radio-2:checked ~ .slidesNavigation label#dotForRadio-2,
-  .carrousel #radio-3:checked ~ .slidesNavigation label#dotForRadio-3,
-  .carrousel #radio-4:checked ~ .slidesNavigation label#dotForRadio-4,
-  .carrousel #radio-5:checked ~ .slidesNavigation label#dotForRadio-5  {
-    background: #161748;
-  }
+
+
 
 
 
@@ -231,13 +190,13 @@
 }
 
 .chart {
-    margin-top:1%;
     padding-top:2%;
-    padding-bottom: 2%;
     width: 100%;
     height: 60vh;
     background-color: #f4f4f8;
     z-index: 0;
+    margin-bottom: 3em;
+    border-radius: 10px;
 }
 
 .data-bloc{
@@ -272,7 +231,7 @@
         margin-bottom: 0;
     }
 
-    .carrousel .slides {
+    .slide-bloc .slides {
         padding-top: 0.5em;
       }
 }
@@ -325,7 +284,7 @@
 
 @media all and (max-width: 780px){
 
-    .carrousel {
+    .slide-bloc {
         width: 100%;
 
     margin-left: 0.5em;
@@ -359,10 +318,25 @@
         height:22em;
     }
 
-    .carrousel .slidesNavigation label {
+
+    .carousel-indicators button{
         height: 12px;
         width: 12px;
-      }
+    }
+  
+    .carousel-control-prev span {
+        position: absolute;
+        left: 0.3em;
+        width: 25px;
+        height: 25px;
+    }
+
+    .carousel-control-next span {
+        position: absolute;
+        right: 0.3em;
+        width: 25px;
+        height: 25px;
+    }
 
       
 }
@@ -432,6 +406,10 @@
     #worldMap {
         height:25em;
         width: auto;
+    }
+
+    .carousel-item p{
+        margin: none;
     }
   
 }

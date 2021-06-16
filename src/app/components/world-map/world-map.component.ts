@@ -8,6 +8,9 @@ import { ActivatedRoute, Data } from '@angular/router';
 
 import { GoogleAnalyticsService } from '../../services/google-analytics/google-analytics.service';
 import { Meta, Title } from '@angular/platform-browser';
+import { createOfflineCompileUrlResolver } from '@angular/compiler';
+import { mapToStyles } from '@popperjs/core/lib/modifiers/computeStyles';
+import { mapRange } from 'gsap/src';
 
 @Component({
   selector: 'app-world-map',
@@ -16,14 +19,16 @@ import { Meta, Title } from '@angular/platform-browser';
 })
 export class WorldMapComponent implements OnInit {
 
-  @ViewChild('countryHistoricalChart') countryHistoricalChart: ElementRef<HTMLElement>;
+  @ViewChild('countryHistoricalGlobalDataChart') countryHistoricalGlobalDataChart: ElementRef<HTMLElement>;
+  @ViewChild('countryHistoricalVaccinesChart') countryHistoricalVaccinesChart: ElementRef<HTMLElement>;
 
 
-  historicalCountry: any[];
+  historicalGlobalDataCountry: any[];
   worldNumbers: World;
   countryObject: any;
   countryGlobals: Countries[];
-  view = false;
+  countryVaccines: any[];
+  isACountryIsClicked = false;
 
   //is not yet used
   isAlertClosed: boolean =false;
@@ -63,8 +68,8 @@ export class WorldMapComponent implements OnInit {
       import(/* webpackChunkName: "amcharts" */ "@amcharts/amcharts4/themes/animated"),
       import(/* webpackChunkName: "amcharts" */ "@amcharts/amcharts4/maps"),
       import( /* webpackChunkName: "amcharts" */"@amcharts/amcharts4-geodata/worldLow")
-
     ]).then((modules) => {
+
       const am4core = modules[0];
       const am4charts = modules[1];
       const am4themes_animated = modules[2].default;
@@ -75,14 +80,13 @@ export class WorldMapComponent implements OnInit {
       am4core.options.queue = true;
     
       // Chart code goes here
-
       this.createWorldMap(am4core, am4geodata_worldLow, am4maps, am4charts);
 
+      //world graph historics
+      this.createWorldChart(am4core, am4charts, am4themes_animated); 
 
-
-//Country world graph historics
-      this.createWorldGraph(am4core, am4charts, am4themes_animated); 
-
+      //World graph vaccines 
+      this.createWorldVaccinesChart(am4core, am4charts, am4themes_animated)
     }).catch((e) => {
       console.error("Error when creating chart", e);
     }) 
@@ -91,14 +95,9 @@ export class WorldMapComponent implements OnInit {
   }
 
 
-
-
-
-
-
-
-   createWorldMap(am4core, am4geodata_worldLow, am4maps, am4charts): void{
-    // Create map instance
+  createWorldMap(am4core, am4geodata_worldLow, am4maps, am4charts): void{
+    
+  // Create map instance
   let worldMap = am4core.create("worldMap", am4maps.MapChart);
   
   // Set map definition
@@ -145,19 +144,62 @@ export class WorldMapComponent implements OnInit {
 
   this.resolver.allCountriesCases.forEach(row => {
 
+    let cyToDayCases;
+    let cyToDayDeaths;
+    let cyCritical;
+    let cyTests;
+    let cyVaccines;
+    
+    //correcting what displaying if there is a null value or not
+    if(row.cyToDayCases == null){
+      cyToDayCases = ' /';
+    }
+    else{
+      cyToDayCases = row.cyToDayCases;
+    }
+
+    if(row.cyToDayDeaths == null){
+      cyToDayDeaths = ' /';
+    }
+    else{
+      cyToDayDeaths = row.cyToDayDeaths;
+    }
+
+    if(row.cyCritical == null){
+      cyCritical = ' /';
+    }
+    else{
+      cyCritical = row.cyCritical;
+    }
+
+    if(row.cyTests == null){
+      cyTests = ' /';
+    }
+    else{
+      cyTests = row.cyTests;
+    }
+
+    if(row.cyVaccines == null){
+      cyVaccines = ' /';
+    }
+    else{
+      cyVaccines = row.cyVaccines;
+    }
+
     worldMapDataPolygonSeries.push({
       "value":row.cyToDayCases,
       "cyCases": row.cyCases,
-      "cyCritical": row.cyCritical,
-      "cyDate": row.cyCritical,
+      "cyCritical": cyCritical,
+      "cyDate": row.cyDate,
       "cyDeaths": row.cyDeaths,
       "cyFlag": row.cyFlag,
       "cyName": row.cyName,
       "cyPopulation": row.cyPopulation,
       "cyRecovered": row.cyRecovered,
-      "cyTests": row.cyTests,
-      "cyToDayCases": row.cyToDayCases,
-      "cyToDayDeaths": row.cyToDayDeaths,
+      "cyTests": cyTests,
+      "cyToDayCases": cyToDayCases,
+      "cyToDayDeaths": cyToDayDeaths,
+      "cyVaccines": cyVaccines,
       "id":row.id      
     })
   })
@@ -174,8 +216,7 @@ export class WorldMapComponent implements OnInit {
 
 
 //Affichage des tooltips de l'histographe en fonction de la langue courante
-if(this.translate.currentLang==='en'){
-
+if(this.translate.currentLang === 'en'){
     
   polygonTemplate.tooltipHTML =`<div style="display:flex; flex-direction: column; justify-content:center; padding:2px; ">
   <img style="width:5em;height:3em;border-radius:10px;margin:auto" src="{cyFlag}" alt="country flag">
@@ -185,11 +226,13 @@ if(this.translate.currentLang==='en'){
   <span>Recovered : {cyRecovered.formatNumber('#,###')}</span> 
   <span>Criticals : {cyCritical.formatNumber('#,###')}</span> 
   <span>Deaths : {cyDeaths.formatNumber('#,###')} <span style="color:red; margin-left:5px;"> +{cyToDayDeaths.formatNumber('#,###')}</span></span> 
-<div>`
+  <span>Tests : {cyTests.formatNumber('#,###')}</span> 
+  <span>Vaccines : <span style="color: green"; >{cyVaccines.formatNumber('#,###')}</span> </span> 
+  <div>`
   
 }
 
-if(this.translate.currentLang==='fr'){
+if(this.translate.currentLang === 'fr'){
 
   polygonTemplate.tooltipHTML =`<div style="display:flex; flex-direction: column; justify-content:center; padding:2px; ">
 <img style="width:5em;height:3em;border-radius:10px;margin:auto" src="{cyFlag}" alt="country flag">
@@ -201,21 +244,13 @@ if(this.translate.currentLang==='fr'){
 <span>Décès : {cyDeaths.formatNumber('#,###')} <span style="color:red; margin-left:5px;"> +{cyToDayDeaths.formatNumber('#,###')}</span></span> 
 <div>`
 
-  
 }
-
-
-
-
-
-
 
 this.translate.onLangChange.subscribe(lang =>{
 
 
-  if(lang.lang==='en'){
+  if(lang.lang === 'en'){
 
-    
     polygonTemplate.tooltipHTML =`<div style="display:flex; flex-direction: column; justify-content:center; padding:2px; ">
     <img style="width:5em;height:3em;border-radius:10px;margin:auto" src="{cyFlag}" alt="country flag">
     <span style="text-align:center; margin-top:0.2em;font-weight:bold;font-size:1.4em;margin-bottom: 0.4em">{cyName}</span> 
@@ -225,10 +260,12 @@ this.translate.onLangChange.subscribe(lang =>{
     <span>Criticals : {cyCritical.formatNumber('#,###')}</span> 
     <span>Deaths : {cyDeaths.formatNumber('#,###')} <span style="color:red; margin-left:5px;"> +{cyToDayDeaths.formatNumber('#,###')}</span></span> 
   <div>`
-    
+
+    //console.log("the tooltip normally have to change english")
   }
 
-  if(lang.lang ==='fr'){
+  if(lang.lang === 'fr'){
+
 
     polygonTemplate.tooltipHTML =`<div style="display:flex; flex-direction: column; justify-content:center; padding:2px; ">
   <img style="width:5em;height:3em;border-radius:10px;margin:auto" src="{cyFlag}" alt="country flag">
@@ -239,6 +276,10 @@ this.translate.onLangChange.subscribe(lang =>{
   <span>Critiques : {cyCritical.formatNumber('#,###')}</span> 
   <span>Décès : {cyDeaths.formatNumber('#,###')} <span style="color:red; margin-left:5px;"> +{cyToDayDeaths.formatNumber('#,###')}</span></span> 
 <div>`
+
+
+
+//console.log("the tooltip normally have to change français")
 
     
   }
@@ -300,7 +341,7 @@ var newClickedCountry : any;
 
   polygonTemplate.events.on("hit", function(ev) {
 
-  this.view= true;
+  this.isACountryIsClicked= true;
 
 
 //handling the way of colorize country on click and change when we click on another country
@@ -327,43 +368,49 @@ var newClickedCountry : any;
       // Set active state
         newClickedCountry.isActive = true;
 
-      
-
     }
 
-    //Zoom on clicked country
-    //worldMap.zoomToMapObject(newClickedCountry);
 
     this.countryObject = ev.target.dataItem.dataContext;
+    // Create chart for historic global data instance
+    let countryHistoricsGlobalDataChart =  am4core.create(this.countryHistoricalGlobalDataChart.nativeElement, am4charts.XYChart );
 
-    this.googleAnalyticsService.eventEmitter("Click sur un pays",this.countryObject['cyName'],"click")
-
-    // Create chart instance
-    let countryHistoricsChart =  am4core.create(this.countryHistoricalChart.nativeElement, am4charts.XYChart, );
-
-    let title = countryHistoricsChart.titles.create();
+    let title = countryHistoricsGlobalDataChart.titles.create();
     title.text = this.countryObject['cyName']+" Historical Data";
     title.fontSize = 25;
     title.marginBottom = 15;
-    
-     this.covidService.getCountryHistorical(this.countryObject['cyName'])
+
+    //Getting covid hitorical global data for a country
+    this.covidService.getCountryHistoricalGlobalData(this.countryObject['cyName'])
     .subscribe( data4 => {
-      this.historicalCountry = data4;
+      this.historicalGlobalDataCountry = data4;
+      //Calling the function who will draw the country historics globals data
+      this.createCountryChart(this.historicalGlobalDataCountry, countryHistoricsGlobalDataChart,am4core, am4charts);
       //console.log("this.historicalCountry :",this.historicalCountry )
-
-     
-    //Calling the function who will draw the country historics globals data
-    this.createCountryGraph(this.historicalCountry, countryHistoricsChart,am4core, am4charts);
-      //console.log("this.historicalCountry :",this.historicalCountry )
-
     });
 
+    //Getting covid global data for the selected country
     this.covidService.getCountryGlobals(this.countryObject['cyName'])
     .subscribe( data5 =>{
       this.countryGlobals = data5;
       //console.log("this.globalCountry :",this.countryGlobals );
-
     });
+
+
+
+    //create chart for Vaccines data
+    let countryHistoricsVaccinesChart = am4core.create(this.countryHistoricalVaccinesChart.nativeElement, am4charts.XYChart);
+    
+
+    //Getting Covid vaccines  datafor a country
+    this.covidService.getCountryHistoricalVaccinesData(this.countryObject['cyName'])
+    .subscribe( data6 =>{
+      this.countryVaccines = data6;
+      //Calling the function who will draw the country historics vaccines data
+      this.createCountryVaccinesChart(this.countryVaccines, countryHistoricsVaccinesChart, am4core, am4charts)
+    })
+
+
     
   },this);
 
@@ -380,7 +427,7 @@ var newClickedCountry : any;
 
 
 //creating Graph for the historics covid data of the clicked country
-createCountryGraph(param, map, am4core, am4charts) : void{
+createCountryChart(param, map, am4core, am4charts) : void{
 
     for(var key in param.timeline.cases ){
       // Add data
@@ -549,11 +596,8 @@ map.logo.disabled = true;
 
 }
 
-
-
-  //creating the graph displaying the world historics data of covid
-  createWorldGraph( am4core, am4charts, am4themes_animated) : void{
-
+//creating the graph displaying the world historics data of covid
+createWorldChart( am4core, am4charts, am4themes_animated) : void{
 
     am4core.useTheme(am4themes_animated);
 
@@ -561,7 +605,7 @@ map.logo.disabled = true;
     let worldHistoricsChart = am4core.create('worldHistoricalChart', am4charts.XYChart);
     
     let title = worldHistoricsChart.titles.create();
-    title.text = "World Historical data";
+    title.text = "World  Historical Data";
     title.fontSize = 25;
     title.marginBottom = 15;
 
@@ -642,6 +686,9 @@ if(this.translate.currentLang==='en'){
 
 if(this.translate.currentLang ==='fr'){
 
+  title.text = "Données Mondiales";
+
+
   series.name = "Cas";
   series.tooltipHTML = `<div style="display:flex; align-items:center; justify-content:center;color:white;">
                         Date: {date}
@@ -668,6 +715,8 @@ this.translate.onLangChange.subscribe(lang =>{
 
   if(lang.lang === 'en'){
 
+    title.text = "World Historical Data";
+
     series.name = "Cases";
   series.tooltipHTML = `<div style="display:flex; align-items:center; justify-content:center; color:white;">
                         Date: {date}
@@ -689,6 +738,7 @@ this.translate.onLangChange.subscribe(lang =>{
   }
 
   if(lang.lang === 'fr'){
+    title.text = "Données Historiques Mondiales";
 
     series.name = "Cas";
   series.tooltipHTML = `<div style="display:flex; align-items:center; justify-content:center;color:white;">
@@ -741,7 +791,240 @@ worldHistoricsChart.logo.disabled = true;
 
 }
 
+//creating the graph displaying the world historics data of covid
+createWorldVaccinesChart( am4core, am4charts, am4themes_animated) : void{
 
+  am4core.useTheme(am4themes_animated);
+
+  // Create chart instance
+  let worldVaccineChart = am4core.create('worldVaccineChart', am4charts.XYChart);
+  
+  let title = worldVaccineChart.titles.create();
+  title.text = "World Vaccines Data";
+  title.fontSize = 25;
+  title.marginBottom = 15;
+
+  //Adding historics vaccines data coming from the resolver of maps
+ let data3= this.resolver.worldVaccines;
+
+    for(let i=0; i< data3.length - 1; i++ ){
+          // Add data
+          worldVaccineChart.data.push({date: new Date(data3[i].date), vaccines: data3[i].daily});
+    }
+
+// Create axes
+let dateAxis = worldVaccineChart.xAxes.push(new am4charts.DateAxis());
+dateAxis.renderer.grid.template.location = 0;
+dateAxis.renderer.minGridDistance = 50;
+//dateAxis.renderer.labels.template.fill = am4core.color("#e59165");
+
+let valueAxis = worldVaccineChart.yAxes.push(new am4charts.ValueAxis());
+
+// Create series for cases
+let series = worldVaccineChart.series.push(new am4charts.LineSeries());
+series.dataFields.valueY = "vaccines";
+series.dataFields.dateX = "date";
+series.strokeWidth = 3;
+series.stroke = am4core.color("#00a2ff");
+series.tooltip.getFillFromObject = false;
+series.tooltip.background.fill = am4core.color("#00a2ff");
+
+
+series.tooltip.pointerOrientation = "vertical";
+
+
+//Affichage des tooltips de l'histographe en fonction de la langue courante
+if(this.translate.currentLang==='en'){
+
+series.name = "Vaccines";
+series.tooltipHTML = `<div style="display:flex; align-items:center; justify-content:center; color:white;">
+                      Date: {date}
+                      <div style="margin-left:5px; padding-left: 5px; border-left: 2px solid white;"> Vaccines: {vaccines}</div>                    
+                      </div>`;
+}
+
+if(this.translate.currentLang ==='fr'){
+
+title.text = "Vaccins Dans Le Monde";
+
+series.name = "Vaccins";
+series.tooltipHTML = `<div style="display:flex; align-items:center; justify-content:center;color:white;">
+                      Date: {date}
+                      <div style="margin-left:5px; padding-left: 5px; border-left: solid white;"> Vaccins: {vaccines}</div>                    
+                      </div>`;
+}
+
+
+this.translate.onLangChange.subscribe(lang =>{
+
+
+if(lang.lang === 'en'){
+
+  title.text = "World Vaccines Data";
+
+  series.name = "Vaccines";
+series.tooltipHTML = `<div style="display:flex; align-items:center; justify-content:center; color:white;">
+                      Date: {date}
+                      <div style="margin-left:5px; padding-left: 5px; border-left: 2px solid white;"> Vaccines: {vaccines}</div>                    
+                      </div>`;
+
+  
+}
+
+if(lang.lang === 'fr'){
+  title.text = "Vaccins Dans Le Monde";
+
+  series.name = "Vaccins";
+series.tooltipHTML = `<div style="display:flex; align-items:center; justify-content:center;color:white;">
+                      Date: {date}
+                      <div style="margin-left:5px; padding-left: 5px; border-left: solid white;"> Vaccins: {vaccines}</div>                    
+                      </div>`;
+  
+}
+})
+
+
+//Legend
+worldVaccineChart.legend = new am4charts.Legend();
+worldVaccineChart.cursor = new am4charts.XYCursor();
+
+//Adding scrollbar
+var scrollbarX = new am4charts.XYChartScrollbar();
+scrollbarX.series.push(series);
+
+worldVaccineChart.scrollbarX = scrollbarX;
+
+worldVaccineChart.scrollbarX.background.fill = am4core.color("#dc67ab");
+worldVaccineChart.scrollbarX.background.fillOpacity = 0.2;
+
+//Defining the size ofthe scroll bar
+worldVaccineChart.scrollbarX.minHeight= 40;
+
+//Setting of gris
+worldVaccineChart.scrollbarX.startGrip.background.fill = am4core.color("#000000");
+worldVaccineChart.scrollbarX.startGrip.background.fillOpacity = 0.8;
+worldVaccineChart.scrollbarX.endGrip.background.fill = am4core.color("#000000");
+worldVaccineChart.scrollbarX.endGrip.background.fillOpacity = 0.8;
+  
+// Disabling amChart logo
+worldVaccineChart.logo.disabled = true;
+
+}
+
+
+//Creating world vaccines graph
+createCountryVaccinesChart( param, map, am4core, am4charts) : void{
+
+  let title = map.titles.create();
+    title.text = this.countryObject['cyName']+" Vaccines Data";
+    title.fontSize = 25;
+    title.marginBottom = 15;
+  
+  for(let key in param.timeline ){
+    // Add data
+    console.log("max ",param.timeline.length)
+    console.log("hey ",key)
+    if( parseInt(key) < (param.timeline.length -1) ){
+    map.data.push({date: new Date(param.timeline[key].date), vaccines: param.timeline[key].daily});
+  }
+  }
+
+// Create axes
+let dateAxis = map.xAxes.push(new am4charts.DateAxis());
+dateAxis.renderer.grid.template.location = 0;
+dateAxis.renderer.minGridDistance = 50;
+//dateAxis.renderer.labels.template.fill = am4core.color("#e59165");
+
+let valueAxis = map.yAxes.push(new am4charts.ValueAxis());
+
+// Create series for cases
+let series = map.series.push(new am4charts.LineSeries());
+series.dataFields.valueY = "vaccines";
+series.dataFields.dateX = "date";
+series.strokeWidth = 3;
+series.stroke = am4core.color("#00a2ff");
+series.tooltip.getFillFromObject = false;
+series.tooltip.background.fill = am4core.color("#00a2ff");
+
+
+series.tooltip.pointerOrientation = "vertical";
+
+
+//Affichage des tooltips de l'histographe en fonction de la langue courante
+if(this.translate.currentLang==='en'){
+
+series.name = "Vaccines";
+series.tooltipHTML = `<div style="display:flex; align-items:center; justify-content:center; color:white;">
+                      Date: {date}
+                      <div style="margin-left:5px; padding-left: 5px; border-left: 2px solid white;"> Vaccines: {vaccines}</div>                    
+                      </div>`;
+}
+
+if(this.translate.currentLang ==='fr'){
+
+
+series.name = "Vaccins";
+series.tooltipHTML = `<div style="display:flex; align-items:center; justify-content:center;color:white;">
+                      Date: {date}
+                      <div style="margin-left:5px; padding-left: 5px; border-left: solid white;"> Vaccins: {vaccines}</div>                    
+                      </div>`;
+}
+
+
+this.translate.onLangChange.subscribe(lang =>{
+
+
+if(lang.lang === 'en'){
+
+  series.name = "Vaccines";
+series.tooltipHTML = `<div style="display:flex; align-items:center; justify-content:center; color:white;">
+                      Date: {date}
+                      <div style="margin-left:5px; padding-left: 5px; border-left: 2px solid white;"> Vaccines: {vaccines}</div>                    
+                      </div>`;
+
+  
+}
+
+if(lang.lang === 'fr'){
+
+  series.name = "Vaccins";
+series.tooltipHTML = `<div style="display:flex; align-items:center; justify-content:center;color:white;">
+                      Date: {date}
+                      <div style="margin-left:5px; padding-left: 5px; border-left: solid white;"> Vaccins: {vaccines}</div>                    
+                      </div>`;
+  
+}
+})
+
+
+//Legend
+
+map.legend = new am4charts.Legend();
+map.cursor = new am4charts.XYCursor();
+
+
+//Adding scrollbar
+var scrollbarX = new am4charts.XYChartScrollbar();
+scrollbarX.series.push(series);
+
+map.scrollbarX = scrollbarX;
+
+map.scrollbarX.background.fill = am4core.color("#dc67ab");
+map.scrollbarX.background.fillOpacity = 0.2;
+
+//Defining the size ofthe scroll bar
+map.scrollbarX.minHeight= 40;
+
+//Setting of gris
+map.scrollbarX.startGrip.background.fill = am4core.color("#000000");
+map.scrollbarX.startGrip.background.fillOpacity = 0.8;
+map.scrollbarX.endGrip.background.fill = am4core.color("#000000");
+map.scrollbarX.endGrip.background.fillOpacity = 0.8;
+  
+// Disabling amChart logo
+map.logo.disabled = true;
+
+}
 
 
   //Getting world cases
