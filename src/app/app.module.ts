@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, TransferState } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +9,8 @@ import { MatInputModule } from '@angular/material/input';
 import { WorldStatsComponent } from './components/world-stats/world-stats.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TransferHttpCacheModule } from '@nguniversal/common';
+import { translateBrowserLoaderFactory } from './services/loaders/translate-browser.loader';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { HeaderComponent } from './components/header/header.component';
@@ -17,12 +19,13 @@ import { ScreenSizeAdviceComponent } from './components/screen-size-advice/scree
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { StartingLoaderComponent } from './components/starting-loader/starting-loader.component';
 import { WorldMapModule } from './modules/general/world-map/world-map.module';
 import { DisclaimersModule } from './modules/general/disclaimers/disclaimers.module';
 import { AboutUsModule } from './modules/general/about-us/about-us.module';
 import { Covid19Module } from './modules/general/covid19/covid19.module';
 import { BuyMeACoffeeModule } from './modules/general/buy-me-a-coffee/buy-me-a-coffee.module';
+
+import { environment } from '../environments/environment.prod';
 
 
 import { LocationStrategy, Location, PathLocationStrategy } from '@angular/common';
@@ -33,11 +36,11 @@ import { LocationStrategy, Location, PathLocationStrategy } from '@angular/commo
     PageNotFoundComponent,
     HeaderComponent,
     FooterComponent,
-    ScreenSizeAdviceComponent,
-    StartingLoaderComponent
+    ScreenSizeAdviceComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    TransferHttpCacheModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
@@ -48,8 +51,8 @@ import { LocationStrategy, Location, PathLocationStrategy } from '@angular/commo
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: (httpTranslateLoader),
-        deps: [HttpClient]
+        useFactory: translateBrowserLoaderFactory,
+        deps: [HttpClient, TransferState]
       },
       isolate:false
     }),
@@ -64,7 +67,10 @@ import { LocationStrategy, Location, PathLocationStrategy } from '@angular/commo
   ],
   providers: [
     Location,
-    {provide: LocationStrategy, useClass: PathLocationStrategy}
+    {provide: 'googleTagManagerId',  useValue: environment.GOOGLE_ANALYTICS},
+    {provide: LocationStrategy, useClass: PathLocationStrategy},
+
+
   ],
   bootstrap: [AppComponent]
 })

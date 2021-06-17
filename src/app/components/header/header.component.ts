@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { GoogleAnalyticsService } from '../../services/google-analytics/google-analytics.service';
+import { GoogleTagManagerService } from 'angular-google-tag-manager';
 import * as $ from 'jquery';
 
 @Component({
@@ -12,7 +13,7 @@ export class HeaderComponent implements OnInit {
 
   isEnglishchecked : boolean = true;
   isFrenchChecked : boolean = false;
-  constructor(private translate: TranslateService, public googleAnalytics : GoogleAnalyticsService   ) {
+  constructor(private translate: TranslateService, private gtmService: GoogleTagManagerService   ) {
    
   }
 
@@ -53,7 +54,7 @@ export class HeaderComponent implements OnInit {
       $( ".fr" ).prop( "checked", true );
     }
 
-    this.googleAnalytics.eventEmitter("Choix_langue", "français","click")
+    this.customEvent();
     
   }
 
@@ -82,6 +83,18 @@ export class HeaderComponent implements OnInit {
       }
     });
 
+}
+
+
+
+customEvent() {
+
+  
+  const gtmTag = {
+    event: 'choose-french',
+    data: 'french user',
+  };
+  this.gtmService.pushTag(gtmTag);
 }
 
 }

@@ -9,9 +9,6 @@ import { Countries } from '../../../../models/countries';
 import { Meta, Title } from '@angular/platform-browser';
 //import { ActivatedRoute } from '@angular/router';
 
-declare var Rellax : any; 
-
-
 @Component({
   selector: 'app-world-stats',
   templateUrl: './world-stats.component.html',
@@ -70,13 +67,6 @@ export class WorldStatsComponent implements OnInit {
     this.getContinentsAF();
     this.getContinentsOC();
     //this.getCountriesAll();
-    var rellaxVertical = new Rellax('.rellaxV'); 
-    var rellaxHorizontal = new Rellax('.rellaxH', {
-      horizontal:true,
-  
-      //Disable vertical Parallax Scrolling     
-      vertical:false
-    });
 
   }
 

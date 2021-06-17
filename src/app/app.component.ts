@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Covid19Service }from './services/main-services/main-covid19.service';
 import { Router, NavigationEnd } from '@angular/router';
+import { GoogleTagManagerService } from 'angular-google-tag-manager';
 
 import{ environment } from '../environments/environment';
 
@@ -13,7 +14,7 @@ declare let gtag : Function;
 export class AppComponent implements OnInit{
   title = 'SSCovid19';
 
-  constructor( private covidService : Covid19Service, public router: Router){
+  constructor( private covidService : Covid19Service, public router: Router, private gtmService: GoogleTagManagerService){
     this.router.events.subscribe(event =>{
       if (event instanceof NavigationEnd){
         gtag('config', environment.GOOGLE_ANALYTICS,
@@ -27,7 +28,18 @@ export class AppComponent implements OnInit{
 
 ngOnInit(){
 
-    
+    this.router.events.forEach(item =>{
+      if (item instanceof NavigationEnd){
+        const gtmTag = {
+          event: 'page',
+          pageName: item.url
+        };
+        this.gtmService.pushTag(gtmTag)
+      }
+    });
+    {
+
+    }
 
   }
 
