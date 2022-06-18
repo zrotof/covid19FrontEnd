@@ -1,40 +1,28 @@
-.header{
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #161748;
+    width: 100%;
+    position: fixed;
+    height: 6.5em;
+    z-index: 3;
+    border-bottom:  solid white;
+    top: 0%;
+}
+
+.content{
     display:flex;
     align-items: center;
     justify-content: space-between;
     color: whitesmoke;
-    background-color: #161748;
-    height: 7.5em;
-    width: 100%;
-    padding-left: 1em;
-    padding-right: 1em;
-    position: fixed;
-    top: 0%;
-    border-bottom:  solid white;
-    z-index: 3;
-}
-
-.header_left{
-    display: flex;
-    align-items: center;
     height: 100%;
-    outline: none;
+    width: 100%;
+}
+
+.logo{
+    height: 60px;
     cursor: pointer;
-    background-image: url('../../../assets/img/corona-without-bg.png');
-    background-repeat: no-repeat;
-    background-size: 50%;
-    background-position: center;
-
-}
-
-
-.header_left > img{
-    height: 60%;
-}
-
-
-span {
-    font-weight: bold;
 }
 
 .header_right{
@@ -44,67 +32,82 @@ span {
     height: 100%;
 }
 
-.header-menu-language{
+.menu-language{
     display: flex;
     height: 100%;
     justify-content: center;
     align-items: center;
 }
 
-.header-menu{
+nav{
+    display:flex;
+}
+
+.menu{
     padding: 0;
     margin: 0;
     display: flex;
+    align-items: center;
     list-style: none;
 }
 
-.header-menu > li{
-    margin-left: 0.5em;
-    padding-bottom: 0.5em;
-    padding-top: 0.5em;
+.menu > li{
+    margin-left: 15px;
     position: relative;
 }
 
-
-
-.header-menu >li > span {
-    font-size: 1.23em;
-    padding: 0.5em;
-    outline: none;
+.menu >li > a {
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 5px 10px;
     cursor: pointer;
+    color: white;
+    border-radius: 5px;
+
 }
 
-.header-menu > li > span:hover {
+.menu > li > a:hover {
     color: red;
-    background-color: whitesmoke;
-    border-radius: 8px;
+
 }
+
+.active{
+    color: red !important;
+    background-color: whitesmoke;
+}
+
+
 
 
 .coffee{
-    padding: 0.5em;
-    border-radius: 6px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 2px solid rgb(209, 49, 84);
+    color: white;
+    margin-left: 25px;
+    outline: none;
+    background-color: transparent;
+    border-radius: 5px;
+
+}
+
+.active-button{
     background-color: rgb(209, 49, 84);
+
 }
 
 .coffee-cup{
-    height:1.23em;
+    height:1.1em;
     margin: auto;
 }
 
 
 
-
-.active{
-    color: white;
-    border-bottom: solid red;
-}
-
-.header-language{
+.language{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 2em;
+    margin-left: 25px;
 }
 
 

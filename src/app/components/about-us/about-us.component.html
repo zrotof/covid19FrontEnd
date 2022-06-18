@@ -1,39 +1,42 @@
 <div class="about-us">
-    <span class="title"> {{'about.title' | translate}} </span>
     
-    <div class="content">
-        <div class="bloc-photo">
-            <div class="photo">
-                <img src="../../assets/img/zrotof-big-head.jpg" alt="The image ofdevelopper of this website">
-                
-            </div>
-            <span class="bloc-photo-text" >Contact: samuel@sscovid19.com</span>
-            <span class="bloc-photo-text"> {{'about.bloc-photo.info' | translate }} </span>
-            <span class="bloc-photo-text"> {{'about.bloc-photo.thanks' | translate}} </span>
-        </div>
-
-        <div class="text-bloc">
-            <div class="text">
-                <span class="subtitle">ME</span>
-                <p> {{'about.bloc-text.me.paragraphe1' | translate}} </p>
-                <p> {{'about.bloc-text.me.paragraphe2' | translate}} </p>
-                    <ul>
-                        <li> {{'about.bloc-text.me.reason1' | translate}} </li>
-                        <li> {{'about.bloc-text.me.reason2' | translate}} </li>
-                    </ul>
-              
+    <div class="content my-container">
+        <span class="title"> {{'about.title' | translate}} </span>
+        <div class="profil-texts">
+            <div class="profil">
+                <img src="../../assets/img/zrotof.png" alt="image of developper of this website">
+                    
+                    <div class="networks">     
+                        <i class="pi pi-linkedin linkedin" (click)="openNetwork('linkedin')"></i>
+                        <i class="pi pi-github github" (click)="openNetwork('github')"></i>
+                        <i class="pi pi-instagram instagram" (click)="openNetwork('instagram')"></i>
+                        <img (click)="openNetwork('portfolio')" src="../../../assets/img/portfolio-favicon.png" alt="logo of my portfolio">
+                    </div>
             </div>
 
+            <div class="texts">
+                    <div class="text">
+                        <p> {{'about.bloc-text.me.paragraphe1' | translate}} </p>
+                        <p> {{'about.bloc-text.me.paragraphe2' | translate}} </p>
+                        <ul>
+                            <li> {{'about.bloc-text.me.reason1' | translate}} </li>
+                            <li> {{'about.bloc-text.me.reason2' | translate}} </li>
+                        </ul>
+                    </div>
 
-            <div class="text">
-                <span class="subtitle">SOURCES (<img src="../../assets/img/group.png" alt="icon of a group of three persons" />,<img src="../../assets/img/api.png"/>)</span>
-                <p> {{'about.bloc-text.sources.paragraphe1' | translate}} </p>
-                <ul>
-                    <li> {{'about.bloc-text.sources.source1' | translate}} </li>
-                    <li> {{'about.bloc-text.sources.source2' | translate}} </li>
-                </ul>
+                    <img src="../../../assets/img/sscovid19-illustration.png">
+        
+                    <div class="text">
+                        <p> {{'about.bloc-text.sources.paragraphe1' | translate}} </p>
+                        <ul>
+                            <li> {{'about.bloc-text.sources.source1' | translate}} </li>
+                            <li> {{'about.bloc-text.sources.source2' | translate}} </li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
-        </div>
+           
     </div>
 
 </div>

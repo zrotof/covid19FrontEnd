@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="547" height="222.274" viewBox="0 0 547 222.274">
+  <defs>
+    <clipPath id="clip">
+      <use xlink:href="#fill"/>
+    </clipPath>
+  </defs>
+  <g id="Groupe_18" data-name="Groupe 18" transform="translate(-771.5 -1143.299)">
+    <g id="coro-logo" transform="translate(-586 -275)">
+      <text id="s" transform="translate(1418.5 1569.5)" fill="#fff" font-size="127" font-family="NotoSans, Noto Sans" letter-spacing="0.009em"><tspan x="0" y="0">s</tspan></text>
+      <text id="s-2" data-name="s" transform="translate(1357.5 1569.5)" fill="#fff" font-size="127" font-family="NotoSans, Noto Sans" letter-spacing="0.009em"><tspan x="0" y="0">s</tspan></text>
+      <text id="c" transform="translate(1479.5 1569.5)" fill="#fff" font-size="127" font-family="NotoSans, Noto Sans" letter-spacing="0.009em"><tspan x="0" y="0">c</tspan></text>
+      <text id="o" transform="translate(1540.5 1569.5)" fill="#fff" font-size="127" font-family="NotoSans, Noto Sans" letter-spacing="0.009em"><tspan x="0" y="0">o</tspan></text>
+      <text id="v" transform="translate(1617.5 1569.5)" fill="#fff" font-size="127" font-family="NotoSans, Noto Sans" letter-spacing="0.009em"><tspan x="0" y="0">v</tspan></text>
+      <text id="_1" data-name="1" transform="translate(1800.5 1567.5)" fill="#fff" font-size="104" font-family="NotoSans, Noto Sans" letter-spacing="0.009em"><tspan x="0" y="0">1</tspan></text>
+      <g id="Groupe_2" data-name="Groupe 2" transform="matrix(0.999, 0.035, -0.035, 0.999, 143.107, -26.527)">
+        <path id="Tracé_11" data-name="Tracé 11" d="M1598.162,1711.73s13.972-27.075,18.415-31.575,7.771-4.682,11.918-4.047c3.764.576,12.352,2.733,11.863,14.878s-2.691,26.774-15.824,59.689c-11.265,28.231-19.09,47-30.036,53.052-4.624,2.556-8.572.362-13.347-.808-8.773-2.145-17.834-11.54-20.588-11.991" transform="translate(12.529 -239)" fill="none" stroke="#fff" stroke-width="6"/>
+        <path id="Tracé_12" data-name="Tracé 12" d="M28.211.6,18.369,32.46,0,31.18,42.274,42.416,25.516,34.37l5.466-33.3Z" transform="translate(1563.479 1559.53) rotate(11)" fill="#fff" stroke="#fff" stroke-width="6"/>
+        <g id="Rectangle_2" data-name="Rectangle 2" transform="matrix(0.94, 0.342, -0.342, 0.94, 1660.873, 1387.708)" fill="none" stroke="#fff" stroke-width="28">
+          <rect id="fill" width="4" height="51" stroke="none"/>
+          <path d="M0,14h4M14,0v51M4,37h-4M-10,51v-51" fill="none" clip-path="url(#clip)"/>
+        </g>
+        <path id="Tracé_13" data-name="Tracé 13" d="M1589.619,1802.2s8.761,3.334,24.7-32.824,20.528-59.108,20.528-59.108-18.424,42-34.915,59.61-38.857,18.19-38.857,18.19,8.808,8.042,16.418,10.647A102,102,0,0,0,1589.619,1802.2Z" transform="translate(12.529 -239)" fill="rgba(255,255,255,0.95)"/>
+      </g>
+      <path id="Tracé_14" data-name="Tracé 14" d="M1586.447,1783.629l-1.926,19.335-2,48.117s27.331,2.767,40.442-6.707,11.42-25.173,10.975-30.572-2.316-13.745-15.427-22.707S1586.447,1783.629,1586.447,1783.629Z" transform="translate(161.048 -285.347)" fill="none" stroke="#fff" stroke-width="13"/>
+      <text id="_9" data-name="9" transform="translate(1846.5 1567.5)" fill="#fff" font-size="104" font-family="NotoSans, Noto Sans" letter-spacing="0.009em"><tspan x="0" y="0">9</tspan></text>
+      <path id="Tracé_15" data-name="Tracé 15" d="M1640.724,1568.8s12.139-31.914,18.063-45.316,12.838-47.988,12.838-47.988" transform="translate(83.406 3.68)" fill="none" stroke="#161748" stroke-linecap="round" stroke-width="12"/>
+    </g>
+  </g>
+</svg>

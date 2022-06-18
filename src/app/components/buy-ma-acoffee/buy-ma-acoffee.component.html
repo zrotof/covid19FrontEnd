@@ -1,29 +1,32 @@
-<div class="content">
-    <span class="title"> {{'bmac.title' | translate}} </span>
-    <div class="main-bloc">
-        <div class="left-bloc">
-            <span > {{'bmac.top-bloc.question' | translate}} </span>
-
-            <p> {{'bmac.top-bloc.paragraphe1' | translate}} </p>
-            <ul>
-                <li>{{'bmac.top-bloc.support1' | translate}} </li>
-                <li>{{'bmac.top-bloc.support2' | translate}}</li>
-                <li>{{'bmac.top-bloc.support3' | translate}}</li>
-            </ul>
+<div class="bmac">
+    <div class="content my-container">
+        <span class="title"> {{'bmac.title' | translate}} </span>
+        <div class="top-bloc">
+                <span > {{'bmac.top-bloc.question' | translate}} </span>
+    
+                <p> {{'bmac.top-bloc.paragraphe1' | translate}} </p>
+                <ul>
+                    <li>{{'bmac.top-bloc.support1' | translate}} </li>
+                    <li>{{'bmac.top-bloc.support2' | translate}}</li>
+                    <li>{{'bmac.top-bloc.support3' | translate}}</li>
+                </ul>
         </div>
-        <div class="right-bloc">
-            <p> {{'bmac.medium-bloc.paragraphe1' | translate}} </p>
-            <p> {{'bmac.medium-bloc.paragraphe2' | translate}} </p>
-            <p> {{'bmac.medium-bloc.paragraphe3' | translate}} </p>
-            <p> {{'bmac.medium-bloc.paragraphe4' | translate}} </p>
-                <p> {{'bmac.medium-bloc.paragraphe5' | translate}} </p>
+        <div class="middle-bloc">
+                <img  src="../../../assets/img/picsou.jpg" alt="image of picsou">
+                <div class="reasons">
+                    <p> {{'bmac.medium-bloc.paragraphe1' | translate}} </p>
+                    <p> {{'bmac.medium-bloc.paragraphe2' | translate}} </p>
+                    <p> {{'bmac.medium-bloc.paragraphe3' | translate}} </p>
+                    <p> {{'bmac.medium-bloc.paragraphe4' | translate}} </p>
+                    <p> {{'bmac.medium-bloc.paragraphe5' | translate}} </p>
                     <span routerLink="/buy-me-a-coffee" class="coffee" (click)= "redirectToBmc()">
-
-                    <img src="../../assets/img/coffee-cup.png" class="coffee-cup">
-                    Buy Me a coffee 
-                </span>
-            </div>
+    
+                        <img src="../../assets/img/coffee-cup.png" class="coffee-cup">
+                        Buy Me a coffee 
+                    </span>
+                </div>
         </div>
+        
         <span class="title2"> {{'bmac.bottom-bloc.question' | translate}} </span>
         <p  class="secutity-text"><span (click)="redirectToBmcAbout()" class="about-mbc">Buy Me a Coffee</span> {{'bmac.bottom-bloc.paragraphe1' | translate}}</p>
 
@@ -45,4 +48,6 @@
     </div>
     
 </div>
+    </div>
+           
 </div>

@@ -1,576 +1,587 @@
-<div class="greetings">
+<div class="data">
+  <div class="content my-container">
+    
+    <div class="intro">
 
-  <span class="date-update">{{'data.date-update.label' | translate}}
-
-    <span *ngIf="!world" class="date-loader">
-      <div class="spinner-border spinner-border-sm " role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
-    </span>
-    <span *ngIf="world">{{'data.date-update.text1' | translate}} {{dateWorld}} {{'data.date-update.text2' | translate}}</span>
-  </span>
-
-  <div class="globals-text">
-    <h1 class="globals-text-title">{{'data.title' | translate}}</h1>
-    <div class="globals-text-content">
-      <span>{{'data.introduction' | translate}}</span>
-      <div>
-        <ul>
-          <li class="confirmed-cases">{{'data.indications.one' | translate}}</li>
-          <li class="recovered-cases">{{'data.indications.two' | translate}}</li>
-        </ul>
-
-        <ul>
-          <li class="criticals-cases">{{'data.indications.three' | translate}}</li>
-          <li class="death-cases">{{'data.indications.four' | translate}}</li>
-        </ul>
-      </div>
-
-
-    </div>
-  </div>
-  <span class="recommendations">{{'data.advice' | translate}}</span>
-
-</div>
-
-
-
-
-<div class="globals">
-
-  <div class="Spinning_earth">
-    <div class="earth"></div>
-  </div>
-
-  <div class="Cases RCD">
-    <img src="../assets/img/coro_cases.png" alt="confirmed man logo">
-    <span class="number" *ngIf="world"><strong>{{ world.wCases | number }}</strong></span>
-    <span><strong>{{'data.world.total-label-cases' | translate}}</strong></span>
-  </div>
-
-  <div class="ReCrDe">
-
-    <div class="Recovered">
-      <img src="../assets/img/coro_rescue.png" alt="rescued man logo">
-      <div>
-        <span><strong>{{'data.world.total-label-recovered' | translate}}</strong></span>
-        <span class="number" *ngIf="world"><strong>{{world.wRecovered | number}}</strong></span>
-      </div>
-    </div>
-
-    <div class="Criticals RCD">
-      <img src="../assets/img/coro_critical.png" alt="criticals man logo">
-      <div>
-        <span><strong>{{'data.world.total-label-criticals' | translate}}</strong></span>
-        <span class="number" *ngIf="world"><strong>{{world.wCritical | number}}</strong></span>
-      </div>
-    </div>
-
-    <div class="Deaths RCD">
-      <img src="../assets/img/coro_deaths.png" alt="deaths man logo">
-      <div>
-        <span><strong>{{'data.world.total-label-deaths' | translate}}</strong></span>
-        <span class="number" *ngIf="world"><strong>{{world.wDeaths | number}}</strong></span>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="continents">
-    <div class="titles">
-      <div class="titles-medium ">{{'data.continent' | translate}}</div>
-      <div class="titles-max "><img src="../assets/img/coro_cases.png" alt="confirmed man logo"></div>
-      <div class="titles-medium "><img src="../assets/img/coro_rescue.png" alt="rescued man logo"></div>
-      <div class="titles-medium "><img src="../assets/img/coro_critical.png" alt="rescued man logo"></div>
-      <div class="titles-max "><img src="../assets/img/coro_deaths.png" alt="deaths man logo"></div>
-    </div>
-
-    <div class="loader-continents" *ngIf="!continents">
-
-      <div class="d-flex justify-content-center">
-        <div class="spinner-border" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="values" *ngFor="let continent of continents">
-
-      <div class="line">
-
-        <div class="tab-continent-name">{{ continent.ctName }}</div>
-
-        <div class="tab-cases">
-          <div>{{ continent.ctCases | number }}</div>
-          <div *ngIf="continent.ctToDayCases != null">+{{ continent.ctToDayCases | number }}</div>
-          <div *ngIf="continent.ctToDayCases == null "> - </div>
-
-        </div>
-
-        <div class=" tab-normal">{{ continent.ctRecovered | number }}</div>
-
-        <div class=" tab-normal">{{ continent.ctCritical | number }}</div>
-
-        <div class=" tab-deaths">
-          <div>{{ continent.ctDeaths | number }}</div>
-          <div *ngIf="continent.ctToDayDeaths != null ">+{{ continent.ctToDayDeaths | number }}</div>
-          <div *ngIf="continent.ctToDayDeaths == null "> - </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-<div class="data-introduction">
-  <div>
-
-    <div class="data-introduction-left">
-      <h2>
-        {{'data.explanations.one.title' | translate}}
-      </h2>
-      <p>
-        {{'data.explanations.one.text1' | translate}}
-        <span class="disclaimers" routerLink="/disclaimers">{{'data.explanations.one.text2' | translate}}</span>
-        {{'data.explanations.one.text3' | translate}}
-      </p>
-    </div>
-
-    <div class="data-introduction-right">
-      <h2>
-        {{'data.explanations.two.title' | translate}}
-      </h2>
-      <p>{{'data.explanations.two.text' | translate}}</p>
-    </div>
-
-  </div>
-
-  <div class="rounded">
-    <div >
-      <span>{{'data.numbers.one.title' | translate}}</span>
-      <span>{{'data.numbers.one.value' | translate}}</span>
-    </div>
-    <div>
-      <span>{{'data.numbers.two.title' | translate}}</span>
-      <span>{{'data.numbers.two.value' | translate}}</span>
-    </div>
-    <div >
-      <span>{{'data.numbers.three.title' | translate}}</span>
-      <span>
-        <img class="rounded-en" src="../../assets/img/en.png" alt="flag of Fngland">
-        <img class="rounded-fr" src="../../assets/img/fr.jpeg" alt="flag of France">
+      <span class="last-updated-date">{{'data.date-update.label' | translate}}
+    
+        <span *ngIf="!world" class="date-loader">
+          <div class="spinner-border spinner-border-sm " role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </span>
+        <span *ngIf="world">{{'data.date-update.text1' | translate}} {{dateWorld}} {{'data.date-update.text2' | translate}}</span>
       </span>
-
-    </div>
-  </div>
-</div>
-
-
-
-<div class="data-by-continents">
-
-  <div class="continent Continent-NA">
-
-    <div class="continent-name">
-      <span class="name">{{'data.continent-countries.name-na' | translate}}</span>
-      <div class="tests-vaccines">
-        <div class="tests">          
-          <span class="tests-value"> {{ testsNA | number }}</span>
-          <span class="tests-label"> {{ 'data.continent-countries.tests' | translate }}  </span>
-        </div>
-        <div class="vaccines">
-          <span class="vaccines-value">  {{ vaccinesNA | number }}</span>
-          <span class="vaccines-label">{{'data.continent-countries.vaccines' | translate }}  </span>
+    
+      <div class="intro-text">
+        <h1 class="title">{{'data.title' | translate}}</h1>
+        <div class="explanations">
+          <span>{{'data.introduction' | translate}}</span>
+          <div>
+            <ul>
+              <li class="confirmed-cases">{{'data.indications.one' | translate}}</li>
+              <li class="recovered-cases">{{'data.indications.two' | translate}}</li>
+            </ul>
+    
+            <ul>
+              <li class="criticals-cases">{{'data.indications.three' | translate}}</li>
+              <li class="death-cases">{{'data.indications.four' | translate}}</li>
+            </ul>
+          </div>
+    
+    
         </div>
       </div>
+      <span class="recommendations">{{'data.advice' | translate}}</span>
+    
     </div>
+    
+    <div class="globals-data">
+    
+      <div class="world" *ngIf="world">
 
-    <div class="continent-cy-value">
-
-      <div class="cy-header">
-        <div class="cy-header-name">{{'data.continent-countries.headers.one' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.two' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.three' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.four' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.five' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.six' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.seven' | translate}}</div>
+        <div class="global">
+          <img src="../assets/img/coro_cases.png" alt="confirmed man logo">
+          <div class="cases global-text">
+            <span>{{'data.world.total-label-cases' | translate}}</span>
+            <span class="number" >{{ world.wCases | number }}</span>
+          </div>
+        </div>
+      
+        <div class="global">
+            <img src="../assets/img/coro_rescue.png" alt="rescued man logo">
+            <div class="recoveries global-text">
+              <span class="title">{{'data.world.total-label-recovered' | translate}}</span>
+              <span class="number" >{{world.wRecovered | number}}</span>
+            </div>
+        </div>
+      
+        <div class="global">
+            <img src="../assets/img/coro_critical.png" alt="criticals man logo">
+            <div class="criticals global-text">
+              <span class="title">{{'data.world.total-label-criticals' | translate}}</span>
+              <span class="number" >{{world.wCritical | number}}</span>
+            </div>
+        </div>
+      
+        <div class="global">
+            <img src="../assets/img/coro_deaths.png" alt="deaths man logo">
+            <div class="deaths global-text">
+              <span class="title">{{'data.world.total-label-deaths' | translate}}</span>
+              <span class="number">{{world.wDeaths | number}}</span>
+            </div>
+        </div>
+      
       </div>
-
-      <div class="values-content">
-
-        <div class="loader" *ngIf="!countriesNA">
+      
+    
+      <div class="continents">
+        <div class="titles">
+          <div class="titles-medium ">{{'data.continent' | translate}}</div>
+          <div class="titles-max "><img src="../assets/img/coro_cases.png" alt="confirmed man logo"></div>
+          <div class="titles-medium "><img src="../assets/img/coro_rescue.png" alt="rescued man logo"></div>
+          <div class="titles-medium "><img src="../assets/img/coro_critical.png" alt="rescued man logo"></div>
+          <div class="titles-max "><img src="../assets/img/coro_deaths.png" alt="deaths man logo"></div>
+        </div>
+    
+        <div class="loader-continents" *ngIf="!continents">
+    
           <div class="d-flex justify-content-center">
             <div class="spinner-border" role="status">
               <span class="visually-hidden">Loading...</span>
             </div>
           </div>
         </div>
-
-        <div *ngFor="let countryNA of countriesNA">
-          <div *ngIf="countryNA.cyCases" class="cy-values-row">
-            <div class="cy-values-flag-name"><img class="cy-values-flag" src={{countryNA.cyFlag}}
-                alt="flag of {{countryNA.cyName}} "> {{countryNA.cyName}}</div>
-            <div class="cy-values-crcd">
-              <div>{{countryNA.cyCases | number}}</div>
-              <div *ngIf="countryNA.cyToDayCases" style="color: skyblue;">+{{countryNA.cyToDayCases | number}}</div>
-              <div *ngIf="countryNA.cyToDayCases == null" style="color: skyblue;"> - </div>
+    
+        <div class="values" *ngFor="let continent of continents">
+    
+          <div class="line">
+    
+            <div class="tab-continent-name">{{ continent.ctName }}</div>
+    
+            <div class="tab-cases">
+              <div>{{ continent.ctCases | number }}</div>
+              <div *ngIf="continent.ctToDayCases != null">+{{ continent.ctToDayCases | number }}</div>
+              <div *ngIf="continent.ctToDayCases == null "> - </div>
+    
             </div>
-            <div class="cy-values-crcd">{{countryNA.cyRecovered | number}}</div>
-            <div *ngIf="countryNA.cyCritical" class="cy-values-crcd">{{countryNA.cyCritical | number}}</div>
-            <div *ngIf="countryNA.cyCritical == null" class="cy-values-crcd"> -</div>
-            <div class="cy-values-crcd">
-              <div>{{countryNA.cyDeaths | number}}</div>
-              <div *ngIf="countryNA.cyToDayDeaths" style="color: red;">+{{countryNA.cyToDayDeaths | number}}</div>
-              <div *ngIf="countryNA.cyToDayCases == null" style="color: red;"> - </div>
+    
+            <div class=" tab-normal">{{ continent.ctRecovered | number }}</div>
+    
+            <div class=" tab-normal">{{ continent.ctCritical | number }}</div>
+    
+            <div class=" tab-deaths">
+              <div>{{ continent.ctDeaths | number }}</div>
+              <div *ngIf="continent.ctToDayDeaths != null ">+{{ continent.ctToDayDeaths | number }}</div>
+              <div *ngIf="continent.ctToDayDeaths == null "> - </div>
             </div>
-            <div *ngIf="countryNA.cyTests" class="cy-values-crcd"> {{countryNA.cyTests | number}} </div>
-            <div *ngIf="countryNA.cyTests == null" class="cy-values-crcd"> -</div>
-            <div *ngIf="countryNA.cyVaccines" class="cy-values-crcd"> {{countryNA.cyVaccines | number}} </div>
-            <div *ngIf="countryNA.cyVaccines == null" class="cy-values-crcd"> -</div>
+    
           </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="continent Continent-SA">
-
-
-    <div class="continent-name">
-      <span class="name">{{'data.continent-countries.name-sa' | translate}} </span>
-      <div class="tests-vaccines">
-        <div class="tests">
-          <span class="tests-value">{{ testsSA | number }}</span>
-          <span class="tests-label">{{'data.continent-countries.tests' | translate}}</span>
+    
+    
+    
+    <div class="about">
+      <div class="texts">
+    
+        <div class="text">
+          <h3>
+            {{'data.explanations.one.title' | translate}}
+          </h3>
+          <p>
+            {{'data.explanations.one.text1' | translate}}
+            <span class="disclaimers" routerLink="/disclaimers">{{'data.explanations.one.text2' | translate}}</span>
+            {{'data.explanations.one.text3' | translate}}
+          </p>
         </div>
-        <div class="vaccines">
-          <span class="vaccines-value">{{ vaccinesSA | number }}</span>
-          <span class="vaccines-label">{{'data.continent-countries.vaccines' | translate}}</span>
+    
+        <div class="text">
+          <h3>
+            {{'data.explanations.two.title' | translate}}
+          </h3>
+          <p>{{'data.explanations.two.text' | translate}}</p>
         </div>
+    
       </div>
-      <!--<span class="tested"> {{ testsSA | number }} {{'data.continent-countries.tests' | translate}}</span>-->
-    </div>
+    
+      <div class="rounds">
 
-    <div class="continent-cy-value">
-
-      <div class="cy-header">
-        <div class="cy-header-name">{{'data.continent-countries.headers.one' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.two' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.three' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.four' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.five' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.six' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.seven' | translate}}</div>
-      </div>
-
-
-      <div class="values-content">
-
-        <div class="loader" *ngIf="!countriesSA">
-          <div class="d-flex justify-content-center">
-            <div class="spinner-border" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-          </div>
+        <div class="round">
+          <span>{{'data.numbers.one.title' | translate}}</span>
+          <span>{{'data.numbers.one.value' | translate}}</span>
         </div>
 
-        <div *ngFor="let countrySA of countriesSA">
-          <div *ngIf="countrySA.cyCases" class="cy-values-row">
-            <div class="cy-values-flag-name"><img class="cy-values-flag" src={{countrySA.cyFlag}}
-                alt="flag of {{countrySA.cyName}} "> {{countrySA.cyName}}</div>
-            <div class="cy-values-crcd">
-              <div>{{countrySA.cyCases | number}}</div>
-              <div *ngIf="countrySA.cyToDayCases" style="color: skyblue;">+{{countrySA.cyToDayCases | number}}</div>
-              <div *ngIf="countrySA.cyToDayCases == null" style="color: skyblue;"> - </div>
-            </div>
-            <div class="cy-values-crcd">{{countrySA.cyRecovered | number}}</div>
-            <div *ngIf="countrySA.cyCritical" class="cy-values-crcd">{{countrySA.cyCritical | number}}</div>
-            <div *ngIf="countrySA.cyCritical == null" class="cy-values-crcd"> - </div>
-            <div class="cy-values-crcd">
-              <div>{{countrySA.cyDeaths | number}}</div>
-              <div *ngIf="countrySA.cyToDayDeaths" style="color: red;">+{{countrySA.cyToDayDeaths | number}}</div>
-              <div *ngIf="countrySA.cyToDayDeaths == null" style="color: red;"> - </div>
-            </div>
-            <div *ngIf="countrySA.cyTests" class="cy-values-crcd"> {{countrySA.cyTests | number}} </div>
-            <div *ngIf="countrySA.cyTests == null" class="cy-values-crcd"> -</div>
-            <div *ngIf="countrySA.cyVaccines" class="cy-values-crcd"> {{countrySA.cyVaccines | number}} </div>
-            <div *ngIf="countrySA.cyVaccines == null" class="cy-values-crcd"> -</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-
-  </div>
-
-  <div class="continent Continent-EU">
-
-    <div class="continent-name">
-      <span class="name">{{'data.continent-countries.name-eu' | translate}}</span>
-      <div class="tests-vaccines">
-        <div class="tests">
-          <span class="tests-value">{{ testsEU | number }}</span>
-          <span class="tests-label">{{'data.continent-countries.tests' | translate}}</span>
-        </div>
-        <div class="vaccines">
-          <span class="vaccines-value">{{ vaccinesEU | number }}</span>
-          <span class="vaccines-label">{{'data.continent-countries.vaccines' | translate}}</span>
-        </div>
-      </div>
-      <!--<span class="tested"> {{ testsEU | number }} {{'data.continent-countries.tests' | translate}}</span>-->
-    </div>
-
-    <div class="continent-cy-value">
-
-      <div class="cy-header">
-        <div class="cy-header-name">{{'data.continent-countries.headers.one' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.two' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.three' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.four' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.five' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.six' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.seven' | translate}}</div>
-      </div>
-
-      <div class="values-content">
-
-        <div class="loader" *ngIf="!countriesEU">
-          <div class="d-flex justify-content-center">
-            <div class="spinner-border" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-          </div>
+        <div class="round">
+          <span>{{'data.numbers.two.title' | translate}}</span>
+          <span>{{'data.numbers.two.value' | translate}}</span>
         </div>
 
-        <div *ngFor="let countryEU of countriesEU">
-          <div *ngIf="countryEU.cyCases" class="cy-values-row">
-            <div class="cy-values-flag-name"><img class="cy-values-flag" src={{countryEU.cyFlag}}
-                alt="flag of {{countryEU.cyName}} "> {{countryEU.cyName}}</div>
-            <div class="cy-values-crcd">
-              <div>{{countryEU.cyCases | number}}</div>
-              <div *ngIf="countryEU.cyToDayCases" style="color: skyblue;">+{{countryEU.cyToDayCases | number}}</div>
-              <div *ngIf="countryEU.cyToDayCases == null" style="color: skyblue;"> - </div>
-            </div>
-            <div class="cy-values-crcd">{{countryEU.cyRecovered | number}}</div>
-            <div *ngIf="countryEU.cyCritical" class="cy-values-crcd">{{countryEU.cyCritical | number}}</div>
-            <div *ngIf="countryEU.cyCritical == null" class="cy-values-crcd"> - </div>
-            <div class="cy-values-crcd">
-              <div>{{countryEU.cyDeaths | number}}</div>
-              <div *ngIf="countryEU.cyToDayDeaths" style="color: red;">+{{countryEU.cyToDayDeaths | number}}</div>
-              <div *ngIf="countryEU.cyToDayDeaths == null" style="color: red;"> - </div>
-            </div>
-            <div *ngIf="countryEU.cyTests" class="cy-values-crcd"> {{countryEU.cyTests | number}} </div>
-            <div *ngIf="countryEU.cyTests == null" class="cy-values-crcd"> -</div>
-            <div *ngIf="countryEU.cyVaccines" class="cy-values-crcd"> {{countryEU.cyVaccines | number}} </div>
-            <div *ngIf="countryEU.cyVaccines == null" class="cy-values-crcd"> -</div>
-          </div>
+        <div class="round">
+          <span>{{'data.numbers.three.title' | translate}}</span>
+          <span>
+            <img class="round-en" src="../../assets/img/en.png" alt="flag of Fngland">
+            <img class="round-fr" src="../../assets/img/fr.jpeg" alt="flag of France">
+          </span>
         </div>
       </div>
     </div>
+    
+    
+    
+    <div class="data-by-continents">
+    
+      <div class="continent Continent-NA">
+    
+        <div class="continent-name">
+          <span class="name">{{'data.continent-countries.name-na' | translate}}</span>
+          <div class="tests-vaccines">
+            <div class="tests">          
+              <span class="tests-value"> {{ testsNA | number }}</span>
+              <span class="tests-label"> {{ 'data.continent-countries.tests' | translate }}  </span>
+            </div>
 
-  </div>
+            <span class="divider">|</span>
 
-  <div class="continent Continent-AS">
-
-    <div class="continent-name">
-      <span class="name">{{'data.continent-countries.name-as' | translate}} </span>
-      <div class="tests-vaccines">
-        <div class="tests">
-          <span class="tests-value">{{ testsAS | number }}</span>
-          <span class="tests-label">{{'data.continent-countries.tests' | translate}}</span>
-        </div>
-        <div class="vaccines">
-          <span class="vaccines-value">{{ vaccinesAS | number }}</span>
-          <span class="vaccines-label">{{'data.continent-countries.vaccines' | translate}}</span>
-        </div>
-      </div>
-      <!--<span class="tested"> {{ testsAS | number }} {{'data.continent-countries.tests' | translate}}</span>-->
-    </div>
-
-    <div class="continent-cy-value">
-
-      <div class="cy-header">
-        <div class="cy-header-name">{{'data.continent-countries.headers.one' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.two' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.three' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.four' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.five' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.six' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.seven' | translate}}</div>
-      </div>
-
-      <div class="values-content">
-
-        <div class="loader" *ngIf="!countriesAS">
-          <div class="d-flex justify-content-center">
-            <div class="spinner-border" role="status">
-              <span class="visually-hidden">Loading...</span>
+            <div class="vaccines">
+              <span class="vaccines-value">  {{ vaccinesNA | number }}</span>
+              <span class="vaccines-label">{{'data.continent-countries.vaccines' | translate }}  </span>
             </div>
           </div>
         </div>
-
-        <div *ngFor="let countryAS of countriesAS">
-          <div *ngIf="countryAS.cyCases" class="cy-values-row">
-            <div class="cy-values-flag-name"><img class="cy-values-flag" src={{countryAS.cyFlag}}
-                alt="flag of {{countryAS.cyName}} "> {{countryAS.cyName}}</div>
-            <div class="cy-values-crcd">
-              <div>{{countryAS.cyCases | number}}</div>
-              <div *ngIf="countryAS.cyToDayCases" style="color: skyblue;">+{{countryAS.cyToDayCases | number}}</div>
-              <div *ngIf="countryAS.cyToDayCases == null" style="color: skyblue;"> - </div>
+    
+        <div class="continent-cy-value">
+    
+          <div class="cy-header">
+            <div class="cy-header-name">{{'data.continent-countries.headers.one' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.two' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.three' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.four' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.five' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.six' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.seven' | translate}}</div>
+          </div>
+    
+          <div class="values-content">
+    
+            <div class="loader" *ngIf="!countriesNA">
+              <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
             </div>
-            <div class="cy-values-crcd">{{countryAS.cyRecovered | number}}</div>
-            <div *ngIf="countryAS.cyCritical" class="cy-values-crcd">{{countryAS.cyCritical | number}}</div>
-            <div *ngIf="countryAS.cyCritical == null " class="cy-values-crcd"> - </div>
-            <div class="cy-values-crcd">
-              <div>{{countryAS.cyDeaths | number}}</div>
-              <div *ngIf="countryAS.cyToDayDeaths" style="color: red;">+{{countryAS.cyToDayDeaths | number}}</div>
-              <div *ngIf="countryAS.cyToDayDeaths == null" style="color: red;"> - </div>
+    
+            <div *ngFor="let countryNA of countriesNA">
+              <div *ngIf="countryNA.cyCases" class="cy-values-row">
+                <div class="cy-values-flag-name"><img class="cy-values-flag" src={{countryNA.cyFlag}}
+                    alt="flag of {{countryNA.cyName}} "> {{countryNA.cyName}}</div>
+                <div class="cy-values-crcd">
+                  <div>{{countryNA.cyCases | number}}</div>
+                  <div *ngIf="countryNA.cyToDayCases" style="color: skyblue;">+{{countryNA.cyToDayCases | number}}</div>
+                  <div *ngIf="countryNA.cyToDayCases == null" style="color: skyblue;"> - </div>
+                </div>
+                <div class="cy-values-crcd">{{countryNA.cyRecovered | number}}</div>
+                <div *ngIf="countryNA.cyCritical" class="cy-values-crcd">{{countryNA.cyCritical | number}}</div>
+                <div *ngIf="countryNA.cyCritical == null" class="cy-values-crcd"> -</div>
+                <div class="cy-values-crcd">
+                  <div>{{countryNA.cyDeaths | number}}</div>
+                  <div *ngIf="countryNA.cyToDayDeaths" style="color: red;">+{{countryNA.cyToDayDeaths | number}}</div>
+                  <div *ngIf="countryNA.cyToDayCases == null" style="color: red;"> - </div>
+                </div>
+                <div *ngIf="countryNA.cyTests" class="cy-values-crcd"> {{countryNA.cyTests | number}} </div>
+                <div *ngIf="countryNA.cyTests == null" class="cy-values-crcd"> -</div>
+                <div *ngIf="countryNA.cyVaccines" class="cy-values-crcd"> {{countryNA.cyVaccines | number}} </div>
+                <div *ngIf="countryNA.cyVaccines == null" class="cy-values-crcd"> -</div>
+              </div>
             </div>
-            <div *ngIf="countryAS.cyTests" class="cy-values-crcd"> {{countryAS.cyTests | number}} </div>
-            <div *ngIf="countryAS.cyTests == null" class="cy-values-crcd"> -</div>
-            <div *ngIf="countryAS.cyVaccines" class="cy-values-crcd"> {{countryAS.cyVaccines | number}} </div>
-            <div *ngIf="countryAS.cyVaccines == null" class="cy-values-crcd"> -</div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="continent Continent-AF">
-
-    <div class="continent-name">
-      <span class="name">{{'data.continent-countries.name-af' | translate}} </span>
-      <div class="tests-vaccines">
-        <div class="tests">
-          <span class="tests-value">{{ testsAF | number }}</span>
-          <span class="tests-label">{{'data.continent-countries.tests' | translate}}</span>
+    
+      <div class="continent Continent-SA">
+    
+    
+        <div class="continent-name">
+          <span class="name">{{'data.continent-countries.name-sa' | translate}} </span>
+          <div class="tests-vaccines">
+            <div class="tests">
+              <span class="tests-value">{{ testsSA | number }}</span>
+              <span class="tests-label">{{'data.continent-countries.tests' | translate}}</span>
+            </div>
+            <span class="divider">|</span>
+            <div class="vaccines">
+              <span class="vaccines-value">{{ vaccinesSA | number }}</span>
+              <span class="vaccines-label">{{'data.continent-countries.vaccines' | translate}}</span>
+            </div>
+          </div>
+          <!--<span class="tested"> {{ testsSA | number }} {{'data.continent-countries.tests' | translate}}</span>-->
         </div>
-        <div class="vaccines">
-          <span class="vaccines-value">{{ vaccinesAF | number }}</span>
-          <span class="vaccines-label">{{'data.continent-countries.vaccines' | translate}}</span>
+    
+        <div class="continent-cy-value">
+    
+          <div class="cy-header">
+            <div class="cy-header-name">{{'data.continent-countries.headers.one' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.two' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.three' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.four' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.five' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.six' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.seven' | translate}}</div>
+          </div>
+    
+    
+          <div class="values-content">
+    
+            <div class="loader" *ngIf="!countriesSA">
+              <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+            </div>
+    
+            <div *ngFor="let countrySA of countriesSA">
+              <div *ngIf="countrySA.cyCases" class="cy-values-row">
+                <div class="cy-values-flag-name"><img class="cy-values-flag" src={{countrySA.cyFlag}}
+                    alt="flag of {{countrySA.cyName}} "> {{countrySA.cyName}}</div>
+                <div class="cy-values-crcd">
+                  <div>{{countrySA.cyCases | number}}</div>
+                  <div *ngIf="countrySA.cyToDayCases" style="color: skyblue;">+{{countrySA.cyToDayCases | number}}</div>
+                  <div *ngIf="countrySA.cyToDayCases == null" style="color: skyblue;"> - </div>
+                </div>
+                <div class="cy-values-crcd">{{countrySA.cyRecovered | number}}</div>
+                <div *ngIf="countrySA.cyCritical" class="cy-values-crcd">{{countrySA.cyCritical | number}}</div>
+                <div *ngIf="countrySA.cyCritical == null" class="cy-values-crcd"> - </div>
+                <div class="cy-values-crcd">
+                  <div>{{countrySA.cyDeaths | number}}</div>
+                  <div *ngIf="countrySA.cyToDayDeaths" style="color: red;">+{{countrySA.cyToDayDeaths | number}}</div>
+                  <div *ngIf="countrySA.cyToDayDeaths == null" style="color: red;"> - </div>
+                </div>
+                <div *ngIf="countrySA.cyTests" class="cy-values-crcd"> {{countrySA.cyTests | number}} </div>
+                <div *ngIf="countrySA.cyTests == null" class="cy-values-crcd"> -</div>
+                <div *ngIf="countrySA.cyVaccines" class="cy-values-crcd"> {{countrySA.cyVaccines | number}} </div>
+                <div *ngIf="countrySA.cyVaccines == null" class="cy-values-crcd"> -</div>
+              </div>
+            </div>
+          </div>
+    
         </div>
+    
+    
       </div>
-      <!--<span class="tested"> {{ testsAF | number }} {{'data.continent-countries.tests' | translate}}</span>-->
-    </div>
-
-    <div class="continent-cy-value">
-
-      <div class="cy-header">
-        <div class="cy-header-name">{{'data.continent-countries.headers.one' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.two' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.three' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.four' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.five' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.six' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.seven' | translate}}</div>
-      </div>
-
-      <div class="values-content">
-
-        <div class="loader" *ngIf="!countriesAF">
-          <div class="d-flex justify-content-center">
-            <div class="spinner-border" role="status">
-              <span class="visually-hidden">Loading...</span>
+    
+      <div class="continent Continent-EU">
+    
+        <div class="continent-name">
+          <span class="name">{{'data.continent-countries.name-eu' | translate}}</span>
+          <div class="tests-vaccines">
+            <div class="tests">
+              <span class="tests-value">{{ testsEU | number }}</span>
+              <span class="tests-label">{{'data.continent-countries.tests' | translate}}</span>
+            </div>
+            <span class="divider">|</span>
+            <div class="vaccines">
+              <span class="vaccines-value">{{ vaccinesEU | number }}</span>
+              <span class="vaccines-label">{{'data.continent-countries.vaccines' | translate}}</span>
+            </div>
+          </div>
+          <!--<span class="tested"> {{ testsEU | number }} {{'data.continent-countries.tests' | translate}}</span>-->
+        </div>
+    
+        <div class="continent-cy-value">
+    
+          <div class="cy-header">
+            <div class="cy-header-name">{{'data.continent-countries.headers.one' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.two' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.three' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.four' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.five' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.six' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.seven' | translate}}</div>
+          </div>
+    
+          <div class="values-content">
+    
+            <div class="loader" *ngIf="!countriesEU">
+              <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+            </div>
+    
+            <div *ngFor="let countryEU of countriesEU">
+              <div *ngIf="countryEU.cyCases" class="cy-values-row">
+                <div class="cy-values-flag-name"><img class="cy-values-flag" src={{countryEU.cyFlag}}
+                    alt="flag of {{countryEU.cyName}} "> {{countryEU.cyName}}</div>
+                <div class="cy-values-crcd">
+                  <div>{{countryEU.cyCases | number}}</div>
+                  <div *ngIf="countryEU.cyToDayCases" style="color: skyblue;">+{{countryEU.cyToDayCases | number}}</div>
+                  <div *ngIf="countryEU.cyToDayCases == null" style="color: skyblue;"> - </div>
+                </div>
+                <div class="cy-values-crcd">{{countryEU.cyRecovered | number}}</div>
+                <div *ngIf="countryEU.cyCritical" class="cy-values-crcd">{{countryEU.cyCritical | number}}</div>
+                <div *ngIf="countryEU.cyCritical == null" class="cy-values-crcd"> - </div>
+                <div class="cy-values-crcd">
+                  <div>{{countryEU.cyDeaths | number}}</div>
+                  <div *ngIf="countryEU.cyToDayDeaths" style="color: red;">+{{countryEU.cyToDayDeaths | number}}</div>
+                  <div *ngIf="countryEU.cyToDayDeaths == null" style="color: red;"> - </div>
+                </div>
+                <div *ngIf="countryEU.cyTests" class="cy-values-crcd"> {{countryEU.cyTests | number}} </div>
+                <div *ngIf="countryEU.cyTests == null" class="cy-values-crcd"> -</div>
+                <div *ngIf="countryEU.cyVaccines" class="cy-values-crcd"> {{countryEU.cyVaccines | number}} </div>
+                <div *ngIf="countryEU.cyVaccines == null" class="cy-values-crcd"> -</div>
+              </div>
             </div>
           </div>
         </div>
-
-        <div *ngFor="let countryAF of countriesAF">
-          <div *ngIf="countryAF.cyCases" class="cy-values-row">
-            <div class="cy-values-flag-name"><img class="cy-values-flag" src={{countryAF.cyFlag}}
-                alt="flag of {{countryAF.cyName}} "> {{countryAF.cyName}}</div>
-            <div class="cy-values-crcd">
-              <div>{{countryAF.cyCases | number}}</div>
-              <div *ngIf="countryAF.cyToDayCases" style="color: skyblue;">+{{countryAF.cyToDayCases | number}}</div>
-              <div *ngIf="countryAF.cyToDayCases == null" style="color: skyblue;"> - </div>
+    
+      </div>
+    
+      <div class="continent Continent-AS">
+    
+        <div class="continent-name">
+          <span class="name">{{'data.continent-countries.name-as' | translate}} </span>
+          <div class="tests-vaccines">
+            <div class="tests">
+              <span class="tests-value">{{ testsAS | number }}</span>
+              <span class="tests-label">{{'data.continent-countries.tests' | translate}}</span>
             </div>
-            <div class="cy-values-crcd">{{countryAF.cyRecovered | number}}</div>
-            <div *ngIf="countryAF.cyCritical" class="cy-values-crcd">{{countryAF.cyCritical | number}}</div>
-            <div *ngIf="countryAF.cyCritical == null" class="cy-values-crcd"> - </div>
-            <div class="cy-values-crcd">
-              <div>{{countryAF.cyDeaths | number}}</div>
-              <div *ngIf="countryAF.cyToDayDeaths" style="color: red;">+{{countryAF.cyToDayDeaths | number}}</div>
-              <div *ngIf="countryAF.cyToDayDeaths == null" style="color: red;"> - </div>
+            <span class="divider">|</span>
+            <div class="vaccines">
+              <span class="vaccines-value">{{ vaccinesAS | number }}</span>
+              <span class="vaccines-label">{{'data.continent-countries.vaccines' | translate}}</span>
             </div>
-            <div *ngIf="countryAF.cyTests" class="cy-values-crcd"> {{countryAF.cyTests | number}} </div>
-            <div *ngIf="countryAF.cyTests == null" class="cy-values-crcd"> -</div>
-            <div *ngIf="countryAF.cyVaccines" class="cy-values-crcd"> {{countryAF.cyVaccines | number}} </div>
-            <div *ngIf="countryAF.cyVaccines == null" class="cy-values-crcd"> -</div>
+          </div>
+          <!--<span class="tested"> {{ testsAS | number }} {{'data.continent-countries.tests' | translate}}</span>-->
+        </div>
+    
+        <div class="continent-cy-value">
+    
+          <div class="cy-header">
+            <div class="cy-header-name">{{'data.continent-countries.headers.one' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.two' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.three' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.four' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.five' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.six' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.seven' | translate}}</div>
+          </div>
+    
+          <div class="values-content">
+    
+            <div class="loader" *ngIf="!countriesAS">
+              <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+            </div>
+    
+            <div *ngFor="let countryAS of countriesAS">
+              <div *ngIf="countryAS.cyCases" class="cy-values-row">
+                <div class="cy-values-flag-name"><img class="cy-values-flag" src={{countryAS.cyFlag}}
+                    alt="flag of {{countryAS.cyName}} "> {{countryAS.cyName}}</div>
+                <div class="cy-values-crcd">
+                  <div>{{countryAS.cyCases | number}}</div>
+                  <div *ngIf="countryAS.cyToDayCases" style="color: skyblue;">+{{countryAS.cyToDayCases | number}}</div>
+                  <div *ngIf="countryAS.cyToDayCases == null" style="color: skyblue;"> - </div>
+                </div>
+                <div class="cy-values-crcd">{{countryAS.cyRecovered | number}}</div>
+                <div *ngIf="countryAS.cyCritical" class="cy-values-crcd">{{countryAS.cyCritical | number}}</div>
+                <div *ngIf="countryAS.cyCritical == null " class="cy-values-crcd"> - </div>
+                <div class="cy-values-crcd">
+                  <div>{{countryAS.cyDeaths | number}}</div>
+                  <div *ngIf="countryAS.cyToDayDeaths" style="color: red;">+{{countryAS.cyToDayDeaths | number}}</div>
+                  <div *ngIf="countryAS.cyToDayDeaths == null" style="color: red;"> - </div>
+                </div>
+                <div *ngIf="countryAS.cyTests" class="cy-values-crcd"> {{countryAS.cyTests | number}} </div>
+                <div *ngIf="countryAS.cyTests == null" class="cy-values-crcd"> -</div>
+                <div *ngIf="countryAS.cyVaccines" class="cy-values-crcd"> {{countryAS.cyVaccines | number}} </div>
+                <div *ngIf="countryAS.cyVaccines == null" class="cy-values-crcd"> -</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
-  </div>
-
-  <div class="continent Continent-OC">
-
-    <div class="continent-name">
-      <span class="name">{{'data.continent-countries.name-oc' | translate}} </span>
-      <div class="tests-vaccines">
-        <div class="tests">
-          <span class="tests-value">{{ testsOC | number }}</span>
-          <span class="tests-label">{{'data.continent-countries.tests' | translate}}</span>
+    
+      <div class="continent Continent-AF">
+    
+        <div class="continent-name">
+          <span class="name">{{'data.continent-countries.name-af' | translate}} </span>
+          <div class="tests-vaccines">
+            <div class="tests">
+              <span class="tests-value">{{ testsAF | number }}</span>
+              <span class="tests-label">{{'data.continent-countries.tests' | translate}}</span>
+            </div>
+            <span class="divider">|</span>
+            <div class="vaccines">
+              <span class="vaccines-value">{{ vaccinesAF | number }}</span>
+              <span class="vaccines-label">{{'data.continent-countries.vaccines' | translate}}</span>
+            </div>
+          </div>
+          <!--<span class="tested"> {{ testsAF | number }} {{'data.continent-countries.tests' | translate}}</span>-->
         </div>
-        <div class="vaccines">
-          <span class="vaccines-value">{{ vaccinesOC | number }}</span>
-          <span class="vaccines-label">{{'data.continent-countries.vaccines' | translate}}</span>
-        </div>
-      </div>
-      <!--<span class="tested"> {{ testsOC | number }} {{'data.continent-countries.tests' | translate}}</span>-->
-    </div>
-
-    <div class="continent-cy-value">
-
-      <div class="cy-header">
-        <div class="cy-header-name">{{'data.continent-countries.headers.one' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.two' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.three' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.four' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.five' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.six' | translate}}</div>
-        <div class="cy-header-crcd">{{'data.continent-countries.headers.seven' | translate}}</div>
-      </div>
-
-      <div class="values-content">
-        <div class="loader" *ngIf="!countriesOC">
-          <div class="d-flex justify-content-center">
-            <div class="spinner-border" role="status">
-              <span class="visually-hidden">Loading...</span>
+    
+        <div class="continent-cy-value">
+    
+          <div class="cy-header">
+            <div class="cy-header-name">{{'data.continent-countries.headers.one' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.two' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.three' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.four' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.five' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.six' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.seven' | translate}}</div>
+          </div>
+    
+          <div class="values-content">
+    
+            <div class="loader" *ngIf="!countriesAF">
+              <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+            </div>
+    
+            <div *ngFor="let countryAF of countriesAF">
+              <div *ngIf="countryAF.cyCases" class="cy-values-row">
+                <div class="cy-values-flag-name"><img class="cy-values-flag" src={{countryAF.cyFlag}}
+                    alt="flag of {{countryAF.cyName}} "> {{countryAF.cyName}}</div>
+                <div class="cy-values-crcd">
+                  <div>{{countryAF.cyCases | number}}</div>
+                  <div *ngIf="countryAF.cyToDayCases" style="color: skyblue;">+{{countryAF.cyToDayCases | number}}</div>
+                  <div *ngIf="countryAF.cyToDayCases == null" style="color: skyblue;"> - </div>
+                </div>
+                <div class="cy-values-crcd">{{countryAF.cyRecovered | number}}</div>
+                <div *ngIf="countryAF.cyCritical" class="cy-values-crcd">{{countryAF.cyCritical | number}}</div>
+                <div *ngIf="countryAF.cyCritical == null" class="cy-values-crcd"> - </div>
+                <div class="cy-values-crcd">
+                  <div>{{countryAF.cyDeaths | number}}</div>
+                  <div *ngIf="countryAF.cyToDayDeaths" style="color: red;">+{{countryAF.cyToDayDeaths | number}}</div>
+                  <div *ngIf="countryAF.cyToDayDeaths == null" style="color: red;"> - </div>
+                </div>
+                <div *ngIf="countryAF.cyTests" class="cy-values-crcd"> {{countryAF.cyTests | number}} </div>
+                <div *ngIf="countryAF.cyTests == null" class="cy-values-crcd"> -</div>
+                <div *ngIf="countryAF.cyVaccines" class="cy-values-crcd"> {{countryAF.cyVaccines | number}} </div>
+                <div *ngIf="countryAF.cyVaccines == null" class="cy-values-crcd"> -</div>
+              </div>
             </div>
           </div>
         </div>
-
-        <div *ngFor="let countryOC of countriesOC">
-          <div *ngIf="countryOC.cyCases" class="cy-values-row">
-            <div class="cy-values-flag-name"><img class="cy-values-flag" src={{countryOC.cyFlag}}
-                alt="flag of {{countryOC.cyName}} "> {{countryOC.cyName}}</div>
-            <div class="cy-values-crcd">
-              <div>{{countryOC.cyCases | number}}</div>
-              <div *ngIf="countryOC.cyToDayCases" style="color: skyblue;">+{{countryOC.cyToDayCases | number}}</div>
-              <div *ngIf="countryOC.cyToDayCases == null" style="color: skyblue;"> - </div>
+    
+      </div>
+    
+      <div class="continent Continent-OC">
+    
+        <div class="continent-name">
+          <span class="name">{{'data.continent-countries.name-oc' | translate}} </span>
+          <div class="tests-vaccines">
+            <div class="tests">
+              <span class="tests-value">{{ testsOC | number }}</span>
+              <span class="tests-label">{{'data.continent-countries.tests' | translate}}</span>
             </div>
-            <div class="cy-values-crcd">{{countryOC.cyRecovered | number}}</div>
-            <div *ngIf="countryOC.cyCritical" class="cy-values-crcd">{{countryOC.cyCritical | number}}</div>
-            <div *ngIf="countryOC.cyCritical == null" class="cy-values-crcd"> - </div>
-            <div class="cy-values-crcd">
-              <div>{{countryOC.cyDeaths | number}}</div>
-              <div *ngIf="countryOC.cyToDayDeaths" style="color: red;">+{{countryOC.cyToDayDeaths | number}}</div>
-              <div *ngIf="countryOC.cyToDayDeaths == null" style="color: red;"> - </div>
+            <span class="divider">|</span>
+            <div class="vaccines">
+              <span class="vaccines-value">{{ vaccinesOC | number }}</span>
+              <span class="vaccines-label">{{'data.continent-countries.vaccines' | translate}}</span>
             </div>
-            <div *ngIf="countryOC.cyTests" class="cy-values-crcd"> {{countryOC.cyTests | number}} </div>
-            <div *ngIf="countryOC.cyTests == null" class="cy-values-crcd"> -</div>
-            <div *ngIf="countryOC.cyVaccines" class="cy-values-crcd"> {{countryOC.cyVaccines | number}} </div>
-            <div *ngIf="countryOC.cyVaccines == null" class="cy-values-crcd"> -</div>
+          </div>
+          <!--<span class="tested"> {{ testsOC | number }} {{'data.continent-countries.tests' | translate}}</span>-->
+        </div>
+    
+        <div class="continent-cy-value">
+    
+          <div class="cy-header">
+            <div class="cy-header-name">{{'data.continent-countries.headers.one' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.two' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.three' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.four' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.five' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.six' | translate}}</div>
+            <div class="cy-header-crcd">{{'data.continent-countries.headers.seven' | translate}}</div>
+          </div>
+    
+          <div class="values-content">
+            <div class="loader" *ngIf="!countriesOC">
+              <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+            </div>
+    
+            <div *ngFor="let countryOC of countriesOC">
+              <div *ngIf="countryOC.cyCases" class="cy-values-row">
+                <div class="cy-values-flag-name"><img class="cy-values-flag" src={{countryOC.cyFlag}}
+                    alt="flag of {{countryOC.cyName}} "> {{countryOC.cyName}}</div>
+                <div class="cy-values-crcd">
+                  <div>{{countryOC.cyCases | number}}</div>
+                  <div *ngIf="countryOC.cyToDayCases" style="color: skyblue;">+{{countryOC.cyToDayCases | number}}</div>
+                  <div *ngIf="countryOC.cyToDayCases == null" style="color: skyblue;"> - </div>
+                </div>
+                <div class="cy-values-crcd">{{countryOC.cyRecovered | number}}</div>
+                <div *ngIf="countryOC.cyCritical" class="cy-values-crcd">{{countryOC.cyCritical | number}}</div>
+                <div *ngIf="countryOC.cyCritical == null" class="cy-values-crcd"> - </div>
+                <div class="cy-values-crcd">
+                  <div>{{countryOC.cyDeaths | number}}</div>
+                  <div *ngIf="countryOC.cyToDayDeaths" style="color: red;">+{{countryOC.cyToDayDeaths | number}}</div>
+                  <div *ngIf="countryOC.cyToDayDeaths == null" style="color: red;"> - </div>
+                </div>
+                <div *ngIf="countryOC.cyTests" class="cy-values-crcd"> {{countryOC.cyTests | number}} </div>
+                <div *ngIf="countryOC.cyTests == null" class="cy-values-crcd"> -</div>
+                <div *ngIf="countryOC.cyVaccines" class="cy-values-crcd"> {{countryOC.cyVaccines | number}} </div>
+                <div *ngIf="countryOC.cyVaccines == null" class="cy-values-crcd"> -</div>
+              </div>
+            </div>
           </div>
         </div>
+    
+    
       </div>
     </div>
-
-
   </div>
 </div>

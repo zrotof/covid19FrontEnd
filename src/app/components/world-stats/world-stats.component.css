@@ -1,25 +1,31 @@
-.greetings{
-    margin-top: 7.5em;
-    padding-top: 1em;
-    padding-bottom: 1em;
+.data{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.content{
     display: flex;
     flex-direction: column;
-    padding-left:0.5em;
-    padding-right:0.5em;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
-.recommendations{
-    margin-top: 1.5vh;
-    font-size: 1.2em;
-    font-weight: bold;
-    text-align: center;
+.intro{
+    margin-top: 7.5em;
+    padding-top: 1em;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 45px;
 }
 
-.date-update{
+
+.last-updated-date{
     margin-top: 1vh;
     text-align: right;
     font-weight: bold;
-    margin-right: 1em;
 }
 
 .date-loader{
@@ -27,17 +33,17 @@
     margin-right: 7em;
 }
 
-.globals-text{
+.intro-text{
     display:flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     color: black;
-    margin-top:2vh;
+    margin: 40px 0 35px 0;
     width:100%;
 }
 
-.globals-text-title{
+.intro-text .title{
     width: 28vh;
     font-size: 1.8em;
     color:#161748;
@@ -45,7 +51,7 @@
     margin-right: 0.5em;
 }
 
-.globals-text-content{
+.explanations{
     text-align: unset;
     display:flex;
     flex-direction: column;
@@ -56,7 +62,7 @@
     border-radius: 8px;
 }
 
-.globals-text-content > div{
+.explanations > div{
     margin-top:1vh;
     display:flex;
     align-items:flex-start;
@@ -64,10 +70,9 @@
     width: 100%;
 }
 
-.globals-text-content > div > ul{
+.explanations > div > ul{
     list-style: none;
     padding: 0;
-
 }
 
 .confirmed-cases::before{
@@ -79,7 +84,6 @@
     margin-right:1vh;
 
 }
-
 
 .recovered-cases::before{
     content:" ";
@@ -99,7 +103,6 @@
     margin-right:1vh;
 }
 
-
 .death-cases::before{
     content:"";
     background-color:rgb(190, 24, 24) ;
@@ -109,133 +112,78 @@
     margin-right:1vh;
 }
 
+.recommendations{
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+}
 
-.globals{
+.globals-data{
     background: #161748;
     display:flex;
-    justify-content: center;
     align-items: center;
-    padding-left: 1vh;
-    padding-right: 1vh;
-    flex-wrap: wrap;
-    margin-bottom: 1em;
-    padding-top: 0.4em;
-    padding-bottom: 0.4em;
-    display:flex;
     justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
+    padding: 30px 0;
+    border-radius: 5px;
 }
 
+.world{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
 
-
-.Spinning_earth{
-    height: 12em;
-    width: 10em;
+.global{
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
-.earth{
-    height: 85%;
-    width: 100%;
-    margin-right:1em;
-
-    background-image: url("../../../assets/img/coro_spinner.jpg");
-    border-radius: 50%;
-    background-size: cover;
-    box-shadow: 20px -20px 50px 2px #000 inset, 0 0 2px #000;
-    animation: spin 20s linear infinite;
+.global img{
+    height: 40px;
+    width: 18px;
+    margin-right: 7px;
 }
 
-@keyframes spin{
-    0%
-    {
-        background-position: 0 0;
-    }
-    100%
-    {
-        background-position: 1200px 0;
-    }
-}
-
-.Cases{
+.global-text{
     display:flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+}
+
+.global-text .title{
+    font-weight: 500;
+}
+
+.global-text .number{
+    font-size: 0.93em;
+}
+
+.cases{
     color: skyblue;
 }
 
-.Cases img{
-    height: 60px;
-    width:30px;
-    margin-bottom: 2%;
-}
-
-.ReCrDe{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 1em;
-    margin-right:1em;
-}
-
-.Recovered{
+.recoveries{
     color:rgb(33, 163, 33);
-    display:flex;
-    border-bottom: solid white;
 }
 
-.Recovered img{
-    height: 40px;
-    width: 18px;
-}
-
-.Recovered div{
-    display: flex;
-    flex-direction: column;
-}
-
-.Criticals{
+.criticals{
     color: rgb(218, 218, 39);
-    display:flex;
-    border-bottom: solid white;
-    margin-top: 6px;
 }
 
-.Criticals img{
-    height: 40px;
-    width: 18px;
-}
-
-.Criticals div{
-    display: flex;
-    flex-direction: column;
-}
-
-.Deaths{
+.deaths{
     color: rgb(190, 24, 24);
-    display:flex;
-    margin-top: 6px;
 }
 
-.Deaths img{
-    height: 40px;
-    width: 18px;
-}
 
-.Deaths div{
-    display: flex;
-    flex-direction: column;
-}
 
 .continents{
     min-height: 95%;
     display: flex;
     flex-direction: column;
     overflow: hidden; 
+    margin-top: 25px;
 }
 
 .titles{
@@ -378,7 +326,7 @@ width:50%;
 }
 
 
-.data-introduction{
+.about{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -390,39 +338,25 @@ width:50%;
 
 }
 
-.data-introduction > div{
+.about .texts{
     display: flex;
     justify-content: center;
     width: 100%;
     flex-wrap: wrap;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
 
 }
 
-.data-introduction-right,
-.data-introduction-left
-{
+.text{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 60vh;
-
-}
-
-.data-introduction-right
-{
-    padding-left: 2em;
-}
-
-.data-introduction-left
-{
-    padding-right: 2em;
+    margin: 0 40px;
+    width: 450px;
 }
 
 
-.data-introduction-right > h2,
-.data-introduction-left > h2{
+
+.text > h3{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -437,7 +371,7 @@ width:50%;
 }
 
 
-.rounded{
+.rounds{
     display: flex;
     width: 100%;
     justify-content: center;
@@ -445,41 +379,28 @@ width:50%;
 
 }
 
-.rounded > div{
+.round{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-left: 2vh;
+    margin: 0 2vh;
     text-align: center;
-    margin-right:2vh;
 }
 
-.rounded-en{
-    height: 1.5em;
-    width: 3.3em;
-    margin-bottom: 0.05em;
-}
-
-.rounded-fr{
-    height: 1.5em;
-    width: 3.3em;
-    margin-top: 0.05em;
-}
-
-.rounded > div span:first-child{
+.round span:first-child{
     
     color: white;
     padding-left: 1vh;
     padding-right: 1vh;
     font-weight: lighter;
-    font-size: 1.3em;
+    font-size: 1.1em;
     background-color: #161748 ;
     border-radius: 6px;
     margin-top: 2vh;
 }
 
-.rounded > div span:last-child{
+.round span:last-child{
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -491,42 +412,52 @@ width:50%;
     font-size: 1.4em;
     padding:2vh;
     justify-content: center;
-    height: 10vh;
-    width: 10vh;
+    height: 72px;
+    width: 72px;
     margin-top: 2vh;
     overflow: hidden;
 
 }
 
-.data-by-continents{
-    background-color: #161748;
-    padding-left: 1%;
-    padding-right: 1%;
-    padding-top: 5em;
+.round-en{
+    height: 1.5em;
+    width: 3.3em;
+    margin-bottom: 0.05em;
+}
 
+.round-fr{
+    height: 1.5em;
+    width: 3.3em;
+    margin-top: 0.05em;
+}
+
+
+
+.data-by-continents{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     position: relative;
-    z-index: 1;
-    margin-top: 4em;
-    margin-bottom: 4em;
+    margin-top: 8em;
+    margin-bottom: 6em;
     overflow: hidden;
 }
 
 
 
 .continent{
+
+    display: flex;
+    flex-direction: column;
     margin-bottom: 5em;
+    justify-content: center;
+    align-items: center;
+
     width: 100%;
     color: rgb(255, 255, 255);
-    margin-left: 2vh;
-    margin-right: 2vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+   
 
 }
 
@@ -555,31 +486,34 @@ width:50%;
 
 .continent-name{
     display: flex;
-    flex-direction: column;
-    z-index: 3;
-    background-color: rgba(255, 255, 255, 0.164);
-    backdrop-filter: blur(3px);
-    padding: 0.6em;
-    width: 16em;
-    border-radius: 8px;
-    margin-right: 0.5em;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    color: black;
+    margin-bottom: 0.3em;
 }
 
 .name{
     font-weight: bold;
     font-size: 2em;
-    margin-bottom: 0.3em;
 }
 
 .tests-vaccines{
     display: flex;
-    flex-direction: column;
+    align-items: center;
 }
 
 .tests,.vaccines{
     display: flex;
-    font-weight: bold;
+    align-items: baseline;
+    
 }
+
+.divider{
+    margin: 0 15px;
+    font-size: 2em;
+}
+
 .tests-label, .vaccines-label{
     font-size: 1.2em;
     font-weight: bold;
@@ -588,21 +522,17 @@ width:50%;
 }
 
 .tests-value, .vaccines-value{
-    font-size: 1.2em;
-    margin-bottom: 0.3em;
-
+    font-size: 1em;
 }
 
 .continent-cy-value{
+    background-color: #202129;
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
     border-radius: 8px;
-    border: 2px solid gray;
     overflow: hidden;
     backdrop-filter: blur(6px);
-    z-index: 3;
-    background-color: rgba(35, 35, 36, 0.6);
 }
 
 
@@ -764,7 +694,6 @@ width: 100%;
         width: 100%;
         justify-content: space-between;
         background: none;
-        align-items: flex-end;
         backdrop-filter: unset;
         padding: 0;
         border-radius: unset;

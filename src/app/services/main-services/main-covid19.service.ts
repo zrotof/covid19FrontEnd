@@ -4,7 +4,7 @@ import { World } from '../../../../models/world';
 import { Countries } from '../../../../models/countries';
 import { Continent } from '../../../../models/continent';
 import { Observable, of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
 
@@ -28,12 +28,20 @@ export class Covid19Service {
   WorldHistoricAll = environment.API_World_Historical_All ;
   worldVaccines = environment.API_World_Vaccines;
 
+  headers = {
+    headers : new HttpHeaders({
+      'Content-Type':"application/json"
+    })
+  };
+
   constructor( private http :HttpClient ){
 
   }
 
+  
+
   getWorldGlobals(): Observable<World>{
-   return this.http.get<World>(this.worldURL);
+   return this.http.get<World>(this.worldURL, this.headers);
   }
 
 

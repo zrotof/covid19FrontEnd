@@ -8,30 +8,33 @@
 
 }
 
+.content{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;    
+}
+
 .title{
     text-decoration: underline;
     font-size: 2.5em;
     font-weight: bolder;
-    margin-bottom: 45px;
-    margin-top: 45px;
+    margin: 45px 0;
     color: #161748;
+    text-align: center;
 }
 
 
 .introduction{
     width: 100%;
-    font-size: 1.4em;
-    font-weight: bold;
-    margin-bottom: 1em;
+    font-size: 1.1em;
+    margin-bottom: 2em;
     text-align: justify;
-
-    padding-right: 1em;
-    padding-left: 1em;
 }
 
 #accordionExample{
     z-index: 1;
-    width: 70%;
+    width: 100%;
 }
 
 
@@ -72,16 +75,20 @@ label:hover{
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 15px ;
+    margin-top: 15px;
     position: relative;
     margin-bottom: 400px;
+    height: 100vh;
 }
 
 .ligne{
     width: 4px;
     height: 715px;
     background: #161748;
-    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .timeline-event-image{
@@ -116,39 +123,35 @@ label:hover{
 }
 
 .timeline-event{
-    width: 400px;
-  
-    height: auto;
+    width: 44%;
+    top: 0;
     background: #161748;
     position: absolute;
     display: flex;
     border-radius: 8px;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 15px rgb(0 0 0 / 50%);
     color: white;
-    left: 50%;
-    transform: translate(-50%);
     top: 100%;
-
 }
 
 .box1{
     top: 0px;
-    left: calc(50% - 270px);
+    left: 0;
 }
 
 .box2{
     top: 200px;
-    left: calc(50% + 270px);
+    right: 0;
 }
 
 .box3{
     top: 375px;
-    left: calc(50% - 270px);
+    left: 0;
 }
 
 .box4{
     top: 715px;
-    left: calc(50% + 270px);
+    right: 0;
 }
 
 
@@ -203,20 +206,19 @@ label:hover{
     }
 
     .ligne{
-        width: 2px;
+        left: 43px;
     }
 
     .timeline-event-image{
         
-        border: 2px solid #161748;
-        width: 60px;
-        height: 60px;
-        
+        left: 43px;
+
     }
 
     .timeline-event{
-        width: 300px;        
-    
+        width: 90%;
+        right: 0;
+        left: inherit !important;
     }
 
     .timeline-event-title{
@@ -263,19 +265,18 @@ label:hover{
     }
     #accordionExample{
         width: 100%;
-        padding-left: 2em;
-        padding-right: 2em;
     }
+
     .some-covid19-facts{
         height: 40em;
-       
     }
+
     .introduction{
         font-size: 1.2em;
     }
 
     .timeline {
-         width: 80%;
+         width: 100%;
     }
 
     
@@ -290,12 +291,26 @@ label:hover{
     
 }
 
+
+@media all and (max-width: 844px){
+
+ 
+
+    .box1,.box2,.box3,.box4{
+      left: calc(50% + 25px);
+      width: 80%;
+      }
+  
+  
+  
+      
+  }
+
 @media all and (max-width: 840px){
 
     #accordionExample{
         width: 100%;
-        padding-left: 1.5em;
-        padding-right: 1.5em;
+
     }
     .some-covid19-facts{
         height: 30em;
@@ -306,27 +321,7 @@ label:hover{
 }
 
 
-@media all and (max-width: 742px){
 
-  .ligne{
-      position: relative;
-      left: -50%;
-  }
-
-  .element-one,.element-two,.element-three,.element-four{
-    left: calc(50% - 50%);
-    }
-
-
-  .box1,.box2,.box3,.box4{
-    left: calc(50% + 25px);
-    width: 90%;
-    }
-
-
-
-    
-}
 
 
 @media all and (max-width: 718px){
@@ -399,14 +394,30 @@ label:hover{
   
 }
 
-
 @media all and (max-width: 479px){
 
     .title{
         font-size: 1.7em;
     }
 
-  
+    .ligne{
+        width: 2px;
+        left: 25px;
+    }
+
+    .timeline-event-image{
+        
+        border: 2px solid #161748;
+        width: 40px;
+        height: 40px;
+        left: 25px;
+    }
+
+    .coro-origine,.coro-old-man,.coro-oms,.coro-vaccines{
+        height: 30px;
+        width: 30px;
+    }
+
 }
 
 @media all and (max-width: 430px){
@@ -415,15 +426,6 @@ label:hover{
         margin-top:4.5em;
     }
 
-    .timeline-event-image{
-        width: 3.5em;
-        height: 3.5em;
-    }
-
-    .coro-origine,.coro-old-man,.coro-oms,.coro-vaccines{
-        height: 2.5em;
-        width: 2.5em;
-}
   
 }
 
