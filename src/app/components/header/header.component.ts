@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { GoogleAnalyticsService } from '../../services/google-analytics/google-analytics.service';
 import { GoogleTagManagerService } from 'angular-google-tag-manager';
-import * as $ from 'jquery';
 
 @Component({
   selector: 'app-header',
@@ -24,68 +22,63 @@ export class HeaderComponent implements OnInit {
 
   chooseEnglish(){
 
+    let englishCheckbox = <HTMLInputElement>document.querySelector('.en');
+    let frenchCheckbox = <HTMLInputElement>document.querySelector('.fr');
+
     if(!this.isEnglishchecked){
-      $( ".en" ).prop( "checked", true );
-      $( ".fr" ).prop( "checked", false );
+
+      englishCheckbox.checked = true;
+      frenchCheckbox.checked = false;
 
       this.isEnglishchecked = true;
       this.isFrenchChecked = false;
       this.translate.use('en');
     }
     else{
-      $( ".en" ).prop( "checked", true );
+      englishCheckbox.checked = true;
     }
 
+    this.customEvent();
 
 
   }
 
+
   chooseFrench(){
 
+
+    let englishCheckbox = <HTMLInputElement>document.querySelector('.en');
+    let frenchCheckbox = <HTMLInputElement>document.querySelector('.fr');
+
     if(!this.isFrenchChecked){
-      $( ".fr" ).prop( "checked", true );
-      $( ".en" ).prop( "checked", false );
+
+      frenchCheckbox.checked = true;
+      englishCheckbox.checked = false;
 
       this.isFrenchChecked = true;
       this.isEnglishchecked = false;
       this.translate.use('fr');
     }
+
     else{
-      $( ".fr" ).prop( "checked", true );
+      frenchCheckbox.checked = true;
     }
+
 
     this.customEvent();
     
   }
 
 
+onBurgerMenu(){
 
+  let burger = <HTMLElement>document.querySelector('.burger_menu');
+  let navigation = <HTMLElement>document.querySelector('.menu-language');
 
-  onBurgerMenu(){
-
-   var burger = $('.burger_menu');
-    var ul = $('.header-menu');
-    const links = $('.header-menu > li ').toArray();
- 
-    ul.toggleClass("burger_slide_in");
- 
-
-    burger.toggleClass("toggle");
-
-
-    links.forEach((link, index) => {
-
-      if(link.style.animation){
-        link.style.animation='';
-      }
-      else{
-        link.style.animation= `navLinkFade 0.5s ease forwards ${index/7 + 0.3}s`;
-      }
-    });
+  burger.classList.toggle('toggle')
+  navigation.classList.toggle('burger_slide_in')
 
 }
-
-
 
 customEvent() {
 

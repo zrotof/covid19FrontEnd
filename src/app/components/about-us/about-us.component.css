@@ -3,7 +3,6 @@
     display: flex;
     flex-direction: column;
     background-color: white;
-    color:#161748;
     align-items:center;
     min-height: 100vh;
 }
@@ -22,6 +21,8 @@
     font-size: 2.5em;
     font-weight: bolder;
     margin: 45px 0 90px 0;
+    color:#161748;
+
 }
 
 

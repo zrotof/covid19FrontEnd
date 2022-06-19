@@ -222,7 +222,7 @@
             "four":{
                 "multi":{
                     "one":{
-                        "date":"21/12/2021",
+                        "date":"21/12/2020",
                         "text":"Vaccin Pfizer-BioNTech validé le 21 Décembre 2021."
                     },
                     "two":{
@@ -325,7 +325,7 @@
         },
         "bloc-text":{
             "me":{
-                "paragraphe1":"Bonjour, je m'appelle Samuel Bonachi. Je suis un développeur web et plus généralement un passionné d'informatique.",
+                "paragraphe1":"Bonjour, je m'appelle Samuel Mandeng. Je suis un développeur web et plus généralement un passionné d'informatique.",
                 "paragraphe2":"Réaliser ce site est une façon pour moi d'être un acteur dans la lutte contre la covid-19. Compte tenu du nombre de centaines de milliers et maintenant de millions de personnes qui sont touchées par cette maladie, je me suis proposé de réaliser ce site pour avec deux objectifs principaux :",
                 "reason1":"pour rappeler à tous que la covid-19 est réelle et qu'elle ne touche pas que les autres",
                 "reason2":"donner la possibité d'accéder facilement aux données sur l'évolution de la covid-19 dans le monde entier"
@@ -411,12 +411,7 @@
 
 
     "footer":{
-        "job":"contactez-moi pour des offres d'emploi",
-        "follow":"SUIVRE",
-        "legal":"LÉGAL",
-        "copyright":"2021 Samuel Bonachi. Tous droits réservés",
-        "disclaimers":"Avis de non-responsabilité"
-
+        "copyright":"2021 - sscovid19"
     }
 
 }

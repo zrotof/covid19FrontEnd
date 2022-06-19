@@ -151,7 +151,7 @@
         },
         "bloc-text":{
             "me":{
-                "paragraphe1":"Hello, my name is Samuel Bonachi. I am a web developer and more generally a computer enthusiast.",
+                "paragraphe1":"Hello, my name is Samuel Mandeng. I am a web developer and more generally a computer enthusiast.",
                 "paragraphe2":"Realizing this site is a way for me to be an actor in the fight against covid-19.Considering the number of hundreds of thousands and now millions of people who are affected by this disease, I proposed to realize this site for with two main objectives:",
                 "reason1":"to remind everyone that covid19 is real and that it does not only affect others",
                 "reason2":"allowing everyone to easily access data about the evolution of covid19 around the world"
@@ -307,7 +307,7 @@
             "multi":{
                 "img":"../../assets/img/covid-vaccins.png",
                 "one":{
-                    "date":"21/12/2021",
+                    "date":"21/12/2020",
                     "text":"Pfizer-BioNTech  vaccine validated on December 21st 2021."
                 },
                 "two":{
@@ -446,11 +446,8 @@
 
 
     "footer":{
-        "job":"You can contact me for jobs opportunities",
-        "follow":"FOLLOW",
-        "legal":"LEGAL",
-        "copyright":"2021 Samuel Bonachi. All Rights Reserved",
-        "disclaimers":"Disclaimers"
+
+        "copyright":"2021 - sscovid19"
 
     }
 

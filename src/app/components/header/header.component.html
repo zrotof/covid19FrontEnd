@@ -5,9 +5,9 @@
           
         <div class="header_right">
      
-              <div class="menu-language">
-              
-                  <nav>
+            <div class="menu-language">
+               
+                <nav>
                       <ul class="menu">
                           <li> 
                               <a routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" routerLink="/">{{'header.nav.link1' | translate}}</a>
@@ -29,10 +29,9 @@
                               <img src="../../assets/img/coffee-cup.png" class="coffee-cup" alt="image of a coffee cup">
                               Buy Me a coffee
                       </button>
-                  </nav>
-          
+                </nav>
               
-              <div class="language">
+                <div class="language">
                   <label class="switch english">
                       <input type="checkbox" class="checkbox en" (click)="chooseEnglish()" checked>
                       <span class="toggle-thumb">
@@ -49,14 +48,15 @@
                       </span>
                   </label>
           
-              </div>
-              </div> 
+                </div>
+        
+            </div> 
           
-              <div class="burger_menu" (click)="onBurgerMenu()">
-                  <span class="line1"></span>
-                  <span class="line2"></span>
-                  <span class="line3"></span>
-              </div>
+            <div class="burger_menu" (click)="onBurgerMenu()">
+                <span class="line1"></span>
+                <span class="line2"></span>
+                <span class="line3"></span>
+            </div>
           
         </div>
     

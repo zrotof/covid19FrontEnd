@@ -45,7 +45,7 @@ export class WorldMapComponent implements OnInit {
     private googleAnalyticsService: GoogleAnalyticsService,
     private route: ActivatedRoute) {
       this.resolver= this.route.snapshot.data['resolved'];
-     }
+    }
 
   ngOnInit(): void {
 
@@ -59,9 +59,8 @@ export class WorldMapComponent implements OnInit {
 
   ngAfterViewInit() {
 
-
 // amCharts imports
-//Due to the size of libraries, we import modulelike this, so that they will be used oly when needed
+//Due to the size of libraries, we import module like this, so that they will be used only when needed
     Promise.all([
       import(/* webpackChunkName: "amcharts" */ "@amcharts/amcharts4/core"),
       import(/* webpackChunkName: "amcharts" */ "@amcharts/amcharts4/charts"),
@@ -1026,7 +1025,6 @@ map.logo.disabled = true;
 
 }
 
-
   //Getting world cases
   worldCases() : void{
     this.covidService.getWorldGlobals()
@@ -1035,23 +1033,16 @@ map.logo.disabled = true;
    });
   }
 
-
   alertClosed(){
     this.isAlertClosed =true;
   }
 
-
   //Function to set title and meta description of page
   setTitleAndMetaDescription(){
-    if( this.translate.currentLang == 'en'){
+
       this.title.setTitle("World map of covid-19 infected countries");
       this.meta.updateTag({ name: 'description', content: "See all countries affected by covid-19 and historical data since January 2020." });
-    }
-    else{
-      this.title.setTitle("Carte mondiales des pays infectés par la covid-19" );
-      this.meta.updateTag({ name: 'description', content: "Consultez l'ensemble des pays touchés par la covid-19 et des données historiques depuis Janvier 2020." });
-
-    }
+    
   }
 
 }

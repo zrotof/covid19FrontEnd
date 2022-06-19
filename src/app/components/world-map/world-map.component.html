@@ -7,48 +7,7 @@
 
     <div  class="slide-bloc">
     
-    <!--
-      <span class="question-title">{{'map.instructions.title'| translate}}</span>						
-      <input type="radio" name="slides" id="radio-1" checked>
-      <input type="radio" name="slides" id="radio-2">
-      <input type="radio" name="slides" id="radio-3">
-      <input type="radio" name="slides" id="radio-4">
-      <input type="radio" name="slides" id="radio-5">
-      <ul class="slides">
-  
-         <li class="slide">
-          <p>{{'map.instructions.messages.one'| translate}}</p>
-        </li>        
-        
-        <li class="slide">
-          <p>{{'map.instructions.messages.two'| translate}}</p>
-        </li>
-  
-        <li class="slide">
-          <p>{{'map.instructions.messages.three'| translate}}</p>
-        </li>
-  
-        <li class="slide">
-          <p>{{'map.instructions.messages.four'| translate}}</p>
-        </li>
-  
-        <li class="slide">
-          <p>{{'map.instructions.messages.five'| translate}}</p>
-        </li>   
-     
-      </ul>
-  
-      <div class="slidesNavigation">
-        <label for="radio-1" id="dotForRadio-1"></label>
-        <label for="radio-2" id="dotForRadio-2"></label>
-        <label for="radio-3" id="dotForRadio-3"></label>
-        <label for="radio-4" id="dotForRadio-4"></label>
-        <label for="radio-5" id="dotForRadio-5"></label>
-      </div>
-      
-  
-  -->
-  
+
   <span class="question-title">{{'map.instructions.title'| translate}}</span>						
   
   
@@ -93,20 +52,6 @@
   
   </div>		
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
     
       <div id="worldMap">
         <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
@@ -114,128 +59,9 @@
         </div>
       </div>
     
-  <!--
-    <div *ngIf="isACountryIsClicked" class="some-data">
-  
-      <div *ngIf="countryGlobals" class="some-data-content" >
-        <img  class="some-data-content-flag" src="{{countryGlobals.countryInfo.flag}}">
-        <div class="some-data-content-text">
-          <span class="title">{{countryGlobals.country | uppercase }} {{'map.header.country' | translate}} </span>
-          <span >{{'map.update' | translate}}: {{countryGlobals.updated | date :'short'}} </span>
-        </div>
-      </div>
-  
-      <table class="table table-bordered table-dark table-personalised">
-        <thead>
-          <tr>
-            <th scope="col"></th>
-            <th scope="col">{{'map.table.titles.cases' | translate}}</th>
-            <th scope="col">{{'map.table.titles.recovered' | translate}}</th>
-            <th scope="col">{{'map.table.titles.actives' | translate}}</th>
-            <th scope="col">{{'map.table.titles.deaths' | translate}}</th>
-          </tr>
-        </thead>
-        <tbody *ngIf="countryGlobals">
-          <tr>
-            <th scope="row">{{'map.table.totals' | translate}}</th>
-            <td>{{countryGlobals.cases | number}}</td>
-            <td>{{countryGlobals.recovered | number}} </td>
-            <td>{{countryGlobals.active | number}}</td>
-            <td>{{countryGlobals.deaths | number}}</td>
-          </tr>
-          <tr>
-            
-            <th scope="row">{{'map.table.today' | translate}}</th>
-            <td class="table-text-skyblue">+ {{countryGlobals.todayCases | number}}</td>
-            <td class="table-text-green">+ {{countryGlobals.todayRecovered | number}}</td>
-            <td> / </td>
-            <td class="table-text-red">+ {{countryGlobals.todayDeaths | number}}</td>
-          </tr>
-        </tbody>
-      </table>
-  
-  
-      <div *ngIf="countryGlobals" class="percentage-bloc">
-  
-        <div class="bloc">
-          <span class="percentage-bloc-title">{{'map.percentage.tests.title' | translate}}</span>
-          <span>Population: {{ countryGlobals['population'] | number }}</span>
-          <span>Tests: {{ countryGlobals['tests'] | number }} </span>
-          <span class="last">{{ countryGlobals['tests']/ countryGlobals['population'] | percent:'2.2' }}
-            {{'map.percentage.tests.text' | translate}}</span>
-        </div>
-        <div class="bloc">
-          <span class="percentage-bloc-title" >{{'map.percentage.recovered.title' | translate}}</span>
-          <span>{{'map.percentage.recovered.cases' | translate}}: {{ countryGlobals['cases'] | number }} </span>
-          <span>{{'map.percentage.recovered.recovered' | translate}}: {{ countryGlobals['recovered'] | number }} </span>
-          <span class="last">{{ countryGlobals['recovered'] / countryGlobals['cases'] | percent:'2.2' }}
-            {{'map.percentage.recovered.text' | translate}}</span>
-        </div>
-        <div class="bloc">
-          <span class="percentage-bloc-title">{{'map.percentage.deaths.title' | translate}}</span>
-          <span>{{'map.percentage.deaths.cases' | translate}}: {{ countryGlobals['cases'] | number }} </span>
-          <span>{{'map.percentage.deaths.deaths' | translate}}: {{ countryGlobals['deaths'] | number }} </span>
-          <span class="last">{{ countryGlobals['deaths'] / countryGlobals['cases'] | percent:'2.2' }}
-            {{'map.percentage.deaths.text' | translate}}</span>
-        </div>
-  
-  
-      </div>
-  
-  
-    </div>
-  -->
-  
     <div [ngClass]="{'chart':isACountryIsClicked}" class="chart" #countryHistoricalGlobalDataChart></div>
     <div [ngClass]="{'chart':isACountryIsClicked}" class="chart" #countryHistoricalVaccinesChart></div>
     
-  
-  
-  
-  <!--
-    <div *ngIf="!isACountryIsClicked" class="some-data">
-  
-      <div *ngIf="worldNumbers" class="some-data-content">
-        <img class="some-data-content-flag" src="../../assets/img/earth.jpg">
-        <div  class="some-data-content-text">
-          <span class="title">{{'map.header.world' | translate}}</span>
-          <span >{{'map.update' | translate}}: {{worldNumbers[0].updatedAt | date:'EEEE, MMMM d, y, h:mm a'}}</span>
-        </div>
-      </div>
-  
-      <table class="table table-bordered table-dark table-personalised">
-        <thead>
-          <tr>
-            <th scope="col"></th>
-            <th scope="col">{{'map.table.titles.cases' | translate}}</th>
-            <th scope="col">{{'map.table.titles.recovered' | translate}}</th>
-            <th scope="col">{{'map.table.titles.actives' | translate}}</th>
-            <th scope="col">{{'map.table.titles.deaths' | translate}}</th>
-          </tr>
-        </thead>
-        <tbody *ngIf="worldNumbers">
-          <tr>
-            <th scope="row">{{'map.table.totals' | translate}}</th>
-            <td>{{worldNumbers[0].wCases | number}}</td>
-            <td>{{worldNumbers[0].wRecovered | number}} </td>
-            <td>{{worldNumbers[0].wActive | number}}</td>
-            <td>{{worldNumbers[0].wDeaths | number}}</td>
-  
-          </tr>
-          <tr>
-            <th scope="row">{{'map.table.today' | translate}}</th>
-            <td class="table-text-skyblue">+ {{worldNumbers[0].wToDayCases | number}}</td>
-            <td class="table-text-green">+ {{worldNumbers[0].wToDayRecovered | number}}</td>
-            <td> / </td>
-            <td class="table-text-red">+ {{worldNumbers[0].wToDayDeaths | number}}</td>
-  
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  
-  -->
-  
     <div *ngIf ="!isACountryIsClicked" class="chart" id="worldHistoricalChart"></div>
     <div *ngIf ="!isACountryIsClicked" class="chart" id="worldVaccineChart"></div>
     

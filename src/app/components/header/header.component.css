@@ -51,12 +51,12 @@ nav{
     list-style: none;
 }
 
-.menu > li{
+li{
     margin-left: 15px;
     position: relative;
 }
 
-.menu >li > a {
+a {
     text-decoration: none;
     font-size: 1.1em;
     padding: 5px 10px;
@@ -66,7 +66,7 @@ nav{
 
 }
 
-.menu > li > a:hover {
+a:hover {
     color: red;
 
 }
@@ -190,21 +190,105 @@ nav{
 }
 
 
+@media all and (max-width: 1024px){
+    
+    .logo{
+        height: 55px;
+        cursor: pointer;
+    }
 
+    a {
+        font-size: 0.95em;
+    }
+
+    .coffee-cup{
+        height:0.95em;
+    }
+}
 
 @media all and (max-width: 1007px){
     
-    .header{
-        padding-left: 2vh;
-        padding-right: 2vh;
+    header{
         height: 6em;
     }
+
+    .menu-language{
+        transform: translateX(100%);
+        position: absolute;
+        flex-direction: column;
+        background:#161748;
+        top: 6em;
+        right: 0;
+        transition: transform 0.5s ease-in;
+        padding:2em;
+        height: fit-content;
+        align-items: flex-end;
+    }
+
+    nav{
+        flex-direction: column;
+    }
+
+    .menu{
+        align-items: flex-end;
+        flex-direction: column;
+    }
+
+    li{
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+
+    a {
+        font-size: 1.1em;
+    }
+
+    .coffee{
+        margin-bottom: 15px;
+        font-size: 1.1em;
+    }
+
+    .coffee-cup{
+        height:1.1em;
+    }
+
+    
+
+    .language{
+        margin:0;
+    }
+
+    .switch{
+        width: 55px;
+        height: 15px;
+    }
+
+    .toggle-thumb{
+        padding: 6px;
+    }
+
+    .english .toggle-thumb:before {
+        height: 25px;
+        width: 25px;
+        left: 4px;
+    }
+
+    .french .toggle-thumb:before {
+        height: 25px;
+        width: 25px;
+        left: 4px;
+    }
+
+    .checkbox:checked + .toggle-thumb:before {
+        transform: translateX(22px);
+        
+      }
 
     .burger_menu{
         display: flex;
         flex-direction: column;
-        height: 4.5vh;
-        width: 4.5vh;
+        height: 30px;
+        width: 30px;
         align-items: center;
         justify-content: space-between;
         cursor: pointer;
@@ -212,55 +296,15 @@ nav{
 
     .burger_menu span{
         background-color: white;
-        width: 4.5vh;
-        height: 0.5vh;
+        width: 30px;
+        height: 3px;
+        border-radius: 100px;
         transition: all 0.3s ease;
-    }
-
-    .header-menu{
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        background: #161748c9;
-        top: 6em;
-        right: 0%;
-        margin-top: 0%;
-        margin-right: 0%;
-        padding-left: 5em;
-        transform: translateX(100%);
-        transition: transform 0.5s ease-in;
-        padding-top: 2em;
-        padding-bottom: 2em;
-        
-
-    }
-
-    .header-language{
-        margin-right: 1em;
-    }
-
-    .header-menu > li {
-        margin-left: 0%;
-        opacity: 0;
-        text-align: right;
-        width: 100%;
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
-
-    }
-    .header-menu > li > span{
-        width: 100%;
-        padding-right: 3vh;
-
     }
 
     .burger_slide_in{
         transform: translateX(0%);
     }
-
-
 
     @keyframes navLinkFade {
 
@@ -276,11 +320,9 @@ nav{
         
     }
 
-
     .toggle .line1{
+        transform: rotate(45deg) translate(5px, -2px);
         transform-origin : 0 0 ;
-        transform: rotate(45deg) translate(0.4vh,-0.5vh);
-        width: 6vh;
     }   
 
     .toggle .line2{
@@ -288,74 +330,26 @@ nav{
     }
 
     .toggle .line3{
+        transform: rotate(-45deg) translate(5px, 0px);
         transform-origin: 0 0;
-        transform: rotate(-45deg) translate(0.4vh,0.5vh);
-        width: 6vh;
-        text-align: center;
-    }
 
-    .active{
-        padding:0;
-        border: none;
-    }
-
-    .active > a{
-        color: blue;
-        font-weight: bold;
-        font-size: 1.2em;
     }
 
 }
 
-
-
-
-@media all and (max-width: 870px){
-
-    .header_left_text > span{
-        font-size: 1em;
-    }
-
-}
-
-@media all and (max-width: 575px){
-
-    .header_left_text > span{
-        font-size: 1em;
-    }
-    
-
-}
 
 @media all and (max-width: 430px){
 
-    .header{
+    header{
         height: 4.5em;
     }
 
     .header_left_img{
-        height: 85%;
+        height: 50px;
     }
 
-    .header_left_text > span{
-        font-size: 0.8em;
-    }
-
-    .header-menu{
+    .menu-language{
         top: 4.5em;
-        padding-left: 3em;
-        padding-top: 0.2em;
-        padding-bottom: 0.2em;
-
-    }
-
-    .header-menu > li{
-        margin-top: 0.1em;
-        margin-bottom: 0.1em;
-    }
-
-    .header-menu > li > span{
-        font-size: 1.1em;
     }
 
 
