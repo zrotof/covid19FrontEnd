@@ -4,15 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { WorldStatsComponent } from './components/world-stats/world-stats.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TransferHttpCacheModule } from '@nguniversal/common';
 import { translateBrowserLoaderFactory } from './services/loaders/translate-browser.loader';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ScreenSizeAdviceComponent } from './components/screen-size-advice/screen-size-advice.component';
@@ -29,6 +26,7 @@ import { environment } from '../environments/environment.prod';
 
 
 import { LocationStrategy, Location, PathLocationStrategy } from '@angular/common';
+import { OutdatedContentAdviceComponent } from './components/outdated-content-advice/outdated-content-advice.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,18 +34,16 @@ import { LocationStrategy, Location, PathLocationStrategy } from '@angular/commo
     PageNotFoundComponent,
     HeaderComponent,
     FooterComponent,
-    ScreenSizeAdviceComponent
+    ScreenSizeAdviceComponent,
+    OutdatedContentAdviceComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     TransferHttpCacheModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatInputModule,
     HttpClientModule,
     NgbModule,
-    MatAutocompleteModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -61,16 +57,11 @@ import { LocationStrategy, Location, PathLocationStrategy } from '@angular/commo
     AboutUsModule,
     Covid19Module,
     BuyMeACoffeeModule
-
-    
-
   ],
   providers: [
     Location,
     {provide: 'googleTagManagerId',  useValue: environment.GOOGLE_ANALYTICS},
     {provide: LocationStrategy, useClass: PathLocationStrategy},
-
-
   ],
   bootstrap: [AppComponent]
 })

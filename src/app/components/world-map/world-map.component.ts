@@ -8,9 +8,7 @@ import { ActivatedRoute, Data } from '@angular/router';
 
 import { GoogleAnalyticsService } from '../../services/google-analytics/google-analytics.service';
 import { Meta, Title } from '@angular/platform-browser';
-import { createOfflineCompileUrlResolver } from '@angular/compiler';
-import { mapToStyles } from '@popperjs/core/lib/modifiers/computeStyles';
-import { mapRange } from 'gsap/src';
+
 
 @Component({
   selector: 'app-world-map',
@@ -38,12 +36,13 @@ export class WorldMapComponent implements OnInit {
   resolver : Data;
 
 
-  constructor( private covidService : Covid19Service,
+  constructor( 
+    private covidService : Covid19Service,
     private title: Title,
     private meta: Meta,
     private translate: TranslateService,
-    private googleAnalyticsService: GoogleAnalyticsService,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute
+    ) {
       this.resolver= this.route.snapshot.data['resolved'];
     }
 
@@ -53,9 +52,6 @@ export class WorldMapComponent implements OnInit {
     this.worldCases();
  
   }
-
-
-
 
   ngAfterViewInit() {
 
@@ -260,7 +256,6 @@ this.translate.onLangChange.subscribe(lang =>{
     <span>Deaths : {cyDeaths.formatNumber('#,###')} <span style="color:red; margin-left:5px;"> +{cyToDayDeaths.formatNumber('#,###')}</span></span> 
   <div>`
 
-    //console.log("the tooltip normally have to change english")
   }
 
   if(lang.lang === 'fr'){
@@ -275,10 +270,6 @@ this.translate.onLangChange.subscribe(lang =>{
   <span>Critiques : {cyCritical.formatNumber('#,###')}</span> 
   <span>Décès : {cyDeaths.formatNumber('#,###')} <span style="color:red; margin-left:5px;"> +{cyToDayDeaths.formatNumber('#,###')}</span></span> 
 <div>`
-
-
-
-//console.log("the tooltip normally have to change français")
 
     
   }
@@ -385,14 +376,12 @@ var newClickedCountry : any;
       this.historicalGlobalDataCountry = data4;
       //Calling the function who will draw the country historics globals data
       this.createCountryChart(this.historicalGlobalDataCountry, countryHistoricsGlobalDataChart,am4core, am4charts);
-      //console.log("this.historicalCountry :",this.historicalCountry )
     });
 
     //Getting covid global data for the selected country
     this.covidService.getCountryGlobals(this.countryObject['cyName'])
     .subscribe( data5 =>{
       this.countryGlobals = data5;
-      //console.log("this.globalCountry :",this.countryGlobals );
     });
 
 
@@ -920,9 +909,6 @@ createCountryVaccinesChart( param, map, am4core, am4charts) : void{
     title.marginBottom = 15;
   
   for(let key in param.timeline ){
-    // Add data
-    console.log("max ",param.timeline.length)
-    console.log("hey ",key)
     if( parseInt(key) < (param.timeline.length -1) ){
     map.data.push({date: new Date(param.timeline[key].date), vaccines: param.timeline[key].daily});
   }

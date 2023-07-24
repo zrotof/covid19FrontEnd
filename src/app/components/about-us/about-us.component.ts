@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-about-us',
@@ -6,18 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about-us.component.css']
 })
 
-
-
-export class AboutUsComponent implements OnInit {
-
-	constructor() {
-    
-	}
-
-  ngOnInit(): void {
-
-  }
-
+export class AboutUsComponent{
 
   openNetwork(param: string){
 

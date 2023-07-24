@@ -1,5 +1,10 @@
+<ng-container *ngIf="displayOutdatedModal">
+    <app-outdated-content-advice (closeOutdateModal)="onCloseOutdateModal()"></app-outdated-content-advice>
+</ng-container>
 <app-header></app-header>
 <app-screen-size-advice></app-screen-size-advice>
     <router-outlet>
     </router-outlet>
 <app-footer></app-footer>
+
+

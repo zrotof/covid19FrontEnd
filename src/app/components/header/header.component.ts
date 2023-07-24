@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { GoogleTagManagerService } from 'angular-google-tag-manager';
 
@@ -7,18 +7,13 @@ import { GoogleTagManagerService } from 'angular-google-tag-manager';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent{
 
   isEnglishchecked : boolean = true;
   isFrenchChecked : boolean = false;
   constructor(private translate: TranslateService, private gtmService: GoogleTagManagerService   ) {
    
   }
-
-  ngOnInit(): void {
-    
-  }
-
 
   chooseEnglish(){
 
@@ -81,8 +76,6 @@ onBurgerMenu(){
 }
 
 customEvent() {
-
-  
   const gtmTag = {
     event: 'choose-french',
     data: 'french user',

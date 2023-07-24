@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
-
 
 import { Covid19Service }from '../../services/main-services/main-covid19.service';
 import { World } from '../../../../models/world';
@@ -45,13 +43,10 @@ export class WorldStatsComponent implements OnInit {
   vaccinesOC : number =0;
 
   dateWorld: number;
-  constructor( private translate : TranslateService, private covidService : Covid19Service,private title: Title, private meta : Meta){
-    //private route: ActivatedRoute
-
-    
-    
-    
-     }
+  constructor( 
+    private covidService : Covid19Service,
+    private title: Title, 
+    private meta : Meta){}
 
   ngOnInit(): void {
 

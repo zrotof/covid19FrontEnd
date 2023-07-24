@@ -17,10 +17,8 @@ export class Covid19Component implements OnInit {
 
    //Function to set title and meta description of page
    setTitleAndMetaDescription(){
-
       this.title.setTitle("What is covid-19 ?");
       this.meta.updateTag({ name: 'description', content: "Access a set of information related to covid-19. This page answers frequently asked questions from the World Health Organization (WHO)." });
-    
   }
 
 }

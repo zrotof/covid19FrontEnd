@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { environment } from '../../../environments/environment';
 
 @Component({
@@ -6,24 +6,14 @@ import { environment } from '../../../environments/environment';
   templateUrl: './buy-ma-acoffee.component.html',
   styleUrls: ['./buy-ma-acoffee.component.css']
 })
-export class BuyMaACoffeeComponent implements OnInit {
-
-	constructor() {
-    
-	  }
-
-  ngOnInit(): void {
-
-  }
+export class BuyMaACoffeeComponent{
 
   redirectToBmc(){
-
     const url = environment.API_BUY_ME_COFEE_URL_MY_PAGE;
     window.open(url, '_blank');
   }
 
   redirectToBmcAbout(){
-
     const url = environment.API_BUY_ME_COFEE_URL_ABOUT;
     window.open(url, '_blank');
   }

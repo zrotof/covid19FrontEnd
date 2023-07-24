@@ -15,7 +15,13 @@
         "text":"For an optimized rendering, it would be better to consult this website from a computer"
     },
 
-
+    "outdated-advice" : {
+        "title" : "End of updates",
+        "denomination" : "Dear users",
+        "text1" : "Thanks to you, our website has been able to play a vital role in keeping you informed about the progress of COVID-19 during a period of unprecedented challenges.",
+        "text2" : "Unfortunately, the sscovid19.com website will soon no longer be updated, due to the availability of comprehensive information from official sources and healthcare organizations.",
+        "button" : "Agreed"
+    },
 
 
 

@@ -14,7 +14,13 @@
         "text":"Pour un rendu optimisé, il est préférable de consulter ce site à partir d'un ordinateur"
     },
 
-
+    "outdated-advice" : {
+        "title" : "Fin des mises à jour",
+        "denomination" : "Chers utilisateurs",
+        "text1" : "Grâce à vous, notre site web a pu jouer un rôle essentiel en vous tenant informés sur l'état d'évolution du COVID-19 pendant une période de défis sans précédent.",
+        "text2" : "Malheureusement, le site sscovid19.com ne sera bientôt plus mis à jour, en raison de la disponibilité d'informations exhaustives fournies par les sources officielles et les organismes de santé.",
+        "button" : "D'accord"
+    },
 
 
     "data":{

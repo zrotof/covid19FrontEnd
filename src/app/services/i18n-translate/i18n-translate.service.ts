@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { Subject } from 'rxjs';
 
 @Injectable({
@@ -7,14 +6,10 @@ import { Subject } from 'rxjs';
 })
 export class I18nTranslateService {
 
-
   translateLanguageEvent = new Subject<string>();
-  constructor(private translateService: TranslateService) { }
+  constructor() { }
 
   changeLanguage(language: string){
-    //this.translateService.use(language);
     this.translateLanguageEvent.next(language);
-
-    console.log("modifié, les autres devraient écouter: "+ language)
   }
 }
